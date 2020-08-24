@@ -1,0 +1,39 @@
+@import '../../constants/variables.scss';
+
+.header-nav-card-container {
+  width: 360px;
+  cursor: pointer;
+
+  &.dark {
+    border-bottom: 1px solid $dark;
+    color: $dark;
+  }
+
+  &.light {
+    border-bottom: 1px solid $white;
+    color: $white;
+  }
+
+  .header-nav-card-flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .header-nav-card-left {
+      p {
+        margin-bottom: -7px;
+      }
+
+      div {
+        font-family: $poppins;
+        font-size: 24px;
+        font-weight: 400;
+        margin-bottom: 2px;
+      }
+    }
+
+    p {
+      margin: auto 0;
+    }
+  }
+}
