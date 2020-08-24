@@ -1,0 +1,52 @@
+@import '../../constants/variables.scss';
+
+.arrow-box-container {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  border-radius: 1px;
+  box-sizing: border-box;
+
+  svg {
+    margin: auto;
+  }
+
+  // Color mode
+
+  &.dark {
+    border: $dark 1px solid;
+
+    svg > path {
+      stroke: $dark;
+      stroke-width: 1px;
+    }
+  }
+
+  &.light {
+    border: $white 1px solid;
+
+    svg > path {
+      stroke: $white;
+      stroke-width: 1px;
+    }
+  }
+
+  // Orientation of SVG arrow
+
+  &.up {
+    transform: rotate(0deg); 
+  }
+
+  &.down {
+    transform: rotate(180deg); 
+  }
+
+  &.left {
+    transform: rotate(270deg); 
+  }
+
+  &.right {
+    transform: rotate(90deg); 
+  }
+}
