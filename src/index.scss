@@ -1,3 +1,5 @@
+@import './constants/variables.scss';
+
 html, body {
   margin: 0;
   width: 100%;
@@ -7,4 +9,53 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+}
+
+// Default text stylings
+
+h1, .h1 {
+  font-family: $poppins;
+  font-size: 72px;
+  font-weight: 700;
+
+  margin-top: 72px;
+  margin-bottom: 23px;
+}
+
+h2, .h2 {
+  font-family: $poppins;
+  font-size: 48px;
+  font-weight: 200;
+
+  margin-top: 72px;
+  margin-bottom: 23px;
+}
+
+h3, .h3 {
+  font-family: $poppins;
+  font-size: 36px;
+  font-weight: 600;
+
+  margin-top: 48px;
+  margin-bottom: 23px;
+}
+
+h4, .h4 {
+  font-family: $open-sans;
+  font-size: 27px;
+  font-weight: 400;
+
+  margin-top: 36px;
+  margin-bottom: 18px;
+}
+
+p, .p {
+  font-family: $open-sans;
+  font-size: 18px;
+  font-weight: 300;
+
+  margin-top: 0px;
+  margin-bottom: 18px;
+
+  line-height: 155%;
 }
