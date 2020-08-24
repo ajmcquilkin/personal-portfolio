@@ -1,0 +1,33 @@
+@import '../../constants/variables.scss';
+
+.button-container {
+  font-family: $open-sans;
+  font-weight: 400;
+  font-size: 22px;
+
+  background: none;
+  border-radius: 4px;
+  cursor: pointer;
+  
+  // Color mode
+
+  &.dark {
+    color: $dark;
+    border: $dark 1.5px solid;
+  }
+
+  &.light {
+    color: $white;
+    border: $white 1.5px solid;
+  }
+
+  // Sizing
+
+  &.lg {
+    padding: 10px 240px 14px;
+  }
+
+  &.sm {
+    padding: 10px 56px 14px;
+  }
+}
