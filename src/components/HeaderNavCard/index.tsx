@@ -11,7 +11,7 @@ interface Props {
   dark?: boolean;
 }
 
-const ArrowBox = ({
+const HeaderNavCard = ({
   onClick,
   title,
   subtitle,
@@ -37,4 +37,4 @@ const ArrowBox = ({
   </div>
 );
 
-export default ArrowBox;
+export default HeaderNavCard;

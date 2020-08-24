@@ -1,0 +1,58 @@
+@import '../../constants/variables.scss';
+
+.project-card-container {
+  width: 680px;
+  // height: 400px;
+  padding: 65px 111px 69px 93px;
+  position: relative;
+
+  color: $white;
+  background-color: lightblue;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+
+  .project-card-header-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 18px;
+
+    .project-card-header-icon {
+      margin: auto 27px auto 0;
+      height: 42px;
+    }
+
+    .project-card-header-text-container {
+      h4 {
+        margin-top: 0px;
+        margin-bottom: -7px;
+      }
+
+      p {
+        margin-bottom: 0px;
+      }
+    }
+  }
+
+  p {
+    margin-bottom: 25px;
+  }
+
+  .project-card-bottom-container {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+
+    right: 36px;
+    bottom: 34px;
+
+    .project-card-bottom-text {
+      font-family: $open-sans;
+      font-size: 12px;
+      font-weight: 400;
+    }
+
+    .project-card-bottom-icon {
+      height: 14px;
+      margin-left: 18px;
+    }
+  }
+}

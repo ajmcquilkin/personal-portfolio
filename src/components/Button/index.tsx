@@ -10,7 +10,7 @@ interface Props {
   dark?: boolean;
 }
 
-const ArrowBox = ({
+const Button = ({
   children,
   onClick,
   className = '',
@@ -26,4 +26,4 @@ const ArrowBox = ({
   </button>
 );
 
-export default ArrowBox;
+export default Button;
