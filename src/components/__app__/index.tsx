@@ -3,9 +3,9 @@ import { Route, Switch } from 'react-router-dom';
 import { ConnectedRouter } from 'connected-react-router';
 import { History } from 'history';
 
-import WelcomeRedux from '../welcome';
-import Test from '../test';
-import Fallback from '../fallback';
+import WelcomeRedux from '../__welcome__';
+import Test from '../__test__';
+import Fallback from '../__fallback__';
 
 /**
  * This history is loaded from the redux state in src/index.ts

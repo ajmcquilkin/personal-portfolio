@@ -1,8 +1,8 @@
-# ReactJS Typescript Starter Template
+# Adam McQuilkin Personal Portfolio
 
 **Author:** Adam McQuilkin  
-**Created:** 6/4/2020  
-**Description:** A starter Typescript ReactJS app built with Webpack, Babel, and ESLint
+**Created:** 8/24/2020
+**Description:** Adam McQuilkin's personal portfolio repository.
 
 ## Table of Contents
 
