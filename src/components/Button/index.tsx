@@ -2,7 +2,7 @@ import React from 'react';
 import './Button.scss';
 
 interface Props {
-  children: JSX.Element | string;
+  children: string;
   onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 
   className?: string;
