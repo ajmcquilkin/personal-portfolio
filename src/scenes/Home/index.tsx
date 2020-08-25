@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import Footer from '../FooterScreen';
 
@@ -14,18 +14,6 @@ import MountainPanorama from '../../assets/images/mountain_pano.jpg';
 import { Project, Tag, ProjectsArray } from './projects';
 
 import './Home.scss';
-
-/**
- * A function to enable sticky scrolling for project search menu
- */
-function enableSticky(): void {
-  const navbar = document.getElementById('home-work-search-container');
-  if (window.pageYOffset > (navbar ? navbar.getBoundingClientRect().top + document.documentElement.scrollTop : 999999)) {
-    navbar?.classList.add('sticky');
-  } else {
-    navbar?.classList.remove('sticky');
-  }
-}
 
 /**
  * Filters projects based on given search query and filter tag
@@ -58,13 +46,6 @@ const Home = () => {
   const [tag, setTag] = React.useState<Tag>('all');
   const [search, setSearch] = React.useState<string>('');
   const [searchResults, setSearchResults] = React.useState<Project[]>(ProjectsArray);
-
-  useEffect(() => {
-    document.addEventListener('scroll', enableSticky);
-    return function removeListener() {
-      window.removeEventListener('scroll', enableSticky);
-    };
-  });
 
   return (
     <main>
@@ -244,21 +225,56 @@ const Home = () => {
         </div>
 
         <div id="work-experience-results">
-          {searchResults.map((project: Project) => (
-            <ProjectCard
-              key={project.title}
-              title={project.title}
-              subtitle={project.subtitle}
-              headerIcon={(className) => (<img className={className} src={project.headerIconSrc} alt={project.headerIconAlt} />)}
-              contentText={project.contentText}
-              buttonText={project.buttonText}
-              onClick={() => {}}
-              bottomText={project.bottomText}
-              bottomIcon={(className) => (<img className={className} src={project.bottomIconSrc} alt={project.bottomIconAlt} />)}
-              backgroundStyling={project.backgroundStyling}
-              className="work-experience-project-card"
-            />
-          ))}
+          {searchResults.length > 0
+            ? searchResults.map((project: Project) => (
+              <ProjectCard
+                key={project.title}
+                title={project.title}
+                subtitle={project.subtitle}
+                headerIcon={(className) => (<img className={className} src={project.headerIconSrc} alt={project.headerIconAlt} />)}
+                contentText={project.contentText}
+                buttonText={project.buttonText}
+                onClick={() => {}}
+                bottomText={project.bottomText}
+                bottomIcon={(className) => (<img className={className} src={project.bottomIconSrc} alt={project.bottomIconAlt} />)}
+                backgroundStyling={project.backgroundStyling}
+                className="work-experience-project-card"
+              />
+            ))
+            : (
+              <div className="work-experience-fallback">
+                <h2>Uh oh!</h2>
+                <p>
+                  I couldn&apos;t find what you were looking for! Try searching for
+                  {' '}
+                  <button
+                    type="button"
+                    className="p"
+                    onClick={() => {
+                      setSearchResults(getFilteredProjects('patent', tag));
+                      setSearch('patent');
+                    }}
+                  >
+                    patent
+                  </button>
+                  {' '}
+                  or
+                  {' '}
+                  <button
+                    type="button"
+                    className="p"
+                    onClick={() => {
+                      setSearchResults(getFilteredProjects('typescript', tag));
+                      setSearch('typescript');
+                    }}
+                  >
+                    typescript
+                  </button>
+                  {' '}
+                  if you need some ideas.
+                </p>
+              </div>
+            )}
         </div>
       </section>
 

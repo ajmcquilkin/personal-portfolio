@@ -36,10 +36,12 @@ main {
       .home-achievements-text-container {
         .h4 {
           margin: 0;
+          color: $dark;
         }
 
         p {
           margin: 0;
+          color: $dark;
         }
       }
     }
@@ -61,12 +63,10 @@ main {
 
       &.left {
         margin-right: 144px;
-        // padding-bottom: 60px;
       }
 
       &.right {
         margin-left: 144px;
-        // padding-top: 60px;
       }
     }
 
@@ -79,15 +79,18 @@ main {
 
       h2 {
         margin: 0 0 -7px;
+        color: $dark;
       }
 
       .h4 {
         margin: 0 0 24px;
+        color: $dark;
       }
 
       p {
         font-size: 27px;
         margin-bottom: 36px;
+        color: $dark;
       }
     }
   }
@@ -100,6 +103,7 @@ main {
 
     p {
       margin: 0 auto 20px;
+      color: $dark;
     }
 
     .home-more-work-arrow {
@@ -126,7 +130,7 @@ main {
       top: -540px;
       color: $white;
 
-      P {
+      p {
         font-size: 24px;
       }
     }
@@ -156,15 +160,18 @@ main {
 
         .h4 {
           margin: 0 auto -9px;
+          color: $dark;
         }
   
         h3 {
           margin: 0 auto 24px;
+          color: $dark;
         }
 
         p {
           text-align: center;
           margin: 0 auto 0.55em;
+          color: $dark;
 
           &.header {
             margin-bottom: 48px;
@@ -312,6 +319,22 @@ main {
 
       .work-experience-project-card {
         margin-bottom: 60px;
+      }
+
+      .work-experience-fallback {
+        width: 720px;
+        height: 400px;
+        color: $dark;
+        
+        button {
+          background: none;
+          border: none;
+          margin: 0;
+          padding: 0;
+
+          text-decoration: underline;
+          cursor: pointer;
+        }
       }
     }
   }
