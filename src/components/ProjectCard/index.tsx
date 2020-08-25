@@ -13,6 +13,8 @@ interface Props {
 
   bottomText: string;
   bottomIcon?: (className: string) => JSX.Element;
+
+  backgroundStyling: string;
   className?: string;
 }
 
@@ -28,10 +30,12 @@ const ProjectCard = ({
   bottomText,
   bottomIcon,
 
+  backgroundStyling,
   className = '',
 }: Props) => (
   <div
     className={`project-card-container ${className}`}
+    style={{ background: backgroundStyling }}
   >
     <div className="project-card-header-container">
       {headerIcon('project-card-header-icon')}

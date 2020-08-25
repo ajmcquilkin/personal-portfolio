@@ -5,7 +5,6 @@ import ArrowBox from '../../components/ArrowBox';
 import Button from '../../components/Button';
 import HeaderNavCard from '../../components/HeaderNavCard';
 import NavMenuItem from '../../components/NavMenuItem';
-import ProjectCard from '../../components/ProjectCard';
 
 import HomeFeatureImg from '../../assets/images/home_feature.jpg';
 import AboutFeatureImg from '../../assets/images/about_feature.jpg';

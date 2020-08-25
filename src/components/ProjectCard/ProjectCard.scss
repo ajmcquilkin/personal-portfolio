@@ -1,13 +1,11 @@
 @import '../../constants/variables.scss';
 
 .project-card-container {
-  width: 680px;
-  // height: 400px;
+  width: 720px;
   padding: 65px 111px 69px 93px;
   position: relative;
 
   color: $white;
-  background-color: lightblue;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
 
   .project-card-header-container {

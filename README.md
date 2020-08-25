@@ -121,7 +121,7 @@ This app is enabled natively with [react-redux](https://www.npmjs.com/package/re
 
 This redux state is created in the `src/index.ts` file, which contains calls to configure and implement this redux state.
 
-This template natively supports [Redux Dev Tools](https://github.com/reduxjs/redux-devtools), which allows for the viewing of this redux state in-browser. If this is enabled, the browser extension will add a function field to the Javascript `window` object with the key `__REDUX_DEVTOOLS_EXTENSION_COMPOSE__`. This key holds reference to an alternate redux [compose](https://redux.js.org/api/compose/) function, which can then be used to configure the store to be accessable by the extension.
+This template natively supports [Redux Dev Tools](https://github.com/reduxjs/redux-devtools), which allows for the viewing of this redux state in-browser. If this is enabled, the browser extension will add a function field to the Javascript `window` object with the key `__REDUX_DEVTOOLS_EXTENSION_COMPOSE__`. This key holds reference to an alternate redux [compose](https://redux.js.org/api/compose/) function, which can then be used to configure the store to be accessible by the extension.
 
 Since Typescipt doensn't allow for the insertion of undefined keys into an object defined by an interface (`window` is defined with the TS `interface Window`), the window must be temporarily typed as any, which overrides any connected interfaces or types. This allows for `composeEnhancers` to call the new `compose` function (if present) or to call the redux-standard `compose` function if not.
 

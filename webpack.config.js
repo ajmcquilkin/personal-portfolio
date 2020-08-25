@@ -19,6 +19,18 @@ var config = {
       // { test: /\.tsx?$/, loader: "babel-loader", exclude: /node_modules/ },
       // { test: /\.tsx?$/, loader: "ts-loader" },
       { test: /\.tsx?$/, loaders: ['ts-loader', 'babel-loader'], exclude: /node_modules/ },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              useRelativePath: true,
+              name: '[name].[ext]',
+            },
+          },
+        ],
+      },
       { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
     ]
   },
