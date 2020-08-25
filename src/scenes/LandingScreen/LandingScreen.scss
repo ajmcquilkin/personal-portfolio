@@ -1,0 +1,86 @@
+@import '../../constants/variables.scss';
+
+.landing-screen-container {
+  padding: 0 calc((100vw - #{$main-screen-width}) / 2);
+  height: 115vh;
+
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .landing-screen-signature {
+    position: absolute;
+    left: 80px;
+    top: 38px;
+
+    font-family: $caveat;
+    font-size: 48px;
+    font-weight: 700;
+    color: $white;
+  }
+
+  .landing-screen-menu-container {
+    width: calc((100vw - #{$main-screen-width}) / 2);
+    position: absolute;
+    top: 55px;
+    right: 0;
+
+    .landing-screen-menu-item {
+      margin: 0 0 11px;
+    }
+  }
+
+  .landing-screen-banner-container {
+    position: absolute;
+    top: 32vh;
+    color: $white;
+
+    h1 {
+      margin: 0 0 -29px;
+    }
+
+    h2 {
+      margin: 0 0 7px;
+    }
+
+    .landing-screen-banner-content {
+      font-family: $open-sans;
+      font-size: 27px;
+      font-weight: 300;
+      line-height: 155%;
+
+      max-width: 750px;
+      margin: 0 0 28px;
+    }
+
+    .landing-screen-button-container > button {
+      margin-right: 40px;
+
+      :last-child {
+        margin-right: 0px;
+      }
+    }
+  }
+
+  .landing-screen-cards-container {
+    position: absolute;
+    width: $main-screen-width;
+    bottom: 30vh;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .landing-screen-nav-card {
+      margin-bottom: 36px;
+    }
+  }
+
+  .landing-screen-arrow-box {
+    position: absolute;
+    bottom: 21vh;
+    left: 50vw;
+    transform: translate(-50%, 0);
+  }
+}

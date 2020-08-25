@@ -46,7 +46,7 @@
     &.right {
       margin-left: 18px;
       margin-right: 0px;
-      width: 92px;
+      width: calc((100vw - #{$main-screen-width}) / 8);
     }
 
     &.active.dark {
