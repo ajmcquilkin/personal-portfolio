@@ -1,0 +1,163 @@
+export type Tag = 'all' | 'design' | 'development';
+
+export interface Project {
+  title: string;
+  subtitle: string;
+  headerIconSrc: string;
+  headerIconAlt: string;
+  contentText: string;
+  buttonText: string;
+  projectSubURL: string;
+  bottomText: string;
+  bottomIconSrc: string;
+  bottomIconAlt: string;
+  tags: Tag[];
+  // backgroundCSS: string;
+  // background
+}
+
+export const ProjectsArray: Project[] = [
+  {
+    title: 'D-Planner, LLC',
+    subtitle: 'Entrepreneurship',
+    headerIconSrc: '',
+    headerIconAlt: 'D-Planner logo',
+    contentText: 'Academic planning is difficult for students, especially when information is fragmented and hard to find. D-Planner is a better way of planning out your time at college. Winner of the 2018 DALI Pitch Competition.',
+    buttonText: 'read more',
+    projectSubURL: 'dplanner',
+    bottomText: 'Co-founder, Project Designer, Developer',
+    bottomIconSrc: '',
+    bottomIconAlt: '',
+    tags: ['development', 'design'],
+  },
+  {
+    title: 'Intermediate Computer Interface',
+    subtitle: 'Entrepreneurship, US Patent and Trademark Office',
+    headerIconSrc: '',
+    headerIconAlt: 'Computer chip',
+    contentText: 'Veritatis ipsa laborum ducimus facilis qui. Eveniet et hic quidem rem qui natus aut. Recusandae enim iure qui ab. Labore nulla cumque aliquam et. Quod fugiat et officia officiis rerum debitis vero molestias.',
+    buttonText: 'read more',
+    projectSubURL: 'icid',
+    bottomText: 'US Patent 9,632,952',
+    bottomIconSrc: '',
+    bottomIconAlt: 'USPTO logo',
+    tags: ['development'],
+  },
+  {
+    title: 'Mini Design Course',
+    subtitle: 'DALI Lab Design Lecturer',
+    headerIconSrc: '',
+    headerIconAlt: 'Dartmouth College logo',
+    contentText: 'Veritatis ipsa laborum ducimus facilis qui. Eveniet et hic quidem rem qui natus aut. Recusandae enim iure qui ab. Labore nulla cumque aliquam et. Quod fugiat et officia officiis rerum debitis vero molestias.',
+    buttonText: 'read more',
+    projectSubURL: 'mini-design-course',
+    bottomText: 'Senior Design Lecturer',
+    bottomIconSrc: '',
+    bottomIconAlt: '',
+    tags: ['design'],
+  },
+  {
+    title: 'Student Term Scheduling Portal',
+    subtitle: 'Registrar, Dartmouth College',
+    headerIconSrc: '',
+    headerIconAlt: 'Dartmouth College logo',
+    contentText: 'Dartmouth College’s existing term election interface has a success rate of 25%, and does not support international students. How might Dartmouth make sure their interface works for everyone?',
+    buttonText: 'read more',
+    projectSubURL: 'scheduling',
+    bottomText: 'Designer, Developer, Development Mentor',
+    bottomIconSrc: '',
+    bottomIconAlt: '',
+    tags: ['design', 'development'],
+  },
+  {
+    title: 'JestJS UI Testing Workshop',
+    subtitle: 'DALI Lab Development Lecturer',
+    headerIconSrc: '',
+    headerIconAlt: 'ReactJS logo',
+    contentText: 'Veritatis ipsa laborum ducimus facilis qui. Eveniet et hic quidem rem qui natus aut. Recusandae enim iure qui ab. Labore nulla cumque aliquam et. Quod fugiat et officia officiis rerum debitis vero molestias.',
+    buttonText: 'read more',
+    projectSubURL: 'jest-workshop',
+    bottomText: 'Developer, Development Mentor',
+    bottomIconSrc: '',
+    bottomIconAlt: '',
+    tags: ['development', 'design'],
+  },
+  {
+    title: 'Portable Radio Repeater',
+    subtitle: 'Dartmouth College',
+    headerIconSrc: '',
+    headerIconAlt: 'Dartmouth College logo',
+    contentText: 'A highly portable radio repeater mast that allows search and rescue workers to communicate via radio in highly mountainous and dangerous terrain, built to support and improve existing radio infrastructure.',
+    buttonText: 'read more',
+    projectSubURL: 'repeater',
+    bottomText: 'Developer, Electrical Systems Manager',
+    bottomIconSrc: '',
+    bottomIconAlt: '',
+    tags: ['development'],
+  },
+  {
+    title: 'Granite State Volunteering',
+    subtitle: 'NH State Government',
+    headerIconSrc: '',
+    headerIconAlt: 'New Hampshire vector outline',
+    contentText: 'Veritatis ipsa laborum ducimus facilis qui. Eveniet et hic quidem rem qui natus aut. Recusandae enim iure qui ab. Labore nulla cumque aliquam et. Quod fugiat et officia officiis rerum debitis vero molestias.',
+    buttonText: 'read more',
+    projectSubURL: 'volunteering',
+    bottomText: 'Lead Developer, Development Mentor',
+    bottomIconSrc: '',
+    bottomIconAlt: '',
+    tags: ['development'],
+  },
+  {
+    title: 'ReactJS + Typescript Starter',
+    subtitle: 'DALI Lab Development Lecturer',
+    headerIconSrc: '',
+    headerIconAlt: 'Typescript logo',
+    contentText: 'Veritatis ipsa laborum ducimus facilis qui. Eveniet et hic quidem rem qui natus aut. Recusandae enim iure qui ab. Labore nulla cumque aliquam et. Quod fugiat et officia officiis rerum debitis vero molestias.',
+    buttonText: 'read more',
+    projectSubURL: 'react-typescript-starter',
+    bottomText: 'Developer, Development Mentor',
+    bottomIconSrc: '',
+    bottomIconAlt: '',
+    tags: ['development'],
+  },
+  {
+    title: 'Whiteboard Productivity',
+    subtitle: 'DALI Lab, Dartmouth College',
+    headerIconSrc: '',
+    headerIconAlt: 'Github logo',
+    contentText: 'An all-encompassing productivity app that empowers users to take full control over their lives through relevant, integrated planning functionality. Built in conjunction with Tuck School of Business.',
+    buttonText: 'read more',
+    projectSubURL: 'whiteboard',
+    bottomText: 'Developer, Development Mentor',
+    bottomIconSrc: '',
+    bottomIconAlt: '',
+    tags: ['development'],
+  },
+  {
+    title: 'MindSquare',
+    subtitle: 'Dartmouth College',
+    headerIconSrc: '',
+    headerIconAlt: 'Dartmouth College logo',
+    contentText: 'On college campuses, fear of missing out is a powerful social motivator. MindSquare helps users reframe what it means to take personal time away from stressful daily activities through personalized digital mosaics.',
+    buttonText: 'read more',
+    projectSubURL: 'mindsquare',
+    bottomText: 'Product Designer',
+    bottomIconSrc: '',
+    bottomIconAlt: '',
+    tags: ['design'],
+  },
+  {
+    title: 'TODO: Discuss this portfolio',
+    subtitle: '',
+    headerIconSrc: '',
+    headerIconAlt: '',
+    contentText: '',
+    buttonText: '',
+    projectSubURL: '',
+    bottomText: '',
+    bottomIconSrc: '',
+    bottomIconAlt: '',
+    tags: ['development', 'design'],
+  },
+];
