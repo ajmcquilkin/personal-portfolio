@@ -46,8 +46,9 @@ const LandingScreen = ({ history }: Props) => {
   const { pathname } = history.location;
 
   return (
-    <div className="landing-screen-container" style={{ backgroundImage: `url(${getBackgroundImageByURL(pathname)})` }}>
+    <div className="landing-screen-container" style={{ background: `linear-gradient(rgba(54, 54, 54, 0.12), rgba(54, 54, 54, 0.12)), rgba(0, 0, 0, 0) url(${getBackgroundImageByURL(pathname)}) 50% 30%` }}>
       <div className="landing-screen-signature">AM</div>
+      <div className="landing-screen-signature-shadow" />
 
       <nav
         className="landing-screen-menu-container"
@@ -77,15 +78,20 @@ const LandingScreen = ({ history }: Props) => {
           className="landing-screen-menu-item"
         />
       </nav>
+      <div className="landing-screen-menu-shadow" />
 
       <div className="landing-screen-banner-container" role="banner">
-        <h1>Adam McQuilkin</h1>
-        <h2>Developer, Product Designer</h2>
-        <div className="landing-screen-banner-content">{getDescriptionByURL(pathname)}</div>
-        <div className="landing-screen-button-container">
-          <Button onClick={() => {}}>contact me</Button>
-          <Button onClick={() => {}}>download resume</Button>
+        <div className="landing-screen-banner-content">
+          <h1>Adam McQuilkin</h1>
+          <h2>Developer, Product Designer</h2>
+          <div className="landing-screen-banner-content">{getDescriptionByURL(pathname)}</div>
+          <div className="landing-screen-button-container">
+            <Button onClick={() => {}}>contact me</Button>
+            <Button onClick={() => {}}>download resume</Button>
+          </div>
         </div>
+
+        <div className="landing-screen-banner-shadow" />
       </div>
 
       <nav
@@ -118,6 +124,8 @@ const LandingScreen = ({ history }: Props) => {
       </nav>
 
       <ArrowBox className="landing-screen-arrow-box" />
+
+      <div className="landing-screen-bottom-gradient" />
     </div>
   );
 };

@@ -5,6 +5,7 @@ main {
   flex-direction: column;
   position: relative;
   padding: 0 calc((100vw - #{$main-screen-width}) / 2);
+  box-sizing: border-box;
 
   #home-achievements {
     display: flex;
@@ -337,5 +338,11 @@ main {
         }
       }
     }
+  }
+
+  .home-footer {
+    position: relative;
+    width: 100vw;
+    left: calc((100vw - #{$main-screen-width}) / 2 * -1);
   }
 }

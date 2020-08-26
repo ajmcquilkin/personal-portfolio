@@ -278,7 +278,7 @@ const Home = () => {
         </div>
       </section>
 
-      <Footer />
+      <Footer className="home-footer" />
     </main>
   );
 };
