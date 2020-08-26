@@ -1,1 +1,62 @@
 @import '../../constants/variables.scss';
+
+footer {
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+  height: 1085px;
+  background-size: cover !important;
+
+  .footer-top-gradient {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 1) 13.02%, rgba(255, 255, 255, 0) 100%);
+  }
+
+  .footer-main-content {
+    margin: auto;
+    padding: 168px 73px;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(34, 34, 34, 0.1) 0%, rgba(34, 34, 34, 0) 100%);
+    
+    h2 {
+      color: $white;
+    }
+
+    .footer-button-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  .footer-bottom-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    z-index: 2;
+
+    background: rgba(23, 30, 39, 0.5);
+    padding: 15px 0;
+    color: $white;
+
+    p {
+      margin: auto 40px auto 0;
+
+      &:last-child {
+        margin: auto 0;
+      }
+    }
+  }
+
+  .footer-bottom-gradient {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 345px;
+    background: linear-gradient(180deg, rgba(23, 30, 39, 0.9) 0%, rgba(23, 30, 39, 0.572917) 59.9%, rgba(23, 30, 39, 0) 100%);
+    transform: rotate(-180deg);
+  }
+}

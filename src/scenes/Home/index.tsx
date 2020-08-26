@@ -189,7 +189,7 @@ const Home = () => {
           <h2>My Work Experience</h2>
         </div>
 
-        <div id="home-work-search-container">
+        <div role="search" id="home-work-search-container">
           <div className="home-work-separator" />
 
           <button type="button" onClick={() => { setTag('all'); setSearchResults(getFilteredProjects(search, 'all')); }}>
