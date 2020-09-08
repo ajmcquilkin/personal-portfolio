@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import LandingScreen from '../scenes/LandingScreen';
 import Home from '../scenes/Home';
+import About from '../scenes/About';
 
 /**
  * This history is loaded from the redux state in src/index.ts
@@ -17,7 +18,7 @@ const App = () => (
     <LandingScreen />
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route exact path="/about" render={() => (<div />)} />
+      <Route exact path="/about" component={About} />
     </Switch>
   </div>
 );

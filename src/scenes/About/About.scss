@@ -1,0 +1,124 @@
+@import '../../constants/variables.scss';
+
+main {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 0 calc((100vw - #{$main-screen-width}) / 2);
+  box-sizing: border-box;
+
+  #about-intro {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+
+    img {
+      position: relative;
+      left: -63px;
+      top: -36px;
+      width: 611px;
+      height: 773px;
+
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.125);
+    }
+
+    .about-intro-text-container {
+      margin: auto 0;
+
+      h2 {
+        margin: 0 0 -9px;
+      }
+
+      h3 {
+        margin: 0 0 33px;
+      }
+
+      p {
+        margin: 0 0 63px;
+      }
+    }
+  }
+
+  #enjoy-projects {
+
+  }
+
+  #main-photo-gallery {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+
+    #about-photo-title {
+      margin: auto 102px auto 0;
+      padding-left: 27px;
+      box-sizing: border-box;
+      border-left: 1px solid $dark;
+      flex: 2;
+
+      h2 {
+        margin: 0 0 12px 0;
+      }
+    }
+
+    #main-gallery-container {
+      flex: 5;
+      overflow-x: auto;
+      margin-right: calc(-1 * (100vw - #{$main-screen-width}) / 2);
+
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+
+      /* Hide scrollbar in Chrome, Safari, and Opera */
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      #main-gallery-scroll-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: 100%;
+
+        .about-image-tile {
+          margin: 0px 0px 6px 6px;
+        }
+      }
+    }
+
+    #about-gallery-scroll-container {
+      position: absolute;
+      display: flex;
+      flex-direction: row;
+      align-content: center;
+
+      bottom: -50px;
+      right: calc(-1 * (100vw - #{$main-screen-width}) / 2);
+
+      p {
+        color: #999999;
+        margin: 0 25px;
+      }
+
+      & > div {
+        height: 1px;
+        background: #999999;
+        margin: auto 0;
+
+        &:nth-child(1) {
+          width: 531px;
+        }
+
+        &:nth-child(3) {
+          width: 128px;
+        }
+      }
+    }
+  }
+
+  .about-footer {
+    position: relative;
+    width: calc(100% + 2 * ((100vw - #{$main-screen-width}) / 2));
+    left: calc((100vw - #{$main-screen-width}) / 2 * -1);
+  }
+}

@@ -70,7 +70,8 @@
     "webpack:start": "webpack-dev-server --content-base ./dist --hot --inline --colors --port 3000",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "deploy": "npx surge ./build adammcquilkin.surge.sh"
   },
   "browserslist": {
     "production": [
