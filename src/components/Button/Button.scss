@@ -14,12 +14,24 @@
   &.dark {
     color: $dark;
     border: $dark 1.5px solid;
+
+    &:hover {
+      color: $white;
+      background-color: $dark;
+    }
   }
 
   &.light {
     color: $white;
     border: $white 1.5px solid;
+
+    &:hover {
+      color: $dark;
+      background-color: $white;
+    }
   }
+
+  transition: color 0.3s, background-color 0.3s;
 
   // Sizing
 
