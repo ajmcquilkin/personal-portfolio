@@ -23,6 +23,9 @@ import WYIcon1 from '../../assets/images/gallery/wy_1.jpg';
 // import WYIcon2 from '../../assets/images/gallery/wy_2.jpg';
 import WYIcon3 from '../../assets/images/gallery/wy_3.jpg';
 
+import SafetyImage from '../../assets/images/safety.png';
+import ProfileImage from '../../assets/images/profile.jpg';
+
 import './About.scss';
 
 const About = () => {
@@ -39,7 +42,7 @@ const About = () => {
   return (
     <main>
       <section id="about-intro">
-        <img />
+        <img src={ProfileImage} alt="Adam McQuilkin profile" />
         <div className="about-intro-text-container">
           <h2>Hi, my name’s Adam!</h2>
           <h3>Dartmouth College, Class of 2023</h3>
@@ -56,7 +59,7 @@ const About = () => {
       </section>
 
       <section id="main-photo-gallery">
-        <div id="about-photo-title" className="about-title-container">
+        <div className="about-title-container">
           <h2>I love photography</h2>
           <p>Veritatis ipsa laborum ducimus facilis qui. Eveniet et hic quidem rem qui natus aut. Recusandae enim iure qui ab. Labore nulla cumque aliquam et.</p>
         </div>
@@ -180,8 +183,8 @@ const About = () => {
         </div>
       </section>
 
-      <section>
-        <img />
+      <section id="about-safety-section">
+        <img src={SafetyImage} alt="WFR, WFA, CPR safety certifications" />
 
         <div className="about-title-container">
           <h2>I keep people safe</h2>
@@ -189,14 +192,14 @@ const About = () => {
         </div>
       </section>
 
-      <section>
+      <section id="about-outdoors-section">
         <div className="about-title-container">
           <h2>I love the outdoors</h2>
           <p>Veritatis ipsa laborum ducimus facilis qui. Eveniet et hic quidem rem qui natus aut. Recusandae enim iure qui ab. Labore nulla cumque aliquam et.</p>
         </div>
 
-        <div>
-          <img />
+        <div id="about-outdoors-image-container">
+          <img src={WMNFIcon1} alt="Spending time outdoors" />
           <p>You can often find me hidden away in the woods.</p>
         </div>
       </section>
