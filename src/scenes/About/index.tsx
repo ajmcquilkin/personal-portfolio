@@ -56,7 +56,7 @@ const About = () => {
       </section>
 
       <section id="main-photo-gallery">
-        <div id="about-photo-title">
+        <div id="about-photo-title" className="about-title-container">
           <h2>I love photography</h2>
           <p>Veritatis ipsa laborum ducimus facilis qui. Eveniet et hic quidem rem qui natus aut. Recusandae enim iure qui ab. Labore nulla cumque aliquam et.</p>
         </div>
@@ -183,14 +183,14 @@ const About = () => {
       <section>
         <img />
 
-        <div>
+        <div className="about-title-container">
           <h2>I keep people safe</h2>
           <p>Veritatis ipsa laborum ducimus facilis qui. Eveniet et hic quidem rem qui natus aut. Recusandae enim iure qui ab. Labore nulla cumque aliquam et.</p>
         </div>
       </section>
 
       <section>
-        <div>
+        <div className="about-title-container">
           <h2>I love the outdoors</h2>
           <p>Veritatis ipsa laborum ducimus facilis qui. Eveniet et hic quidem rem qui natus aut. Recusandae enim iure qui ab. Labore nulla cumque aliquam et.</p>
         </div>

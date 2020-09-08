@@ -1,5 +1,19 @@
 @import '../../constants/variables.scss';
 
+// Duplicated styling
+
+.about-title-container {
+  padding-left: 27px;
+  box-sizing: border-box;
+  border-left: 1px solid $dark;
+
+  h2 {
+    margin: 0 0 12px 0;
+  }
+}
+
+// Ordered styling
+
 main {
   display: flex;
   flex-direction: column;
@@ -48,17 +62,11 @@ main {
     display: flex;
     flex-direction: row;
     position: relative;
+    margin-bottom: 314px;
 
     #about-photo-title {
       margin: auto 102px auto 0;
-      padding-left: 27px;
-      box-sizing: border-box;
-      border-left: 1px solid $dark;
       flex: 2;
-
-      h2 {
-        margin: 0 0 12px 0;
-      }
     }
 
     #main-gallery-container {
