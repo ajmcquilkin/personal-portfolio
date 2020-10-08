@@ -20,16 +20,19 @@ var config = {
       // { test: /\.tsx?$/, loader: "ts-loader" },
       { test: /\.tsx?$/, loaders: ['ts-loader', 'babel-loader'], exclude: /node_modules/ },
       {
-        test: /\.(jpe?g|png|gif|svg)$/,
+        test: /\.(png|jpe?g|gif)$/i,
         use: [
           {
-            loader: 'file-loader',
+            loader: 'url-loader',
             options: {
-              useRelativePath: true,
-              name: '[name].[ext]',
+              limit: false,
             },
           },
         ],
+      },
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
       },
       { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
     ]
