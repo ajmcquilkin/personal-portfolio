@@ -16,14 +16,24 @@ const Button = ({
   className = '',
   size = 'sm',
   dark = false,
-}: Props) => (
-  <button
-    type="button"
-    onClick={onClick}
-    className={`button-container ${size} ${dark ? 'dark' : 'light'} ${className}`}
-  >
-    {children}
-  </button>
-);
+}: Props) => {
+  const width = size === 'lg' ? 400 : 240;
+  const height = 60;
+
+  return (
+    <div className={`button-container ${size} ${dark ? 'dark' : 'light'} ${className}`}>
+      <button
+        type="button"
+        onClick={onClick}
+      >
+        <svg width={`${width}px`} height={`${height}px`} viewBox={`0 0 ${width} ${height}`}>
+          <polyline points={`${width - 1},1 ${width - 1},${height - 1} 1,${height - 1} 1,1 ${width - 1},1`} className="bg-line" />
+        </svg>
+
+        {children}
+      </button>
+    </div>
+  );
+};
 
 export default Button;

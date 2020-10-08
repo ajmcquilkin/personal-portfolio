@@ -7,6 +7,11 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './components/App';
 import './index.scss';
 
+const main = document.getElementById('main');
+const viewWidth = main?.clientWidth || 100;
+console.log(main, main?.clientWidth, viewWidth);
+document.documentElement.style.setProperty('--view-width', `${viewWidth}px`);
+
 /**
  * Allow the react app to access this store
  */
@@ -14,5 +19,5 @@ ReactDOM.render(
   <BrowserRouter>
     <App />
   </BrowserRouter>,
-  document.getElementById('main'),
+  main,
 );

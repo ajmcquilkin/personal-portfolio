@@ -17,7 +17,7 @@ const NavMenuItem = ({
   className = '',
   dark = false,
 }: Props) => (
-  <div className={`nav-menu-container${dark ? ' dark' : ' light'} ${className}`}>
+  <div className={`nav-menu-container${dark ? ' dark' : ' light'} ${className}`} role="button">
     <div className={`nav-menu-container-bar left${history.location.pathname === pageLink ? ' active' : ''}${dark ? ' dark' : ' light'}`} />
     <NavLink exact className={dark ? 'dark' : 'light'} to={pageLink}>{pageName}</NavLink>
     <div className={`nav-menu-container-bar right${history.location.pathname === pageLink ? ' active' : ''}${dark ? ' dark' : ' light'}`} />

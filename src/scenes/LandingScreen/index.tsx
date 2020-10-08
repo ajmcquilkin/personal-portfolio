@@ -55,25 +55,25 @@ const LandingScreen = ({ history }: Props) => {
         aria-label="Main site links"
       >
         <NavMenuItem
-          pageName="HOME"
+          pageName="home"
           pageLink="/"
           className="landing-screen-menu-item"
         />
 
         <NavMenuItem
-          pageName="ABOUT ME"
+          pageName="about me"
           pageLink="/about"
           className="landing-screen-menu-item"
         />
 
         <NavMenuItem
-          pageName="MY RESUME"
+          pageName="my resume"
           pageLink="/resume"
           className="landing-screen-menu-item"
         />
 
         <NavMenuItem
-          pageName="CONTACT"
+          pageName="contact"
           pageLink="/contact"
           className="landing-screen-menu-item"
         />
@@ -86,8 +86,8 @@ const LandingScreen = ({ history }: Props) => {
           <h2>Developer, Product Designer</h2>
           <div className="landing-screen-banner-content">{getDescriptionByURL(pathname)}</div>
           <div className="landing-screen-button-container">
-            <Button onClick={() => {}}>contact me</Button>
-            <Button onClick={() => {}}>download resume</Button>
+            <Button className="landing-screen-button" onClick={() => {}} size="sm">contact me</Button>
+            <Button className="landing-screen-button" onClick={() => {}} size="lg">download resume</Button>
           </div>
         </div>
 

@@ -23,6 +23,11 @@ import WYIcon1 from '../../assets/images/gallery/wy_1.jpg';
 // import WYIcon2 from '../../assets/images/gallery/wy_2.jpg';
 import WYIcon3 from '../../assets/images/gallery/wy_3.jpg';
 
+import CertsImage from '../../assets/images/certs.png';
+import AdamMcQuilkinImg from '../../assets/images/adam_mcquilkin.jpg';
+
+import { ReactComponent as SlantedBackground } from '../../assets/background.svg';
+
 import './About.scss';
 
 const About = () => {
@@ -39,7 +44,7 @@ const About = () => {
   return (
     <main>
       <section id="about-intro">
-        <img />
+        <img src={AdamMcQuilkinImg} alt="Adam J McQuilkin" />
         <div className="about-intro-text-container">
           <h2>Hi, my name’s Adam!</h2>
           <h3>Dartmouth College, Class of 2023</h3>
@@ -49,14 +54,17 @@ const About = () => {
       </section>
 
       <section id="enjoy-projects">
-        <div className="h2">I enjoy working on</div>
-        <h2 className="h1">meaningful projects</h2>
-        <p>I love to work on projects that can bring positive change to the lives of others. From my school to search and rescue teams in the mountains, I want to do good in my communities.</p>
-        <Button size="lg" onClick={() => {}}>see my work</Button>
+        <div id="about-skills-skew"><SlantedBackground /></div>
+        <div className="about-enjoy-text-container">
+          <div className="h2">I enjoy working on</div>
+          <h2 className="h1">meaningful projects</h2>
+          <p>I love to work on projects that can bring positive change to the lives of others. From my school to search and rescue teams in the mountains, I want to do good in my communities.</p>
+          <Button size="lg" onClick={() => {}}>see my work</Button>
+        </div>
       </section>
 
       <section id="main-photo-gallery">
-        <div id="about-photo-title">
+        <div className="about-photo-title">
           <h2>I love photography</h2>
           <p>Veritatis ipsa laborum ducimus facilis qui. Eveniet et hic quidem rem qui natus aut. Recusandae enim iure qui ab. Labore nulla cumque aliquam et.</p>
         </div>
@@ -154,6 +162,7 @@ const About = () => {
               height={`${imageHeight}px`}
               className="about-image-tile"
             />
+
             {/* <ImageTile
               title="Wyoming"
               subtitle="August, 2019"
@@ -162,6 +171,7 @@ const About = () => {
               height={`${imageHeight}px`}
               className="about-image-tile"
             /> */}
+
             <ImageTile
               title="Wyoming"
               subtitle="August, 2019"
@@ -180,23 +190,23 @@ const About = () => {
         </div>
       </section>
 
-      <section>
-        <img />
+      <section id="wilderness-safety">
+        <img src={CertsImage} alt="Wilderness Safety Certification Cards" />
 
-        <div>
+        <div className="about-photo-title">
           <h2>I keep people safe</h2>
           <p>Veritatis ipsa laborum ducimus facilis qui. Eveniet et hic quidem rem qui natus aut. Recusandae enim iure qui ab. Labore nulla cumque aliquam et.</p>
         </div>
       </section>
 
-      <section>
-        <div>
+      <section id="outdoors-experience">
+        <div className="about-photo-title">
           <h2>I love the outdoors</h2>
           <p>Veritatis ipsa laborum ducimus facilis qui. Eveniet et hic quidem rem qui natus aut. Recusandae enim iure qui ab. Labore nulla cumque aliquam et.</p>
         </div>
 
-        <div>
-          <img />
+        <div id="outdoors-experience-photo-container">
+          <img src={WMNFIcon1} alt="White Mountains" />
           <p>You can often find me hidden away in the woods.</p>
         </div>
       </section>

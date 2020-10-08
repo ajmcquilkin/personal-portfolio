@@ -1,18 +1,24 @@
 import React from 'react';
-import './ProjectCard.scss';
+import SVG from 'react-inlinesvg';
+
 import Button from '../Button';
+import './ProjectCard.scss';
 
 interface Props {
   title: string;
   subtitle: string;
-  headerIcon: (className: string) => JSX.Element;
+  // headerIcon: (className: string) => JSX.Element;
+  headerIconURL: string;
+  headerIconAlt: string;
   contentText: string;
 
   buttonText: string;
   onClick: () => void;
 
   bottomText: string;
-  bottomIcon?: (className: string) => JSX.Element;
+  // bottomIcon?: (className: string) => JSX.Element;
+  bottomIconURL?: string;
+  bottomIconAlt?: string;
 
   backgroundStyling: string;
   className?: string;
@@ -21,14 +27,16 @@ interface Props {
 const ProjectCard = ({
   title,
   subtitle,
-  headerIcon,
+  headerIconURL,
+  headerIconAlt,
   contentText,
 
   buttonText,
   onClick,
 
   bottomText,
-  bottomIcon,
+  bottomIconURL,
+  bottomIconAlt,
 
   backgroundStyling,
   className = '',
@@ -38,7 +46,11 @@ const ProjectCard = ({
     style={{ background: backgroundStyling }}
   >
     <div className="project-card-header-container">
-      {headerIcon('project-card-header-icon')}
+      <SVG
+        src={headerIconURL}
+        title={headerIconAlt}
+        className="project-card-header-icon"
+      />
       <div className="project-card-header-text-container">
         <h4>{title}</h4>
         <p>{subtitle}</p>
@@ -50,7 +62,13 @@ const ProjectCard = ({
 
     <div className="project-card-bottom-container">
       <div className="project-card-bottom-text">{bottomText}</div>
-      {bottomIcon ? bottomIcon('project-card-bottom-icon') : null}
+      {bottomIconURL && bottomIconAlt ? (
+        <SVG
+          src={bottomIconURL}
+          title={bottomIconAlt}
+          className="project-card-bottom-icon"
+        />
+      ) : null}
     </div>
   </div>
 );

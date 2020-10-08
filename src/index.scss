@@ -5,6 +5,17 @@ html, body {
   width: 100%;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  section {
+    padding: 0 $screen-padding;
+    box-sizing: border-box;
+  }
+}
+
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

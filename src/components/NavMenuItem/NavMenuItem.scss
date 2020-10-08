@@ -3,8 +3,8 @@
 .nav-menu-container {
   display: flex;
   flex-direction: row;
-  width: 100%;
-
+  overflow: hidden;
+  
   &.dark {
     color: $dark;
   }
@@ -12,49 +12,72 @@
   &.light {
     color: $white;
   }
-
+  
+  &:hover > .nav-menu-container-bar:not(.active) {
+    &.left { transform: translate(0%, 0%); }
+    &.right { transform: translate(0%, 0%); }
+    
+    &.light { background: $white; }
+    &.dark { background: $dark; }
+  }
+  
   a {
+    position: relative;
     font-family: $poppins;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 300;
     text-decoration: none;
     text-align: right;
+    overflow: hidden;
 
-    &.active {
-      font-weight: 700;
+    &:focus {
+      outline: none;
+    }
+    
+    &.active::after, &:focus::after {
+      @include after(1px);
+      transform: translate(0%, 0%);
     }
 
-    &.dark {
-      color: $dark;
-    }
+    &.dark { color: $dark; &::after { background: $dark; } }
+    &.light { color: $white; &::after { background: $white; } }
 
-    &.light {
-      color: $white;
+    &::after {
+      @include after(1px);
+      transform: translate(-100%, 0%);
     }
   }
-
+  
   .nav-menu-container-bar {
-    margin-top: auto;
-    margin-bottom: auto;
+    margin: auto 0;
     height: 1px;
-
+    transition: transform 0.3s ease-in-out;
+    
     &.left {
+      transform: translate(-100%, 0%);
+
       margin-left: 0px;
       margin-right: 18px;
       flex: 1;
     }
-
+    
     &.right {
+      transform: translate(100%, 0%);
+
       margin-left: 18px;
       margin-right: 0px;
-      width: calc((100vw - #{$main-screen-width}) / 8);
+      width: 96px;
     }
 
-    &.active.dark {
+    &.active {
+      transform: translateX(0);
+    }
+
+    &.dark {
       background: $dark;
     }
-  
-    &.active.light {
+
+    &.light {
       background: $white;
     }
   }

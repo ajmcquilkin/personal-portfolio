@@ -12,3 +12,20 @@ $dark: #171E27;
 // Spacing variables
 
 $main-screen-width: 72vw;
+$screen-padding: calc((100vw - #{$main-screen-width}) / 2);
+
+// Mixins
+
+@mixin after($height:2px) {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: $height;
+
+  transition: transform 0.4s cubic-bezier(0, 1, 0.6, 1);
+  transition-delay: 0.1s;
+}

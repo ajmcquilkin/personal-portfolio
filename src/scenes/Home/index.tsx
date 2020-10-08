@@ -12,6 +12,7 @@ import TestImage from '../../assets/images/test_project_image.png';
 import MountainPanorama from '../../assets/images/mountain_pano.jpg';
 
 import { Project, Tag, ProjectsArray } from './projects';
+import { ReactComponent as SlantedBackground } from '../../assets/background.svg';
 
 import './Home.scss';
 
@@ -41,6 +42,17 @@ function getFilteredProjects(search: string, tag: Tag): Project[] {
     return searchBool && filterBool;
   });
 }
+
+const imgCache: { [key:string]: string } = {};
+
+function importAll(r: __WebpackModuleApi.RequireContext) {
+  r.keys().forEach((key) => {
+    imgCache[key] = r(key);
+  });
+  console.log(imgCache);
+}
+
+importAll(require.context('../../assets/icons', false, /\.svg$/));
 
 const Home = () => {
   const [tag, setTag] = React.useState<Tag>('all');
@@ -95,7 +107,7 @@ const Home = () => {
       </div>
 
       <section id="home-skills">
-        <div id="home-skills-skew" />
+        <div id="home-skills-skew"><SlantedBackground /></div>
         <div className="home-skills-text-container">
           <h2>What I can do</h2>
           <p>I love to work on projects that can bring positive change to the lives of others. From my school to search and rescue teams in the mountains, I want to do good in my communities.</p>
@@ -105,40 +117,6 @@ const Home = () => {
           <div className="home-skills-type-container">
             <div className="h4">software</div>
             <h3>development</h3>
-            <p className="header">Est fugiat eum quo corrupti quae voluptas eaque. Veritatis aut explicabo perferendis. Quia recusandae quia voluptates id hic sed hic.</p>
-
-            <h4>experience with</h4>
-            <div className="home-skills-list-container">
-              <p>Animation</p>
-              <p>Graphic Design</p>
-              <p>Mobile Design</p>
-              <p>UI Design</p>
-              <p>UX Design</p>
-              <p>Web Design</p>
-            </div>
-
-            <h4>design tools</h4>
-            <div className="home-skills-list-container">
-              <p>Adobe After Effects</p>
-              <p>Adobe Illustrator</p>
-              <p>Adobe Photoshop</p>
-              <p>Adobe Premiere Pro</p>
-              <p>Figma</p>
-              <p>Zeplin</p>
-            </div>
-
-            <Button
-              className="home-skills-button"
-              dark
-              onClick={() => {}}
-            >
-              see work
-            </Button>
-          </div>
-
-          <div className="home-skills-type-container">
-            <div className="h4">product</div>
-            <h3>design</h3>
             <p className="header">Est fugiat eum quo corrupti quae voluptas eaque. Veritatis aut explicabo perferendis. Quia recusandae quia voluptates id hic sed hic.</p>
 
             <h4>languages</h4>
@@ -181,7 +159,42 @@ const Home = () => {
 
             </Button>
           </div>
+
+          <div className="home-skills-type-container">
+            <div className="h4">product</div>
+            <h3>design</h3>
+            <p className="header">Est fugiat eum quo corrupti quae voluptas eaque. Veritatis aut explicabo perferendis. Quia recusandae quia voluptates id hic sed hic.</p>
+
+            <h4>experience with</h4>
+            <div className="home-skills-list-container">
+              <p>Animation</p>
+              <p>Graphic Design</p>
+              <p>Mobile Design</p>
+              <p>UI Design</p>
+              <p>UX Design</p>
+              <p>Web Design</p>
+            </div>
+
+            <h4>design tools</h4>
+            <div className="home-skills-list-container">
+              <p>Adobe After Effects</p>
+              <p>Adobe Illustrator</p>
+              <p>Adobe Photoshop</p>
+              <p>Adobe Premiere Pro</p>
+              <p>Figma</p>
+              <p>Zeplin</p>
+            </div>
+
+            <Button
+              className="home-skills-button"
+              dark
+              onClick={() => {}}
+            >
+              see work
+            </Button>
+          </div>
         </div>
+
       </section>
 
       <section id="work-experience">
@@ -192,16 +205,28 @@ const Home = () => {
         <div role="search" id="home-work-search-container">
           <div className="home-work-separator" />
 
-          <button type="button" onClick={() => { setTag('all'); setSearchResults(getFilteredProjects(search, 'all')); }}>
-            <p className={tag === 'all' ? 'active' : ''}>all</p>
+          <button
+            className={tag === 'all' ? 'active' : ''}
+            type="button"
+            onClick={() => { setTag('all'); setSearchResults(getFilteredProjects(search, 'all')); }}
+          >
+            <p>all</p>
           </button>
 
-          <button type="button" onClick={() => { setTag('development'); setSearchResults(getFilteredProjects(search, 'development')); }}>
-            <p className={tag === 'development' ? 'active' : ''}>development</p>
+          <button
+            className={tag === 'development' ? 'active' : ''}
+            type="button"
+            onClick={() => { setTag('development'); setSearchResults(getFilteredProjects(search, 'development')); }}
+          >
+            <p>development</p>
           </button>
 
-          <button type="button" onClick={() => { setTag('design'); setSearchResults(getFilteredProjects(search, 'design')); }}>
-            <p className={tag === 'design' ? 'active' : ''}>design</p>
+          <button
+            className={tag === 'design' ? 'active' : ''}
+            type="button"
+            onClick={() => { setTag('design'); setSearchResults(getFilteredProjects(search, 'design')); }}
+          >
+            <p>design</p>
           </button>
 
           <div className="home-work-separator" />
@@ -216,7 +241,7 @@ const Home = () => {
               className="p"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="search here for “Patent”, “Typescript”, “Entrepreneurship”, etc..."
+              placeholder="search for keywords"
             />
 
             <button type="submit"><img src={SearchIcon} alt="search" /></button>
@@ -231,12 +256,12 @@ const Home = () => {
                 key={project.title}
                 title={project.title}
                 subtitle={project.subtitle}
-                headerIcon={(className) => (<img className={className} src={project.headerIconSrc} alt={project.headerIconAlt} />)}
+                headerIconURL={imgCache[project.headerIconSrc] || ''}
+                headerIconAlt={project.headerIconAlt}
                 contentText={project.contentText}
                 buttonText={project.buttonText}
                 onClick={() => {}}
                 bottomText={project.bottomText}
-                bottomIcon={(className) => (<img className={className} src={project.bottomIconSrc} alt={project.bottomIconAlt} />)}
                 backgroundStyling={project.backgroundStyling}
                 className="work-experience-project-card"
               />

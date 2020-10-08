@@ -20,7 +20,7 @@ export const ProjectsArray: Project[] = [
   {
     title: 'D-Planner, LLC',
     subtitle: 'Entrepreneurship',
-    headerIconSrc: '/static/media/search.e3deb209.svg',
+    headerIconSrc: './search.svg',
     headerIconAlt: 'D-Planner logo',
     contentText: 'Academic planning is difficult for students, especially when information is fragmented and hard to find. D-Planner is a better way of planning out your time at college. Winner of the 2018 DALI Pitch Competition.',
     buttonText: 'read more',
@@ -33,8 +33,8 @@ export const ProjectsArray: Project[] = [
   },
   {
     title: 'Intermediate Computer Interface',
-    subtitle: 'Entrepreneurship, US Patent and Trademark Office',
-    headerIconSrc: '/static/media/search.e3deb209.svg',
+    subtitle: 'US Patent and Trademark Office',
+    headerIconSrc: './chip.svg',
     headerIconAlt: 'Computer chip',
     contentText: 'Veritatis ipsa laborum ducimus facilis qui. Eveniet et hic quidem rem qui natus aut. Recusandae enim iure qui ab. Labore nulla cumque aliquam et. Quod fugiat et officia officiis rerum debitis vero molestias.',
     buttonText: 'read more',
@@ -48,7 +48,7 @@ export const ProjectsArray: Project[] = [
   {
     title: 'Mini Design Course',
     subtitle: 'DALI Lab Design Lecturer',
-    headerIconSrc: '',
+    headerIconSrc: './dartmouth.svg',
     headerIconAlt: 'Dartmouth College logo',
     contentText: 'Veritatis ipsa laborum ducimus facilis qui. Eveniet et hic quidem rem qui natus aut. Recusandae enim iure qui ab. Labore nulla cumque aliquam et. Quod fugiat et officia officiis rerum debitis vero molestias.',
     buttonText: 'read more',
@@ -60,9 +60,9 @@ export const ProjectsArray: Project[] = [
     backgroundStyling: 'radial-gradient(95.95% 95.95% at 50% 50%, rgba(85, 85, 85, 0) 0%, rgba(85, 85, 85, 0) 58.02%, rgba(85, 85, 85, 0.3) 100%), #38B2AB',
   },
   {
-    title: 'Student Term Scheduling Portal',
+    title: 'Term Scheduling Portal',
     subtitle: 'Registrar, Dartmouth College',
-    headerIconSrc: '',
+    headerIconSrc: './dartmouth.svg',
     headerIconAlt: 'Dartmouth College logo',
     contentText: 'Dartmouth College’s existing term election interface has a success rate of 25%, and does not support international students. How might Dartmouth make sure their interface works for everyone?',
     buttonText: 'read more',
@@ -76,7 +76,7 @@ export const ProjectsArray: Project[] = [
   {
     title: 'JestJS UI Testing Workshop',
     subtitle: 'DALI Lab Development Lecturer',
-    headerIconSrc: '',
+    headerIconSrc: './react.svg',
     headerIconAlt: 'ReactJS logo',
     contentText: 'Veritatis ipsa laborum ducimus facilis qui. Eveniet et hic quidem rem qui natus aut. Recusandae enim iure qui ab. Labore nulla cumque aliquam et. Quod fugiat et officia officiis rerum debitis vero molestias.',
     buttonText: 'read more',
@@ -90,7 +90,7 @@ export const ProjectsArray: Project[] = [
   {
     title: 'Portable Radio Repeater',
     subtitle: 'Dartmouth College',
-    headerIconSrc: '',
+    headerIconSrc: './dartmouth.svg',
     headerIconAlt: 'Dartmouth College logo',
     contentText: 'A highly portable radio repeater mast that allows search and rescue workers to communicate via radio in highly mountainous and dangerous terrain, built to support and improve existing radio infrastructure.',
     buttonText: 'read more',
@@ -104,7 +104,7 @@ export const ProjectsArray: Project[] = [
   {
     title: 'Granite State Volunteering',
     subtitle: 'NH State Government',
-    headerIconSrc: '',
+    headerIconSrc: './newhampshire.svg',
     headerIconAlt: 'New Hampshire vector outline',
     contentText: 'Veritatis ipsa laborum ducimus facilis qui. Eveniet et hic quidem rem qui natus aut. Recusandae enim iure qui ab. Labore nulla cumque aliquam et. Quod fugiat et officia officiis rerum debitis vero molestias.',
     buttonText: 'read more',
@@ -118,7 +118,7 @@ export const ProjectsArray: Project[] = [
   {
     title: 'ReactJS + Typescript Starter',
     subtitle: 'DALI Lab Development Lecturer',
-    headerIconSrc: '',
+    headerIconSrc: './typescript.svg',
     headerIconAlt: 'Typescript logo',
     contentText: 'Veritatis ipsa laborum ducimus facilis qui. Eveniet et hic quidem rem qui natus aut. Recusandae enim iure qui ab. Labore nulla cumque aliquam et. Quod fugiat et officia officiis rerum debitis vero molestias.',
     buttonText: 'read more',
@@ -132,7 +132,7 @@ export const ProjectsArray: Project[] = [
   {
     title: 'Whiteboard Productivity',
     subtitle: 'DALI Lab, Dartmouth College',
-    headerIconSrc: '',
+    headerIconSrc: './github.svg',
     headerIconAlt: 'Github logo',
     contentText: 'An all-encompassing productivity app that empowers users to take full control over their lives through relevant, integrated planning functionality. Built in conjunction with Tuck School of Business.',
     buttonText: 'read more',
@@ -146,7 +146,7 @@ export const ProjectsArray: Project[] = [
   {
     title: 'MindSquare',
     subtitle: 'Dartmouth College',
-    headerIconSrc: '',
+    headerIconSrc: './dartmouth.svg',
     headerIconAlt: 'Dartmouth College logo',
     contentText: 'On college campuses, fear of missing out is a powerful social motivator. MindSquare helps users reframe what it means to take personal time away from stressful daily activities through personalized digital mosaics.',
     buttonText: 'read more',
