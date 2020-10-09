@@ -15,8 +15,8 @@ const Footer = ({ className }: Props) => (
     <div className="footer-main-content">
       <h2>Want to chat? Let me know!</h2>
       <div className="footer-button-container">
-        <Button onClick={() => {}} size="sm">contact me</Button>
-        <Button onClick={() => {}} size="lg">download resume</Button>
+        <Button onClick={() => {}} className="footer-button" size="sm">contact me</Button>
+        <Button onClick={() => {}} className="footer-button" size="lg">download resume</Button>
       </div>
     </div>
 

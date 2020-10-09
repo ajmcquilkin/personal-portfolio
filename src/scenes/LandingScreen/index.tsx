@@ -41,20 +41,13 @@ function getDescriptionByURL(url: string) {
 
 const LandingScreen = () => {
   const { location: { pathname, hash }, push } = useHistory();
+  console.log(pathname);
 
   // Always loaded with Home or About
   useEffect(() => {
     if (hash) {
       const hashString = hash.slice(1);
       const element = document.getElementById(hashString);
-      // if (element) {
-      //   const main = document.getElementById('main');
-      //   if (main) {
-      //     main.animate({
-      //       scrollTop: element. .offset().top
-      //     }, 1000);
-      //   }
-      // }
       if (element) { element.scrollIntoView({ behavior: 'smooth' }); }
     }
   });

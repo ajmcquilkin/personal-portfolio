@@ -20,7 +20,7 @@ const NavMenuItem = ({
 }: Props) => (
   <div className={`nav-menu-container${dark ? ' dark' : ' light'} ${className}`} role="button">
     <div className={`nav-menu-container-bar left${active ? ' active' : ''}${dark ? ' dark' : ' light'}`} />
-    <button className={dark ? 'dark' : 'light'} onClick={onClick} type="button">{pageName}</button>
+    <button className={`${dark ? 'dark' : 'light'}${active ? ' active' : ''}`} onClick={onClick} type="button">{pageName}</button>
     <div className={`nav-menu-container-bar right${active ? ' active' : ''}${dark ? ' dark' : ' light'}`} />
   </div>
 );

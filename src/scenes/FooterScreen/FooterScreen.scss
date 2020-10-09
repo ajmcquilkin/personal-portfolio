@@ -30,6 +30,14 @@ footer {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+
+      .footer-button {
+        margin-right: 36px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
     }
   }
 
