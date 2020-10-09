@@ -13,7 +13,7 @@ export default function DPlannerStory() {
         title="D-Planner, LLC"
         subtitle="Course planning done right."
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore."
-        buttonLink="https://d-planner.com"
+        onButtonClick={() => window.open('https://d-planner.com')}
         renderContent={(className) => (<img className={className} src={TestImage} alt="TEST" />)}
       />
 

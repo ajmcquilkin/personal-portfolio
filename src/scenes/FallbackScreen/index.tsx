@@ -6,7 +6,7 @@ import Button from '../../components/Button';
 import HeaderNavCard from '../../components/HeaderNavCard';
 import NavMenuItem from '../../components/NavMenuItem';
 
-import { mailtoLink } from '../../constants/constants';
+import { mailtoLink } from '../../constants';
 
 import './FallbackScreen.scss';
 

@@ -1,3 +1,5 @@
+import { storyURLs } from '../../constants';
+
 export type Tag = 'all' | 'design' | 'development';
 
 export interface Project {
@@ -13,7 +15,6 @@ export interface Project {
   bottomIconAlt: string;
   tags: Tag[];
   backgroundStyling: string;
-  // background
 }
 
 export const ProjectsArray: Project[] = [
@@ -24,7 +25,7 @@ export const ProjectsArray: Project[] = [
     headerIconAlt: 'D-Planner logo',
     contentText: 'Academic planning is difficult for students, especially when information is fragmented and hard to find. D-Planner is a better way of planning out your time at college. Winner of the 2018 DALI Pitch Competition.',
     buttonText: 'read more',
-    projectSubURL: 'dplanner',
+    projectSubURL: storyURLs.dplanner,
     bottomText: 'Co-founder, Project Designer, Developer',
     bottomIconSrc: '',
     bottomIconAlt: '',
@@ -38,7 +39,7 @@ export const ProjectsArray: Project[] = [
     headerIconAlt: 'Computer chip',
     contentText: 'Veritatis ipsa laborum ducimus facilis qui. Eveniet et hic quidem rem qui natus aut. Recusandae enim iure qui ab. Labore nulla cumque aliquam et. Quod fugiat et officia officiis rerum debitis vero molestias.',
     buttonText: 'read more',
-    projectSubURL: 'icid',
+    projectSubURL: storyURLs.icid,
     bottomText: 'US Patent 9,632,952',
     bottomIconSrc: '',
     bottomIconAlt: 'USPTO logo',
@@ -52,7 +53,7 @@ export const ProjectsArray: Project[] = [
     headerIconAlt: 'Dartmouth College logo',
     contentText: 'Veritatis ipsa laborum ducimus facilis qui. Eveniet et hic quidem rem qui natus aut. Recusandae enim iure qui ab. Labore nulla cumque aliquam et. Quod fugiat et officia officiis rerum debitis vero molestias.',
     buttonText: 'read more',
-    projectSubURL: 'mini-design-course',
+    projectSubURL: storyURLs.mdc,
     bottomText: 'Senior Design Lecturer',
     bottomIconSrc: '',
     bottomIconAlt: '',
@@ -66,7 +67,7 @@ export const ProjectsArray: Project[] = [
     headerIconAlt: 'Dartmouth College logo',
     contentText: 'Dartmouth College’s existing term election interface has a success rate of 25%, and does not support international students. How might Dartmouth make sure their interface works for everyone?',
     buttonText: 'read more',
-    projectSubURL: 'scheduling',
+    projectSubURL: storyURLs.scheduling,
     bottomText: 'Designer, Developer, Development Mentor',
     bottomIconSrc: '',
     bottomIconAlt: '',
@@ -80,7 +81,7 @@ export const ProjectsArray: Project[] = [
     headerIconAlt: 'ReactJS logo',
     contentText: 'Veritatis ipsa laborum ducimus facilis qui. Eveniet et hic quidem rem qui natus aut. Recusandae enim iure qui ab. Labore nulla cumque aliquam et. Quod fugiat et officia officiis rerum debitis vero molestias.',
     buttonText: 'read more',
-    projectSubURL: 'jest-workshop',
+    projectSubURL: storyURLs.jest,
     bottomText: 'Developer, Development Mentor',
     bottomIconSrc: '',
     bottomIconAlt: '',
@@ -94,7 +95,7 @@ export const ProjectsArray: Project[] = [
     headerIconAlt: 'Dartmouth College logo',
     contentText: 'A highly portable radio repeater mast that allows search and rescue workers to communicate via radio in highly mountainous and dangerous terrain, built to support and improve existing radio infrastructure.',
     buttonText: 'read more',
-    projectSubURL: 'repeater',
+    projectSubURL: storyURLs.repeater,
     bottomText: 'Developer, Electrical Systems Manager',
     bottomIconSrc: '',
     bottomIconAlt: '',
@@ -108,7 +109,7 @@ export const ProjectsArray: Project[] = [
     headerIconAlt: 'New Hampshire vector outline',
     contentText: 'Veritatis ipsa laborum ducimus facilis qui. Eveniet et hic quidem rem qui natus aut. Recusandae enim iure qui ab. Labore nulla cumque aliquam et. Quod fugiat et officia officiis rerum debitis vero molestias.',
     buttonText: 'read more',
-    projectSubURL: 'volunteering',
+    projectSubURL: storyURLs.graniteState,
     bottomText: 'Lead Developer, Development Mentor',
     bottomIconSrc: '',
     bottomIconAlt: '',
@@ -122,7 +123,7 @@ export const ProjectsArray: Project[] = [
     headerIconAlt: 'Typescript logo',
     contentText: 'Veritatis ipsa laborum ducimus facilis qui. Eveniet et hic quidem rem qui natus aut. Recusandae enim iure qui ab. Labore nulla cumque aliquam et. Quod fugiat et officia officiis rerum debitis vero molestias.',
     buttonText: 'read more',
-    projectSubURL: 'react-typescript-starter',
+    projectSubURL: storyURLs.tsStarter,
     bottomText: 'Developer, Development Mentor',
     bottomIconSrc: '',
     bottomIconAlt: '',
@@ -136,7 +137,7 @@ export const ProjectsArray: Project[] = [
     headerIconAlt: 'Github logo',
     contentText: 'An all-encompassing productivity app that empowers users to take full control over their lives through relevant, integrated planning functionality. Built in conjunction with Tuck School of Business.',
     buttonText: 'read more',
-    projectSubURL: 'whiteboard',
+    projectSubURL: storyURLs.whiteboard,
     bottomText: 'Developer, Development Mentor',
     bottomIconSrc: '',
     bottomIconAlt: '',
@@ -150,25 +151,25 @@ export const ProjectsArray: Project[] = [
     headerIconAlt: 'Dartmouth College logo',
     contentText: 'On college campuses, fear of missing out is a powerful social motivator. MindSquare helps users reframe what it means to take personal time away from stressful daily activities through personalized digital mosaics.',
     buttonText: 'read more',
-    projectSubURL: 'mindsquare',
+    projectSubURL: storyURLs.mindsquare,
     bottomText: 'Product Designer',
     bottomIconSrc: '',
     bottomIconAlt: '',
     tags: ['design'],
     backgroundStyling: 'radial-gradient(92.28% 92.28% at 50% 50%, rgba(81, 143, 245, 0) 0%, rgba(23, 74, 91, 0.5) 100%), #60A8C1',
   },
-  {
-    title: 'TODO: Discuss this portfolio',
-    subtitle: '',
-    headerIconSrc: '',
-    headerIconAlt: '',
-    contentText: '',
-    buttonText: '',
-    projectSubURL: '',
-    bottomText: '',
-    bottomIconSrc: '',
-    bottomIconAlt: '',
-    tags: ['development', 'design'],
-    backgroundStyling: 'radial-gradient(92.28% 92.28% at 50% 50%, rgba(81, 143, 245, 0) 0%, rgba(23, 74, 91, 0.5) 100%), #60A8C1',
-  },
+  // {
+  //   title: 'TODO: Discuss this portfolio',
+  //   subtitle: '',
+  //   headerIconSrc: '',
+  //   headerIconAlt: '',
+  //   contentText: '',
+  //   buttonText: '',
+  //   projectSubURL: '',
+  //   bottomText: '',
+  //   bottomIconSrc: '',
+  //   bottomIconAlt: '',
+  //   tags: ['development', 'design'],
+  //   backgroundStyling: 'radial-gradient(92.28% 92.28% at 50% 50%, rgba(81, 143, 245, 0) 0%, rgba(23, 74, 91, 0.5) 100%), #60A8C1',
+  // },
 ];

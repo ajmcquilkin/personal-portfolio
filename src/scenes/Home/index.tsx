@@ -51,7 +51,6 @@ function importAll(r: __WebpackModuleApi.RequireContext) {
   r.keys().forEach((key) => {
     imgCache[key] = r(key);
   });
-  console.table(imgCache);
 }
 
 importAll(require.context('../../assets/icons', false, /\.svg$/));
@@ -266,7 +265,7 @@ const Home = () => {
                 headerIconAlt={project.headerIconAlt}
                 contentText={project.contentText}
                 buttonText={project.buttonText}
-                onClick={() => {}}
+                onClick={() => push(`/story/${project.projectSubURL}`)}
                 bottomText={project.bottomText}
                 backgroundStyling={project.backgroundStyling}
                 className="work-experience-project-card"

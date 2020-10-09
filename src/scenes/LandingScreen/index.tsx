@@ -11,7 +11,7 @@ import HomeFeatureImg from '../../assets/images/home_feature.jpg';
 import AboutFeatureImg from '../../assets/images/about_feature.jpg';
 import FallbackFeatureImg from '../../assets/images/404_feature.jpg';
 
-import { mailtoLink } from '../../constants/constants';
+import { mailtoLink } from '../../constants';
 
 import './LandingScreen.scss';
 

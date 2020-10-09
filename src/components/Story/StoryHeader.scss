@@ -66,12 +66,14 @@
     color: $dark;
 
     .story-header-content-container {
+      flex: 2;
       height: auto;
       margin: auto;
     }
 
     .story-header-banner-content {
       position: relative;
+      flex: 5;
       z-index: 2;
 
       h1 {

@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { MouseEvent } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import ArrowBox from '../ArrowBox';
 import Button from '../Button';
 import NavMenuItem from '../NavMenuItem';
 
-import { mailtoLink } from '../../constants/constants';
+import { mailtoLink } from '../../constants';
 
 import './StoryHeader.scss';
 
@@ -14,17 +14,22 @@ interface StoryHeaderProps {
   subtitle: string;
   description: string;
 
-  buttonLink: string;
+  onButtonClick: (e: React.MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => void;
   buttonText?: string;
   showButton?: boolean;
+  showArrow?: boolean;
   renderContent: (className: string) => void;
 }
 
 const LandingScreen = ({
-  title, subtitle, description,
-  buttonText, buttonLink, showButton, renderContent
+  title, subtitle, description, showArrow,
+  buttonText, onButtonClick, showButton, renderContent
 }: StoryHeaderProps) => {
   const { push } = useHistory();
+
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="story-header-container">
@@ -73,7 +78,7 @@ const LandingScreen = ({
           <h2>{subtitle}</h2>
           <div className="story-header-banner-content">{description}</div>
           <div className="story-header-button-container">
-            {showButton === false ? null : <Button className="story-header-button" onClick={() => window.open(buttonLink)} size="lg" dark>{buttonText || 'visit deployed site'}</Button>}
+            {showButton === false ? null : <Button className="story-header-button" onClick={onButtonClick} size="lg" dark>{buttonText || 'visit deployed site'}</Button>}
             <Button className="story-header-button" onClick={() => window.open(mailtoLink, '_self')} size="sm" dark>contact me</Button>
           </div>
         </div>
@@ -81,7 +86,7 @@ const LandingScreen = ({
         {renderContent('story-header-content-container')}
       </div>
 
-      <ArrowBox dark className="story-header-arrow-box" />
+      {showArrow === false ? null : <ArrowBox dark className="story-header-arrow-box" />}
     </div>
   );
 };
