@@ -102,7 +102,7 @@ const LandingScreen = () => {
           <h2>Developer, Product Designer</h2>
           <div className="landing-screen-banner-content">{getDescriptionByURL(pathname)}</div>
           <div className="landing-screen-button-container">
-            <Button className="landing-screen-button" onClick={() => {}} size="sm">contact me</Button>
+            <Button className="landing-screen-button" onClick={() => window.open(mailtoLink, '_self')} size="sm">contact me</Button>
             <Button className="landing-screen-button" onClick={() => {}} size="lg">download resume</Button>
           </div>
         </div>

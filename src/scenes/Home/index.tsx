@@ -57,7 +57,7 @@ function importAll(r: __WebpackModuleApi.RequireContext) {
 importAll(require.context('../../assets/icons', false, /\.svg$/));
 
 const Home = () => {
-  const { location } = useHistory();
+  const { location, push } = useHistory();
   const parsedQuery = queryString.parse(location.search);
 
   // TODO: Validate JSON schema
@@ -92,7 +92,7 @@ const Home = () => {
           <h2>D-Planner, LLC</h2>
           <div className="h4">Co-founder, Product Designer, Developer</div>
           <p>Academic planning is difficult for students, especially when information is fragmented and hard to find. D-Planner is a better way of planning out your time at college. Winner of the 2018 DALI Pitch Competition.</p>
-          <Button dark size="lg" onClick={() => {}}>read more</Button>
+          <Button dark size="lg" onClick={() => push('/story/dplanner')}>read more</Button>
         </div>
         <img className="right" src={TestImage} alt="TEST" />
       </section>
@@ -103,7 +103,7 @@ const Home = () => {
           <h2>D-Planner, LLC</h2>
           <div className="h4">Co-founder, Product Designer, Developer</div>
           <p>Academic planning is difficult for students, especially when information is fragmented and hard to find. D-Planner is a better way of planning out your time at college. Winner of the 2018 DALI Pitch Competition.</p>
-          <Button dark size="lg" onClick={() => {}}>read more</Button>
+          <Button dark size="lg" onClick={() => push('/story/dplanner')}>read more</Button>
         </div>
       </section>
 

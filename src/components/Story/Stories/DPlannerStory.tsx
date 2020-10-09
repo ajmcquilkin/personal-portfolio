@@ -74,7 +74,7 @@ export default function DPlannerStory() {
 
         <section>
           <ul>
-            <li>Loremmipsum dolor sit amet, consectetur asipiscing elit.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur asipiscing elit.</li>
             <li>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
             <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
             <li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</li>
