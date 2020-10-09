@@ -1,8 +1,8 @@
-// Inspiration: https://github.com/supasate/connected-react-router/blob/master/examples/typescript/src/configureStore.tsx
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
+
+import 'react-lazy-load-image-component/src/effects/opacity.css'; // Lazy image loading
 
 import App from './components/App';
 import './index.scss';

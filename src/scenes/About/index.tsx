@@ -1,36 +1,19 @@
 import React from 'react';
+import { LazyLoadImage, trackWindowScroll, LazyLoadImageProps } from 'react-lazy-load-image-component';
 
 import Button from '../../components/Button';
 import ImageTile from '../../components/ImageTile';
 import Footer from '../FooterScreen';
 
-import BanffIcon1 from '../../assets/images/gallery/banff_1.jpg';
-import BanffIcon2 from '../../assets/images/gallery/banff_2.jpg';
-import BanffIcon3 from '../../assets/images/gallery/banff_3.jpg';
-
-import FrancIcon1 from '../../assets/images/gallery/franc_1.jpg';
-import FrancIcon2 from '../../assets/images/gallery/franc_2.jpg';
-
-import GileIcon1 from '../../assets/images/gallery/gile_1.jpg';
-import GileIcon2 from '../../assets/images/gallery/gile_2.jpg';
-
-import NCNPIcon1 from '../../assets/images/gallery/ncnp_1.jpg';
-import NCNPIcon2 from '../../assets/images/gallery/ncnp_2.jpg';
-
-import WMNFIcon1 from '../../assets/images/gallery/wmnf_1.jpg';
-
-import WYIcon1 from '../../assets/images/gallery/wy_1.jpg';
-// import WYIcon2 from '../../assets/images/gallery/wy_2.jpg';
-import WYIcon3 from '../../assets/images/gallery/wy_3.jpg';
-
-import CertsImage from '../../assets/images/certs.png';
-import AdamMcQuilkinImg from '../../assets/images/adam_mcquilkin.jpg';
-
 import { ReactComponent as SlantedBackground } from '../../assets/background.svg';
 
 import './About.scss';
 
-const About = () => {
+interface IAboutProps extends LazyLoadImageProps {
+
+}
+
+const About = ({ scrollPosition }: IAboutProps) => {
   const imageWidth = 400;
   const imageHeight = 270;
 
@@ -41,10 +24,31 @@ const About = () => {
     setGalleryWidth((ref?.current?.children.length || 0) * ((imageWidth + 6) / 3));
   }, [ref.current]);
 
+  function generateRenderImage(src:string, alt:string) {
+    return function renderImage(className: string) {
+      return (
+        <LazyLoadImage
+          src={src}
+          alt={alt}
+          width={imageWidth}
+          height={imageHeight}
+
+          effect="opacity"
+          scrollPosition={scrollPosition}
+          wrapperClassName={className}
+        />
+      );
+    };
+  }
+
   return (
     <main>
       <section id="about-intro">
-        <img src={AdamMcQuilkinImg} alt="Adam J McQuilkin" />
+        <LazyLoadImage
+          src="https://res.cloudinary.com/duq3rhnd2/image/upload/w_611,h_773/v1602266134/Personal%20Portfolio/adam_mcquilkin_qszxv1.jpg"
+          alt="Adam J McQuilkin"
+          effect="opacity"
+        />
         <div className="about-intro-text-container">
           <h2>Hi, my name’s Adam!</h2>
           <h3>Dartmouth College, Class of 2023</h3>
@@ -74,7 +78,8 @@ const About = () => {
             <ImageTile
               title="Banff National Park"
               subtitle="December, 2019"
-              renderImage={(className) => <img src={BanffIcon1} alt="Banff National Park" className={className} />}
+
+              renderImage={generateRenderImage(`https://res.cloudinary.com/duq3rhnd2/image/upload/w_${imageWidth},h_${imageHeight}/v1602266166/Personal%20Portfolio/gallery/banff_1_titzr9.jpg`, 'Banff National Park')}
               width={`${imageWidth}px`}
               height={`${imageHeight}px`}
               className="about-image-tile"
@@ -82,7 +87,8 @@ const About = () => {
             <ImageTile
               title="Banff National Park"
               subtitle="December, 2019"
-              renderImage={(className) => <img src={BanffIcon2} alt="Banff National Park" className={className} />}
+              renderImage={generateRenderImage(`https://res.cloudinary.com/duq3rhnd2/image/upload/w_${imageWidth},h_${imageHeight}/v1602266166/Personal%20Portfolio/gallery/banff_2_tafput.jpg`, 'Banff National Park')}
+
               width={`${imageWidth}px`}
               height={`${imageHeight}px`}
               className="about-image-tile"
@@ -90,7 +96,8 @@ const About = () => {
             <ImageTile
               title="Banff National Park"
               subtitle="December, 2019"
-              renderImage={(className) => <img src={BanffIcon3} alt="Banff National Park" className={className} />}
+              renderImage={generateRenderImage(`https://res.cloudinary.com/duq3rhnd2/image/upload/w_${imageWidth},h_${imageHeight}/v1602266166/Personal%20Portfolio/gallery/banff_3_jg8swn.jpg`, 'Banff National Park')}
+
               width={`${imageWidth}px`}
               height={`${imageHeight}px`}
               className="about-image-tile"
@@ -99,7 +106,8 @@ const About = () => {
             <ImageTile
               title="Franconia Ridge"
               subtitle="April, 2019"
-              renderImage={(className) => <img src={FrancIcon1} alt="Franconia Ridge" className={className} />}
+              renderImage={generateRenderImage(`https://res.cloudinary.com/duq3rhnd2/image/upload/w_${imageWidth},h_${imageHeight}/v1602266166/Personal%20Portfolio/gallery/franc_1_yblpgr.jpg`, 'Franconia Ridge')}
+
               width={`${imageWidth}px`}
               height={`${imageHeight}px`}
               className="about-image-tile"
@@ -107,7 +115,8 @@ const About = () => {
             <ImageTile
               title="Franconia Ridge"
               subtitle="November, 2019"
-              renderImage={(className) => <img src={FrancIcon2} alt="Franconia Ridge" className={className} />}
+              renderImage={generateRenderImage(`https://res.cloudinary.com/duq3rhnd2/image/upload/w_${imageWidth},h_${imageHeight}/v1602266166/Personal%20Portfolio/gallery/franc_2_qtcjjv.jpg`, 'Franconia Ridge')}
+
               width={`${imageWidth}px`}
               height={`${imageHeight}px`}
               className="about-image-tile"
@@ -116,7 +125,8 @@ const About = () => {
             <ImageTile
               title="New Hampshire"
               subtitle="June, 2019"
-              renderImage={(className) => <img src={GileIcon1} alt="New Hampshire" className={className} />}
+              renderImage={generateRenderImage(`https://res.cloudinary.com/duq3rhnd2/image/upload/w_${imageWidth},h_${imageHeight}/v1602266166/Personal%20Portfolio/gallery/gile_1_s3r4rr.jpg`, 'New Hampshire')}
+
               width={`${imageWidth}px`}
               height={`${imageHeight}px`}
               className="about-image-tile"
@@ -124,7 +134,8 @@ const About = () => {
             <ImageTile
               title="New Hampshire"
               subtitle="June, 2019"
-              renderImage={(className) => <img src={GileIcon2} alt=" New Hampshire" className={className} />}
+              renderImage={generateRenderImage(`https://res.cloudinary.com/duq3rhnd2/image/upload/w_${imageWidth},h_${imageHeight}/v1602266166/Personal%20Portfolio/gallery/gile_2_lruwvu.jpg`, 'New Hampshire')}
+
               width={`${imageWidth}px`}
               height={`${imageHeight}px`}
               className="about-image-tile"
@@ -133,7 +144,8 @@ const About = () => {
             <ImageTile
               title="North Cascades"
               subtitle="August, 2019"
-              renderImage={(className) => <img src={NCNPIcon1} alt="North Cascades" className={className} />}
+              renderImage={generateRenderImage(`https://res.cloudinary.com/duq3rhnd2/image/upload/w_${imageWidth},h_${imageHeight}/v1602266166/Personal%20Portfolio/gallery/ncnp_1_fqejrv.jpg`, 'North Cascades')}
+
               width={`${imageWidth}px`}
               height={`${imageHeight}px`}
               className="about-image-tile"
@@ -141,7 +153,8 @@ const About = () => {
             <ImageTile
               title="North Cascades"
               subtitle="August, 2019"
-              renderImage={(className) => <img src={NCNPIcon2} alt="North Cascades" className={className} />}
+              renderImage={generateRenderImage(`https://res.cloudinary.com/duq3rhnd2/image/upload/w_${imageWidth},h_${imageHeight}/v1602266166/Personal%20Portfolio/gallery/ncnp_2_zhnmyt.jpg`, 'North Cascades')}
+
               width={`${imageWidth}px`}
               height={`${imageHeight}px`}
               className="about-image-tile"
@@ -150,14 +163,16 @@ const About = () => {
             <ImageTile
               title="White Mountains"
               subtitle="July, 2018"
-              renderImage={(className) => <img src={WMNFIcon1} alt="White Mountains" className={className} />}
+              renderImage={generateRenderImage(`https://res.cloudinary.com/duq3rhnd2/image/upload/w_${imageWidth},h_${imageHeight}/v1602266166/Personal%20Portfolio/gallery/wmnf_1_small_zfwq2y.jpg`, 'White Mountains')}
+
               className="about-image-tile"
             />
 
             <ImageTile
               title="Wyoming"
               subtitle="August, 2019"
-              renderImage={(className) => <img src={WYIcon1} alt="Wyoming" className={className} />}
+              renderImage={generateRenderImage(`https://res.cloudinary.com/duq3rhnd2/image/upload/w_${imageWidth},h_${imageHeight}/v1602266166/Personal%20Portfolio/gallery/wy_1_xrcgbg.jpg`, 'Wyoming')}
+
               width={`${imageWidth}px`}
               height={`${imageHeight}px`}
               className="about-image-tile"
@@ -175,7 +190,8 @@ const About = () => {
             <ImageTile
               title="Wyoming"
               subtitle="August, 2019"
-              renderImage={(className) => <img src={WYIcon3} alt="Wyoming" className={className} />}
+              renderImage={generateRenderImage(`https://res.cloudinary.com/duq3rhnd2/image/upload/w_${imageWidth},h_${imageHeight}/v1602266166/Personal%20Portfolio/gallery/wy_3_sotj58.jpg`, 'Wyoming')}
+
               width={`${imageWidth}px`}
               height={`${imageHeight}px`}
               className="about-image-tile"
@@ -191,7 +207,7 @@ const About = () => {
       </section>
 
       <section id="wilderness-safety">
-        <img src={CertsImage} alt="Wilderness Safety Certification Cards" />
+        <img src="https://res.cloudinary.com/duq3rhnd2/image/upload/w_600,q_70/v1602266166/Personal%20Portfolio/gallery/certs_vh4p0b.jpg" alt="Wilderness Safety Certification Cards" />
 
         <div className="about-photo-title">
           <h2>I keep people safe</h2>
@@ -206,7 +222,7 @@ const About = () => {
         </div>
 
         <div id="outdoors-experience-photo-container">
-          <img src={WMNFIcon1} alt="White Mountains" />
+          <img src="https://res.cloudinary.com/duq3rhnd2/image/upload/w_640/v1602266166/Personal%20Portfolio/gallery/wmnf_1_small_zfwq2y.jpg" alt="White Mountains" />
           <p>You can often find me hidden away in the woods.</p>
         </div>
       </section>
@@ -216,4 +232,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default trackWindowScroll(About);

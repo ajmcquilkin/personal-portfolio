@@ -1,15 +1,12 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import queryString from 'query-string';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import ArrowBox from '../../components/ArrowBox';
 import Button from '../../components/Button';
 import HeaderNavCard from '../../components/HeaderNavCard';
 import NavMenuItem from '../../components/NavMenuItem';
-
-import HomeFeatureImg from '../../assets/images/home_feature.jpg';
-import AboutFeatureImg from '../../assets/images/about_feature.jpg';
-import FallbackFeatureImg from '../../assets/images/404_feature.jpg';
 
 import { mailtoLink } from '../../constants';
 
@@ -22,11 +19,9 @@ interface Props {
 function getBackgroundImageByURL(url: string) {
   switch (url) {
     case '/':
-      return HomeFeatureImg;
-    case '/about':
-      return AboutFeatureImg;
+      return `https://res.cloudinary.com/duq3rhnd2/image/upload/q_70,w_${window.innerWidth}/v1602266143/Personal%20Portfolio/home_feature_rhdgb7.jpg`;
     default:
-      return FallbackFeatureImg;
+      return `https://res.cloudinary.com/duq3rhnd2/image/upload/q_70,w_${window.innerWidth}/v1602266143/Personal%20Portfolio/about_feature_dzmlth.jpg`;
   }
 }
 
@@ -55,10 +50,15 @@ const LandingScreen = () => {
   });
 
   return (
-    <div
-      className="landing-screen-container"
-      style={{ background: `linear-gradient(rgba(54, 54, 54, 0.12), rgba(54, 54, 54, 0.12)), rgba(0, 0, 0, 0) url(${getBackgroundImageByURL(pathname)}) 50% 30%` }}
-    >
+    <div className="landing-screen-container">
+      <LazyLoadImage
+        src={getBackgroundImageByURL(pathname)}
+        alt="Main landing feature (about)"
+
+        effect="opacity"
+        wrapperClassName="landing-main-feature"
+      />
+
       <div className="landing-screen-signature">AM</div>
       <div className="landing-screen-signature-shadow" />
 

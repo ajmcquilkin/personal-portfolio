@@ -9,6 +9,17 @@
   background-repeat: no-repeat;
   overflow: hidden;
 
+  background: 'linear-gradient(rgba(54, 54, 54, 0.12), rgba(54, 54, 54, 0.12)), rgba(0, 0, 0, 0) 50% 30%';
+  background-color: #b5d9ec;
+
+  .landing-main-feature {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
   .landing-screen-signature {
     position: absolute;
     z-index: 2;

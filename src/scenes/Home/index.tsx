@@ -1,6 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import queryString from 'query-string';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import Footer from '../FooterScreen';
 
@@ -203,7 +204,14 @@ const Home = () => {
       </section>
 
       <section id="work-experience">
-        <div id="work-experience-search" style={{ backgroundImage: `linear-gradient(180deg, rgba(23, 30, 39, 0) 82.29%, #171E27 100%), url(${MountainPanorama})` }}>
+        <div id="work-experience-search">
+          <LazyLoadImage
+            src={`https://res.cloudinary.com/duq3rhnd2/image/upload/q_70,w_${window.innerWidth}/v1602266143/Personal%20Portfolio/mountain_pano_vo7jqt.jpg`}
+            alt="Mountain panorama"
+            effect="opacity"
+            wrapperClassName="work-experience-feature"
+          />
+          <div id="work-experience-gradient" />
           <h2>My Work Experience</h2>
         </div>
 
