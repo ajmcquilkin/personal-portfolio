@@ -4,6 +4,10 @@
 **Created:** 8/24/2020
 **Description:** Adam McQuilkin's personal portfolio repository.
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8aa86d5b-7b92-4201-945a-2852027abb30/deploy-status)](https://app.netlify.com/sites/adammcquilkin/deploys)   
+![Typescript Version](https://img.shields.io/badge/typescript-4.0.3-blue)
+![React Version](https://img.shields.io/badge/react-16.13.1-blue)
+
 ## Table of Contents
 
 * [Main Features](#main-features)  
