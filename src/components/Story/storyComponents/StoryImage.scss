@@ -1,0 +1,16 @@
+@import '../../../constants/variables.scss';
+
+.story-image-container {
+  width: 50%;
+  margin-bottom: 36px;
+
+  .story-image-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 24px;
+  }
+
+  p {
+    margin: 0 24px;
+  }
+}

@@ -26,6 +26,10 @@ main {
 
 // Default text stylings
 
+.dark {
+  color: $dark;
+}
+
 h1, .h1 {
   font-family: $poppins;
   font-size: 72px;
@@ -62,7 +66,7 @@ h4, .h4 {
   margin-bottom: 18px;
 }
 
-p, .p {
+p, .p, li {
   font-family: $open-sans;
   font-size: 18px;
   font-weight: 300;
@@ -71,4 +75,12 @@ p, .p {
   margin-bottom: 18px;
 
   line-height: 155%;
+}
+
+li {
+  padding-left: 6px;
+}
+
+ul {
+  margin-bottom: 30px;
 }

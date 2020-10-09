@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 import queryString from 'query-string';
 
@@ -10,6 +10,8 @@ import NavMenuItem from '../../components/NavMenuItem';
 import HomeFeatureImg from '../../assets/images/home_feature.jpg';
 import AboutFeatureImg from '../../assets/images/about_feature.jpg';
 import FallbackFeatureImg from '../../assets/images/404_feature.jpg';
+
+import { mailtoLink } from '../../constants/constants';
 
 import './LandingScreen.scss';
 
@@ -44,7 +46,7 @@ const LandingScreen = () => {
   console.log(pathname);
 
   // Always loaded with Home or About
-  useEffect(() => {
+  React.useEffect(() => {
     if (hash) {
       const hashString = hash.slice(1);
       const element = document.getElementById(hashString);
@@ -88,7 +90,7 @@ const LandingScreen = () => {
         <NavMenuItem
           active={false}
           pageName="contact"
-          onClick={() => window.open('mailto:adam.j.mcquilkin.22@dartmouth.edu', '_self')}
+          onClick={() => window.open(mailtoLink, '_self')}
           className="landing-screen-menu-item"
         />
       </nav>

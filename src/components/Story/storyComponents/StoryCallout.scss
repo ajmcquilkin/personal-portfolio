@@ -1,0 +1,20 @@
+@import '../../../constants/variables.scss';
+
+.story-callout-container {
+  border-left: 4px solid $dark;
+  padding-left: 30px;
+  margin-bottom: 30px;
+  position: relative;
+
+  font-family: $open-sans;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 155%;
+
+  &::before {
+    content: "“";
+    position: absolute;
+    left: 15px;
+    top: 0;
+  }
+}

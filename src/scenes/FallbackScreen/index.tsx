@@ -6,6 +6,8 @@ import Button from '../../components/Button';
 import HeaderNavCard from '../../components/HeaderNavCard';
 import NavMenuItem from '../../components/NavMenuItem';
 
+import { mailtoLink } from '../../constants/constants';
+
 import './FallbackScreen.scss';
 
 interface Props {
@@ -48,7 +50,7 @@ const FallbackScreen = () => {
         <NavMenuItem
           active={false}
           pageName="contact"
-          onClick={() => window.open('mailto:adam.j.mcquilkin.22@dartmouth.edu', '_self')}
+          onClick={() => window.open(mailtoLink, '_self')}
           className="fallback-screen-menu-item"
         />
       </nav>
