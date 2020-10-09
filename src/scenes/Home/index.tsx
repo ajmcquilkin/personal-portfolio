@@ -1,4 +1,6 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
+import queryString from 'query-string';
 
 import Footer from '../FooterScreen';
 
@@ -49,15 +51,19 @@ function importAll(r: __WebpackModuleApi.RequireContext) {
   r.keys().forEach((key) => {
     imgCache[key] = r(key);
   });
-  console.log(imgCache);
+  console.table(imgCache);
 }
 
 importAll(require.context('../../assets/icons', false, /\.svg$/));
 
 const Home = () => {
-  const [tag, setTag] = React.useState<Tag>('all');
-  const [search, setSearch] = React.useState<string>('');
-  const [searchResults, setSearchResults] = React.useState<Project[]>(ProjectsArray);
+  const { location } = useHistory();
+  const parsedQuery = queryString.parse(location.search);
+
+  // TODO: Validate JSON schema
+  const [tag, setTag] = React.useState<Tag>(parsedQuery.tag as any || 'all');
+  const [searchQuery, setSearchQuery] = React.useState<string>(parsedQuery.query as any || '');
+  const [searchResults, setSearchResults] = React.useState<Project[]>(getFilteredProjects(searchQuery, tag));
 
   return (
     <main>
@@ -208,7 +214,7 @@ const Home = () => {
           <button
             className={tag === 'all' ? 'active' : ''}
             type="button"
-            onClick={() => { setTag('all'); setSearchResults(getFilteredProjects(search, 'all')); }}
+            onClick={() => { setTag('all'); setSearchResults(getFilteredProjects(searchQuery, 'all')); }}
           >
             <p>all</p>
           </button>
@@ -216,7 +222,7 @@ const Home = () => {
           <button
             className={tag === 'development' ? 'active' : ''}
             type="button"
-            onClick={() => { setTag('development'); setSearchResults(getFilteredProjects(search, 'development')); }}
+            onClick={() => { setTag('development'); setSearchResults(getFilteredProjects(searchQuery, 'development')); }}
           >
             <p>development</p>
           </button>
@@ -224,7 +230,7 @@ const Home = () => {
           <button
             className={tag === 'design' ? 'active' : ''}
             type="button"
-            onClick={() => { setTag('design'); setSearchResults(getFilteredProjects(search, 'design')); }}
+            onClick={() => { setTag('design'); setSearchResults(getFilteredProjects(searchQuery, 'design')); }}
           >
             <p>design</p>
           </button>
@@ -234,13 +240,13 @@ const Home = () => {
             id="home-search-input-container"
             onSubmit={(e) => {
               e.preventDefault();
-              setSearchResults(getFilteredProjects(search, tag));
+              setSearchResults(getFilteredProjects(searchQuery, tag));
             }}
           >
             <input
               className="p"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="search for keywords"
             />
 
@@ -277,7 +283,7 @@ const Home = () => {
                     className="p"
                     onClick={() => {
                       setSearchResults(getFilteredProjects('patent', tag));
-                      setSearch('patent');
+                      setSearchQuery('patent');
                     }}
                   >
                     patent
@@ -290,7 +296,7 @@ const Home = () => {
                     className="p"
                     onClick={() => {
                       setSearchResults(getFilteredProjects('typescript', tag));
-                      setSearch('typescript');
+                      setSearchQuery('typescript');
                     }}
                   >
                     typescript

@@ -1,0 +1,145 @@
+@import '../../constants/variables.scss';
+
+.fallback-screen-container {
+  background: linear-gradient(rgba(54, 54, 54, 0.12), rgba(54, 54, 54, 0.12)), rgba(0, 0, 0, 0) url('../../assets/images/404_feature.jpg') 50% 30%;
+  padding: 0 calc((100vw - #{$main-screen-width}) / 2);
+  height: 100vh;
+
+  position: relative;
+  background-size: cover !important;
+  background-repeat: no-repeat;
+  overflow: hidden;
+
+  .fallback-screen-signature {
+    position: absolute;
+    z-index: 2;
+    left: 80px;
+    top: 38px;
+
+    font-family: $caveat;
+    font-size: 48px;
+    font-weight: 700;
+    color: $white;
+  }
+
+  .fallback-screen-signature-shadow {
+    position: absolute;
+    width: 796.98px;
+    height: 323.28px;
+    left: -174px;
+    top: -101.5px;
+
+    background: linear-gradient(180deg, rgba(23, 30, 39, 0.2) 0%, rgba(23, 30, 39, 0.1) 64.06%, rgba(23, 30, 39, 0) 100%);
+    transform: rotate(-30deg);
+  }
+
+  .fallback-screen-menu-container {
+    position: absolute;
+    z-index: 2;
+    width: 300px;
+    top: 55px;
+    right: 0;
+
+    .fallback-screen-menu-item {
+      margin: 0 0 11px;
+    }
+  }
+
+  .fallback-screen-menu-shadow {
+    position: absolute;
+    width: 1158.01px;
+    height: 485.08px;
+    right: -200px;
+    top: -481.56px;
+
+    background: linear-gradient(180deg, rgba(23, 30, 39, 0.3) 0%, rgba(23, 30, 39, 0.15) 64.06%, rgba(23, 30, 39, 0) 100%);
+    transform: rotate(30deg);
+  }
+
+  .fallback-screen-banner-container {
+    position: absolute;
+    top: 27vh;
+    color: $white;
+
+    .fallback-screen-banner-content {
+      position: relative;
+      z-index: 2;
+
+      h1 {
+        margin: 0 0 -29px;
+      }
+  
+      h2 {
+        margin: 0 0 7px;
+      }
+  
+      .fallback-screen-banner-content {
+        font-family: $open-sans;
+        font-size: 27px;
+        font-weight: 300;
+        line-height: 155%;
+  
+        max-width: 750px;
+        margin: 0 0 28px;
+      }
+  
+      .fallback-screen-button-container {
+        display: flex;
+        flex-direction: row;
+        
+        .fallback-screen-button {
+          margin-right: 40px;
+    
+          :last-child {
+            margin-right: 0px;
+          }
+        }
+      }
+    }
+
+    .fallback-screen-banner-shadow {
+      position: absolute;
+      width: 240%;
+      height: 330%;
+      left: -60%;
+      top: -108%;
+  
+      background: radial-gradient(50% 50% at 50% 50%, rgba(34, 34, 34, 0.2) 0%, rgba(34, 34, 34, 0) 100%);
+    }
+  }
+
+  .fallback-screen-cards-container {
+    position: absolute;
+    z-index: 2;
+    width: $main-screen-width;
+    top: 70vh;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .fallback-screen-nav-card {
+      margin-bottom: 36px;
+    }
+  }
+
+  .fallback-screen-arrow-box {
+    position: absolute;
+    z-index: 2;
+    bottom: 21vh;
+    left: 50vw;
+    transform: translate(-50%, 0);
+  }
+
+  .fallback-screen-bottom-gradient {
+    position: absolute;
+    width: 100%;
+    height: 497px;
+    left: 0;
+    bottom: 0;
+
+    background: linear-gradient(180deg, rgba(23, 30, 39, 0.6) 0%, rgba(23, 30, 39, 0.3) 59.9%, rgba(23, 30, 39, 0) 100%);
+    transform: rotate(-180deg);
+  }
+}

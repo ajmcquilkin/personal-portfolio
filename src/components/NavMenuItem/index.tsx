@@ -1,27 +1,28 @@
 import React from 'react';
-import { withRouter, NavLink, RouteComponentProps } from 'react-router-dom';
 import './NavMenuItem.scss';
 
-interface Props extends RouteComponentProps {
+interface Props {
+  active: boolean;
   pageName: string;
-  pageLink: string;
+  onClick: (e: React.SyntheticEvent) => void;
 
   className?: string;
   dark?: boolean;
 }
 
 const NavMenuItem = ({
+  active,
   pageName,
-  pageLink,
-  history,
+  onClick,
+
   className = '',
   dark = false,
 }: Props) => (
   <div className={`nav-menu-container${dark ? ' dark' : ' light'} ${className}`} role="button">
-    <div className={`nav-menu-container-bar left${history.location.pathname === pageLink ? ' active' : ''}${dark ? ' dark' : ' light'}`} />
-    <NavLink exact className={dark ? 'dark' : 'light'} to={pageLink}>{pageName}</NavLink>
-    <div className={`nav-menu-container-bar right${history.location.pathname === pageLink ? ' active' : ''}${dark ? ' dark' : ' light'}`} />
+    <div className={`nav-menu-container-bar left${active ? ' active' : ''}${dark ? ' dark' : ' light'}`} />
+    <button className={dark ? 'dark' : 'light'} onClick={onClick} type="button">{pageName}</button>
+    <div className={`nav-menu-container-bar right${active ? ' active' : ''}${dark ? ' dark' : ' light'}`} />
   </div>
 );
 
-export default withRouter(NavMenuItem);
+export default NavMenuItem;

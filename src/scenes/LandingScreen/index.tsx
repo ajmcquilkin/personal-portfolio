@@ -1,5 +1,6 @@
-import React from 'react';
-import { withRouter, RouteChildrenProps } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
+import queryString from 'query-string';
 
 import ArrowBox from '../../components/ArrowBox';
 import Button from '../../components/Button';
@@ -12,11 +13,7 @@ import FallbackFeatureImg from '../../assets/images/404_feature.jpg';
 
 import './LandingScreen.scss';
 
-interface Props extends RouteChildrenProps {
-
-}
-
-interface State {
+interface Props {
 
 }
 
@@ -42,11 +39,31 @@ function getDescriptionByURL(url: string) {
   }
 }
 
-const LandingScreen = ({ history }: Props) => {
-  const { pathname } = history.location;
+const LandingScreen = () => {
+  const { location: { pathname, hash }, push } = useHistory();
+
+  // Always loaded with Home or About
+  useEffect(() => {
+    if (hash) {
+      const hashString = hash.slice(1);
+      const element = document.getElementById(hashString);
+      // if (element) {
+      //   const main = document.getElementById('main');
+      //   if (main) {
+      //     main.animate({
+      //       scrollTop: element. .offset().top
+      //     }, 1000);
+      //   }
+      // }
+      if (element) { element.scrollIntoView({ behavior: 'smooth' }); }
+    }
+  });
 
   return (
-    <div className="landing-screen-container" style={{ background: `linear-gradient(rgba(54, 54, 54, 0.12), rgba(54, 54, 54, 0.12)), rgba(0, 0, 0, 0) url(${getBackgroundImageByURL(pathname)}) 50% 30%` }}>
+    <div
+      className="landing-screen-container"
+      style={{ background: `linear-gradient(rgba(54, 54, 54, 0.12), rgba(54, 54, 54, 0.12)), rgba(0, 0, 0, 0) url(${getBackgroundImageByURL(pathname)}) 50% 30%` }}
+    >
       <div className="landing-screen-signature">AM</div>
       <div className="landing-screen-signature-shadow" />
 
@@ -55,26 +72,30 @@ const LandingScreen = ({ history }: Props) => {
         aria-label="Main site links"
       >
         <NavMenuItem
+          active={pathname === '/'}
           pageName="home"
-          pageLink="/"
+          onClick={() => push('/')}
           className="landing-screen-menu-item"
         />
 
         <NavMenuItem
+          active={pathname === '/about'}
           pageName="about me"
-          pageLink="/about"
+          onClick={() => push('/about')}
           className="landing-screen-menu-item"
         />
 
         <NavMenuItem
+          active={false}
           pageName="my resume"
-          pageLink="/resume"
+          onClick={() => {}}
           className="landing-screen-menu-item"
         />
 
         <NavMenuItem
+          active={false}
           pageName="contact"
-          pageLink="/contact"
+          onClick={() => window.open('mailto:adam.j.mcquilkin.22@dartmouth.edu', '_self')}
           className="landing-screen-menu-item"
         />
       </nav>
@@ -99,7 +120,7 @@ const LandingScreen = ({ history }: Props) => {
         aria-label="Links to filtered site content"
       >
         <HeaderNavCard
-          onClick={() => {}}
+          onClick={() => push(`/?${queryString.stringify({ tag: 'development' })}#work-experience-search`)}
           title="development"
           subtitle="software"
           linkText="see work"
@@ -107,7 +128,7 @@ const LandingScreen = ({ history }: Props) => {
         />
 
         <HeaderNavCard
-          onClick={() => {}}
+          onClick={() => push(`/?${queryString.stringify({ tag: 'design' })}#work-experience-search`)}
           title="design"
           subtitle="product"
           linkText="see work"
@@ -115,7 +136,7 @@ const LandingScreen = ({ history }: Props) => {
         />
 
         <HeaderNavCard
-          onClick={() => {}}
+          onClick={() => push('/about#main-photo-gallery')}
           title="photography"
           subtitle="personal"
           linkText="see work"
@@ -130,4 +151,4 @@ const LandingScreen = ({ history }: Props) => {
   );
 };
 
-export default withRouter(LandingScreen);
+export default LandingScreen;

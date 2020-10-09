@@ -197,7 +197,7 @@
   #work-experience-search {
     position: relative;
     left: calc((100vw - #{$main-screen-width}) / 2 * -1);
-    width: var(--view-width);
+    width: 100vw;
     height: 569px;
 
     color: $white;
