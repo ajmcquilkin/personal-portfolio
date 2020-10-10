@@ -54,7 +54,6 @@ const LandingScreen = () => {
       <LazyLoadImage
         src={getBackgroundImageByURL(pathname)}
         alt="Main landing feature (about)"
-
         effect="opacity"
         wrapperClassName="landing-main-feature"
       />
@@ -83,7 +82,7 @@ const LandingScreen = () => {
         <NavMenuItem
           active={false}
           pageName="my resume"
-          onClick={() => {}}
+          onClick={() => window.open('/Adam_McQuilkin_Resume.pdf')}
           className="landing-screen-menu-item"
         />
 

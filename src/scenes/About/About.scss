@@ -144,9 +144,13 @@
   position: relative;
   margin-bottom: 360px;
 
-  img {
+  .wilderness-safety-image {
     max-width: 600px;
     margin-right: 120px;
+
+    img {
+      object-fit: contain;
+    }
   }
 }
 
@@ -162,10 +166,11 @@
     justify-content: center;
     margin-left: 120px;
     
-    img {
+    .outdoors-experience-image {
       max-width: 640px;
       margin-bottom: 20px;
       box-shadow: 0px 4px 8px 0px #000000 12.5%;
+      object-fit: cover
     }
 
     p {

@@ -43,7 +43,7 @@ const FallbackScreen = () => {
         <NavMenuItem
           active={false}
           pageName="my resume"
-          onClick={() => push('/TODO')}
+          onClick={() => window.open('/Adam_McQuilkin_Resume.pdf')}
           className="fallback-screen-menu-item"
         />
 

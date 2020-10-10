@@ -23,7 +23,7 @@ interface StoryHeaderProps {
 
 const LandingScreen = ({
   title, subtitle, description, showArrow,
-  buttonText, onButtonClick, showButton, renderContent
+  buttonText, onButtonClick, showButton, renderContent,
 }: StoryHeaderProps) => {
   const { push } = useHistory();
 
@@ -58,7 +58,7 @@ const LandingScreen = ({
         <NavMenuItem
           active={false}
           pageName="my resume"
-          onClick={() => {}}
+          onClick={() => window.open('/Adam_McQuilkin_Resume.pdf')}
           className="story-header-menu-item"
           dark
         />

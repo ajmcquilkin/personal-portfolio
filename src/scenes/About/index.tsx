@@ -32,7 +32,6 @@ const About = ({ scrollPosition }: IAboutProps) => {
           alt={alt}
           width={imageWidth}
           height={imageHeight}
-
           effect="opacity"
           scrollPosition={scrollPosition}
           wrapperClassName={className}
@@ -78,8 +77,10 @@ const About = ({ scrollPosition }: IAboutProps) => {
             <ImageTile
               title="Banff National Park"
               subtitle="December, 2019"
-
-              renderImage={generateRenderImage(`https://res.cloudinary.com/duq3rhnd2/image/upload/w_${imageWidth},h_${imageHeight}/v1602266166/Personal%20Portfolio/gallery/banff_1_titzr9.jpg`, 'Banff National Park')}
+              renderImage={generateRenderImage(
+                `https://res.cloudinary.com/duq3rhnd2/image/upload/w_${imageWidth},h_${imageHeight}/v1602266166/Personal%20Portfolio/gallery/banff_1_titzr9.jpg`,
+                'Banff National Park',
+              )}
               width={`${imageWidth}px`}
               height={`${imageHeight}px`}
               className="about-image-tile"
@@ -87,8 +88,10 @@ const About = ({ scrollPosition }: IAboutProps) => {
             <ImageTile
               title="Banff National Park"
               subtitle="December, 2019"
-              renderImage={generateRenderImage(`https://res.cloudinary.com/duq3rhnd2/image/upload/w_${imageWidth},h_${imageHeight}/v1602266166/Personal%20Portfolio/gallery/banff_2_tafput.jpg`, 'Banff National Park')}
-
+              renderImage={generateRenderImage(
+                `https://res.cloudinary.com/duq3rhnd2/image/upload/w_${imageWidth},h_${imageHeight}/v1602266166/Personal%20Portfolio/gallery/banff_2_tafput.jpg`,
+                'Banff National Park',
+              )}
               width={`${imageWidth}px`}
               height={`${imageHeight}px`}
               className="about-image-tile"
@@ -96,8 +99,10 @@ const About = ({ scrollPosition }: IAboutProps) => {
             <ImageTile
               title="Banff National Park"
               subtitle="December, 2019"
-              renderImage={generateRenderImage(`https://res.cloudinary.com/duq3rhnd2/image/upload/w_${imageWidth},h_${imageHeight}/v1602266166/Personal%20Portfolio/gallery/banff_3_jg8swn.jpg`, 'Banff National Park')}
-
+              renderImage={generateRenderImage(
+                `https://res.cloudinary.com/duq3rhnd2/image/upload/w_${imageWidth},h_${imageHeight}/v1602266166/Personal%20Portfolio/gallery/banff_3_jg8swn.jpg`,
+                'Banff National Park',
+              )}
               width={`${imageWidth}px`}
               height={`${imageHeight}px`}
               className="about-image-tile"
@@ -106,8 +111,10 @@ const About = ({ scrollPosition }: IAboutProps) => {
             <ImageTile
               title="Franconia Ridge"
               subtitle="April, 2019"
-              renderImage={generateRenderImage(`https://res.cloudinary.com/duq3rhnd2/image/upload/w_${imageWidth},h_${imageHeight}/v1602266166/Personal%20Portfolio/gallery/franc_1_yblpgr.jpg`, 'Franconia Ridge')}
-
+              renderImage={generateRenderImage(
+                `https://res.cloudinary.com/duq3rhnd2/image/upload/w_${imageWidth},h_${imageHeight}/v1602266166/Personal%20Portfolio/gallery/franc_1_yblpgr.jpg`,
+                'Franconia Ridge',
+              )}
               width={`${imageWidth}px`}
               height={`${imageHeight}px`}
               className="about-image-tile"
@@ -115,8 +122,10 @@ const About = ({ scrollPosition }: IAboutProps) => {
             <ImageTile
               title="Franconia Ridge"
               subtitle="November, 2019"
-              renderImage={generateRenderImage(`https://res.cloudinary.com/duq3rhnd2/image/upload/w_${imageWidth},h_${imageHeight}/v1602266166/Personal%20Portfolio/gallery/franc_2_qtcjjv.jpg`, 'Franconia Ridge')}
-
+              renderImage={generateRenderImage(
+                `https://res.cloudinary.com/duq3rhnd2/image/upload/w_${imageWidth},h_${imageHeight}/v1602266166/Personal%20Portfolio/gallery/franc_2_qtcjjv.jpg`,
+                'Franconia Ridge',
+              )}
               width={`${imageWidth}px`}
               height={`${imageHeight}px`}
               className="about-image-tile"
@@ -125,8 +134,10 @@ const About = ({ scrollPosition }: IAboutProps) => {
             <ImageTile
               title="New Hampshire"
               subtitle="June, 2019"
-              renderImage={generateRenderImage(`https://res.cloudinary.com/duq3rhnd2/image/upload/w_${imageWidth},h_${imageHeight}/v1602266166/Personal%20Portfolio/gallery/gile_1_s3r4rr.jpg`, 'New Hampshire')}
-
+              renderImage={generateRenderImage(
+                `https://res.cloudinary.com/duq3rhnd2/image/upload/w_${imageWidth},h_${imageHeight}/v1602266166/Personal%20Portfolio/gallery/gile_1_s3r4rr.jpg`,
+                'New Hampshire',
+              )}
               width={`${imageWidth}px`}
               height={`${imageHeight}px`}
               className="about-image-tile"
@@ -134,8 +145,10 @@ const About = ({ scrollPosition }: IAboutProps) => {
             <ImageTile
               title="New Hampshire"
               subtitle="June, 2019"
-              renderImage={generateRenderImage(`https://res.cloudinary.com/duq3rhnd2/image/upload/w_${imageWidth},h_${imageHeight}/v1602266166/Personal%20Portfolio/gallery/gile_2_lruwvu.jpg`, 'New Hampshire')}
-
+              renderImage={generateRenderImage(
+                `https://res.cloudinary.com/duq3rhnd2/image/upload/w_${imageWidth},h_${imageHeight}/v1602266166/Personal%20Portfolio/gallery/gile_2_lruwvu.jpg`,
+                'New Hampshire',
+              )}
               width={`${imageWidth}px`}
               height={`${imageHeight}px`}
               className="about-image-tile"
@@ -144,8 +157,10 @@ const About = ({ scrollPosition }: IAboutProps) => {
             <ImageTile
               title="North Cascades"
               subtitle="August, 2019"
-              renderImage={generateRenderImage(`https://res.cloudinary.com/duq3rhnd2/image/upload/w_${imageWidth},h_${imageHeight}/v1602266166/Personal%20Portfolio/gallery/ncnp_1_fqejrv.jpg`, 'North Cascades')}
-
+              renderImage={generateRenderImage(
+                `https://res.cloudinary.com/duq3rhnd2/image/upload/w_${imageWidth},h_${imageHeight}/v1602266166/Personal%20Portfolio/gallery/ncnp_1_fqejrv.jpg`,
+                'North Cascades',
+              )}
               width={`${imageWidth}px`}
               height={`${imageHeight}px`}
               className="about-image-tile"
@@ -153,8 +168,10 @@ const About = ({ scrollPosition }: IAboutProps) => {
             <ImageTile
               title="North Cascades"
               subtitle="August, 2019"
-              renderImage={generateRenderImage(`https://res.cloudinary.com/duq3rhnd2/image/upload/w_${imageWidth},h_${imageHeight}/v1602266166/Personal%20Portfolio/gallery/ncnp_2_zhnmyt.jpg`, 'North Cascades')}
-
+              renderImage={generateRenderImage(
+                `https://res.cloudinary.com/duq3rhnd2/image/upload/w_${imageWidth},h_${imageHeight}/v1602266166/Personal%20Portfolio/gallery/ncnp_2_zhnmyt.jpg`,
+                'North Cascades',
+              )}
               width={`${imageWidth}px`}
               height={`${imageHeight}px`}
               className="about-image-tile"
@@ -163,16 +180,20 @@ const About = ({ scrollPosition }: IAboutProps) => {
             <ImageTile
               title="White Mountains"
               subtitle="July, 2018"
-              renderImage={generateRenderImage(`https://res.cloudinary.com/duq3rhnd2/image/upload/w_${imageWidth},h_${imageHeight}/v1602266166/Personal%20Portfolio/gallery/wmnf_1_small_zfwq2y.jpg`, 'White Mountains')}
-
+              renderImage={generateRenderImage(
+                `https://res.cloudinary.com/duq3rhnd2/image/upload/w_${imageWidth},h_${imageHeight}/v1602266166/Personal%20Portfolio/gallery/wmnf_1_small_zfwq2y.jpg`,
+                'White Mountains',
+              )}
               className="about-image-tile"
             />
 
             <ImageTile
               title="Wyoming"
               subtitle="August, 2019"
-              renderImage={generateRenderImage(`https://res.cloudinary.com/duq3rhnd2/image/upload/w_${imageWidth},h_${imageHeight}/v1602266166/Personal%20Portfolio/gallery/wy_1_xrcgbg.jpg`, 'Wyoming')}
-
+              renderImage={generateRenderImage(
+                `https://res.cloudinary.com/duq3rhnd2/image/upload/w_${imageWidth},h_${imageHeight}/v1602266166/Personal%20Portfolio/gallery/wy_1_xrcgbg.jpg`,
+                'Wyoming',
+              )}
               width={`${imageWidth}px`}
               height={`${imageHeight}px`}
               className="about-image-tile"
@@ -190,8 +211,10 @@ const About = ({ scrollPosition }: IAboutProps) => {
             <ImageTile
               title="Wyoming"
               subtitle="August, 2019"
-              renderImage={generateRenderImage(`https://res.cloudinary.com/duq3rhnd2/image/upload/w_${imageWidth},h_${imageHeight}/v1602266166/Personal%20Portfolio/gallery/wy_3_sotj58.jpg`, 'Wyoming')}
-
+              renderImage={generateRenderImage(
+                `https://res.cloudinary.com/duq3rhnd2/image/upload/w_${imageWidth},h_${imageHeight}/v1602266166/Personal%20Portfolio/gallery/wy_3_sotj58.jpg`,
+                'Wyoming',
+              )}
               width={`${imageWidth}px`}
               height={`${imageHeight}px`}
               className="about-image-tile"
@@ -207,7 +230,27 @@ const About = ({ scrollPosition }: IAboutProps) => {
       </section>
 
       <section id="wilderness-safety">
-        <img src="https://res.cloudinary.com/duq3rhnd2/image/upload/w_600,q_70/v1602266166/Personal%20Portfolio/gallery/certs_vh4p0b.jpg" alt="Wilderness Safety Certification Cards" />
+        {/* <ImageTile
+          title="Wyoming"
+          subtitle="August, 2019"
+          renderImage={generateRenderImage(
+            'https://res.cloudinary.com/duq3rhnd2/image/upload/v1602266120/Personal%20Portfolio/certs_vh4p0b.png',
+            'Wilderness Medical Certifications',
+          )}
+          width="600px"
+          className="about-image-tile"
+        /> */}
+
+        <LazyLoadImage
+          src="https://res.cloudinary.com/duq3rhnd2/image/upload/w_600,q_70/v1602266120/Personal%20Portfolio/certs_vh4p0b.png"
+          alt="Wilderness Safety Certification Cards"
+          width={600}
+          height={400}
+          effect="opacity"
+          scrollPosition={scrollPosition}
+          wrapperClassName="wilderness-safety-image"
+        />
+        {/* <img src="https://res.cloudinary.com/duq3rhnd2/image/upload/w_600,q_70/v1602266166/Personal%20Portfolio/gallery/certs_vh4p0b.jpg" alt="Wilderness Safety Certification Cards" /> */}
 
         <div className="about-photo-title">
           <h2>I keep people safe</h2>
@@ -222,7 +265,27 @@ const About = ({ scrollPosition }: IAboutProps) => {
         </div>
 
         <div id="outdoors-experience-photo-container">
-          <img src="https://res.cloudinary.com/duq3rhnd2/image/upload/w_640/v1602266166/Personal%20Portfolio/gallery/wmnf_1_small_zfwq2y.jpg" alt="White Mountains" />
+          {/* <ImageTile
+            title="Wyoming"
+            subtitle="August, 2019"
+            renderImage={generateRenderImage(
+              'https://res.cloudinary.com/duq3rhnd2/image/upload/w_640/v1602266166/Personal%20Portfolio/gallery/wmnf_1_small_zfwq2y.jpg',
+              'White Mountains',
+            )}
+            width="600px"
+            className="about-image-tile"
+          /> */}
+          <LazyLoadImage
+            src="https://res.cloudinary.com/duq3rhnd2/image/upload/w_640/v1602266166/Personal%20Portfolio/gallery/wmnf_1_small_zfwq2y.jpg"
+            alt="White Mountains"
+            width={600}
+            height={400}
+            effect="opacity"
+            scrollPosition={scrollPosition}
+            wrapperClassName="outdoors-experience-image"
+          />
+
+          {/* <img src="https://res.cloudinary.com/duq3rhnd2/image/upload/w_640/v1602266166/Personal%20Portfolio/gallery/wmnf_1_small_zfwq2y.jpg" alt="White Mountains" /> */}
           <p>You can often find me hidden away in the woods.</p>
         </div>
       </section>

@@ -12,7 +12,6 @@ import ProjectCard from '../../components/ProjectCard';
 import SearchIcon from '../../assets/icons/search.svg';
 
 import TestImage from '../../assets/images/test_project_image.png';
-import MountainPanorama from '../../assets/images/mountain_pano.jpg';
 
 import { Project, Tag, ProjectsArray } from './projects';
 import { ReactComponent as SlantedBackground } from '../../assets/background.svg';
