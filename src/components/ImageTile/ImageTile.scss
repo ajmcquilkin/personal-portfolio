@@ -50,19 +50,27 @@
     }
   }
 
-  .image-tile-image {
-    position: absolute;
-    left: 0;
-    top: 0;
-
+  // TODO: Add hover scale effect here
+  .image-tile-image-container {
     width: 100%;
     height: 100%;
-
-    transform: scale(100%);
-    transition: transform 0.3s ease-in-out;
-
-    &:hover {
-      transform: scale(120%); 
+    
+    &:hover .image-tile-image > .lazy-load-image-background.opacity.lazy-load-image-loaded {
+      transform: scale(120%);
+      // transition: transform 0.3s ease-in-out;
+    }
+    
+    .image-tile-image {
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: flex;
+      
+      .lazy-load-image-background.opacity.lazy-load-image-loaded {
+        transform: scale(100%);
+        transition: transform 0.3s ease-in-out;
+        
+      }
     }
   }
 }

@@ -10,7 +10,7 @@ main {
   flex-direction: column;
   position: relative;
 
-  section {
+  .padded-section {
     padding: 0 $screen-padding;
     box-sizing: border-box;
   }

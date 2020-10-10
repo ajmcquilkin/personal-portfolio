@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { withRouter, RouteChildrenProps } from 'react-router-dom';
 import queryString from 'query-string';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
@@ -9,12 +9,14 @@ import Button from '../../components/Button';
 import ArrowBox from '../../components/ArrowBox';
 import ProjectCard from '../../components/ProjectCard';
 
-import SearchIcon from '../../assets/icons/search.svg';
+import { Project, Tag, ProjectsArray } from './projects';
 
+import SearchIcon from '../../assets/icons/search.svg';
 import TestImage from '../../assets/images/test_project_image.png';
 
-import { Project, Tag, ProjectsArray } from './projects';
 import { ReactComponent as SlantedBackground } from '../../assets/background.svg';
+import { ReactComponent as PatentIcon } from '../../assets/icons/pencil-ruler.svg';
+import { ReactComponent as DPlannerIcon } from '../../assets/icons/grad-cap.svg';
 
 import './Home.scss';
 
@@ -55,9 +57,12 @@ function importAll(r: __WebpackModuleApi.RequireContext) {
 
 importAll(require.context('../../assets/icons', false, /\.svg$/));
 
-const Home = () => {
-  const { location, push } = useHistory();
-  const { tag: urlTag, query: urlQuery } = queryString.parse(location.search);
+interface IHomeProps extends RouteChildrenProps {
+
+}
+
+const Home = ({ history: { push }, location: { search } }:IHomeProps) => {
+  const { tag: urlTag, query: urlQuery } = React.useMemo(() => queryString.parse(search), [search]);
 
   // TODO: Validate JSON schema
   const [tag, setTag] = React.useState<Tag>('all');
@@ -68,13 +73,13 @@ const Home = () => {
     if (urlTag) setTag(urlTag as any);
     if (urlQuery) setTag(urlQuery as any);
     if (urlTag || urlQuery) setSearchResults(getFilteredProjects(searchQuery, tag));
-  });
+  }, [search]);
 
   return (
     <main>
       <section id="home-achievements">
         <div className="home-achievement-container">
-          <img />
+          <PatentIcon className="home-achievements-icon" />
           <div className="home-achievements-text-container">
             <div className="h4">US Patent 9,632,952</div>
             <p>Intermediate Computer Interface Device</p>
@@ -83,7 +88,7 @@ const Home = () => {
         </div>
 
         <div className="home-achievement-container">
-          <img />
+          <DPlannerIcon className="home-achievements-icon" />
           <div className="home-achievements-text-container">
             <div className="h4">DALI Pitch Competition Winner</div>
             <p>Pitching for D-Planner, LLC</p>
@@ -92,7 +97,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="home-featured-project-container">
+      <section className="home-featured-project-container padded-section">
         <div className="home-featured-project-text-container">
           <h2>D-Planner, LLC</h2>
           <div className="h4">Co-founder, Product Designer, Developer</div>
@@ -102,7 +107,7 @@ const Home = () => {
         <img className="right" src={TestImage} alt="TEST" />
       </section>
 
-      <section className="home-featured-project-container">
+      <section className="home-featured-project-container padded-section">
         <img className="left" src={TestImage} alt="TEST" />
         <div className="home-featured-project-text-container">
           <h2>D-Planner, LLC</h2>
@@ -326,4 +331,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default withRouter(Home);
