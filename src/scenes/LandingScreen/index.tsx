@@ -8,7 +8,7 @@ import Button from '../../components/Button';
 import HeaderNavCard from '../../components/HeaderNavCard';
 import NavMenuItem from '../../components/NavMenuItem';
 
-import { mailtoLink } from '../../constants';
+import { mailtoLink, resumeFileName } from '../../constants';
 
 import './LandingScreen.scss';
 
@@ -38,8 +38,6 @@ function getDescriptionByURL(url: string) {
 
 const LandingScreen = () => {
   const { location: { pathname, hash }, push } = useHistory();
-  console.log(pathname);
-
   // Always loaded with Home or About
   React.useEffect(() => {
     if (hash) {
@@ -82,7 +80,7 @@ const LandingScreen = () => {
         <NavMenuItem
           active={false}
           pageName="my resume"
-          onClick={() => window.open('/Adam_McQuilkin_Resume.pdf')}
+          onClick={() => window.open(`/${resumeFileName}`)}
           className="landing-screen-menu-item"
         />
 
@@ -102,7 +100,7 @@ const LandingScreen = () => {
           <div className="landing-screen-banner-content">{getDescriptionByURL(pathname)}</div>
           <div className="landing-screen-button-container">
             <Button className="landing-screen-button" onClick={() => window.open(mailtoLink, '_self')} size="sm">contact me</Button>
-            <Button className="landing-screen-button" onClick={() => {}} size="lg">download resume</Button>
+            <Button className="landing-screen-button" onClick={() => window.open(resumeFileName)} size="lg">download resume</Button>
           </div>
         </div>
 

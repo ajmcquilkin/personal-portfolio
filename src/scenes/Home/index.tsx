@@ -57,12 +57,18 @@ importAll(require.context('../../assets/icons', false, /\.svg$/));
 
 const Home = () => {
   const { location, push } = useHistory();
-  const parsedQuery = queryString.parse(location.search);
+  const { tag: urlTag, query: urlQuery } = queryString.parse(location.search);
 
   // TODO: Validate JSON schema
-  const [tag, setTag] = React.useState<Tag>(parsedQuery.tag as any || 'all');
-  const [searchQuery, setSearchQuery] = React.useState<string>(parsedQuery.query as any || '');
-  const [searchResults, setSearchResults] = React.useState<Project[]>(getFilteredProjects(searchQuery, tag));
+  const [tag, setTag] = React.useState<Tag>('all');
+  const [searchQuery, setSearchQuery] = React.useState<string>('');
+  const [searchResults, setSearchResults] = React.useState<Project[]>(ProjectsArray);
+
+  React.useEffect(() => {
+    if (urlTag) setTag(urlTag as any);
+    if (urlQuery) setTag(urlQuery as any);
+    if (urlTag || urlQuery) setSearchResults(getFilteredProjects(searchQuery, tag));
+  });
 
   return (
     <main>
@@ -158,7 +164,7 @@ const Home = () => {
             <Button
               className="home-skills-button"
               dark
-              onClick={() => {}}
+              onClick={() => push(`/?${queryString.stringify({ tag: 'development' })}#work-experience-search`)}
             >
               see work
 
@@ -193,7 +199,7 @@ const Home = () => {
             <Button
               className="home-skills-button"
               dark
-              onClick={() => {}}
+              onClick={() => push(`/?${queryString.stringify({ tag: 'design' })}#work-experience-search`)}
             >
               see work
             </Button>

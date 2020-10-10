@@ -1,5 +1,5 @@
-// eslint-disable-next-line import/prefer-default-export
 export const mailtoLink = 'mailto:adam.j.mcquilkin.22@dartmouth.edu';
+export const resumeFileName = 'Adam_McQuilkin_Resume.pdf';
 
 export const storyURLs = {
   dplanner: 'dplanner',
@@ -11,5 +11,5 @@ export const storyURLs = {
   graniteState: 'granite-state-volunteering',
   tsStarter: 'reactjs-typescript-starter',
   whiteboard: 'whiteboard-productivity',
-  mindsquare: 'uiux-mindsquare'
+  mindsquare: 'uiux-mindsquare',
 };
