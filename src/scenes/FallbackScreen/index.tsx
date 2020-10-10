@@ -6,7 +6,7 @@ import Button from '../../components/Button';
 import HeaderNavCard from '../../components/HeaderNavCard';
 import NavMenuItem from '../../components/NavMenuItem';
 
-import { mailtoLink } from '../../constants';
+import { mailtoLink, resumeFileName } from '../../constants';
 
 import './FallbackScreen.scss';
 
@@ -43,7 +43,7 @@ const FallbackScreen = () => {
         <NavMenuItem
           active={false}
           pageName="my resume"
-          onClick={() => window.open('/Adam_McQuilkin_Resume.pdf')}
+          onClick={() => window.open(`/${resumeFileName}`)}
           className="fallback-screen-menu-item"
         />
 

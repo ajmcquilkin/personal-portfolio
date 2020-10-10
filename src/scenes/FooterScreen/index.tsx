@@ -1,4 +1,6 @@
 import React from 'react';
+
+import { mailtoLink, resumeFileName } from '../../constants';
 import Button from '../../components/Button';
 import './FooterScreen.scss';
 
@@ -13,8 +15,8 @@ const Footer = ({ className }: Props) => (
     <div className="footer-main-content">
       <h2>Want to chat? Let me know!</h2>
       <div className="footer-button-container">
-        <Button onClick={() => {}} className="footer-button" size="sm">contact me</Button>
-        <Button onClick={() => {}} className="footer-button" size="lg">download resume</Button>
+        <Button onClick={() => window.open(mailtoLink, '_self')} className="footer-button" size="sm">contact me</Button>
+        <Button onClick={() => window.open(`/${resumeFileName}`)} className="footer-button" size="lg">download resume</Button>
       </div>
     </div>
 

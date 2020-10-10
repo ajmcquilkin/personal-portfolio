@@ -1,11 +1,11 @@
-import React, { MouseEvent } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 
 import ArrowBox from '../ArrowBox';
 import Button from '../Button';
 import NavMenuItem from '../NavMenuItem';
 
-import { mailtoLink } from '../../constants';
+import { mailtoLink, resumeFileName } from '../../constants';
 
 import './StoryHeader.scss';
 
@@ -58,7 +58,7 @@ const LandingScreen = ({
         <NavMenuItem
           active={false}
           pageName="my resume"
-          onClick={() => window.open('/Adam_McQuilkin_Resume.pdf')}
+          onClick={() => window.open(`/${resumeFileName}`)}
           className="story-header-menu-item"
           dark
         />

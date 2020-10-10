@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import { LazyLoadImage, trackWindowScroll, LazyLoadImageProps } from 'react-lazy-load-image-component';
 
 import Button from '../../components/Button';
@@ -16,6 +17,8 @@ interface IAboutProps extends LazyLoadImageProps {
 const About = ({ scrollPosition }: IAboutProps) => {
   const imageWidth = 400;
   const imageHeight = 270;
+
+  const { push } = useHistory();
 
   const [galleryWidth, setGalleryWidth] = React.useState<number>();
 
@@ -62,7 +65,7 @@ const About = ({ scrollPosition }: IAboutProps) => {
           <div className="h2">I enjoy working on</div>
           <h2 className="h1">meaningful projects</h2>
           <p>I love to work on projects that can bring positive change to the lives of others. From my school to search and rescue teams in the mountains, I want to do good in my communities.</p>
-          <Button size="lg" onClick={() => {}}>see my work</Button>
+          <Button size="lg" onClick={() => push('/#work-experience-search')}>see my work</Button>
         </div>
       </section>
 

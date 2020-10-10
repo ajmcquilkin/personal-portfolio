@@ -1,3 +1,3 @@
-import { mailtoLink, storyURLs } from './constants';
+import { mailtoLink, resumeFileName, storyURLs } from './constants';
 
-export { mailtoLink, storyURLs };
+export { mailtoLink, resumeFileName, storyURLs };
