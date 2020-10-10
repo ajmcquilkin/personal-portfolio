@@ -6,6 +6,8 @@ import { StoryImage, StoryCallout } from '../storyComponents';
 import TestImage from '../../../assets/images/test_project_image.png';
 import Footer from '../../../scenes/FooterScreen';
 
+import './story.scss';
+
 export default function DPlannerStory() {
   return (
     <div className="story-container">
@@ -17,7 +19,7 @@ export default function DPlannerStory() {
         renderContent={(className) => (<img className={className} src={TestImage} alt="TEST" />)}
       />
 
-      <main>
+      <main className="story-main">
         <section>
           <h2>Project Overview</h2>
           <div>

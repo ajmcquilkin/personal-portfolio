@@ -45,7 +45,7 @@ const About = ({ scrollPosition }: IAboutProps) => {
 
   return (
     <main>
-      <section id="about-intro">
+      <section id="about-intro" className="padded-section">
         <LazyLoadImage
           src="https://res.cloudinary.com/duq3rhnd2/image/upload/w_611,h_773/v1602266134/Personal%20Portfolio/adam_mcquilkin_qszxv1.jpg"
           alt="Adam J McQuilkin"
@@ -69,7 +69,7 @@ const About = ({ scrollPosition }: IAboutProps) => {
         </div>
       </section>
 
-      <section id="main-photo-gallery">
+      <section id="main-photo-gallery" className="padded-section">
         <div className="about-photo-title">
           <h2>I love photography</h2>
           <p>Veritatis ipsa laborum ducimus facilis qui. Eveniet et hic quidem rem qui natus aut. Recusandae enim iure qui ab. Labore nulla cumque aliquam et.</p>
@@ -232,18 +232,7 @@ const About = ({ scrollPosition }: IAboutProps) => {
         </div>
       </section>
 
-      <section id="wilderness-safety">
-        {/* <ImageTile
-          title="Wyoming"
-          subtitle="August, 2019"
-          renderImage={generateRenderImage(
-            'https://res.cloudinary.com/duq3rhnd2/image/upload/v1602266120/Personal%20Portfolio/certs_vh4p0b.png',
-            'Wilderness Medical Certifications',
-          )}
-          width="600px"
-          className="about-image-tile"
-        /> */}
-
+      <section id="wilderness-safety" className="padded-section">
         <LazyLoadImage
           src="https://res.cloudinary.com/duq3rhnd2/image/upload/w_600,q_70/v1602266120/Personal%20Portfolio/certs_vh4p0b.png"
           alt="Wilderness Safety Certification Cards"
@@ -253,7 +242,6 @@ const About = ({ scrollPosition }: IAboutProps) => {
           scrollPosition={scrollPosition}
           wrapperClassName="wilderness-safety-image"
         />
-        {/* <img src="https://res.cloudinary.com/duq3rhnd2/image/upload/w_600,q_70/v1602266166/Personal%20Portfolio/gallery/certs_vh4p0b.jpg" alt="Wilderness Safety Certification Cards" /> */}
 
         <div className="about-photo-title">
           <h2>I keep people safe</h2>
@@ -261,23 +249,13 @@ const About = ({ scrollPosition }: IAboutProps) => {
         </div>
       </section>
 
-      <section id="outdoors-experience">
+      <section id="outdoors-experience" className="padded-section">
         <div className="about-photo-title">
           <h2>I love the outdoors</h2>
           <p>Veritatis ipsa laborum ducimus facilis qui. Eveniet et hic quidem rem qui natus aut. Recusandae enim iure qui ab. Labore nulla cumque aliquam et.</p>
         </div>
 
         <div id="outdoors-experience-photo-container">
-          {/* <ImageTile
-            title="Wyoming"
-            subtitle="August, 2019"
-            renderImage={generateRenderImage(
-              'https://res.cloudinary.com/duq3rhnd2/image/upload/w_640/v1602266166/Personal%20Portfolio/gallery/wmnf_1_small_zfwq2y.jpg',
-              'White Mountains',
-            )}
-            width="600px"
-            className="about-image-tile"
-          /> */}
           <LazyLoadImage
             src="https://res.cloudinary.com/duq3rhnd2/image/upload/w_640/v1602266166/Personal%20Portfolio/gallery/wmnf_1_small_zfwq2y.jpg"
             alt="White Mountains"
@@ -288,7 +266,6 @@ const About = ({ scrollPosition }: IAboutProps) => {
             wrapperClassName="outdoors-experience-image"
           />
 
-          {/* <img src="https://res.cloudinary.com/duq3rhnd2/image/upload/w_640/v1602266166/Personal%20Portfolio/gallery/wmnf_1_small_zfwq2y.jpg" alt="White Mountains" /> */}
           <p>You can often find me hidden away in the woods.</p>
         </div>
       </section>

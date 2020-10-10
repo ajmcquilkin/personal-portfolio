@@ -36,18 +36,22 @@
 
 #enjoy-projects {
   position: relative;
-
+  
   #about-skills-skew {
     position: relative;
-    width: calc(#{$screen-padding} * 2 + #{$main-screen-width});
-    left: calc(#{$screen-padding} * -1);
+    width: 100%;
     top: 108px;
+    
+    svg {
+      width: 100%;
+    }
   }
-
+  
   .about-enjoy-text-container {
     position: relative;
     top: -540px;
     color: $white;
+    padding: 0 $screen-padding;
 
     .h2 {
       margin: 0 0 -17px;

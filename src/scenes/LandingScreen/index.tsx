@@ -38,6 +38,7 @@ function getDescriptionByURL(url: string) {
 
 const LandingScreen = () => {
   const { location: { pathname, hash }, push } = useHistory();
+
   // Always loaded with Home or About
   React.useEffect(() => {
     if (hash) {
