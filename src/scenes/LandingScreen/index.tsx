@@ -21,9 +21,9 @@ interface Props {
 function getBackgroundImageByURL(url: string) {
   switch (url) {
     case '/':
-      return `https://res.cloudinary.com/duq3rhnd2/image/upload/q_70,w_${window.innerWidth}/v1602521762/Personal%20Portfolio/home_feature_2_u8dqk7.jpg`;
+      return `https://res.cloudinary.com/duq3rhnd2/image/upload/q_70,w_${window.innerWidth},h_${Math.ceil(window.innerHeight * 1.15)},c_fill/v1602521762/Personal%20Portfolio/home_feature_2_crop_yeg97j.jpg`;
     default:
-      return `https://res.cloudinary.com/duq3rhnd2/image/upload/q_70,w_${window.innerWidth}/v1602266143/Personal%20Portfolio/about_feature_dzmlth.jpg`;
+      return `https://res.cloudinary.com/duq3rhnd2/image/upload/q_70,w_${window.innerWidth},h_${Math.ceil(window.innerHeight * 1.15)},c_fill/v1602266143/Personal%20Portfolio/about_feature_dzmlth.jpg`;
   }
 }
 
