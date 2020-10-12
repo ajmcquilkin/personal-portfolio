@@ -1,6 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import queryString from 'query-string';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import Button from '../../components/Button';
 import HeaderNavCard from '../../components/HeaderNavCard';
@@ -19,6 +20,13 @@ const FallbackScreen = () => {
 
   return (
     <div className="fallback-screen-container">
+      <LazyLoadImage
+        src={`https://res.cloudinary.com/duq3rhnd2/image/upload/q_70,w_${window.innerWidth}/v1602266350/Personal%20Portfolio/404_feature_small_cfwdfz.jpg`}
+        alt="Main landing feature (about)"
+        effect="opacity"
+        wrapperClassName="fallback-main-feature"
+      />
+
       <div className="fallback-screen-signature">AM</div>
       <div className="fallback-screen-signature-shadow" />
 

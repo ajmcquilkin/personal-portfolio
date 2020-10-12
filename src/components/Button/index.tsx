@@ -1,4 +1,5 @@
 import React from 'react';
+import throttle from 'lodash.throttle';
 import './Button.scss';
 
 interface Props {
@@ -17,8 +18,19 @@ const Button = ({
   size = 'sm',
   dark = false,
 }: Props) => {
-  const width = size === 'lg' ? 400 : 240;
-  const height = 60;
+  const [vw, setVW] = React.useState<number>(window.innerWidth);
+
+  React.useEffect(() => {
+    const throttledHandleResize = throttle(() => {
+      setVW(window.innerWidth);
+    }, 200, { leading: true });
+
+    window.addEventListener('resize', throttledHandleResize);
+    return () => { window.removeEventListener('resize', throttledHandleResize); };
+  });
+
+  const width = size === 'lg' ? (0.16 * vw + 240) : (0.09 * vw + 120);
+  const height = (0.02 * vw + 30);
 
   return (
     <div className={`button-container ${size} ${dark ? 'dark' : 'light'} ${className}`}>

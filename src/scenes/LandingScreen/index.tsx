@@ -10,6 +10,8 @@ import NavMenuItem from '../../components/NavMenuItem';
 
 import { mailtoLink, resumeFileName } from '../../constants';
 
+import NewBanner from '../../assets/images/new_banner.jpg';
+
 import './LandingScreen.scss';
 
 interface Props {
@@ -19,7 +21,7 @@ interface Props {
 function getBackgroundImageByURL(url: string) {
   switch (url) {
     case '/':
-      return `https://res.cloudinary.com/duq3rhnd2/image/upload/q_70,w_${window.innerWidth}/v1602266143/Personal%20Portfolio/home_feature_rhdgb7.jpg`;
+      return `https://res.cloudinary.com/duq3rhnd2/image/upload/q_70,w_${window.innerWidth}/v1602521762/Personal%20Portfolio/home_feature_2_u8dqk7.jpg`;
     default:
       return `https://res.cloudinary.com/duq3rhnd2/image/upload/q_70,w_${window.innerWidth}/v1602266143/Personal%20Portfolio/about_feature_dzmlth.jpg`;
   }

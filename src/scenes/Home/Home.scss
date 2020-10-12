@@ -3,6 +3,7 @@
 #home-achievements {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   position: relative;
   transform: translate(0, -50%);
   padding: 48px 72px;
@@ -13,6 +14,28 @@
   box-sizing: border-box;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.125);
   border-radius: 4px;
+
+  @media only screen and (max-width: 1300px) {
+    display: flex;
+    flex-direction: column;
+    
+    transform: translate(0, -10%);
+    padding: 48px 0;
+    margin: 0 30px;
+    
+    .home-achievement-container {
+      justify-content: center;
+      margin: 0 48px 60px !important;
+
+      &:last-child {
+        margin: 0 48px 0 !important;
+      }
+    }
+
+    .home-achievements-icon {
+      width: 120px;
+    }
+  }
 
   .home-achievement-container {
     display: flex;
@@ -46,32 +69,58 @@
 .home-featured-project-container{
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 216px;
+
+  @media only screen and (min-width: 600px) and (max-width: 1100px) {
+    display: flex;
+    flex-direction: column;
+    margin-top: 90px;
+
+    img {
+      margin: 60px auto !important;
+    }
+  }
+
+  @media only screen and (max-width: 1300px) {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 90px;
+    padding: 0 !important;
+
+    img {
+      margin: 30px auto !important;
+      width: 80%;
+    }
+
+    .home-featured-project-text-container {
+      border-left: none !important;
+      padding: 0 !important;
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
 
   img {
     object-fit: cover;
     position: relative;
     top: 0px;
-    height: 100%;
-    margin-bottom: 60px;
 
     &.left {
-      margin-right: 144px;
+      margin: auto 144px auto 0;
     }
 
     &.right {
-      margin-left: 144px;
+      margin: auto 0 auto 144px;
     }
   }
 
   .home-featured-project-text-container {
     border-left: $dark 1px solid;
     padding-left: 60px;
-    min-width: 600px;
+    min-width: 330px;
     flex: 2;
-    margin-bottom: 60px;
 
     h2 {
       margin: 0 0 -7px;

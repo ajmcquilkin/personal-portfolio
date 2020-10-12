@@ -2,7 +2,8 @@
 
 .header-nav-card-container {
   position: relative;
-  width: 360px;
+  width: calc(13.5vw + 120px);
+  min-width: 216px;
   cursor: pointer;
 
   // Hover effects
@@ -62,12 +63,12 @@
 
     .header-nav-card-left {
       p {
-        margin-bottom: -7px;
+        margin-bottom: -0.33em;
       }
 
       div {
         font-family: $poppins;
-        font-size: 24px;
+        font-size: calc(0.5vw + 15px);
         font-weight: 400;
         margin-bottom: 2px;
       }

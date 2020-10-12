@@ -1,37 +1,53 @@
 @import '../../constants/variables.scss';
 
+$large-min-width: 240px;
+$large-min-height: 30px;
+$large-width: calc(16vw + #{$large-min-width});
+$large-height: calc(2vw + #{$large-min-height});
+$large-border: calc(2 * #{$large-width} + 2 * #{$large-height});
+
+$small-min-width: 120px;
+$small-min-height: 30px;
+$small-width: calc(9vw + #{$small-min-width});
+$small-height: calc(2vw + #{$small-min-height});
+$small-border: calc(2 * #{$small-width} + 2 * #{$small-height});
+
 .button-container {
   position: relative;
 
   // Sizing
   
   &.lg {
-    width: 400px;
-    height: 60px;
+    width: $large-width;
+    height: $large-height;
+    min-width: 240px;
+    min-height: 42px;
     
     button {
       svg {
-        stroke-dasharray: 400px 920px;
-        stroke-dashoffset: 400px;
+        stroke-dasharray: $large-width $large-border;
+        stroke-dashoffset: $large-width;
       }
 
-      &:focus-within svg { stroke-dashoffset: -920px; }
-      &:hover svg { stroke-dashoffset: -920px;       }
+      &:focus-within svg { stroke-dashoffset: calc(#{$large-border} * -1); }
+      &:hover svg { stroke-dashoffset: calc(#{$large-border} * -1); }
     }
   }
   
   &.sm {
-    width: 240px;
-    height: 60px;
+    width: $small-width;
+    height: $small-height;
+    min-width: $small-min-width;
+    min-height: $small-min-height;
     
     button {
       svg {
-        stroke-dasharray: 240px 600px;
-        stroke-dashoffset: 240px;
+        stroke-dasharray: $small-width $small-border;
+        stroke-dashoffset: $small-width;
       }
       
-      &:focus-within svg { stroke-dashoffset: -600px; }
-      &:hover svg { stroke-dashoffset: -600px; }
+      &:focus-within svg { stroke-dashoffset: calc(#{$small-border} * -1); }
+      &:hover svg { stroke-dashoffset: calc(#{$small-border} * -1); }
     }
   }
 
@@ -56,7 +72,7 @@
   button {
     font-family: $open-sans;
     font-weight: 400;
-    font-size: 22px;
+    font-size: calc(0.5vw + 12px);
     
     width: 100%;
     height: 100%;

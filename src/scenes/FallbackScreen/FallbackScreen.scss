@@ -10,6 +10,14 @@
   background-repeat: no-repeat;
   overflow: hidden;
 
+  .fallback-main-feature {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
   .fallback-screen-signature {
     position: absolute;
     z-index: 2;

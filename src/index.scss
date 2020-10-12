@@ -32,47 +32,47 @@ main {
 
 h1, .h1 {
   font-family: $poppins;
-  font-size: 72px;
+  font-size: calc(2vw + 24px);
   font-weight: 700;
 
-  margin-top: 72px;
-  margin-bottom: 23px;
+  margin-top: 1em;
+  margin-bottom: 0.36em;
 }
 
 h2, .h2 {
   font-family: $poppins;
-  font-size: 48px;
+  font-size: calc(1.5vw + 18px);
   font-weight: 200;
 
-  margin-top: 72px;
-  margin-bottom: 23px;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
 }
 
 h3, .h3 {
   font-family: $poppins;
-  font-size: 36px;
+  font-size: calc(1vw + 18px);
   font-weight: 300;
 
-  margin-top: 48px;
-  margin-bottom: 23px;
+  margin-top: 1.33em;
+  margin-bottom: 0.5em;
 }
 
 h4, .h4 {
   font-family: $open-sans;
-  font-size: 27px;
+  font-size: calc(0.7vw + 15px);
   font-weight: 400;
 
-  margin-top: 36px;
-  margin-bottom: 18px;
+  margin-top: 1.33em;
+  margin-bottom: 0.66em;
 }
 
 p, .p, li {
   font-family: $open-sans;
-  font-size: 18px;
+  font-size: calc(0.3vw + 15px);
   font-weight: 300;
 
-  margin-top: 0px;
-  margin-bottom: 18px;
+  margin-top: 0em;
+  margin-bottom: 1em;
 
   line-height: 155%;
 }

@@ -58,7 +58,7 @@ const ProjectCard = ({
     </div>
 
     <p>{contentText}</p>
-    <Button onClick={onClick}>{buttonText}</Button>
+    <Button className="project-card-button-container" onClick={onClick}>{buttonText}</Button>
 
     <div className="project-card-bottom-container">
       <div className="project-card-bottom-text">{bottomText}</div>
