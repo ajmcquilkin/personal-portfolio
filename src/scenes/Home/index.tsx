@@ -217,7 +217,7 @@ const Home = ({ history: { push }, location: { search } }:IHomeProps) => {
       <section id="work-experience">
         <div id="work-experience-search">
           <LazyLoadImage
-            src={`https://res.cloudinary.com/duq3rhnd2/image/upload/q_70,w_${window.innerWidth}/v1602266143/Personal%20Portfolio/mountain_pano_vo7jqt.jpg`}
+            src={`https://res.cloudinary.com/duq3rhnd2/image/upload/q_70,w_${window.innerWidth},h_${document.getElementById('work-experience-search')?.clientHeight || 800},c_fill/v1602266143/Personal%20Portfolio/mountain_pano_vo7jqt.jpg`}
             alt="Mountain panorama"
             effect="opacity"
             wrapperClassName="work-experience-feature"
@@ -227,50 +227,55 @@ const Home = ({ history: { push }, location: { search } }:IHomeProps) => {
         </div>
 
         <div role="search" id="home-work-search-container">
-          <div className="home-work-separator" />
+          <div id="home-work-search-button-container">
+            <div className="home-work-separator" />
+            <button
+              className={tag === 'all' ? 'active' : ''}
+              type="button"
+              onClick={() => { setTag('all'); setSearchResults(getFilteredProjects(searchQuery, 'all')); }}
+            >
+              <p>all</p>
+            </button>
 
-          <button
-            className={tag === 'all' ? 'active' : ''}
-            type="button"
-            onClick={() => { setTag('all'); setSearchResults(getFilteredProjects(searchQuery, 'all')); }}
-          >
-            <p>all</p>
-          </button>
+            <button
+              className={tag === 'development' ? 'active' : ''}
+              type="button"
+              onClick={() => { setTag('development'); setSearchResults(getFilteredProjects(searchQuery, 'development')); }}
+            >
+              <p>development</p>
+            </button>
 
-          <button
-            className={tag === 'development' ? 'active' : ''}
-            type="button"
-            onClick={() => { setTag('development'); setSearchResults(getFilteredProjects(searchQuery, 'development')); }}
-          >
-            <p>development</p>
-          </button>
+            <button
+              className={tag === 'design' ? 'active' : ''}
+              type="button"
+              onClick={() => { setTag('design'); setSearchResults(getFilteredProjects(searchQuery, 'design')); }}
+            >
+              <p>design</p>
+            </button>
 
-          <button
-            className={tag === 'design' ? 'active' : ''}
-            type="button"
-            onClick={() => { setTag('design'); setSearchResults(getFilteredProjects(searchQuery, 'design')); }}
-          >
-            <p>design</p>
-          </button>
+            <div className="home-work-separator" />
+          </div>
 
-          <div className="home-work-separator" />
-          <form
-            id="home-search-input-container"
-            onSubmit={(e) => {
-              e.preventDefault();
-              setSearchResults(getFilteredProjects(searchQuery, tag));
-            }}
-          >
-            <input
-              className="p"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="search for keywords"
-            />
+          <div id="home-work-search-form-container">
+            <div className="home-work-separator" />
+            <form
+              id="home-search-input-container"
+              onSubmit={(e) => {
+                e.preventDefault();
+                setSearchResults(getFilteredProjects(searchQuery, tag));
+              }}
+            >
+              <input
+                className="p"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="search for keywords"
+              />
 
-            <button type="submit"><img src={SearchIcon} alt="search" /></button>
-          </form>
-          <div className="home-work-separator" />
+              <button type="submit"><img src={SearchIcon} alt="search" /></button>
+            </form>
+            <div className="home-work-separator" />
+          </div>
         </div>
 
         <div id="work-experience-results">

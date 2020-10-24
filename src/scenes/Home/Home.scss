@@ -165,10 +165,7 @@
     position: relative;
     width: 100%;
     top: 150px;
-
-    svg {
-      width: 100%;
-    }
+    overflow: hidden;
   }
 
   .home-skills-text-container {
@@ -292,6 +289,7 @@
   #home-work-search-container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     
     position: sticky;
     z-index: 10;
@@ -299,125 +297,145 @@
     
     width: 100%;
     padding: 58px calc((100vw - #{$main-screen-width}) / 2);
-    // margin-left: calc((100vw - #{$main-screen-width}) / 2 * -1);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
     background: $dark;
-    
-    .home-work-separator {
+
+    div > .home-work-separator {
       flex: 1;
-      // width: auto;
       height: 1px;
       margin-top: auto;
       margin-bottom: auto;
       background: $white;
-    }
-    
-    button {
-      background: none;
-      border: none;
-      overflow: hidden;
-      
-      position: relative;
-      transition: transform 0.3s ease-out, opacity 0.3s ease-in-out;
-      opacity: 0.6;
-      cursor: pointer;
 
-      &:hover, &.active, &:focus {
-        opacity: 1;
-      }
-      
-      &:focus {
-        outline: none;
-      }
-      
-      &::after {
-        @include after(1px);
-        background: $white;
-        transform: translate(calc(-100% - 42px), 0%);
-        width: calc(100% - 42px);
-        margin: 0 21px;
-        opacity: 1;
-      }
-      
-      &.active::after, &[type=button]:focus::after {
-        transform: translate(0%, 0%);
-      }
-      
-      p {
-        color: $white;
-        margin: auto 21px;
-      }
+      // @media only screen and (max-width: 1000px) {
+      //   .home-work-separator {
+      //     // display: none;
+      //   }
+      // }
     }
     
-    #home-search-input-container {
+    #home-work-search-button-container {
       display: flex;
       flex-direction: row;
-      width: 300px;
-      overflow: hidden;
-      position: relative;
-      
-      &::after {
-        @include after(2px);
-        background: $white;
-        width: calc(100% - 29px);
-        margin: 0 18px;
-        opacity: 1;
-        transform: translate(calc(-100% - 18px), 0%);
-        transition: transform 0.3s ease-out;
-      }
-      
-      &:focus-within::after {
-        transform: translate(0%, 0%);
-      }
-      
-      input {
-        border: none;
+      flex: 1;
+
+      margin-bottom: 18px;
+
+      button {
         background: none;
-        position: relative;
-        width: auto;
+        border: none;
+        overflow: hidden;
         
-        flex: 1;
-        color: $white;
-        margin: 0 18px;
-        padding: 7px 42px 7px 8px;
-        border-bottom: 1px solid $white;
+        position: relative;
+        transition: transform 0.3s ease-out, opacity 0.3s ease-in-out;
+        opacity: 0.6;
+        cursor: pointer;
+  
+        &:hover, &.active, &:focus {
+          opacity: 1;
+        }
         
         &:focus {
           outline: none;
         }
         
-        ::placeholder {
-          color: #CCCCCC;
+        &::after {
+          @include after(1px);
+          background: $white;
+          transform: translate(calc(-100% - 42px), 0%);
+          width: calc(100% - 42px);
+          margin: 0 21px;
+          opacity: 1;
         }
-
-        ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-          color: #CCCCCC;
+        
+        &.active::after, &[type=button]:focus::after {
+          transform: translate(0%, 0%);
         }
-
-        ::-moz-placeholder { /* Firefox 19+ */
-          color: #CCCCCC;
-        }
-
-        :-ms-input-placeholder { /* IE 10+ */
-          color: #CCCCCC;
-        }
-
-        :-moz-placeholder { /* Firefox 18- */
-          color: #CCCCCC;
+        
+        p {
+          color: $white;
+          margin: auto 21px;
         }
       }
+    }
 
-      button {
-        background: none;
-        border: none;
+    #home-work-search-form-container {
+      display: flex;
+      flex-direction: row;
+      flex: 1;
 
-        position: absolute;
-        margin: auto 0;
-        cursor: pointer;
+      margin-bottom: 18px;
 
-        top: 50%;
-        right: 18px;
-        transform: translate(0, -50%);
+      #home-search-input-container {
+        display: flex;
+        flex-direction: row;
+        width: 300px;
+        overflow: hidden;
+        position: relative;
+        
+        &::after {
+          @include after(2px);
+          background: $white;
+          width: calc(100% - 29px);
+          margin: 0 18px;
+          opacity: 1;
+          transform: translate(calc(-100% - 18px), 0%);
+          transition: transform 0.3s ease-out;
+        }
+        
+        &:focus-within::after {
+          transform: translate(0%, 0%);
+        }
+        
+        input {
+          border: none;
+          background: none;
+          position: relative;
+          width: auto;
+          
+          flex: 1;
+          color: $white;
+          margin: 0 18px;
+          padding: 7px 42px 7px 8px;
+          border-bottom: 1px solid $white;
+          
+          &:focus {
+            outline: none;
+          }
+          
+          ::placeholder {
+            color: #CCCCCC;
+          }
+  
+          ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+            color: #CCCCCC;
+          }
+  
+          ::-moz-placeholder { /* Firefox 19+ */
+            color: #CCCCCC;
+          }
+  
+          :-ms-input-placeholder { /* IE 10+ */
+            color: #CCCCCC;
+          }
+  
+          :-moz-placeholder { /* Firefox 18- */
+            color: #CCCCCC;
+          }
+        }
+  
+        button {
+          background: none;
+          border: none;
+  
+          position: absolute;
+          margin: auto 0;
+          cursor: pointer;
+  
+          top: 50%;
+          right: 18px;
+          transform: translate(0, -50%);
+        }
       }
     }
   }
