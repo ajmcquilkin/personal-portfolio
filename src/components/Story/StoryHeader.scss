@@ -1,7 +1,7 @@
 @import '../../constants/variables.scss';
 
 .story-header-container {
-  padding: 0 calc((100vw - #{$main-screen-width}) / 2);
+  @include responsivePadding();
   height: 100vh;
 
   position: relative;

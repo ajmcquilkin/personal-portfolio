@@ -2,7 +2,7 @@
 
 .fallback-screen-container {
   background: linear-gradient(rgba(54, 54, 54, 0.12), rgba(54, 54, 54, 0.12)), rgba(0, 0, 0, 0) url('../../assets/images/404_feature.jpg') 50% 30%;
-  padding: 0 calc((100vw - #{$main-screen-width}) / 2);
+  @include responsivePadding();
   height: 100vh;
 
   position: relative;

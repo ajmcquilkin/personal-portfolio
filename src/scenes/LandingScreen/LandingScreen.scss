@@ -1,7 +1,8 @@
 @import '../../constants/variables.scss';
 
 .landing-screen-container {
-  padding: 0 calc((100vw - #{$main-screen-width}) / 2);
+  @include responsivePadding();
+
   height: 115vh;
 
   position: relative;
@@ -24,19 +25,23 @@
     }
   }
 
-  .landing-screen-signature {
+  #landing-screen-signature {
     position: absolute;
     z-index: 2;
-    left: 80px;
+    left: $screen-padding;
     top: 38px;
 
     font-family: $caveat;
     font-size: 48px;
     font-weight: 700;
     color: $white;
+
+    @media only screen and (max-width: 600px) {
+      left: $screen-padding-small;
+    }
   }
 
-  .landing-screen-signature-shadow {
+  #landing-screen-signature-shadow {
     position: absolute;
     width: 796.98px;
     height: 323.28px;
@@ -47,7 +52,7 @@
     transform: rotate(-30deg);
   }
 
-  .landing-screen-menu-container {
+  #landing-screen-menu-container {
     position: absolute;
     z-index: 2;
     width: 300px;
@@ -63,7 +68,7 @@
     }
   }
 
-  .landing-screen-menu-shadow {
+  #landing-screen-menu-shadow {
     position: absolute;
     width: 1158.01px;
     height: 485.08px;
@@ -116,7 +121,7 @@
       }
     }
 
-    .landing-screen-banner-shadow {
+    #landing-screen-banner-shadow {
       position: absolute;
       width: 240%;
       height: 330%;

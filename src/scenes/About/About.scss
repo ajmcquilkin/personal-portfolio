@@ -51,7 +51,7 @@
     position: relative;
     top: -540px;
     color: $white;
-    padding: 0 $screen-padding;
+    @include responsivePadding();
 
     .h2 {
       margin: 0 0 -17px;

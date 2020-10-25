@@ -98,14 +98,14 @@ const Home = ({ history: { push }, location: { search } }:IHomeProps) => {
       </section>
 
       <section className="home-featured-project-container padded-section">
-        {window.innerWidth < 1300 ? <img className="right" src={TestImage} alt="TEST" /> : null}
+        {window.innerWidth < 1200 ? <img className="right" src={TestImage} alt="TEST" /> : null}
         <div className="home-featured-project-text-container">
           <h2>D-Planner, LLC</h2>
           <div className="h4">Co-founder, Product Designer, Developer</div>
           <p>Academic planning is difficult for students, especially when information is fragmented and hard to find. D-Planner is a better way of planning out your time at college. Winner of the 2018 DALI Pitch Competition.</p>
           <Button dark size="sm" onClick={() => push('/story/dplanner')}>read more</Button>
         </div>
-        {window.innerWidth >= 1300 ? <img className="right" src={TestImage} alt="TEST" /> : null}
+        {window.innerWidth >= 1200 ? <img className="right" src={TestImage} alt="TEST" /> : null}
       </section>
 
       <section className="home-featured-project-container padded-section">

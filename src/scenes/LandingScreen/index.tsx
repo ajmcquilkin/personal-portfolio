@@ -59,11 +59,11 @@ const LandingScreen = () => {
         wrapperClassName="landing-main-feature"
       />
 
-      <div className="landing-screen-signature">AM</div>
-      <div className="landing-screen-signature-shadow" />
+      <div id="landing-screen-signature">AM</div>
+      <div id="landing-screen-signature-shadow" />
 
       <nav
-        className="landing-screen-menu-container"
+        id="landing-screen-menu-container"
         aria-label="Main site links"
       >
         <NavMenuItem
@@ -94,7 +94,7 @@ const LandingScreen = () => {
           className="landing-screen-menu-item"
         />
       </nav>
-      <div className="landing-screen-menu-shadow" />
+      <div id="landing-screen-menu-shadow" />
 
       <div className="landing-screen-banner-container" role="banner">
         <div className="landing-screen-banner-content">
@@ -107,7 +107,7 @@ const LandingScreen = () => {
           </div>
         </div>
 
-        <div className="landing-screen-banner-shadow" />
+        <div id="landing-screen-banner-shadow" />
       </div>
 
       <nav
