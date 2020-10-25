@@ -2,6 +2,7 @@
 
 .story-header-container {
   @include responsivePadding();
+
   height: 100vh;
 
   position: relative;
@@ -9,75 +10,61 @@
   background-repeat: no-repeat;
   overflow: hidden;
 
-  .story-header-signature {
+  @media only screen and (max-width: 570px) {
+    background: none;
+  }
+
+  background: 'linear-gradient(rgba(54, 54, 54, 0.12), rgba(54, 54, 54, 0.12)), rgba(0, 0, 0, 0) 50% 30%';
+  background-color: $dark;
+
+  .story-header-content-container {
+    width: 100%;
+    margin: 24px 0;
+  }
+
+  #story-header-signature {
     position: absolute;
     z-index: 2;
-    left: 80px;
+    left: $screen-padding;
     top: 38px;
 
     font-family: $caveat;
     font-size: 48px;
     font-weight: 700;
     color: $dark;
+
+    @media only screen and (max-width: 600px) {
+      left: $screen-padding-small;
+    }
   }
 
-  .story-header-signature-shadow {
-    position: absolute;
-    width: 796.98px;
-    height: 323.28px;
-    left: -174px;
-    top: -101.5px;
-
-    background: linear-gradient(180deg, rgba(23, 30, 39, 0.2) 0%, rgba(23, 30, 39, 0.1) 64.06%, rgba(23, 30, 39, 0) 100%);
-    transform: rotate(-30deg);
-  }
-
-  .story-header-menu-container {
+  #story-header-menu-container {
     position: absolute;
     z-index: 2;
     width: 300px;
-    top: 55px;
+    top: 48px;
     right: 0;
+
+    @media only screen and (max-width: 800px) {
+      width: 180px;
+    }
 
     .story-header-menu-item {
       margin: 0 0 11px;
     }
   }
 
-  .story-header-menu-shadow {
-    position: absolute;
-    width: 1158.01px;
-    height: 485.08px;
-    right: -200px;
-    top: -481.56px;
-
-    background: linear-gradient(180deg, rgba(23, 30, 39, 0.3) 0%, rgba(23, 30, 39, 0.15) 64.06%, rgba(23, 30, 39, 0) 100%);
-    transform: rotate(30deg);
-  }
-
   .story-header-banner-container {
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    justify-content: space-between;
-
-    width: $main-screen-width;
-    top: 30vh;
+    position: relative;
+    top: 27vh;
     color: $dark;
-
-    .story-header-content-container {
-      flex: 2;
-      height: auto;
-      margin: auto;
-    }
 
     .story-header-banner-content {
       position: relative;
-      flex: 5;
       z-index: 2;
 
       h1 {
-        margin: 0 0 -29px;
+        margin: 0 0 -0.5em;
       }
   
       h2 {
@@ -86,7 +73,7 @@
   
       .story-header-banner-content {
         font-family: $open-sans;
-        font-size: 27px;
+        font-size: calc(16px + 0.5vw);
         font-weight: 300;
         line-height: 155%;
   
@@ -97,33 +84,24 @@
       .story-header-button-container {
         display: flex;
         flex-direction: row;
-        
+        flex-wrap: wrap;
+
         .story-header-button {
-          margin-right: 40px;
+          margin: 0 36px 18px 0;
     
           :last-child {
-            margin-right: 0px;
+            margin: 0px;
           }
         }
       }
     }
-
-    .story-header-banner-shadow {
-      position: absolute;
-      width: 240%;
-      height: 330%;
-      left: -60%;
-      top: -108%;
-  
-      background: radial-gradient(50% 50% at 50% 50%, rgba(34, 34, 34, 0.2) 0%, rgba(34, 34, 34, 0) 100%);
-    }
   }
 
   .story-header-cards-container {
-    position: absolute;
+    position: relative;
     z-index: 2;
     width: $main-screen-width;
-    top: 70vh;
+    top: 30vh;
 
     display: flex;
     flex-direction: row;
@@ -133,14 +111,27 @@
     .story-header-nav-card {
       margin-bottom: 36px;
     }
+
+    @media only screen and (max-width: 725px) {
+      top: 32vh;
+      width: 100%;
+
+      .story-header-nav-card {
+        width: 100%;
+      }
+    }
   }
 
   .story-header-arrow-box {
     position: absolute;
     z-index: 2;
-    bottom: 9vh;
+    bottom: 21vh;
     left: 50vw;
     transform: translate(-50%, 0);
+
+    @media only screen and (max-width: 725px) { 
+      display: none;
+    }
   }
 
   .story-header-bottom-gradient {

@@ -33,10 +33,10 @@ const LandingScreen = ({
 
   return (
     <div className="story-header-container">
-      <div className="story-header-signature">AM</div>
+      <div id="story-header-signature">AM</div>
 
       <nav
-        className="story-header-menu-container"
+        id="story-header-menu-container"
         aria-label="Main site links"
       >
         <NavMenuItem

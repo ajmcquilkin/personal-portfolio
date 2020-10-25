@@ -11,27 +11,23 @@ import { mailtoLink, resumeFileName } from '../../constants';
 
 import './FallbackScreen.scss';
 
-interface Props {
-
-}
-
 const FallbackScreen = () => {
   const { push } = useHistory();
 
   return (
     <div className="fallback-screen-container">
       <LazyLoadImage
-        src={`https://res.cloudinary.com/duq3rhnd2/image/upload/q_70,w_${window.innerWidth}/v1602266350/Personal%20Portfolio/404_feature_small_cfwdfz.jpg`}
-        alt="Main landing feature (about)"
+        src={`https://res.cloudinary.com/duq3rhnd2/image/upload/q_70,w_${window.innerWidth},h_${Math.ceil(window.innerHeight * 1.15)},c_fill/v1602266350/Personal%20Portfolio/404_feature_small_cfwdfz.jpg`}
+        alt="Main fallback feature (about)"
         effect="opacity"
-        wrapperClassName="fallback-main-feature"
+        wrapperClassName="fallback-screen-main-feature"
       />
 
-      <div className="fallback-screen-signature">AM</div>
-      <div className="fallback-screen-signature-shadow" />
+      <div id="fallback-screen-signature">AM</div>
+      <div id="fallback-screen-signature-shadow" />
 
       <nav
-        className="fallback-screen-menu-container"
+        id="fallback-screen-menu-container"
         aria-label="Main site links"
       >
         <NavMenuItem
@@ -62,7 +58,7 @@ const FallbackScreen = () => {
           className="fallback-screen-menu-item"
         />
       </nav>
-      <div className="fallback-screen-menu-shadow" />
+      <div id="fallback-screen-menu-shadow" />
 
       <div className="fallback-screen-banner-container" role="banner">
         <div className="fallback-screen-banner-content">
@@ -74,7 +70,7 @@ const FallbackScreen = () => {
           </div>
         </div>
 
-        <div className="fallback-screen-banner-shadow" />
+        <div id="fallback-screen-banner-shadow" />
       </div>
 
       <nav

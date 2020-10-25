@@ -9,7 +9,7 @@ export interface IStoryImageProps {
 
 export default function StoryImage({ renderImage, caption, className }: IStoryImageProps) {
   return (
-    <div className={`story-image-container ${className}`}>
+    <div className={`story-image-container ${className || ''}`}>
       {renderImage('story-image-image')}
       <p>{caption}</p>
     </div>

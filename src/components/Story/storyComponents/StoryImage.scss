@@ -4,6 +4,15 @@
   width: 50%;
   margin-bottom: 36px;
 
+  @media only screen and (max-width: 570px) {
+    width: 100%;
+
+    p {
+      margin: 0 12px !important;
+      text-align: center;
+    }
+  }
+
   .story-image-image {
     width: 100%;
     height: auto;
