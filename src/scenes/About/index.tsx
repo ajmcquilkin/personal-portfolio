@@ -25,7 +25,7 @@ const About = ({ scrollPosition }: IAboutProps) => {
   const ref = React.useRef<HTMLDivElement | null>(null);
   React.useLayoutEffect(() => {
     setGalleryWidth((ref?.current?.children.length || 0) * ((imageWidth + 6) / 3));
-  }, [ref.current]);
+  }, []);
 
   function generateRenderImage(src:string, alt:string) {
     return function renderImage(className: string) {
@@ -42,8 +42,6 @@ const About = ({ scrollPosition }: IAboutProps) => {
       );
     };
   }
-
-  console.log(Math.min(window.innerWidth, 600));
 
   return (
     <main>

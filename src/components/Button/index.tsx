@@ -29,8 +29,8 @@ const Button = ({
     return () => { window.removeEventListener('resize', throttledHandleResize); };
   });
 
-  const width = size === 'lg' ? (0.16 * vw + 240) : (0.09 * vw + 120);
-  const height = (0.02 * vw + 30);
+  const width = size === 'lg' ? (Math.ceil(0.16 * vw) + 240) : (Math.ceil(0.09 * vw) + 120);
+  const height = (Math.ceil(0.02 * vw) + 30);
 
   return (
     <div className={`button-container ${size} ${dark ? 'dark' : 'light'} ${className}`}>

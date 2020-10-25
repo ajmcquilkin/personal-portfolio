@@ -73,7 +73,7 @@ const Home = ({ history: { push }, location: { search } }:IHomeProps) => {
     if (urlTag) setTag(urlTag as any);
     if (urlQuery) setTag(urlQuery as any);
     if (urlTag || urlQuery) setSearchResults(getFilteredProjects(searchQuery, tag));
-  }, [search]);
+  }, [search, tag, searchQuery, urlTag, urlQuery]);
 
   return (
     <main>

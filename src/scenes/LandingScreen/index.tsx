@@ -10,13 +10,7 @@ import NavMenuItem from '../../components/NavMenuItem';
 
 import { mailtoLink, resumeFileName } from '../../constants';
 
-import NewBanner from '../../assets/images/new_banner.jpg';
-
 import './LandingScreen.scss';
-
-interface Props {
-
-}
 
 function getBackgroundImageByURL(url: string) {
   switch (url) {
