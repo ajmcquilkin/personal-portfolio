@@ -6,19 +6,56 @@
   justify-content: space-between;
   position: relative;
 
-  img {
-    position: relative;
-    left: -63px;
-    top: -36px;
-    max-width: 611px;
-    height: 773px;
+  @media only screen and (max-width: 810px) {
+    flex-direction: column;
 
-    object-fit: cover;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.125);
+    span {
+      margin: 0 auto;
+
+      img {
+        left: 0 !important;
+        width: 36vw;
+        height: 36vw !important;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+
+    .about-intro-text-container {
+      margin: 0 auto !important;
+    }
   }
 
+  span {
+    position: relative;
+    height: 100%;
+    top: -36px;
+    
+    @media only screen and (min-width: 810px) and (max-width: 1300px) {
+      margin: 0 auto 0 -5vw;
+    }
+    
+    @media only screen and (min-width: 1301px) {
+      left: -63px;
+    }
+
+    img {
+      max-width: 36vw;
+      // height: 773px;
+  
+      object-fit: cover;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.125);
+  
+      @media only screen and (min-width: 810px) and (max-width: 1300px) {
+        width: 30vw;
+        height: auto;
+      }
+    }
+  }
+
+
   .about-intro-text-container {
-    margin: auto 0 auto 50px;
+    margin: 36px 0 auto 96px;
 
     h2 {
       margin: 0 0 -9px;
@@ -41,15 +78,12 @@
     position: relative;
     width: 100%;
     top: 108px;
-    
-    svg {
-      width: 100%;
-    }
+    overflow: hidden;
   }
   
   .about-enjoy-text-container {
     position: relative;
-    top: -540px;
+    top: calc(10vw - 690px);
     color: $white;
     @include responsivePadding();
 
@@ -69,11 +103,15 @@
 }
 
 .about-photo-title {
-  margin: auto 102px auto 0;
+  margin: auto 0;
   border-left: $dark 1px solid;
   padding-left: 42px;
   box-sizing: border-box;
-  flex: 2;
+  flex: 1;
+
+  @media only screen and (max-width: 810px) {
+    margin-bottom: 48px;
+  }
 
   h2 {
     margin: 0 0 12px 0;
@@ -85,19 +123,36 @@
   flex-direction: row;
   position: relative;
   margin-top: -300px;
-  margin-bottom: 360px;
+  margin-bottom: 240px;
 
+  .about-photo-title {
+    margin-left: $screen-padding;
+
+    @media only screen and (max-width: 810px) {
+      margin: $screen-padding-small;
+    }
+  }
+  
+  @media only screen and (max-width: 810px) {
+    flex-direction: column;
+    margin-bottom: 120px;
+  }
+  
   #main-gallery-container {
     flex: 5;
     overflow-x: auto;
-    margin-right: calc(-1 * (100vw - #{$main-screen-width}) / 2);
-
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    margin-right: 0;
+    margin-left: 120px;
+    overflow-x: auto;
 
     /* Hide scrollbar in Chrome, Safari, and Opera */
     &::-webkit-scrollbar {
       display: none;
+    }
+
+    @media only screen and (max-width: 810px) {
+      width: 100%;
+      margin: 0;
     }
 
     #main-gallery-scroll-container {
@@ -118,6 +173,12 @@
     flex-direction: row;
     align-content: center;
 
+    width: 48vw;
+
+    @media only screen and (max-width: 810px) {
+      width: 72vw;
+    }
+
     bottom: -50px;
     right: 0;
 
@@ -132,11 +193,11 @@
       margin: auto 0;
 
       &:nth-child(1) {
-        width: 531px;
+        flex: 7;
       }
 
       &:nth-child(3) {
-        width: 128px;
+        flex: 2;
       }
     }
   }
@@ -146,14 +207,33 @@
   display: flex;
   flex-direction: row;
   position: relative;
-  margin-bottom: 360px;
+  margin-bottom: 240px;
+
+  @media only screen and (max-width: 810px) {
+    flex-direction: column;
+    margin-bottom: 96px;
+
+    .wilderness-safety-image {
+      width: 100%;
+      margin-right: 0 !important;
+      margin-bottom: 48px;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
 
   .wilderness-safety-image {
     max-width: 600px;
+    width: 100% !important;
     margin-right: 120px;
+    flex: 1;
 
     img {
       object-fit: contain;
+      width: 100%;
+      height: 100%;
     }
   }
 }
@@ -164,21 +244,49 @@
   position: relative;
   margin-bottom: 120px;
 
+  @media only screen and (max-width: 810px) {
+    flex-direction: column;
+    margin-bottom: 48px;
+
+    #outdoors-experience-photo-container {
+      margin-left: 0 !important;
+      width: 100%;
+      flex: 1;
+      
+      .outdoors-experience-image {
+        width: 100% !important;
+
+        img {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
   #outdoors-experience-photo-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-left: 120px;
+    flex: 1;
     
     .outdoors-experience-image {
-      max-width: 640px;
       margin-bottom: 20px;
       box-shadow: 0px 4px 8px 0px #000000 12.5%;
-      object-fit: cover
+      object-fit: cover;
+      width: 100% !important;
+      height: auto !important;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
     }
 
     p {
       margin: 0 auto;
+      text-align: center;
     }
   }
 }

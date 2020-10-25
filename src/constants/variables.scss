@@ -32,10 +32,10 @@ $screen-padding-small: calc((100vw - #{$main-screen-width-large}) / 2);
   transition-delay: 0.1s;
 }
 
-@mixin responsivePadding($verticalPadding: 0px) {
+@mixin responsivePadding($verticalPadding: 0px, $breakpoint: 600px) {
   padding: $verticalPadding $screen-padding;
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: $breakpoint) {
     padding: $verticalPadding $screen-padding-small;
   }
 }

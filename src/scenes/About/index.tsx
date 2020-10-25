@@ -43,6 +43,8 @@ const About = ({ scrollPosition }: IAboutProps) => {
     };
   }
 
+  console.log(Math.min(window.innerWidth, 600));
+
   return (
     <main>
       <section id="about-intro" className="padded-section">
@@ -69,7 +71,7 @@ const About = ({ scrollPosition }: IAboutProps) => {
         </div>
       </section>
 
-      <section id="main-photo-gallery" className="padded-section">
+      <section id="main-photo-gallery">
         <div className="about-photo-title">
           <h2>I love photography</h2>
           <p>Veritatis ipsa laborum ducimus facilis qui. Eveniet et hic quidem rem qui natus aut. Recusandae enim iure qui ab. Labore nulla cumque aliquam et.</p>
@@ -202,15 +204,6 @@ const About = ({ scrollPosition }: IAboutProps) => {
               className="about-image-tile"
             />
 
-            {/* <ImageTile
-              title="Wyoming"
-              subtitle="August, 2019"
-              renderImage={(className) => <img src={WYIcon2} alt="Wyoming" className={className} />}
-              width={`${imageWidth}px`}
-              height={`${imageHeight}px`}
-              className="about-image-tile"
-            /> */}
-
             <ImageTile
               title="Wyoming"
               subtitle="August, 2019"
@@ -236,8 +229,6 @@ const About = ({ scrollPosition }: IAboutProps) => {
         <LazyLoadImage
           src="https://res.cloudinary.com/duq3rhnd2/image/upload/w_600,q_70/v1602266120/Personal%20Portfolio/certs_vh4p0b.png"
           alt="Wilderness Safety Certification Cards"
-          width={600}
-          height={400}
           effect="opacity"
           scrollPosition={scrollPosition}
           wrapperClassName="wilderness-safety-image"
@@ -259,8 +250,6 @@ const About = ({ scrollPosition }: IAboutProps) => {
           <LazyLoadImage
             src="https://res.cloudinary.com/duq3rhnd2/image/upload/w_640/v1602266166/Personal%20Portfolio/gallery/wmnf_1_small_zfwq2y.jpg"
             alt="White Mountains"
-            width={600}
-            height={400}
             effect="opacity"
             scrollPosition={scrollPosition}
             wrapperClassName="outdoors-experience-image"
