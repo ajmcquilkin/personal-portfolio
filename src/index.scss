@@ -13,6 +13,10 @@ main {
   .padded-section {
     padding: 0 $screen-padding;
     box-sizing: border-box;
+    
+    @media only screen and (max-width: 600px) {
+      padding: 0 $screen-padding-small !important;
+    }
   }
 }
 

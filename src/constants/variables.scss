@@ -12,7 +12,9 @@ $dark: #171E27;
 // Spacing variables
 
 $main-screen-width: 72vw;
+$main-screen-width-large: 87vw;
 $screen-padding: calc((100vw - #{$main-screen-width}) / 2);
+$screen-padding-small: calc((100vw - #{$main-screen-width-large}) / 2);
 
 // Mixins
 
