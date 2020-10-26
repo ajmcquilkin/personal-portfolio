@@ -7,7 +7,7 @@ import Button from '../../components/Button';
 import ImageTile from '../../components/ImageTile';
 import Footer from '../FooterScreen';
 
-import { metaTitleBase } from '../../constants';
+import { mailtoLink, metaTitleBase } from '../../constants';
 
 import { ReactComponent as SlantedBackground } from '../../assets/background.svg';
 
@@ -62,7 +62,7 @@ const About = ({ scrollPosition }: IAboutProps) => {
           <h2>Hi, my name’s Adam!</h2>
           <h3>Dartmouth College, Class of 2022</h3>
           <p>I am a student at Dartmouth College majoring in computer science and engineering, and minoring in human-centered design. I have many passions, and I am proud of my ability to bring widely varied experiences to the projects I work on.</p>
-          <Button size="lg" dark onClick={() => {}}>contact me</Button>
+          <Button size="lg" dark onClick={() => window.open(mailtoLink, '_self')}>contact me</Button>
         </div>
       </section>
 
