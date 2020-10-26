@@ -88,11 +88,11 @@
     @include responsivePadding();
 
     .h2 {
-      margin: 0 0 -17px;
+      margin: 0 0 calc(-1 * (0.9vw + 6px));
     }
 
     .h1 {
-      margin: 0 0 24px;
+      margin: 0 0 calc(0.3vw + 12px);
     }
 
     p {

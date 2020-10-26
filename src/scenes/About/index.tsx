@@ -246,7 +246,7 @@ const About = ({ scrollPosition }: IAboutProps) => {
 
         <div id="outdoors-experience-photo-container">
           <LazyLoadImage
-            src="https://res.cloudinary.com/duq3rhnd2/image/upload/q_70,w_640/v1603652703/Personal%20Portfolio/adam_biking_utah_c6jpmn.jpg"
+            src="https://res.cloudinary.com/duq3rhnd2/image/upload/q_70,w_640/v1603672707/Personal%20Portfolio/adam_biking_utah_qqspdo.jpg"
             alt="White Mountains"
             effect="opacity"
             scrollPosition={scrollPosition}

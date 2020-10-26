@@ -66,7 +66,8 @@ const FallbackScreen = () => {
           <h2>You seem to be lost!</h2>
           <div className="fallback-screen-banner-content">It looks like this page doesn&apos;t exist. Try checking out some of my work or click the button below to go home!</div>
           <div className="fallback-screen-button-container">
-            <Button className="fallback-screen-button" onClick={() => push('/')} size="lg">go home</Button>
+            <Button className="fallback-screen-button" onClick={() => push('/')} size="sm">contact me</Button>
+            <Button className="fallback-screen-button" onClick={() => window.open(mailtoLink, '_self')} size="lg">go home</Button>
           </div>
         </div>
 
