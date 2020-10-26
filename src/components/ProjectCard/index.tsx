@@ -52,7 +52,7 @@ const ProjectCard = ({
         className="project-card-header-icon"
       />
       <div className="project-card-header-text-container">
-        <h4>{title}</h4>
+        <h3 className="h4">{title}</h3>
         <p>{subtitle}</p>
       </div>
     </div>

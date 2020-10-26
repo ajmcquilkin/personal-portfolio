@@ -87,7 +87,7 @@ const Home = ({ history: { push }, location: { search } }:IHomeProps) => {
 
       <section id="home-achievements">
         <div className="home-achievement-container">
-          <button type="button" onClick={() => push(`/story/${storyURLs.icid}`)} className="home-achievements-icon">
+          <button type="button" aria-label="ICID Case Study" onClick={() => push(`/story/${storyURLs.icid}`)} className="home-achievements-icon">
             <PatentIcon />
           </button>
           <div className="home-achievements-text-container">
@@ -98,7 +98,7 @@ const Home = ({ history: { push }, location: { search } }:IHomeProps) => {
         </div>
 
         <div className="home-achievement-container">
-          <button type="button" onClick={() => push(`/story/${storyURLs.dplanner}`)} className="home-achievements-icon">
+          <button type="button" aria-label="D-Planner Case Study" onClick={() => push(`/story/${storyURLs.dplanner}`)} className="home-achievements-icon">
             <DPlannerIcon />
           </button>
           <div className="home-achievements-text-container">
@@ -277,11 +277,13 @@ const Home = ({ history: { push }, location: { search } }:IHomeProps) => {
                 setSearchResults(getFilteredProjects(searchQuery, type));
               }}
             >
+
               <input
                 className="p"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="search for keywords"
+                aria-label="Search for Keywords"
               />
 
               <button type="submit"><img src={SearchIcon} alt="search" /></button>
