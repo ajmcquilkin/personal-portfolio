@@ -9,7 +9,8 @@ import Button from '../../components/Button';
 import ArrowBox from '../../components/ArrowBox';
 import ProjectCard from '../../components/ProjectCard';
 
-import { Project, Tag, ProjectsArray } from './projects';
+import { Project, Type, ProjectsArray } from './projects';
+import { storyURLs } from '../../constants';
 
 import SearchIcon from '../../assets/icons/search.svg';
 import TestImage from '../../assets/images/test_project_image.png';
@@ -21,11 +22,11 @@ import { ReactComponent as DPlannerIcon } from '../../assets/icons/grad-cap.svg'
 import './Home.scss';
 
 /**
- * Filters projects based on given search query and filter tag
+ * Filters projects based on given search query and filter type
  * @param search
- * @param tag
+ * @param type
  */
-function getFilteredProjects(search: string, tag: Tag): Project[] {
+function getFilteredProjects(search: string, type: Type): Project[] {
   return ProjectsArray.filter((project) => {
     let searchBool = false;
     let filterBool = false;
@@ -39,10 +40,11 @@ function getFilteredProjects(search: string, tag: Tag): Project[] {
     if (!searchBool && regexSearch.test(project.projectSubURL)) searchBool = true;
     if (!searchBool && regexSearch.test(project.bottomText)) searchBool = true;
     if (!searchBool && regexSearch.test(project.bottomIconAlt)) searchBool = true;
+    if (!searchBool && project.types.some((t) => regexSearch.test(t))) searchBool = true;
     if (!searchBool && project.tags.some((t) => regexSearch.test(t))) searchBool = true;
     if (!searchBool) return false;
 
-    if (tag === 'all' || project.tags.includes(tag)) filterBool = true;
+    if (type === 'all' || project.types.includes(type)) filterBool = true;
     return searchBool && filterBool;
   });
 }
@@ -62,24 +64,26 @@ interface IHomeProps extends RouteChildrenProps {
 }
 
 const Home = ({ history: { push }, location: { search } }:IHomeProps) => {
-  const { tag: urlTag, query: urlQuery } = React.useMemo(() => queryString.parse(search), [search]);
+  const { type: urlType, query: urlQuery } = React.useMemo(() => queryString.parse(search), [search]);
 
-  // TODO: Validate JSON schema
-  const [tag, setTag] = React.useState<Tag>('all');
+  // TODO: Validate query schema
+  const [type, setType] = React.useState<Type>('all');
   const [searchQuery, setSearchQuery] = React.useState<string>('');
   const [searchResults, setSearchResults] = React.useState<Project[]>(ProjectsArray);
 
   React.useEffect(() => {
-    if (urlTag) setTag(urlTag as any);
-    if (urlQuery) setTag(urlQuery as any);
-    if (urlTag || urlQuery) setSearchResults(getFilteredProjects(searchQuery, tag));
-  }, [search, tag, searchQuery, urlTag, urlQuery]);
+    if (urlType) setType(urlType as any);
+    if (urlQuery) setType(urlQuery as any);
+    if (urlType || urlQuery) setSearchResults(getFilteredProjects(searchQuery, type));
+  }, [search, type, searchQuery, urlType, urlQuery]);
 
   return (
     <main>
       <section id="home-achievements">
         <div className="home-achievement-container">
-          <PatentIcon className="home-achievements-icon" />
+          <button type="button" onClick={() => push(`/story/${storyURLs.icid}`)} className="home-achievements-icon">
+            <PatentIcon />
+          </button>
           <div className="home-achievements-text-container">
             <div className="h4">US Patent 9,632,952</div>
             <p>Intermediate Computer Interface Device</p>
@@ -88,7 +92,9 @@ const Home = ({ history: { push }, location: { search } }:IHomeProps) => {
         </div>
 
         <div className="home-achievement-container">
-          <DPlannerIcon className="home-achievements-icon" />
+          <button type="button" onClick={() => push(`/story/${storyURLs.dplanner}`)} className="home-achievements-icon">
+            <DPlannerIcon />
+          </button>
           <div className="home-achievements-text-container">
             <div className="h4">DALI Pitch Competition Winner</div>
             <p>Pitching for D-Planner, LLC</p>
@@ -98,14 +104,14 @@ const Home = ({ history: { push }, location: { search } }:IHomeProps) => {
       </section>
 
       <section className="home-featured-project-container padded-section">
-        {window.innerWidth < 1200 ? <img className="right" src={TestImage} alt="TEST" /> : null}
+        {window.innerWidth < 1275 ? <img className="right" src={TestImage} alt="TEST" /> : null}
         <div className="home-featured-project-text-container">
           <h2>D-Planner, LLC</h2>
           <div className="h4">Co-founder, Product Designer, Developer</div>
           <p>Academic planning is difficult for students, especially when information is fragmented and hard to find. D-Planner is a better way of planning out your time at college. Winner of the 2018 DALI Pitch Competition.</p>
           <Button dark size="sm" onClick={() => push('/story/dplanner')}>read more</Button>
         </div>
-        {window.innerWidth >= 1200 ? <img className="right" src={TestImage} alt="TEST" /> : null}
+        {window.innerWidth >= 1275 ? <img className="right" src={TestImage} alt="TEST" /> : null}
       </section>
 
       <section className="home-featured-project-container padded-section">
@@ -127,14 +133,14 @@ const Home = ({ history: { push }, location: { search } }:IHomeProps) => {
         <div id="home-skills-skew"><SlantedBackground /></div>
         <div className="home-skills-text-container">
           <h2>What I can do</h2>
-          <p>I love to work on projects that can bring positive change to the lives of others. From my school to search and rescue teams in the mountains, I want to do good in my communities.</p>
+          <p>I pride myself on bringing my varied experiences to every project. I enjoy leadership, collaboration, and mentorship, and I can draw from my software development, engineering, and product design background to create holistic products and experiences.</p>
         </div>
 
         <div id="home-skills-types-container">
           <div className="home-skills-type-container">
             <div className="h4">software</div>
             <h3>development</h3>
-            <p className="header">Est fugiat eum quo corrupti quae voluptas eaque. Veritatis aut explicabo perferendis. Quia recusandae quia voluptates id hic sed hic.</p>
+            <p className="header">My development background includes fields from embedded design to web development. I am self-motivated and passionate, and enjoy learning new programming concepts.</p>
 
             <h4>languages</h4>
             <div className="home-skills-list-column-container">
@@ -148,12 +154,12 @@ const Home = ({ history: { push }, location: { search } }:IHomeProps) => {
               </div>
 
               <div className="home-skills-list-container">
-                <p>Arduino</p>
-                <p>Bash</p>
-                <p>C / C++</p>
-                <p>CSS / Sass</p>
-                <p>HTML</p>
-                <p>Java</p>
+                <p>Javascript</p>
+                <p>MongoDB</p>
+                <p>NodeJS</p>
+                <p>Python</p>
+                <p>ReactJS</p>
+                <p>Typescript</p>
               </div>
             </div>
 
@@ -170,7 +176,7 @@ const Home = ({ history: { push }, location: { search } }:IHomeProps) => {
             <Button
               className="home-skills-button"
               dark
-              onClick={() => push(`/?${queryString.stringify({ tag: 'development' })}#work-experience-search`)}
+              onClick={() => push(`/?${queryString.stringify({ type: 'development' })}#work-experience-search`)}
             >
               see work
 
@@ -180,7 +186,7 @@ const Home = ({ history: { push }, location: { search } }:IHomeProps) => {
           <div className="home-skills-type-container">
             <div className="h4">product</div>
             <h3>design</h3>
-            <p className="header">Est fugiat eum quo corrupti quae voluptas eaque. Veritatis aut explicabo perferendis. Quia recusandae quia voluptates id hic sed hic.</p>
+            <p className="header">I am minoring in human-centered design and have a strong background in user-centric product development. I use thses product design skills in my development and entrepreneurship projects.</p>
 
             <h4>experience with</h4>
             <div className="home-skills-list-container">
@@ -205,7 +211,7 @@ const Home = ({ history: { push }, location: { search } }:IHomeProps) => {
             <Button
               className="home-skills-button"
               dark
-              onClick={() => push(`/?${queryString.stringify({ tag: 'design' })}#work-experience-search`)}
+              onClick={() => push(`/?${queryString.stringify({ type: 'design' })}#work-experience-search`)}
             >
               see work
             </Button>
@@ -230,25 +236,25 @@ const Home = ({ history: { push }, location: { search } }:IHomeProps) => {
           <div id="home-work-search-button-container">
             <div className="home-work-separator" />
             <button
-              className={tag === 'all' ? 'active' : ''}
+              className={type === 'all' ? 'active' : ''}
               type="button"
-              onClick={() => { setTag('all'); setSearchResults(getFilteredProjects(searchQuery, 'all')); }}
+              onClick={() => { setType('all'); setSearchResults(getFilteredProjects(searchQuery, 'all')); }}
             >
               <p>all</p>
             </button>
 
             <button
-              className={tag === 'development' ? 'active' : ''}
+              className={type === 'development' ? 'active' : ''}
               type="button"
-              onClick={() => { setTag('development'); setSearchResults(getFilteredProjects(searchQuery, 'development')); }}
+              onClick={() => { setType('development'); setSearchResults(getFilteredProjects(searchQuery, 'development')); }}
             >
               <p>development</p>
             </button>
 
             <button
-              className={tag === 'design' ? 'active' : ''}
+              className={type === 'design' ? 'active' : ''}
               type="button"
-              onClick={() => { setTag('design'); setSearchResults(getFilteredProjects(searchQuery, 'design')); }}
+              onClick={() => { setType('design'); setSearchResults(getFilteredProjects(searchQuery, 'design')); }}
             >
               <p>design</p>
             </button>
@@ -262,7 +268,7 @@ const Home = ({ history: { push }, location: { search } }:IHomeProps) => {
               id="home-search-input-container"
               onSubmit={(e) => {
                 e.preventDefault();
-                setSearchResults(getFilteredProjects(searchQuery, tag));
+                setSearchResults(getFilteredProjects(searchQuery, type));
               }}
             >
               <input
@@ -305,7 +311,7 @@ const Home = ({ history: { push }, location: { search } }:IHomeProps) => {
                     type="button"
                     className="p"
                     onClick={() => {
-                      setSearchResults(getFilteredProjects('patent', tag));
+                      setSearchResults(getFilteredProjects('patent', type));
                       setSearchQuery('patent');
                     }}
                   >
@@ -318,7 +324,7 @@ const Home = ({ history: { push }, location: { search } }:IHomeProps) => {
                     type="button"
                     className="p"
                     onClick={() => {
-                      setSearchResults(getFilteredProjects('typescript', tag));
+                      setSearchResults(getFilteredProjects('typescript', type));
                       setSearchQuery('typescript');
                     }}
                   >

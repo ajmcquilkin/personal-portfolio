@@ -21,17 +21,6 @@ function getBackgroundImageByURL(url: string) {
   }
 }
 
-function getDescriptionByURL(url: string) {
-  switch (url) {
-    case '/':
-      return 'Est fugiat eum quo corrupti quae voluptas eaque. Veritatis aut explicabo perferendis.';
-    case '/about':
-      return 'Est fugiat eum quo corrupti quae voluptas eaque. Veritatis aut explicabo perferendis.';
-    default:
-      return 'You seem to be lost in the woods. We couldn’t find the page you were looking for, but give these pages a try!';
-  }
-}
-
 const LandingScreen = () => {
   const { location: { pathname, hash }, push } = useHistory();
 
@@ -94,7 +83,8 @@ const LandingScreen = () => {
         <div className="landing-screen-banner-content">
           <h1>Adam McQuilkin</h1>
           <h2>Developer, Product Designer</h2>
-          <div className="landing-screen-banner-content">{getDescriptionByURL(pathname)}</div>
+          {/* <div className="landing-screen-banner-content">Est fugiat eum quo corrupti quae voluptas eaque. Veritatis aut explicabo perferendis.</div> */}
+          <div className="landing-screen-banner-content">A passionate Dartmouth College computer science and design student, specializing in web and application development.</div>
           <div className="landing-screen-button-container">
             <Button className="landing-screen-button" onClick={() => window.open(mailtoLink, '_self')} size="sm">contact me</Button>
             <Button className="landing-screen-button" onClick={() => window.open(resumeFileName)} size="lg">download resume</Button>
@@ -109,7 +99,7 @@ const LandingScreen = () => {
         aria-label="Links to filtered site content"
       >
         <HeaderNavCard
-          onClick={() => push(`/?${queryString.stringify({ tag: 'development' })}#work-experience-search`)}
+          onClick={() => push(`/?${queryString.stringify({ type: 'development' })}#work-experience-search`)}
           title="development"
           subtitle="software"
           linkText="see work"
@@ -117,7 +107,7 @@ const LandingScreen = () => {
         />
 
         <HeaderNavCard
-          onClick={() => push(`/?${queryString.stringify({ tag: 'design' })}#work-experience-search`)}
+          onClick={() => push(`/?${queryString.stringify({ type: 'design' })}#work-experience-search`)}
           title="design"
           subtitle="product"
           linkText="see work"

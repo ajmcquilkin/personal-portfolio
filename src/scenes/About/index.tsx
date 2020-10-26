@@ -53,8 +53,8 @@ const About = ({ scrollPosition }: IAboutProps) => {
         />
         <div className="about-intro-text-container">
           <h2>Hi, my name’s Adam!</h2>
-          <h3>Dartmouth College, Class of 2023</h3>
-          <p>I am a student at Dartmouth College majoring in Computer Science and Engineerining, and minoring in Human-Centered Design. I have many passions, and I am proud of my ability to bring widely varied experiences to the projects I work on.</p>
+          <h3>Dartmouth College, Class of 2022</h3>
+          <p>I am a student at Dartmouth College majoring in computer science and engineering, and minoring in human-centered design. I have many passions, and I am proud of my ability to bring widely varied experiences to the projects I work on.</p>
           <Button size="lg" dark onClick={() => {}}>contact me</Button>
         </div>
       </section>
@@ -64,7 +64,7 @@ const About = ({ scrollPosition }: IAboutProps) => {
         <div className="about-enjoy-text-container">
           <div className="h2">I enjoy working on</div>
           <h2 className="h1">meaningful projects</h2>
-          <p>I love to work on projects that can bring positive change to the lives of others. From my school to search and rescue teams in the mountains, I want to do good in my communities.</p>
+          <p>I enjoy working on projects that can bring positive change to the lives of others. From my school work to my experieinces on search and rescue teams, I strive to enrich my communities.</p>
           <Button size="lg" onClick={() => push('/#work-experience-search')}>see my work</Button>
         </div>
       </section>
@@ -72,7 +72,7 @@ const About = ({ scrollPosition }: IAboutProps) => {
       <section id="main-photo-gallery">
         <div className="about-photo-title">
           <h2>I love photography</h2>
-          <p>Veritatis ipsa laborum ducimus facilis qui. Eveniet et hic quidem rem qui natus aut. Recusandae enim iure qui ab. Labore nulla cumque aliquam et.</p>
+          <p>In my free time I work as a freelance professional photographer. My specialties include landscape and high-adventure portrait photography. Check out some of my work here!</p>
         </div>
 
         <div id="main-gallery-container">
@@ -234,26 +234,26 @@ const About = ({ scrollPosition }: IAboutProps) => {
 
         <div className="about-photo-title">
           <h2>I keep people safe</h2>
-          <p>Veritatis ipsa laborum ducimus facilis qui. Eveniet et hic quidem rem qui natus aut. Recusandae enim iure qui ab. Labore nulla cumque aliquam et.</p>
+          <p>I am proud to be a registered Wilderness First Responder (WFR), based in Hanover, NH. I am highly trained in backcountry emergency medicine, which enables me to keep those I care about safe.</p>
         </div>
       </section>
 
       <section id="outdoors-experience" className="padded-section">
         <div className="about-photo-title">
           <h2>I love the outdoors</h2>
-          <p>Veritatis ipsa laborum ducimus facilis qui. Eveniet et hic quidem rem qui natus aut. Recusandae enim iure qui ab. Labore nulla cumque aliquam et.</p>
+          <p>I am an avid hiker and mountain biker, and over the past 15 years have hiked all of the 100 highest peaks in New England. I have also explored the outdoors in all 50 US states.</p>
         </div>
 
         <div id="outdoors-experience-photo-container">
           <LazyLoadImage
-            src="https://res.cloudinary.com/duq3rhnd2/image/upload/w_640/v1602266166/Personal%20Portfolio/gallery/wmnf_1_small_zfwq2y.jpg"
+            src="https://res.cloudinary.com/duq3rhnd2/image/upload/q_70,w_640/v1603652703/Personal%20Portfolio/adam_biking_utah_c6jpmn.jpg"
             alt="White Mountains"
             effect="opacity"
             scrollPosition={scrollPosition}
             wrapperClassName="outdoors-experience-image"
           />
 
-          <p>You can often find me hidden away in the woods.</p>
+          <p>A typical day in the outdoors.</p>
         </div>
       </section>
 

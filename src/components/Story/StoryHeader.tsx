@@ -78,8 +78,8 @@ const LandingScreen = ({
           <h2>{subtitle}</h2>
           <div className="story-header-banner-content">{description}</div>
           <div className="story-header-button-container">
-            {showButton === false ? null : <Button className="story-header-button" onClick={onButtonClick} size="lg" dark>{buttonText || 'visit deployed site'}</Button>}
             <Button className="story-header-button" onClick={() => window.open(mailtoLink, '_self')} size="sm" dark>contact me</Button>
+            {showButton === false ? null : <Button className="story-header-button" onClick={onButtonClick} size="lg" dark>{buttonText || 'visit deployed site'}</Button>}
           </div>
         </div>
 

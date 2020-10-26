@@ -10,6 +10,7 @@ export const storyURLs = {
   repeater: 'portable-radio-repeater',
   graniteState: 'granite-state-volunteering',
   tsStarter: 'reactjs-typescript-starter',
+  crudTemplate: 'dali-crud-template',
   whiteboard: 'whiteboard-productivity',
   mindsquare: 'uiux-mindsquare',
 };

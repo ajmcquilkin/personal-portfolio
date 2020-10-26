@@ -2,7 +2,7 @@ import React from 'react';
 import { useHistory, RouteComponentProps } from 'react-router-dom';
 
 import StoryHeader from './StoryHeader';
-import DPlannerStory from './Stories/DPlannerStory';
+// import DPlannerStory from './Stories/DPlannerStory';
 
 import { storyURLs } from '../../constants';
 
@@ -19,7 +19,18 @@ export default function StoryContainer({ match }: IStoryContainerProps) {
 
   switch (match.params.id) {
     case storyURLs.dplanner:
-      return <DPlannerStory />;
+      // return <DPlannerStory />;
+      return (
+        <StoryHeader
+          title="D-Planner, LLC"
+          subtitle="Case Study Coming Soon!"
+          description="The writeup for this project is coming soon. If you just can't wait to hear about this project, let me know by clicking the button below."
+          renderContent={(className) => (<div className={className} />)}
+          onButtonClick={() => push('/')}
+          buttonText="go home"
+          showArrow={false}
+        />
+      );
     case storyURLs.icid:
       return (
         <StoryHeader
@@ -92,10 +103,22 @@ export default function StoryContainer({ match }: IStoryContainerProps) {
           showArrow={false}
         />
       );
-    case storyURLs.tsStarter:
+    // case storyURLs.tsStarter:
+    //   return (
+    //     <StoryHeader
+    //       title="ReactJS Typescript Starter"
+    //       subtitle="Case Study Coming Soon!"
+    //       description="The writeup for this project is coming soon. If you just can't wait to hear about this project, let me know by clicking the button below."
+    //       renderContent={(className) => (<div className={className} />)}
+    //       onButtonClick={() => push('/')}
+    //       buttonText="go home"
+    //       showArrow={false}
+    //     />
+    //   );
+    case storyURLs.crudTemplate:
       return (
         <StoryHeader
-          title="ReactJS Typescript Starter"
+          title="Advanced CRUD Starter Pack"
           subtitle="Case Study Coming Soon!"
           description="The writeup for this project is coming soon. If you just can't wait to hear about this project, let me know by clicking the button below."
           renderContent={(className) => (<div className={className} />)}

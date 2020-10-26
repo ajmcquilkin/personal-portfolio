@@ -78,7 +78,7 @@ const FallbackScreen = () => {
         aria-label="Links to filtered site content"
       >
         <HeaderNavCard
-          onClick={() => push(`/?${queryString.stringify({ tag: 'development' })}#work-experience-search`)}
+          onClick={() => push(`/?${queryString.stringify({ type: 'development' })}#work-experience-search`)}
           title="development"
           subtitle="software"
           linkText="see work"
@@ -86,7 +86,7 @@ const FallbackScreen = () => {
         />
 
         <HeaderNavCard
-          onClick={() => push(`/?${queryString.stringify({ tag: 'design' })}#work-experience-search`)}
+          onClick={() => push(`/?${queryString.stringify({ type: 'design' })}#work-experience-search`)}
           title="design"
           subtitle="product"
           linkText="see work"
