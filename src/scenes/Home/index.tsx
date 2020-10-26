@@ -317,11 +317,11 @@ const Home = ({ history: { push }, location: { search } }:IHomeProps) => {
                     type="button"
                     className="p"
                     onClick={() => {
-                      setSearchResults(getFilteredProjects('patent', type));
-                      setSearchQuery('patent');
+                      setSearchResults(getFilteredProjects('redux', type));
+                      setSearchQuery('redux');
                     }}
                   >
-                    patent
+                    redux
                   </button>
                   {' '}
                   or
