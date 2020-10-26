@@ -13,7 +13,8 @@ import { Project, Type, ProjectsArray } from './projects';
 import { storyURLs } from '../../constants';
 
 import SearchIcon from '../../assets/icons/search.svg';
-import TestImage from '../../assets/images/test_project_image.png';
+import DPlannerImage from '../../assets/images/dplanner.png';
+import ICIDImage from '../../assets/images/icid.png';
 
 import { ReactComponent as SlantedBackground } from '../../assets/background.svg';
 import { ReactComponent as PatentIcon } from '../../assets/icons/pencil-ruler.svg';
@@ -104,23 +105,23 @@ const Home = ({ history: { push }, location: { search } }:IHomeProps) => {
       </section>
 
       <section className="home-featured-project-container padded-section">
-        {window.innerWidth < 1275 ? <img className="right" src={TestImage} alt="TEST" /> : null}
+        {window.innerWidth < 1275 ? <img className="right" src={DPlannerImage} alt="TEST" /> : null}
         <div className="home-featured-project-text-container">
           <h2>D-Planner, LLC</h2>
           <div className="h4">Co-founder, Product Designer, Developer</div>
           <p>Academic planning is difficult for students, especially when information is fragmented and hard to find. D-Planner is a better way of planning out your time at college. Winner of the 2018 DALI Pitch Competition.</p>
-          <Button dark size="sm" onClick={() => push('/story/dplanner')}>read more</Button>
+          <Button dark size="sm" onClick={() => push(`/story/${storyURLs.dplanner}`)}>read more</Button>
         </div>
-        {window.innerWidth >= 1275 ? <img className="right" src={TestImage} alt="TEST" /> : null}
+        {window.innerWidth >= 1275 ? <img className="right" src={DPlannerImage} alt="TEST" /> : null}
       </section>
 
       <section className="home-featured-project-container padded-section">
-        <img className="left" src={TestImage} alt="TEST" />
+        <img className="left" src={ICIDImage} alt="TEST" />
         <div className="home-featured-project-text-container">
-          <h2>D-Planner, LLC</h2>
-          <div className="h4">Co-founder, Product Designer, Developer</div>
-          <p>Academic planning is difficult for students, especially when information is fragmented and hard to find. D-Planner is a better way of planning out your time at college. Winner of the 2018 DALI Pitch Competition.</p>
-          <Button dark size="sm" onClick={() => push('/story/dplanner')}>read more</Button>
+          <h2>ICID Embedded System</h2>
+          <div className="h4">Sole Inventor, Patent Holder</div>
+          <p>Macros are common in software, but only possible when the user is in full control of the target system. The Intermediate Computer Interface Device (ICID) enables human-interface device macros on any valid USB host.</p>
+          <Button dark size="sm" onClick={() => push(`/story/${storyURLs.icid}`)}>read more</Button>
         </div>
       </section>
 
