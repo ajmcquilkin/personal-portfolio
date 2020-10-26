@@ -1,10 +1,13 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { LazyLoadImage, trackWindowScroll, LazyLoadImageProps } from 'react-lazy-load-image-component';
+import { Helmet } from 'react-helmet';
 
 import Button from '../../components/Button';
 import ImageTile from '../../components/ImageTile';
 import Footer from '../FooterScreen';
+
+import { metaTitleBase } from '../../constants';
 
 import { ReactComponent as SlantedBackground } from '../../assets/background.svg';
 
@@ -45,6 +48,10 @@ const About = ({ scrollPosition }: IAboutProps) => {
 
   return (
     <main>
+      <Helmet>
+        <title>{`About | ${metaTitleBase}`}</title>
+      </Helmet>
+
       <section id="about-intro" className="padded-section">
         <LazyLoadImage
           src="https://res.cloudinary.com/duq3rhnd2/image/upload/w_611,h_773/v1602266134/Personal%20Portfolio/adam_mcquilkin_qszxv1.jpg"

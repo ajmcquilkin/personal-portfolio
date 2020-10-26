@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter, RouteChildrenProps } from 'react-router-dom';
 import queryString from 'query-string';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { Helmet } from 'react-helmet';
 
 import Footer from '../FooterScreen';
 
@@ -10,7 +11,7 @@ import ArrowBox from '../../components/ArrowBox';
 import ProjectCard from '../../components/ProjectCard';
 
 import { Project, Type, ProjectsArray } from './projects';
-import { storyURLs } from '../../constants';
+import { storyURLs, metaTitleBase } from '../../constants';
 
 import SearchIcon from '../../assets/icons/search.svg';
 import DPlannerImage from '../../assets/images/dplanner.png';
@@ -80,6 +81,10 @@ const Home = ({ history: { push }, location: { search } }:IHomeProps) => {
 
   return (
     <main>
+      <Helmet>
+        <title>{`Home | ${metaTitleBase}`}</title>
+      </Helmet>
+
       <section id="home-achievements">
         <div className="home-achievement-container">
           <button type="button" onClick={() => push(`/story/${storyURLs.icid}`)} className="home-achievements-icon">

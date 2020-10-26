@@ -2,12 +2,13 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import queryString from 'query-string';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { Helmet } from 'react-helmet';
 
 import Button from '../../components/Button';
 import HeaderNavCard from '../../components/HeaderNavCard';
 import NavMenuItem from '../../components/NavMenuItem';
 
-import { mailtoLink, resumeFileName } from '../../constants';
+import { mailtoLink, resumeFileName, metaTitleBase } from '../../constants';
 
 import './FallbackScreen.scss';
 
@@ -16,6 +17,10 @@ const FallbackScreen = () => {
 
   return (
     <div className="fallback-screen-container">
+      <Helmet>
+        <title>{`Page Not Found | ${metaTitleBase}`}</title>
+      </Helmet>
+
       <LazyLoadImage
         src={`https://res.cloudinary.com/duq3rhnd2/image/upload/q_70,w_${window.innerWidth},h_${Math.ceil(window.innerHeight * 1.15)},c_fill/v1602266350/Personal%20Portfolio/404_feature_small_cfwdfz.jpg`}
         alt="Main fallback feature (about)"
