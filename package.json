@@ -1,88 +1,19 @@
 {
-  "name": "react-js-typescript",
-  "version": "1.0.0",
-  "description": "A ReactJS template repository built based on Microsoft's TypeScript system. Based on the following link: https://medium.com/swlh/setting-up-a-react-typescript-sass-webpack-and-babel-7-project-in-6-steps-b4d172d1d0d6",
-  "main": "index.tsx",
-  "repository": "https://github.com/ajmcquilkin/ReactJSTypescript.git",
-  "author": "ajmcquilkin <46639306+ajmcquilkin@users.noreply.github.com>",
-  "license": "None",
+  "name": "personal-portfolio",
+  "version": "0.1.0",
   "private": true,
-  "devDependencies": {
-    "@babel/core": "^7.10.2",
-    "@babel/preset-env": "^7.10.2",
-    "@babel/preset-react": "^7.10.1",
-    "@babel/preset-typescript": "^7.10.1",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^10.4.7",
-    "@testing-library/user-event": "^12.0.11",
-    "@types/anymatch": "^1.3.1",
-    "@types/jest": "^26.0.10",
-    "@types/node": "^14.0.11",
-    "@types/react": "^16.9.35",
-    "@types/react-dom": "^16.9.8",
-    "@types/react-redux": "^7.1.9",
-    "@types/react-router-dom": "^5.1.5",
-    "@types/redux-mock-store": "^1.0.2",
-    "@typescript-eslint/eslint-plugin": "^3.1.0",
-    "@typescript-eslint/parser": "^3.1.0",
-    "babel-loader": "^8.1.0",
-    "babel-polyfill": "^6.26.0",
-    "css-loader": "^4.2.2",
-    "eslint-config-airbnb-typescript": "^9.0.0",
-    "eslint-loader": "^4.0.2",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.20.0",
-    "eslint-plugin-react-hooks": "^4.0.4",
-    "file-loader": "^6.0.0",
-    "html-webpack-plugin": "^4.3.0",
-    "nock": "^13.0.2",
-    "node-sass": "^4.14.1",
-    "redux-mock-store": "^1.5.4",
-    "sass-loader": "^10.0.0",
-    "source-map-loader": "^1.0.0",
-    "style-loader": "^1.2.1",
-    "surge": "^0.21.6",
-    "typescript": "^4.0.0-dev.20200715",
-    "webpack": "4.44.1",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "3.11.0"
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
-    "axios": "^0.20.0",
-    "connected-react-router": "^6.8.0",
-    "core-js": "^3.6.5",
-    "global": "^4.4.0",
-    "history": "4.10.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-redux": "^7.2.0",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "^3.4.1",
-    "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0",
-    "regenerator-runtime": "^0.13.5",
-    "ts-loader": "^8.0.3",
-    "typesafe-actions": "^5.1.0"
+    "next": "10.1.3",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
   },
-  "scripts": {
-    "webpack:dev": "npx webpack --config webpack.config.js",
-    "webpack:start": "webpack-dev-server --content-base ./dist --hot --inline --colors --port 3000",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "deploy": "npx surge ./build adammcquilkin.surge.sh"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "@types/react": "^17.0.3",
+    "typescript": "^4.2.4"
   }
 }
