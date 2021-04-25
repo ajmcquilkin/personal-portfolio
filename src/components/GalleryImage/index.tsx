@@ -1,5 +1,5 @@
 import Image from 'next/image';
-// import styles from './GalleryImage.module.scss';
+import styles from './GalleryImage.module.scss';
 
 export interface GalleryImageProps {
   title: string,
@@ -14,19 +14,21 @@ const GalleryImage = ({
   title, subtitle, src,
   width = 400, height = 270
 }: GalleryImageProps): JSX.Element => (
-  <div>
-    <div>
-      <div>{title}</div>
-      <div>{subtitle}</div>
+  <div className={styles.container} style={{ minWidth: width, height }}>
+    <div className={styles.textContainer}>
+      <div className={styles.title}>{title}</div>
+      <div className={styles.subtitle}>{subtitle}</div>
     </div>
-    <div>
+
+    <div className={styles.imageContainer}>
       <Image
         src={src}
         alt={title}
         width={width}
         height={height}
-        layout="intrinsic"
+        layout="fixed"
         objectFit="cover"
+        className={styles.image}
       />
     </div>
   </div>

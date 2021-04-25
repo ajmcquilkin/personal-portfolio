@@ -1,16 +1,20 @@
 import NavMenuItem from 'components/layout/NavMenuItem';
 import { mailtoLink, resumeFileName } from 'utils';
+import { ColorMode } from 'types';
+
+import styles from './Menu.module.scss';
 
 export interface MenuProps {
-
+  colorMode?: ColorMode,
+  className?: string
 }
 
-const Menu = (): JSX.Element => (
-  <nav>
-    <NavMenuItem content="Home" href="/" />
-    <NavMenuItem content="About Me" href="/about" />
-    <NavMenuItem content="My Resume" href={`/${resumeFileName}`} />
-    <NavMenuItem content="Contact" href={mailtoLink} />
+const Menu = ({ colorMode = 'light', className = '' }: MenuProps): JSX.Element => (
+  <nav className={[styles.container, className].join(' ')}>
+    <NavMenuItem className={styles.menuItem} colorMode={colorMode} label="Home" href="/" />
+    <NavMenuItem className={styles.menuItem} colorMode={colorMode} label="About Me" href="/about" />
+    <NavMenuItem className={styles.menuItem} colorMode={colorMode} label="My Resume" href={`/${resumeFileName}`} />
+    <NavMenuItem className={styles.menuItem} colorMode={colorMode} label="Contact" href={mailtoLink} />
   </nav>
 );
 

@@ -1,0 +1,123 @@
+@use "styles/colors.scss" as colors;
+@use "styles/fonts.scss" as fonts;
+@use "styles/generics.scss" as generics;
+@use "styles/header.scss" as header;
+
+.container {
+  .headerContainer {
+    @include generics.responsivePadding();
+
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+
+    .signature {
+      @include header.signature(colors.$dark);
+    }
+
+    .menuContainer {
+      @include header.menu();
+    }
+
+    .headerFlexContainer {
+      @include header.content(colors.$dark);
+
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .headerContentContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-right: auto;
+
+        .buttonContainer {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+
+          .contentButton {
+            @include header.button();
+          }
+        }
+      }
+
+      .featuredImageContainer {
+        margin: auto;
+        padding-left: 24px;
+      }
+    }
+
+    .arrowBox {
+      @include header.arrowBox();
+    }
+  }
+
+  .overviewContainer {
+    width: generics.$main-screen-width;
+    max-width: generics.$overview-max-width;
+    margin: 0px auto 96px;
+
+    h2 {
+      font-family: fonts.$poppins;
+      font-size: 48px;
+      font-weight: 200;
+      color: colors.$dark;
+
+      margin: 72px 0px 23px;
+    }
+
+    p,
+    li {
+      @include fonts.paragraphStyling();
+      font-size: 18px;
+    }
+
+    .overviewFlexContainer {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .overviewLeft {
+        margin-right: 120px;
+        flex: 5;
+
+        h3 {
+          font-family: fonts.$poppins;
+          font-size: 36px;
+          font-weight: 300;
+          color: colors.$dark;
+
+          margin: 0px 0px 23px;
+        }
+      }
+
+      .overviewRight {
+        flex: 3;
+
+        .overviewRightList {
+          margin-bottom: 30px;
+
+          h3 {
+            font-family: fonts.$poppins;
+            font-size: 27px;
+            font-weight: 400;
+            color: colors.$dark;
+
+            margin: 0px 0px 12px;
+          }
+
+          ul {
+            padding-left: 0px;
+            list-style: none;
+
+            li {
+              margin-bottom: 0.3em;
+            }
+          }
+        }
+      }
+    }
+  }
+}

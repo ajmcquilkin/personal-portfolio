@@ -1,0 +1,56 @@
+@use "styles/colors.scss" as colors;
+
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Open+Sans:wght@300;400&family=Poppins:wght@200;300;400;600;700&display=swap");
+
+$caveat: "Caveat", cursive;
+$open-sans: "Open Sans", sans-serif;
+$poppins: "Poppins", sans-serif;
+
+@mixin h1($color: colors.$dark) {
+  font-family: $poppins;
+  font-size: calc(2vw + 24px);
+  font-weight: 700;
+
+  color: $color;
+  margin-top: 1em;
+  margin-bottom: 0.36em;
+}
+
+@mixin h2($color: colors.$dark) {
+  font-family: $poppins;
+  font-size: calc(1.5vw + 18px);
+  font-weight: 200;
+
+  color: $color;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+@mixin h3($color: colors.$dark) {
+  font-family: $poppins;
+  font-size: calc(1vw + 18px);
+  font-weight: 300;
+
+  color: $color;
+  margin-top: 1.33em;
+  margin-bottom: 0.5em;
+}
+
+@mixin h4($color: colors.$dark) {
+  font-family: $open-sans;
+  font-size: calc(0.7vw + 15px);
+  font-weight: 400;
+
+  margin-top: 1.33em;
+  margin-bottom: 0.66em;
+}
+
+@mixin paragraphStyling($color: colors.$dark) {
+  font-family: $open-sans;
+  font-size: 16px;
+  font-weight: 300;
+
+  color: $color;
+  text-rendering: optimizeLegibility;
+  line-height: 155%;
+}

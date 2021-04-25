@@ -1,4 +1,5 @@
-// @import '../../constants/variables.scss';
+@use "styles/colors.scss" as colors;
+@use "styles/fonts.scss" as fonts;
 
 $large-min-width: 240px;
 $large-min-height: 30px;
@@ -16,64 +17,80 @@ $small-border: calc(2 * #{$small-width} + 2 * #{$small-height});
   position: relative;
 
   // Sizing
-  
+
   &.lg {
     width: $large-width;
     height: $large-height;
     min-width: 240px;
     min-height: 42px;
-    
+
     button {
       svg {
         stroke-dasharray: $large-width $large-border;
         stroke-dashoffset: $large-width;
       }
 
-      &:focus-within svg { stroke-dashoffset: calc(#{$large-border} * -1); }
-      &:hover svg { stroke-dashoffset: calc(#{$large-border} * -1); }
+      &:focus-within svg {
+        stroke-dashoffset: calc(#{$large-border} * -1);
+      }
+      &:hover svg {
+        stroke-dashoffset: calc(#{$large-border} * -1);
+      }
     }
   }
-  
+
   &.sm {
     width: $small-width;
     height: $small-height;
     min-width: $small-min-width;
     min-height: $small-min-height;
-    
+
     button {
       svg {
         stroke-dasharray: $small-width $small-border;
         stroke-dashoffset: $small-width;
       }
-      
-      &:focus-within svg { stroke-dashoffset: calc(#{$small-border} * -1); }
-      &:hover svg { stroke-dashoffset: calc(#{$small-border} * -1); }
+
+      &:focus-within svg {
+        stroke-dashoffset: calc(#{$small-border} * -1);
+      }
+      &:hover svg {
+        stroke-dashoffset: calc(#{$small-border} * -1);
+      }
     }
   }
 
   // Color mode
-  
+
   &.dark button {
-    border: 1px solid black; // ! UPDATE
-    color: black; // ! UPDATE
-    svg { stroke: lightslategray; } // TODO: Update this color
-    &::after { background-color: lightgray; } // TODO: Update this color
+    border: 1px solid colors.$dark;
+    color: colors.$dark;
+    svg {
+      stroke: colors.$dark;
+    } // TODO: Update this color
+    &::after {
+      background-color: colors.$dark;
+    } // TODO: Update this color
   }
-  
+
   &.light button {
-    border: 1px solid white; // ! UPDATE
-    color: white; // ! UPDATE
-    svg { stroke: white; }
-    &::after { background-color: white; }
+    border: 1px solid colors.$white;
+    color: colors.$white;
+    svg {
+      stroke: colors.$white;
+    }
+    &::after {
+      background-color: colors.$white;
+    }
   }
 
   // Main styling
-  
+
   button {
-    // font-family: $open-sans; // ! UPDATE
+    font-family: fonts.$open-sans;
     font-weight: 400;
     font-size: calc(0.5vw + 12px);
-    
+
     width: 100%;
     height: 100%;
 
@@ -90,7 +107,7 @@ $small-border: calc(2 * #{$small-width} + 2 * #{$small-height});
       stroke-width: 2px;
       transition: 1s ease-in-out;
     }
-    
+
     &::after {
       content: "";
       position: absolute;
@@ -98,7 +115,7 @@ $small-border: calc(2 * #{$small-width} + 2 * #{$small-height});
       top: 0;
       width: 100%;
       height: 100%;
-      
+
       opacity: 0;
       transition: opacity 0.6s ease-in-out;
     }
@@ -106,8 +123,9 @@ $small-border: calc(2 * #{$small-width} + 2 * #{$small-height});
     &:focus-within button > svg {
       stroke-dashoffset: -600px;
     }
-    
-    &:hover::after, &:focus::after {
+
+    &:hover::after,
+    &:focus::after {
       opacity: 0.1;
       transition: opacity 0.6s ease-in-out;
     }

@@ -1,0 +1,12 @@
+@use "styles/colors.scss" as colors;
+@use "styles/fonts.scss" as fonts;
+@use "styles/generics.scss" as generics;
+
+.container {
+  display: flex;
+  flex-direction: column;
+
+  .menuItem {
+    margin-bottom: 11px;
+  }
+}

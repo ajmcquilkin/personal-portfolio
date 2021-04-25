@@ -1,22 +1,31 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { ColorMode } from 'types';
+
+import styles from './NavMenuItem.module.scss';
 
 export interface NavMenuItemProps {
-  content: string,
-  href: string
+  href: string,
+  label: string,
+
+  className?: string,
+  colorMode?: ColorMode
 }
 
-const NavMenuItem = ({ content, href }: NavMenuItemProps): JSX.Element => {
+const NavMenuItem = ({
+  label, href, className = '', colorMode = 'light'
+}: NavMenuItemProps): JSX.Element => {
   const router = useRouter();
-  const active = href === router.pathname;
+  const isActive = href === router.pathname;
+  const colorStyle = colorMode === 'light' ? styles.light : styles.dark;
 
   return (
-    <div>
-      <div />
+    <div className={[styles.container, colorStyle, className].join(' ')}>
+      <div className={[styles.bar, styles.left, colorStyle, isActive ? styles.active : ''].join(' ')} />
       <Link href={href}>
-        <a>{content}</a>
+        <a className={[colorStyle, isActive ? styles.active : ''].join(' ')}>{label}</a>
       </Link>
-      <div />
+      <div className={[styles.bar, styles.right, colorStyle, isActive ? styles.active : ''].join(' ')} />
     </div>
   );
 };

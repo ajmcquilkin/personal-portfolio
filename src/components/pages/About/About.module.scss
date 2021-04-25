@@ -1,0 +1,216 @@
+@use "styles/colors.scss" as colors;
+@use "styles/fonts.scss" as fonts;
+@use "styles/generics.scss" as generics;
+
+.container {
+  .introContainer {
+    @include generics.responsivePadding();
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    position: relative;
+    margin-bottom: 120px;
+
+    .introFeaturedImage {
+      position: relative;
+      // left: -63px;
+      top: -36px;
+
+      min-width: 300px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.125);
+
+      & > div {
+        position: static !important; // Next/Image quirk
+      }
+    }
+
+    .introTextContainer {
+      margin: auto auto auto 120px;
+      padding: 48px 0px 96px;
+      max-width: 840px;
+
+      h2 {
+        @include fonts.h2();
+        margin: 0px 0px -6px;
+      }
+
+      h3 {
+        @include fonts.h3();
+        margin: 0px 0px 24px;
+      }
+
+      p {
+        @include fonts.paragraphStyling();
+        margin: 0px 0px 36px;
+        font-size: 24px;
+      }
+    }
+  }
+
+  .workContainer {
+    @include generics.responsivePadding();
+
+    background-color: colors.$dark;
+    margin-bottom: 120px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+
+    .workTextContainer {
+      h2,
+      .workh2 {
+        @include fonts.h2(colors.$white);
+      }
+
+      p {
+        @include fonts.paragraphStyling(colors.$white);
+      }
+    }
+  }
+
+  .photographyContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    margin: 120px 0px;
+    padding: 0px 0px 0px generics.$screen-padding;
+
+    .photographyTextContainer {
+      margin: auto 0px;
+      padding-left: 42px;
+      border-left: 1px solid colors.$dark;
+      flex: 2;
+
+      h2 {
+        @include fonts.h2();
+        margin: 0px 0px 12px;
+      }
+
+      p {
+        @include fonts.paragraphStyling();
+        font-size: 21px;
+      }
+    }
+
+    // TODO: Responsive bug under 810px
+    @media only screen and (max-width: 810px) {
+      flex-direction: column;
+    }
+
+    .galleryContainer {
+      margin-left: 120px;
+      overflow-x: auto;
+      flex: 5;
+
+      @media only screen and (max-width: 810px) {
+        margin-left: calc(-1 * #{generics.$screen-padding} - 6px);
+      }
+
+      .galleryScrollContainer {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  .safetyContainer {
+    @include generics.responsivePadding();
+
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin: 120px 0px 240px;
+
+    @media only screen and (max-width: 810px) {
+      flex-direction: column;
+      margin-bottom: 96px;
+    }
+
+    .safetyImageContainer {
+      margin-right: 120px;
+      flex: 5;
+    }
+
+    .safetyTextContainer {
+      margin: auto 0px;
+      padding-left: 42px;
+      border-left: 1px solid colors.$dark;
+      flex: 4;
+
+      h2 {
+        @include fonts.h2();
+        margin: 0px 0px 12px;
+      }
+
+      p {
+        @include fonts.paragraphStyling();
+        font-size: 21px;
+      }
+    }
+  }
+
+  .outdoorsContainer {
+    @include generics.responsivePadding();
+
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin-bottom: 240px;
+
+    @media only screen and (max-width: 810px) {
+      flex-direction: column;
+
+      .outdoorsImageContainer {
+        margin-left: 0 !important;
+        width: 100%;
+        flex: 1;
+
+        .outdoorsImage {
+          width: 100% !important;
+
+          img {
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+
+    .outdoorsTextContainer {
+      margin: auto 0px;
+      padding-left: 42px;
+      border-left: 1px solid colors.$dark;
+      flex: 4;
+
+      h2 {
+        @include fonts.h2();
+        margin: 0px 0px 12px;
+      }
+
+      p {
+        @include fonts.paragraphStyling();
+        font-size: 21px;
+      }
+    }
+
+    .outdoorsImageContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-left: 120px;
+      flex: 5;
+
+      box-shadow: 0px 4px 8px 0px #000000 12.5%;
+
+      p {
+        @include fonts.paragraphStyling();
+
+        margin: 20px auto 0px;
+        text-align: center;
+      }
+    }
+  }
+}
