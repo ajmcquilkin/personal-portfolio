@@ -23,6 +23,7 @@ export const getStaticProps: GetStaticProps<StoryProps> = async ({ params }) => 
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const allBlogs = glob.sync('posts/**/*.md'); // ! Can't have leading "/"
+
   const blogSlugs = allBlogs.map(
     (file) => file
       .split('/')[1]

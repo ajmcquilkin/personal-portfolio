@@ -5,7 +5,6 @@ import ArrowBox from 'components/ArrowBox';
 import Button from 'components/Button';
 
 import Menu from 'components/layout/Menu';
-import Header from 'components/layout/header/Header';
 import StoryContent from 'components/layout/StoryContent';
 
 import { mailtoLink } from 'utils';

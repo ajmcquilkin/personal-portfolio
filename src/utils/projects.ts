@@ -1,7 +1,19 @@
 /* eslint-disable max-len */
-import { storyURLs } from '../../constants';
 
 export type Tag = 'all' | 'design' | 'development';
+
+export const storyURLs = {
+  dplanner: 'dplanner',
+  icid: 'patent-icid',
+  mdc: 'mini-design-course',
+  scheduling: 'dartmouth-term-scheduling',
+  jest: 'jestjs-ui-workshop',
+  repeater: 'portable-radio-repeater',
+  graniteState: 'granite-state-volunteering',
+  tsStarter: 'reactjs-typescript-starter',
+  whiteboard: 'whiteboard-productivity',
+  mindsquare: 'uiux-mindsquare',
+};
 
 export interface Project {
   title: string;
