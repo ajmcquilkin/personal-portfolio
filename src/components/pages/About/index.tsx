@@ -1,16 +1,14 @@
-import Image from 'next/image';
+// import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useLayoutEffect, useRef, useState } from 'react';
 
-import Button from 'components/Button';
-import GalleryImage from 'components/GalleryImage';
-import Header from 'components/layout/Header';
-import TextBar from 'components/layout/TextBar';
+// import Button from 'components/Button';
+// import Header from 'components/layout/Header';
 
-import { mailtoLink, resumeFileName } from 'utils';
-import mainGalleryImages from 'utils/images';
+// import { mailtoLink, resumeFileName } from 'utils';
+// import mainGalleryImages from 'utils/images';
 
-import Footer from 'components/layout/Footer';
+// import Footer from 'components/layout/Footer';
 import styles from './About.module.scss';
 
 interface AboutProps {
@@ -32,7 +30,7 @@ const About = (): JSX.Element => {
 
   return (
     <div className={styles.container}>
-      <Header
+      {/* <Header
         title="Adam McQuilkin"
         subtitle="Developer, Product Designer"
         description="A passionate Dartmouth College computer science and design student, specializing in web and application development."
@@ -158,7 +156,7 @@ const About = (): JSX.Element => {
         </section>
       </main>
 
-      <Footer />
+      <Footer /> */}
     </div>
   );
 };

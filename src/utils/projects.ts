@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { storyURLs } from '../../constants';
 
 export type Tag = 'all' | 'design' | 'development';

@@ -1,7 +1,8 @@
-import { useRouter } from 'next/router';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 import Button from 'components/Button';
+import TextSection, { TextSectionCTA, TextSectionParagraph } from 'components/TextSection';
 import { mailtoLink, resumeFileName } from 'utils';
 
 import styles from './Footer.module.scss';
@@ -11,48 +12,49 @@ const Footer = (): JSX.Element => {
 
   return (
     <footer className={styles.container}>
-      <div className={styles.backgroundImageContainer}>
-        <div className={styles.backgroundImageOpacity} />
-        <Image
-          src="https://res.cloudinary.com/duq3rhnd2/image/upload/v1618620573/Personal%20Portfolio/DSC_8692_a24ay8.jpg"
-          alt="Footer background"
-          layout="fill"
-          objectFit="cover"
-        />
-      </div>
+      <Image
+        src="https://images.unsplash.com/photo-1554629947-334ff61d85dc"
+        alt="test mountain image"
+        layout="fill"
+        objectFit="cover"
+      />
+
+      <div className={styles.topGradient} />
+      <div className={styles.bottomGradient} />
 
       <div className={styles.contentContainer}>
-        <h2>Want to chat? Let me know!</h2>
+        <img
+          src="/logo-white.svg"
+          alt="adam mcquilkin personal logo"
+          className={styles.logo}
+        />
 
-        <div className={styles.buttonContainer}>
-          <Button
-            onClick={() => router.push(mailtoLink)}
-            className={styles.button}
-          >
-            contact me
-          </Button>
+        <TextSection
+          title="contact me"
+          subtitle="Thanks for stopping by! Always feel free to drop a line if you want to chat :)"
+          context="reach out"
+          colorMode="light"
+          className={styles.textContainer}
+        >
+          <TextSectionCTA className={styles.buttonContainer}>
+            <Button
+              colorMode="light"
+              onClick={() => router.push(mailtoLink)}
+              className={styles.button}
+            >
+              contact me
+            </Button>
 
-          <Button
-            size="large"
-            onClick={() => router.push(resumeFileName)}
-            className={styles.button}
-          >
-            download resume
-          </Button>
-        </div>
+            <Button
+              colorMode="light"
+              onClick={() => router.push(resumeFileName)}
+              className={styles.button}
+            >
+              download resume
+            </Button>
+          </TextSectionCTA>
+        </TextSection>
       </div>
-
-      <div className={styles.textContainer}>
-        <p>designed and coded with love</p>
-        <p>•</p>
-        <p>
-          © Adam McQuilkin,
-          {' '}
-          {new Date().getFullYear()}
-        </p>
-      </div>
-
-      <div className={styles.bottomGradient} />
     </footer>
   );
 };

@@ -1,7 +1,6 @@
-// @import '../../constants/variables.scss';
-
 @use "styles/colors.scss" as colors;
 @use "styles/fonts.scss" as fonts;
+@use "styles/generics.scss" as generics;
 
 .container {
   padding: 0px 14vw; // ! UPDATE
@@ -42,8 +41,10 @@
   .signature {
     position: absolute;
     z-index: 2;
-    left: 4vw; // ! UPDATE
-    top: 38px;
+    left: generics.$home-site-line-left; // ! UPDATE
+    top: 6vh;
+
+    transform: translateX(-50%);
 
     font-family: fonts.$caveat;
     font-size: 48px;
@@ -52,6 +53,22 @@
 
     @media only screen and (max-width: 600px) {
       left: 2vw; // ! UPDATE
+    }
+  }
+
+  .line {
+    @include generics.siteLine();
+    left: generics.$home-site-line-left;
+    width: 1px;
+
+    &.top {
+      top: 0px;
+      height: 4vh;
+    }
+
+    &.main {
+      top: calc(4vh + 2vh + 5.6vh + 2vh);
+      height: calc(100% - (4vh + 2vh + 5.6vh + 2vh));
     }
   }
 
@@ -99,29 +116,70 @@
     transform: rotate(30deg);
   }
 
+  .personalLinksContainer {
+    position: absolute;
+    right: 114px;
+    top: 42vh;
+    transform: translateY(-50%);
+    z-index: 10;
+
+    .linkContainer {
+      display: flex;
+      flex-direction: row;
+      justify-content: right;
+
+      margin-bottom: 12px;
+
+      &:last-child {
+        margin-bottom: 0px;
+      }
+
+      p {
+        margin: auto 21px auto 0px;
+
+        font-family: fonts.$poppins;
+        font-size: 13px;
+        font-weight: 300;
+        color: colors.$white;
+      }
+
+      img {
+        width: 24px;
+        max-height: 24px;
+      }
+    }
+  }
+
   .bannerContainer {
     position: relative;
-    top: 29vh;
+    top: 42vh;
+    transform: translateY(-50%);
 
     .bannerContent {
       position: relative;
       z-index: 2;
 
       h1 {
-        @include fonts.h1(colors.$white);
+        @include fonts.h1();
+
         margin: 0 0 -0.5em;
+        color: colors.$white;
       }
 
       h2 {
-        @include fonts.h2(colors.$white);
+        @include fonts.h2();
+
         margin: 0 0 7px;
+        color: colors.$white;
       }
 
       p {
-        @include fonts.paragraphStyling(colors.$white);
+        @include fonts.paragraphStyling();
+
         margin: 0 0 27px;
         max-width: 810px;
         font-size: 27px;
+        color: colors.$white;
       }
 
       .landing-screen-banner-content {
@@ -161,9 +219,11 @@
   }
 
   .cardsContainer {
-    position: relative;
+    position: absolute;
     z-index: 2;
-    bottom: -51vh;
+    top: 72vh;
+
+    width: generics.$main-screen-width;
 
     display: flex;
     flex-direction: row;
@@ -187,7 +247,7 @@
   .arrowBox {
     position: absolute;
     z-index: 2;
-    bottom: 21vh;
+    top: 90vh;
     left: 50vw;
     transform: translate(-50%, 0);
 
@@ -205,7 +265,7 @@
 
     background: linear-gradient(
       180deg,
-      rgba(23, 30, 39, 0.9) 0%,
+      rgba(23, 30, 39, 1) 0%,
       rgba(23, 30, 39, 0.572917) 59.9%,
       rgba(23, 30, 39, 0) 100%
     );

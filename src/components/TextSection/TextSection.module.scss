@@ -1,0 +1,45 @@
+@use "styles/colors.scss" as colors;
+@use "styles/fonts.scss" as fonts;
+
+.container {
+  display: flex;
+  flex-direction: column;
+
+  &.light {
+    color: colors.$white;
+  }
+
+  &.dark {
+    color: colors.$dark;
+  }
+
+  .context {
+    @include fonts.paragraphStyling();
+    margin: 0px 0px 8px;
+  }
+
+  .header {
+    @include fonts.h2();
+    margin: 0px 0px 16px;
+  }
+
+  .subtitle {
+    @include fonts.paragraphStyling();
+    margin: 0px 0px 27px;
+    font-size: 27px;
+  }
+
+  .children {
+    .description {
+      @include fonts.paragraphStyling();
+
+      margin: 0px 0px 36px;
+      font-size: 18px;
+      line-height: 200%;
+    }
+
+    .cta {
+      margin: 0px;
+    }
+  }
+}

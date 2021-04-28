@@ -1,3 +1,5 @@
+@use "styles/colors.scss" as colors;
+
 // Spacing variables
 
 $main-screen-width: 72vw;
@@ -8,6 +10,8 @@ $screen-padding-small: calc((100vw - #{$main-screen-width-large}) / 2);
 $text-list-margin: 18px;
 $story-max-width: 900px;
 $overview-max-width: 1200px;
+
+$home-site-line-left: 6vw;
 
 // Mixins
 
@@ -31,4 +35,18 @@ $overview-max-width: 1200px;
   @media only screen and (max-width: $breakpoint) {
     padding: $verticalPadding $screen-padding-small;
   }
+}
+
+@mixin informationCard {
+  background-color: colors.$lighter-dark;
+  padding: 41px;
+  border-radius: 4px;
+}
+
+@mixin siteLine {
+  position: absolute;
+  z-index: 999;
+  width: 1px;
+
+  background: colors.$white;
 }

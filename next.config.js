@@ -5,7 +5,8 @@ module.exports = {
   images: {
     domains: [
       'res.cloudinary.com',
-      'www.adammcquilkin.com'
+      'www.adammcquilkin.com',
+      'images.unsplash.com'
     ],
 
     // Used to have cloudinary optimize images

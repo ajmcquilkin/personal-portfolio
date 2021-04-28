@@ -1,0 +1,114 @@
+@use "styles/colors.scss" as colors;
+@use "styles/fonts.scss" as fonts;
+
+$line-offset: 15px;
+$entry-dot-diameter: 7px;
+
+.container {
+  box-shadow: colors.$default-shadow;
+  color: colors.$white;
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+
+    h3 {
+      @include fonts.h3();
+
+      margin: 0px auto 0px 0px;
+      font-size: 27px;
+      color: colors.$light-blue;
+    }
+
+    p {
+      @include fonts.paragraphStyling();
+
+      margin: auto 0px;
+      color: colors.$light-gray;
+    }
+  }
+
+  .content {
+    padding-left: 46px;
+    position: relative;
+
+    .sideLine {
+      position: absolute;
+      left: 0px;
+      top: $line-offset;
+
+      width: 1px;
+      height: calc(100% - #{$line-offset});
+      background-color: colors.$white;
+    }
+
+    .entriesContainer {
+      .entry {
+        margin-bottom: 27px;
+
+        .entryDot {
+          position: absolute;
+          left: calc(-1 * #{$entry-dot-diameter} / 2);
+
+          transform: translateY(#{$line-offset});
+
+          background-color: colors.$white;
+          width: $entry-dot-diameter;
+          height: $entry-dot-diameter;
+          border-radius: 50%;
+        }
+
+        .entryHeader {
+          display: flex;
+          flex-direction: row;
+
+          h4 {
+            @include fonts.h4();
+
+            margin: 0px auto -3px 0px;
+            font-size: 21px;
+          }
+
+          p {
+            margin: auto 0px 0px;
+          }
+        }
+
+        .subtitle {
+          @include fonts.paragraphStyling();
+
+          margin: 0px 0px 6px;
+          font-size: 13px;
+          color: #a0a0a0;
+        }
+
+        .entryDescription {
+          @include fonts.paragraphStyling();
+
+          margin: 0px 0px 9px;
+          font-size: 15px;
+        }
+
+        .addlLinesContainer {
+          .addlLine {
+            display: flex;
+            flex-direction: row;
+
+            p {
+              @include fonts.paragraphStyling();
+
+              margin: 0px;
+              font-size: 15px;
+
+              &.label {
+                margin-right: 12px;
+                font-weight: 700;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

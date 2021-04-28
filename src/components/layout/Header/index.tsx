@@ -10,6 +10,7 @@ import NavCard from 'components/layout/NavCard';
 import { mailtoLink, resumeFileName } from 'utils';
 import { ColorMode } from 'types';
 
+import Link from 'next/link';
 import styles from './Header.module.scss';
 
 export interface HeaderProps {
@@ -46,11 +47,44 @@ const Header = ({
         </div>
       )}
 
-      <div className={styles.signature}>AM</div>
+      <div className={[styles.line, styles.top].join(' ')} />
+      <div className={[styles.line, styles.main].join(' ')} />
+
+      <div className={styles.signature}><img src="/logo-white-transparent.svg" alt="adam mcquilkin personal logo" /></div>
       <div className={styles.signatureShadow} />
 
       <Menu colorMode={colorMode} className={styles.menuContainer} />
       <div className={styles.menuShadow} />
+
+      <div className={styles.personalLinksContainer}>
+        <Link href="">
+          <a className={styles.linkContainer}>
+            <p>LinkedIn</p>
+            <img src="/icons/github.svg" alt="linkedin link" />
+          </a>
+        </Link>
+
+        <Link href="">
+          <a className={styles.linkContainer}>
+            <p>GitHub</p>
+            <img src="/icons/github.svg" alt="github link" />
+          </a>
+        </Link>
+
+        <Link href="">
+          <a className={styles.linkContainer}>
+            <p>Medium</p>
+            <img src="/icons/github.svg" alt="medium link" />
+          </a>
+        </Link>
+
+        <Link href="">
+          <a className={styles.linkContainer}>
+            <p>Email</p>
+            <img src="/icons/github.svg" alt="mailto link" />
+          </a>
+        </Link>
+      </div>
 
       <div className={styles.bannerContainer}>
         <div className={styles.bannerContent}>

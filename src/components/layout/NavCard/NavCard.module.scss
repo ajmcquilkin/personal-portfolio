@@ -89,8 +89,9 @@
     }
 
     p {
-      @include fonts.paragraphStyling(colors.$white);
+      @include fonts.paragraphStyling();
       margin: auto 0px;
+      color: colors.$white;
     }
   }
 }

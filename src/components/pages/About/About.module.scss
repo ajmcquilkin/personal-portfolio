@@ -60,11 +60,12 @@
     .workTextContainer {
       h2,
       .workh2 {
-        @include fonts.h2(colors.$white);
+        @include fonts.h2();
       }
 
       p {
-        @include fonts.paragraphStyling(colors.$white);
+        @include fonts.paragraphStyling();
+        color: colors.$white;
       }
     }
   }

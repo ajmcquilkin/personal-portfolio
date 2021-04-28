@@ -2,5 +2,241 @@
 @use "styles/fonts.scss" as fonts;
 @use "styles/generics.scss" as generics;
 
+.flexSection {
+  display: flex;
+  flex-direction: row;
+}
+
 .container {
+  .mainContainer {
+    .backgroundContainer {
+      position: relative;
+      padding: 6vw 12vw;
+      background: colors.$dark;
+
+      .backgroundLine {
+        @include generics.siteLine();
+
+        top: 0vh;
+        left: 6vw;
+        height: 70%;
+      }
+
+      .backgroundTilesContainer {
+        flex: 1;
+        margin-right: min(6vw, 300px);
+
+        .backgroundTile {
+          margin-bottom: 16px;
+          padding: 41px;
+
+          border-radius: 4px;
+          background: colors.$lighter-dark;
+          color: colors.$white;
+
+          &:last-child {
+            margin-bottom: 0px;
+          }
+
+          .backgroundTileHeader {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            h3 {
+              @include fonts.h3();
+              margin: 0px auto 0px 0px;
+              font-size: 27px;
+              color: colors.$light-blue;
+            }
+
+            p {
+              @include fonts.paragraphStyling();
+              margin: auto 0px;
+            }
+          }
+        }
+      }
+
+      .backgroundTextContainer {
+        margin: auto 0px;
+        flex: 1;
+      }
+    }
+
+    .featuredProjectContainer {
+      padding: 6vw 12vw;
+      background: colors.$white;
+
+      .featuredProjectImage {
+        margin-right: min(6vw, 300px);
+        margin-bottom: 24px;
+        flex: 1;
+
+        p {
+          @include fonts.paragraphStyling();
+          text-align: center;
+        }
+      }
+
+      .featuredProjectContent {
+        flex: 1;
+
+        .featuredProjectContent {
+          margin-bottom: 24px;
+        }
+      }
+    }
+
+    .passionsContainer {
+      align-content: center;
+      height: 100vh;
+
+      background: colors.$lighter-dark;
+      box-shadow: colors.$default-shadow;
+
+      .passionsImage {
+        position: relative;
+        width: 50%;
+
+        .passionsImageSelector {
+          position: absolute;
+          width: 90%;
+          left: 5%;
+          bottom: 48px;
+        }
+      }
+
+      .passionsContent {
+        margin: auto;
+        padding: 12vw;
+        flex: 1;
+      }
+    }
+
+    .resumeContainer {
+      padding: 144px 0px;
+      background: linear-gradient(180deg, #171e27 0%, #1f2733 100%), #171e27;
+
+      .resumeExperienceContainer {
+        .resumeExperienceText {
+          padding: 12vw;
+          flex: 1;
+        }
+
+        .resumeExperienceContent {
+          @include generics.informationCard();
+
+          margin: auto 12vw auto 0px;
+          flex: 1;
+        }
+      }
+
+      .resumeAchievementsContainer {
+        .resumeAchievementsText {
+          padding: 12vw;
+          flex: 1;
+        }
+
+        .resumeAchievementsContent {
+          @include generics.informationCard();
+
+          margin: auto 0px auto 12vw;
+          flex: 1;
+        }
+      }
+
+      .resumeSkillsContainer {
+        .resumeSkillsText {
+          padding: 12vw;
+          flex: 1;
+        }
+
+        .resumeSkillsContent {
+          @include generics.informationCard();
+
+          margin: auto 12vw auto 0px;
+          flex: 1;
+        }
+      }
+    }
+
+    .projectsContainer {
+      .projectsIntroContainer {
+        display: flex;
+        flex-direction: row;
+        background-color: colors.$dark;
+        box-shadow: colors.$default-shadow;
+
+        .projectsIntroImage {
+          margin: auto 12vw auto 0px;
+          flex: 1;
+        }
+
+        .projectIntroText {
+          padding: 12vw;
+          flex: 1;
+
+          .projectsIntroTagsContainer {
+            margin-bottom: 27px;
+
+            .projectsIntroTagLabel {
+              @include fonts.paragraphStyling();
+              margin: 0px 0px 15px;
+            }
+
+            .projectIntroButtonList {
+              display: flex;
+              flex-direction: row;
+              flex-wrap: wrap;
+
+              .projectIntroButton {
+                @include fonts.paragraphStyling();
+
+                margin: 0px 18px 15px 0px;
+                padding: 6px 18px;
+
+                border: 1px solid colors.$white;
+                border-radius: 2px;
+
+                font-size: 15px;
+                color: colors.$white;
+              }
+            }
+          }
+        }
+      }
+
+      .projectsListContainer {
+        .projectContainer {
+          display: flex;
+          flex-direction: row;
+          align-content: center;
+          height: 100vh;
+
+          &.inverted {
+            flex-direction: row-reverse;
+
+            .projectFeaturedImage {
+              margin: auto 12vw auto 0vw;
+            }
+          }
+
+          .projectFeaturedImage {
+            margin: auto 0vw auto 12vw;
+            flex: 1;
+          }
+
+          .projectContentContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            padding: 12vw;
+            flex: 1;
+          }
+        }
+      }
+    }
+  }
 }
