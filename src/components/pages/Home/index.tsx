@@ -1,25 +1,44 @@
 import { useRouter } from 'next/router';
-
-import TextSection, { TextSectionCTA, TextSectionParagraph } from 'components/TextSection';
+import { useState } from 'react';
 
 import Button from 'components/Button';
+import CarouselSelector from 'components/CarouselSelector';
+import TextSection, { TextSectionCTA, TextSectionParagraph } from 'components/TextSection';
+
 import Header from 'components/layout/Header';
 import Footer from 'components/layout/Footer';
+import HomeInformationCard from 'components/layout/HomeInformationCard';
 
 import { mailtoLink, resumeFileName } from 'utils';
+import {
+  ProjectFrameworksArray, ProjectLanguagesArray, ProjectTagsArray,
+  AllProjectTags
+} from 'types/projects';
 
-import CarouselSelector from 'components/CarouselSelector';
-import { useState } from 'react';
-import HomeInformationCard from 'components/layout/HomeInformationCard';
-import { ProjectFrameworksArray, ProjectLanguagesArray, ProjectTagsArray } from 'types/projects';
 import styles from './Home.module.scss';
+
 import { HomeAchievementsCardContent, HomeExperienceCardContent, HomeSkillsCardContent } from './homeCardInformation';
+import { ProjectsArray } from './projects';
 
 const Home = (): JSX.Element => {
   const router = useRouter();
 
   const [featuredProject, setFeaturedProject] = useState(0);
   const [passionsImage, setPassionsImage] = useState(0);
+  const [filteredProjects, setFilteredProjects] = useState(ProjectsArray);
+  const [selectedTags, setSelectedTags] = useState(new Set());
+
+  const handleTagSelect = (tag: AllProjectTags, selected: boolean) => {
+    const updatedState = new Set(selectedTags);
+    if (selected) updatedState.add(tag);
+    else updatedState.delete(tag);
+    setSelectedTags(updatedState);
+  };
+
+  const handleFilterProjects = () => {
+    if (selectedTags.size) setFilteredProjects(ProjectsArray.filter((project) => project.tags.some((tag) => selectedTags.has(tag))));
+    else setFilteredProjects(ProjectsArray);
+  };
 
   return (
     <div className={styles.container}>
@@ -27,8 +46,8 @@ const Home = (): JSX.Element => {
         title="Adam McQuilkin"
         subtitle="Developer, Product Designer"
         description="A passionate Dartmouth College computer science and design student, specializing in web and application development."
-        src="https://res.cloudinary.com/duq3rhnd2/image/upload/v1602538908/Personal%20Portfolio/home_feature_2_crop_yeg97j.jpg"
-        alt="Montana mountains"
+        src="https://res.cloudinary.com/duq3rhnd2/image/upload/v1618616789/Personal%20Portfolio/DSC_8321_crop_dlipoe.jpg"
+        alt="Utah road at sunset with travelling cars"
       >
         <Button
           onClick={() => router.push(mailtoLink)}
@@ -47,6 +66,8 @@ const Home = (): JSX.Element => {
       </Header>
 
       <main className={styles.mainContainer}>
+        {/* Personal Background Section */}
+
         <section className={[styles.flexSection, styles.backgroundContainer].join(' ')}>
           <div className={styles.backgroundLine} />
 
@@ -98,6 +119,8 @@ const Home = (): JSX.Element => {
           </TextSection>
         </section>
 
+        {/* Featured Projects Section */}
+
         <section className={[styles.flexSection, styles.featuredProjectContainer].join(' ')}>
           <div className={styles.featuredProjectImage}>
             <div>image container</div>
@@ -133,6 +156,8 @@ const Home = (): JSX.Element => {
           </div>
         </section>
 
+        {/* Personal Passions Section */}
+
         <section className={[styles.flexSection, styles.passionsContainer].join(' ')}>
           <div className={styles.passionsImage}>
             <div>image container</div>
@@ -166,6 +191,8 @@ const Home = (): JSX.Element => {
             </TextSectionCTA>
           </TextSection>
         </section>
+
+        {/* Resume Section */}
 
         <section className={styles.resumeContainer}>
           <div className={[styles.flexSection, styles.resumeExperienceContainer].join(' ')}>
@@ -259,6 +286,8 @@ const Home = (): JSX.Element => {
           </div>
         </section>
 
+        {/* Past Projects Container */}
+
         <section className={styles.projectsContainer}>
           <div className={[styles.flexSection, styles.projectsIntroContainer].join(' ')}>
             <div className={styles.projectsIntroImage}>image</div>
@@ -273,38 +302,62 @@ const Home = (): JSX.Element => {
               <div className={styles.projectsIntroTagsContainer}>
                 <p className={styles.projectsIntroTagLabel}>tags</p>
                 <div className={styles.projectIntroButtonList}>
-                  {ProjectTagsArray.map((tag) => (
-                    <div className={styles.projectIntroButton} key={tag}>
-                      {tag}
-                    </div>
-                  ))}
+                  {ProjectTagsArray.map((tag) => {
+                    const isSelected = selectedTags.has(tag);
+                    return (
+                      <button
+                        type="button"
+                        onClick={() => handleTagSelect(tag, !isSelected)}
+                        className={[styles.projectIntroButton, isSelected ? styles.selected : ''].join(' ')}
+                        key={tag}
+                      >
+                        {tag}
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
 
               <div className={styles.projectsIntroTagsContainer}>
                 <p className={styles.projectsIntroTagLabel}>languages</p>
                 <div className={styles.projectIntroButtonList}>
-                  {ProjectLanguagesArray.map((language) => (
-                    <div className={styles.projectIntroButton} key={language}>
-                      {language}
-                    </div>
-                  ))}
+                  {ProjectLanguagesArray.map((language) => {
+                    const isSelected = selectedTags.has(language);
+                    return (
+                      <button
+                        type="button"
+                        onClick={() => handleTagSelect(language, !isSelected)}
+                        className={[styles.projectIntroButton, isSelected ? styles.selected : ''].join(' ')}
+                        key={language}
+                      >
+                        {language}
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
 
               <div className={styles.projectsIntroTagsContainer}>
                 <p className={styles.projectsIntroTagLabel}>frameworks</p>
                 <div className={styles.projectIntroButtonList}>
-                  {ProjectFrameworksArray.map((framework) => (
-                    <div className={styles.projectIntroButton} key={framework}>
-                      {framework}
-                    </div>
-                  ))}
+                  {ProjectFrameworksArray.map((framework) => {
+                    const isSelected = selectedTags.has(framework);
+                    return (
+                      <button
+                        type="button"
+                        onClick={() => handleTagSelect(framework, !isSelected)}
+                        className={[styles.projectIntroButton, isSelected ? styles.selected : ''].join(' ')}
+                        key={framework}
+                      >
+                        {framework}
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
 
               <TextSectionCTA>
-                <Button colorMode="light" onClick={() => router.push('/about')}>
+                <Button colorMode="light" onClick={handleFilterProjects}>
                   find projects
                 </Button>
               </TextSectionCTA>
@@ -312,56 +365,29 @@ const Home = (): JSX.Element => {
           </div>
 
           <div className={styles.projectsListContainer}>
-            {[{
-              title: 'D-Planner, LLC',
-              subtitle: 'Entrepreneurship',
-              context: 'Co-founder, Project Designer, Developer',
-              description:
-                `Academic planning is difficult for students, especially when information 
-              is fragmented and hard to find. D-Planner is a better way of planning out your time at college. 
-              Winner of the 2018 DALI Pitch Competition.`,
-              imageUrl: 'https://www.google.com/logos/doodles/2021/anne-mclarens-94th-birthday-6753651837108913.5-l.png'
-            },
-            {
-              title: 'D-Planner, LLC',
-              subtitle: 'Entrepreneurship',
-              context: 'Co-founder, Project Designer, Developer',
-              description:
-                `Academic planning is difficult for students, especially when information 
-              is fragmented and hard to find. D-Planner is a better way of planning out your time at college. 
-              Winner of the 2018 DALI Pitch Competition.`,
-              imageUrl: 'https://www.google.com/logos/doodles/2021/anne-mclarens-94th-birthday-6753651837108913.5-l.png'
-            },
-            {
-              title: 'D-Planner, LLC',
-              subtitle: 'Entrepreneurship',
-              context: 'Co-founder, Project Designer, Developer',
-              description:
-                `Academic planning is difficult for students, especially when information 
-              is fragmented and hard to find. D-Planner is a better way of planning out your time at college. 
-              Winner of the 2018 DALI Pitch Competition.`,
-              imageUrl: 'https://www.google.com/logos/doodles/2021/anne-mclarens-94th-birthday-6753651837108913.5-l.png'
-            }
-            ].map(({
-              title, subtitle, context,
-              description, imageUrl
+            {filteredProjects.map(({
+              title, subtitle, context, description,
+              featuredImageSrc, featuredImageAlt, headerIconSrc, headerIconAlt,
+              backgroundStyling, storyUrl, tags
             }, idx) => (
-              <div className={[styles.flexSection, styles.projectContainer, idx % 2 ? styles.inverted : ''].join(' ')} key={title}>
-                <div className={styles.projectFeaturedImage}><img src={imageUrl} alt="" /></div>
+              <div style={{ background: backgroundStyling }} className={[styles.flexSection, styles.projectContainer, idx % 2 ? styles.inverted : ''].join(' ')} key={title}>
+                <div className={styles.projectFeaturedImage}><img src={featuredImageSrc} alt={featuredImageAlt} /></div>
 
                 <div className={styles.projectContentContainer}>
-                  <div>logo</div>
+                  <img className={styles.projectIcon} src={headerIconSrc} alt={headerIconAlt} />
+
                   <TextSection
                     title={title}
                     subtitle={subtitle}
                     context={context}
+                    colorMode="light"
                   >
                     <TextSectionParagraph>
                       {description}
                     </TextSectionParagraph>
 
                     <TextSectionCTA>
-                      <Button colorMode="dark" onClick={() => router.push('/about')}>
+                      <Button colorMode="light" onClick={() => router.push(storyUrl)}>
                         read more
                       </Button>
                     </TextSectionCTA>
