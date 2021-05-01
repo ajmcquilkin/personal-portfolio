@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import Button from 'components/Button';
 import CarouselSelector from 'components/CarouselSelector';
+import ProtectedImage from 'components/ProtectedImage';
 import TextSection, { TextSectionCTA, TextSectionParagraph } from 'components/TextSection';
 
 import Header from 'components/layout/Header';
@@ -123,7 +124,13 @@ const Home = (): JSX.Element => {
 
         <section className={[styles.flexSection, styles.featuredProjectContainer].join(' ')}>
           <div className={styles.featuredProjectImage}>
-            <div>image container</div>
+            <div className={styles.featuredProjectImageContainer}>
+              <ProtectedImage
+                src="https://images.unsplash.com/photo-1619472376731-3ca648a34b69?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
+                alt="image alt text"
+                objectFit="cover"
+              />
+            </div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictum sit turpis suspendisse urna enim.</p>
           </div>
 
@@ -160,7 +167,14 @@ const Home = (): JSX.Element => {
 
         <section className={[styles.flexSection, styles.passionsContainer].join(' ')}>
           <div className={styles.passionsImage}>
-            <div>image container</div>
+            <div className={styles.passionsImageContainer}>
+              <ProtectedImage
+                src="https://images.unsplash.com/photo-1619472376731-3ca648a34b69?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
+                alt="image alt text"
+                objectFit="cover"
+              />
+            </div>
+
             <CarouselSelector
               numOptions={3}
               currentPos={passionsImage}
@@ -290,14 +304,22 @@ const Home = (): JSX.Element => {
 
         <section className={styles.projectsContainer}>
           <div className={[styles.flexSection, styles.projectsIntroContainer].join(' ')}>
-            <div className={styles.projectsIntroImage}>image</div>
+            <div className={styles.projectsIntroImageContainer}>
+              <div className={styles.projectsIntroImage}>
+                <ProtectedImage
+                  src="https://images.unsplash.com/photo-1619472376731-3ca648a34b69?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
+                  alt="image alt text"
+                  objectFit="cover"
+                />
+              </div>
+            </div>
 
             <TextSection
               title="my projects"
               subtitle="Explore my professional experiences by topic, or view all of my stories below"
               context="my work"
               colorMode="light"
-              className={styles.projectIntroText}
+              className={styles.projectsIntroText}
             >
               <div className={styles.projectsIntroTagsContainer}>
                 <p className={styles.projectsIntroTagLabel}>tags</p>

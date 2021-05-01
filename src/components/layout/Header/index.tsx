@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { ReactNode } from 'react';
 
@@ -11,6 +10,7 @@ import { mailtoLink, resumeFileName } from 'utils';
 import { ColorMode } from 'types';
 
 import Link from 'next/link';
+import ProtectedImage from 'components/ProtectedImage';
 import styles from './Header.module.scss';
 
 export interface HeaderProps {
@@ -37,10 +37,9 @@ const Header = ({
       {src && alt && (
         <div className={styles.mainFeature}>
           <div className={styles.mainFeatureShadow} />
-          <Image
+          <ProtectedImage
             src={src}
             alt={alt}
-            layout="fill"
             objectFit="cover"
             className={styles.mainFeature}
           />

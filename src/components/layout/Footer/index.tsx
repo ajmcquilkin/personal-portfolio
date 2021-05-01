@@ -1,10 +1,10 @@
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 
 import Button from 'components/Button';
-import TextSection, { TextSectionCTA, TextSectionParagraph } from 'components/TextSection';
+import TextSection, { TextSectionCTA } from 'components/TextSection';
 import { mailtoLink, resumeFileName } from 'utils';
 
+import ProtectedImage from 'components/ProtectedImage';
 import styles from './Footer.module.scss';
 
 const Footer = (): JSX.Element => {
@@ -12,10 +12,9 @@ const Footer = (): JSX.Element => {
 
   return (
     <footer className={styles.container}>
-      <Image
+      <ProtectedImage
         src="https://images.unsplash.com/photo-1554629947-334ff61d85dc"
         alt="test mountain image"
-        layout="fill"
         objectFit="cover"
       />
 

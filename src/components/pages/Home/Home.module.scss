@@ -73,6 +73,11 @@
         margin-bottom: 24px;
         flex: 1;
 
+        .featuredProjectImageContainer {
+          position: relative;
+          height: 80%;
+        }
+
         p {
           @include fonts.paragraphStyling();
           text-align: center;
@@ -98,6 +103,12 @@
       .passionsImage {
         position: relative;
         width: 50%;
+
+        .passionsImageContainer {
+          position: relative;
+          width: 100%;
+          height: 100%;
+        }
 
         .passionsImageSelector {
           position: absolute;
@@ -168,12 +179,17 @@
         background-color: colors.$dark;
         box-shadow: colors.$default-shadow;
 
-        .projectsIntroImage {
-          margin: auto 12vw auto 0px;
-          flex: 1;
+        .projectsIntroImageContainer {
+          width: 50%;
+
+          .projectsIntroImage {
+            position: relative;
+            width: 100%;
+            height: 100%;
+          }
         }
 
-        .projectIntroText {
+        .projectsIntroText {
           padding: 12vw;
           flex: 1;
 
