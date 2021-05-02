@@ -13,7 +13,8 @@
 
   p {
     @include fonts.paragraphStyling();
-    font-size: 15px;
+    text-align: left !important;
+    font-size: 15px !important;
 
     margin: 0px 0px 6px;
     color: colors.$dark;
