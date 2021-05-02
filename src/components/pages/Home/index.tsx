@@ -3,8 +3,9 @@ import { useState } from 'react';
 
 import Button from 'components/Button';
 import CarouselSelector from 'components/CarouselSelector';
-import ProtectedImage from 'components/ProtectedImage';
 import TextSection, { TextSectionCTA, TextSectionParagraph } from 'components/TextSection';
+
+import ProtectedImage from 'components/image/ProtectedImage';
 
 import Header from 'components/layout/Header';
 import Footer from 'components/layout/Footer';

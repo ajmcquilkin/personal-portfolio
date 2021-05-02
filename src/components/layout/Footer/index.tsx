@@ -1,10 +1,11 @@
 import { useRouter } from 'next/router';
 
 import Button from 'components/Button';
+import ProtectedImage from 'components/image/ProtectedImage';
 import TextSection, { TextSectionCTA } from 'components/TextSection';
+
 import { mailtoLink, resumeFileName } from 'utils';
 
-import ProtectedImage from 'components/ProtectedImage';
 import styles from './Footer.module.scss';
 
 const Footer = (): JSX.Element => {

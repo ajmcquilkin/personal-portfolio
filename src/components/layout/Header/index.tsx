@@ -1,16 +1,14 @@
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ReactNode } from 'react';
 
 import ArrowBox from 'components/ArrowBox';
-import Button from 'components/Button';
+import ProtectedImage from 'components/image/ProtectedImage';
 import Menu from 'components/layout/Menu';
 import NavCard from 'components/layout/NavCard';
 
-import { mailtoLink, resumeFileName } from 'utils';
 import { ColorMode } from 'types';
 
-import Link from 'next/link';
-import ProtectedImage from 'components/ProtectedImage';
 import styles from './Header.module.scss';
 
 export interface HeaderProps {

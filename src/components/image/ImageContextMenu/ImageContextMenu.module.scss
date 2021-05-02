@@ -1,0 +1,25 @@
+@use "styles/colors.scss" as colors;
+@use "styles/fonts.scss" as fonts;
+
+.container {
+  padding: 9px 18px;
+  max-width: 480px;
+  position: fixed;
+  z-index: 9999;
+
+  border-radius: 8px;
+  box-shadow: colors.$default-shadow;
+  background-color: colors.$white;
+
+  p {
+    @include fonts.paragraphStyling();
+    font-size: 15px;
+
+    margin: 0px 0px 6px;
+    color: colors.$dark;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+}
