@@ -15,10 +15,13 @@ export interface Project {
   subtitle: string,
   context: string,
   description: string,
-  ctaText: string,
-  ctaLink: string,
 
-  featuredLogo: string,
-  featuredImage: string,
-  tags: AllProjectTags[]
+  featuredImageSrc: string,
+  featuredImageAlt: string,
+  featuredLogoSrc: string,
+  featuredLogoAlt: string,
+
+  backgroundStyling?: string,
+  storyUrl?: string,
+  tags?: AllProjectTags[]
 }

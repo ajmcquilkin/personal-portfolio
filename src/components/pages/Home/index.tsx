@@ -1,10 +1,12 @@
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 
 import Button from 'components/Button';
-import CarouselSelector from 'components/CarouselSelector';
 import TextSection, { TextSectionCTA, TextSectionParagraph } from 'components/TextSection';
 
+import Carousel from 'components/carousel/Carousel';
+import CarouselSelector from 'components/carousel/CarouselSelector';
 import ProtectedImage from 'components/image/ProtectedImage';
 
 import Header from 'components/layout/Header';
@@ -20,6 +22,8 @@ import {
 import styles from './Home.module.scss';
 
 import { HomeAchievementsCardContent, HomeExperienceCardContent, HomeSkillsCardContent } from './homeCardInformation';
+import { HomePassionsImages } from './homeFeaturedImages';
+import { HomeFeaturedProjects } from './homeFeaturedProjects';
 import { ProjectsArray } from './projects';
 
 const Home = (): JSX.Element => {
@@ -38,7 +42,7 @@ const Home = (): JSX.Element => {
   };
 
   const handleFilterProjects = () => {
-    if (selectedTags.size) setFilteredProjects(ProjectsArray.filter((project) => project.tags.some((tag) => selectedTags.has(tag))));
+    if (selectedTags.size) setFilteredProjects(ProjectsArray.filter((project) => !!project.tags?.some((tag) => selectedTags.has(tag))));
     else setFilteredProjects(ProjectsArray);
   };
 
@@ -124,40 +128,53 @@ const Home = (): JSX.Element => {
         {/* Featured Projects Section */}
 
         <section className={[styles.flexSection, styles.featuredProjectContainer].join(' ')}>
-          <div className={styles.featuredProjectImage}>
-            <div className={styles.featuredProjectImageContainer}>
-              <ProtectedImage
-                src="https://images.unsplash.com/photo-1619472376731-3ca648a34b69?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
-                alt="image alt text"
-                objectFit="cover"
-              />
-            </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictum sit turpis suspendisse urna enim.</p>
+          <div className={styles.featuredProjectImageContainer}>
+            <Carousel
+              position={featuredProject}
+              className={styles.featuredProjectImageCarousel}
+            >
+              {HomeFeaturedProjects.map(({ featuredImageSrc, featuredImageAlt, caption }) => (
+                <>
+                  <div className={styles.featuredProjectImage}>
+                    <Image
+                      src={featuredImageSrc}
+                      alt={featuredImageAlt}
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </div>
+                  <p>{caption}</p>
+                </>
+              ))}
+            </Carousel>
           </div>
 
-          <div className={styles.featuredProjectContent}>
-            <TextSection
-              title="ICID: USPTO 9,632,952"
-              subtitle="Physical USB Human Interface Device (HID)-class signal interceptor and repeater "
-              context="personal project"
-              className={styles.featuredProjectContent}
-            >
-              <TextSectionParagraph>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictum sit turpis suspendisse urna enim nascetur
-                ultrices massa blandit. Odio tincidunt imperdiet suspendisse venenatis diam ac faucibus. Urna, nullam tincidunt
-                pretium viverra pretium pulvinar. Rhoncus imperdiet ut imperdiet id. Erat tellus molestie vitae sed ac orci
-                scelerisque interdum sit.
-              </TextSectionParagraph>
+          <div className={styles.featuredProjectContentContainer}>
+            <Carousel position={featuredProject}>
+              {HomeFeaturedProjects.map(({
+                title, subtitle, context,
+                description, storyUrl
+              }) => (
+                <TextSection
+                  title={title}
+                  subtitle={subtitle}
+                  context={context}
+                  className={styles.featuredProjectContent}
+                  key={title}
+                >
+                  <TextSectionParagraph>{description}</TextSectionParagraph>
 
-              <TextSectionCTA>
-                <Button colorMode="dark" onClick={() => router.push('/about')}>
-                  more about me
-                </Button>
-              </TextSectionCTA>
-            </TextSection>
+                  <TextSectionCTA>
+                    <Button colorMode="dark" onClick={() => router.push(storyUrl || '/story')}>
+                      learn more
+                    </Button>
+                  </TextSectionCTA>
+                </TextSection>
+              ))}
+            </Carousel>
 
             <CarouselSelector
-              numOptions={3}
+              numOptions={HomeFeaturedProjects.length}
               currentPos={featuredProject}
               onSelect={(idx) => setFeaturedProject(idx)}
             />
@@ -167,17 +184,21 @@ const Home = (): JSX.Element => {
         {/* Personal Passions Section */}
 
         <section className={[styles.flexSection, styles.passionsContainer].join(' ')}>
-          <div className={styles.passionsImage}>
-            <div className={styles.passionsImageContainer}>
-              <ProtectedImage
-                src="https://images.unsplash.com/photo-1619472376731-3ca648a34b69?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
-                alt="image alt text"
-                objectFit="cover"
-              />
-            </div>
+          <div className={styles.passionsImageContainer}>
+            <Carousel position={passionsImage} className={styles.passionsImageCarousel}>
+              {HomePassionsImages.map(({ src, alt }) => (
+                <div className={styles.passionsImage} key={src}>
+                  <ProtectedImage
+                    src={src}
+                    alt={alt}
+                    objectFit="cover"
+                  />
+                </div>
+              ))}
+            </Carousel>
 
             <CarouselSelector
-              numOptions={3}
+              numOptions={HomePassionsImages.length}
               currentPos={passionsImage}
               onSelect={(idx) => setPassionsImage(idx)}
               colorMode="light"
@@ -390,14 +411,14 @@ const Home = (): JSX.Element => {
           <div className={styles.projectsListContainer}>
             {filteredProjects.map(({
               title, subtitle, context, description,
-              featuredImageSrc, featuredImageAlt, headerIconSrc, headerIconAlt,
-              backgroundStyling, storyUrl, tags
+              featuredImageSrc, featuredImageAlt, featuredLogoSrc, featuredLogoAlt,
+              backgroundStyling, storyUrl
             }, idx) => (
               <div style={{ background: backgroundStyling }} className={[styles.flexSection, styles.projectContainer, idx % 2 ? styles.inverted : ''].join(' ')} key={title}>
                 <div className={styles.projectFeaturedImage}><img src={featuredImageSrc} alt={featuredImageAlt} /></div>
 
                 <div className={styles.projectContentContainer}>
-                  <img className={styles.projectIcon} src={headerIconSrc} alt={headerIconAlt} />
+                  <img className={styles.projectIcon} src={featuredLogoSrc} alt={featuredLogoAlt} />
 
                   <TextSection
                     title={title}
@@ -410,7 +431,7 @@ const Home = (): JSX.Element => {
                     </TextSectionParagraph>
 
                     <TextSectionCTA>
-                      <Button colorMode="light" onClick={() => router.push(storyUrl)}>
+                      <Button colorMode="light" onClick={() => router.push(storyUrl || '/story')}>
                         read more
                       </Button>
                     </TextSectionCTA>
