@@ -52,7 +52,7 @@ const Home = (): JSX.Element => {
         title="Adam McQuilkin"
         subtitle="Developer, Product Designer"
         description="A passionate Dartmouth College computer science and design student, specializing in web and application development."
-        src="https://res.cloudinary.com/duq3rhnd2/image/upload/v1618616789/Personal%20Portfolio/DSC_8321_crop_dlipoe.jpg"
+        src="/v1618616789/Personal%20Portfolio/DSC_8321_crop_dlipoe.jpg"
         alt="Utah road at sunset with travelling cars"
       >
         <Button
@@ -329,7 +329,7 @@ const Home = (): JSX.Element => {
             <div className={styles.projectsIntroImageContainer}>
               <div className={styles.projectsIntroImage}>
                 <ProtectedImage
-                  src="https://images.unsplash.com/photo-1619472376731-3ca648a34b69?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
+                  src="/v1619975016/Personal%20Portfolio/DSC_9251_fapzdo.jpg"
                   alt="image alt text"
                   objectFit="cover"
                 />

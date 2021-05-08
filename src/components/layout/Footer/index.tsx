@@ -14,7 +14,7 @@ const Footer = (): JSX.Element => {
   return (
     <footer className={styles.container}>
       <ProtectedImage
-        src="https://images.unsplash.com/photo-1554629947-334ff61d85dc"
+        src="/v1602266186/Personal%20Portfolio/gallery/franc_2_qtcjjv.jpg"
         alt="test mountain image"
         objectFit="cover"
       />

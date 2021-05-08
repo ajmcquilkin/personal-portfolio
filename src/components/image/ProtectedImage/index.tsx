@@ -16,16 +16,16 @@ const ProtectedImage = ({
   const ref = useRef<HTMLDivElement>(null);
 
   return (
-    <div ref={ref} className={[styles.container, className].join(' ')}>
+    <div ref={ref} className={[styles.container, className].join(' ')} role="presentation">
       <Image
         src={src}
-        alt={alt}
+        alt=""
         layout="fill"
         objectFit={objectFit}
         objectPosition={objectPosition}
         quality={quality}
       />
-      <img className={styles.featureImage} src="/feature-image.png" alt="" role="presentation" />
+      <img className={styles.featureImage} src="/feature-image.png" alt={alt} />
       <ImageContextMenu parentRef={ref} />
     </div>
   );

@@ -18,7 +18,6 @@ const ImageContextMenu = ({ parentRef }: ImageContextMenuProps): JSX.Element => 
   };
 
   const handleWindowClick = (e: MouseEvent) => {
-    e.preventDefault();
     setIsOpen(false);
   };
 

@@ -7,6 +7,7 @@ import ProtectedImage from 'components/image/ProtectedImage';
 import Menu from 'components/layout/Menu';
 import NavCard from 'components/layout/NavCard';
 
+import { mailtoLink } from 'utils';
 import { ColorMode } from 'types';
 
 import styles from './Header.module.scss';
@@ -54,31 +55,47 @@ const Header = ({
       <div className={styles.menuShadow} />
 
       <div className={styles.personalLinksContainer}>
-        <Link href="">
-          <a className={styles.linkContainer}>
+        <Link href="https://www.linkedin.com/in/adam-mcquilkin">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.linkContainer}
+          >
             <p>LinkedIn</p>
-            <img src="/icons/github.svg" alt="linkedin link" />
+            <img src="/icons/brands/linkedin.png" alt="linkedin link" />
           </a>
         </Link>
 
-        <Link href="">
-          <a className={styles.linkContainer}>
+        <Link href="https://github.com/ajmcquilkin">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.linkContainer}
+          >
             <p>GitHub</p>
-            <img src="/icons/github.svg" alt="github link" />
+            <img src="/icons/brands/github.png" alt="github link" />
           </a>
         </Link>
 
-        <Link href="">
-          <a className={styles.linkContainer}>
-            <p>Medium</p>
-            <img src="/icons/github.svg" alt="medium link" />
+        {/* <Link href="">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.linkContainer}
+          >
+            <p>Coming Soon!</p>
+            <img src="/icons/brands/medium.png" alt="medium link" />
           </a>
-        </Link>
+        </Link> */}
 
-        <Link href="">
-          <a className={styles.linkContainer}>
+        <Link href={mailtoLink}>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.linkContainer}
+          >
             <p>Email</p>
-            <img src="/icons/github.svg" alt="mailto link" />
+            <img src="/icons/brands/email.png" alt="mailto link" />
           </a>
         </Link>
       </div>

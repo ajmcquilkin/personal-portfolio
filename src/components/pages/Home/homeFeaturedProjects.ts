@@ -11,7 +11,7 @@ export const HomeFeaturedProjects: HomeFeaturedProject[] = [
     description: 'Academic planning is difficult for students, especially when information is fragmented and hard to find. D-Planner is a better way of planning out your time at college. Winner of the 2018 DALI Pitch Competition.',
     caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictum sit turpis suspendisse urna enim.',
 
-    featuredImageSrc: 'https://images.unsplash.com/photo-1619472376731-3ca648a34b69?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80',
+    featuredImageSrc: '/v1602266118/Personal%20Portfolio/test_project_image_lx5fro.png',
     featuredImageAlt: 'image alt text',
     featuredLogoSrc: '/icons/search.svg',
     featuredLogoAlt: 'D-Planner logo',
@@ -23,7 +23,7 @@ export const HomeFeaturedProjects: HomeFeaturedProject[] = [
     description: 'Veritatis ipsa laborum ducimus facilis qui. Eveniet et hic quidem rem qui natus aut. Recusandae enim iure qui ab. Labore nulla cumque aliquam et. Quod fugiat et officia officiis rerum debitis vero molestias.',
     caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictum sit turpis suspendisse urna enim.',
 
-    featuredImageSrc: 'https://images.unsplash.com/photo-1619472376731-3ca648a34b69?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80',
+    featuredImageSrc: '/v1602266118/Personal%20Portfolio/test_project_image_lx5fro.png',
     featuredImageAlt: 'USPTO logo',
     featuredLogoSrc: '/icons/chip.svg',
     featuredLogoAlt: 'Computer chip',
@@ -35,7 +35,7 @@ export const HomeFeaturedProjects: HomeFeaturedProject[] = [
     description: 'Academic planning is difficult for students, especially when information is fragmented and hard to find. D-Planner is a better way of planning out your time at college. Winner of the 2018 DALI Pitch Competition.',
     caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictum sit turpis suspendisse urna enim.',
 
-    featuredImageSrc: 'https://images.unsplash.com/photo-1619472376731-3ca648a34b69?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80',
+    featuredImageSrc: '/v1602266118/Personal%20Portfolio/test_project_image_lx5fro.png',
     featuredImageAlt: 'image alt text',
     featuredLogoSrc: '/icons/search.svg',
     featuredLogoAlt: 'D-Planner logo',

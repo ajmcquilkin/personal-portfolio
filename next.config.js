@@ -10,8 +10,8 @@ module.exports = {
     ],
 
     // Used to have cloudinary optimize images
-    // loader: 'cloudinary',
-    // path: 'https://res.cloudinary.com/duq3rhnd2/image/upload'
+    loader: 'cloudinary',
+    path: 'https://res.cloudinary.com/duq3rhnd2/image/upload'
   },
   webpack(config) {
     config.module.rules.push({

@@ -5,15 +5,19 @@ export interface HomeFeaturedImage {
 
 export const HomePassionsImages: HomeFeaturedImage[] = [
   {
-    src: 'https://images.unsplash.com/photo-1619472376731-3ca648a34b69?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80',
-    alt: 'image alt text'
+    src: '/v1619974667/Personal%20Portfolio/DSC_0933_wpirsx.jpg',
+    alt: 'cloudy mountain farming valley'
   },
   {
-    src: 'https://images.unsplash.com/photo-1619472376731-3ca648a34b69?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80',
-    alt: 'image alt text'
+    src: '/v1619973885/Personal%20Portfolio/DSC_7843_pshlop.jpg',
+    alt: 'snowy mountain road'
   },
   {
-    src: 'https://images.unsplash.com/photo-1619472376731-3ca648a34b69?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80',
-    alt: 'image alt text'
+    src: '/v1619973862/Personal%20Portfolio/gallery/DSC_8013_a5une3.jpg',
+    alt: 'snowy mountain seen through evergreen trees at sunset'
+  },
+  {
+    src: '/v1619973886/Personal%20Portfolio/DSC_7984_rpxxcx.jpg',
+    alt: 'mountain town seen from ridge at sunset'
   }
 ];
