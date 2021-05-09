@@ -7,35 +7,36 @@ export const HomeExperienceCardContent: HomeInformationCardEntry[] = [
     title: 'Microsoft',
     subtitle: 'Software Engineering Intern',
     rightText: 'May 2021 - Aug 2021',
-    description: 'Mattis velit suspendisse interdum sed. Pellentesque pulvinar cursus ante maecenas nulla. Venenatis condimentum semper at commodo felis. Neque eu pretium faucibus faucibus lorem aenean enim cursus. Tincidunt sit venenatis in laoreet elementum viverra risus.',
+    description: 'This internship is currently in progress. I work as a Software Engineering Intern on the PowerBI team, improving the web user experience of users interacting with online paginated reports.',
+    // description: 'Mattis velit suspendisse interdum sed. Pellentesque pulvinar cursus ante maecenas nulla. Venenatis condimentum semper at commodo felis. Neque eu pretium faucibus faucibus lorem aenean enim cursus. Tincidunt sit venenatis in laoreet elementum viverra risus.',
     addlLines: []
   },
   {
     title: 'DALI Lab',
     subtitle: 'Development Mentor, Developer, Product Designer',
     rightText: 'Jan 2019 - Present',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, at tristique cum dictum massa. Auctor non, cursus orci consectetur ut volutpat vitae massa ut. Tincidunt sit dui tellus facilisis malesuada pellentesque. Enim mauris lectus sit nisl nec in sed duis sagittis.',
+    description: 'Worked on MVP-level contract work for business and non-profit partners. I both work as a full-stack developer and as a mentor. I regularly lead product teams in scoping and effective product development, as well as creating mentorship policy for new and returning lab members.',
     addlLines: []
   },
   {
     title: 'D-Planner, LLC',
     subtitle: 'Co-Founder, Product Designer, Full-Stack Developer',
     rightText: 'Sept 2018 - August 2020',
-    description: 'Integer cras malesuada commodo ornare id ornare convallis scelerisque. Aenean vitae aliquam faucibus tellus. Diam et fames augue odio gravida sem odio diam. Condimentum faucibus sed aliquam vel sed sed consectetur ullamcorper. Enim, convallis magna et nunc eget. Viverra turpis orci sollicitudin vitae gravida a risus.',
+    description: 'Founded a startup to improve academic planning for all students, winning two rounds of early-stage startup funding through Dartmouth College tech incubators. Designed, managed, and implemented a modern online suite of tools to give students control over their future within higher education.',
     addlLines: []
   },
   {
     title: 'Nextmove Technologies',
     subtitle: 'Head of Web Development',
     rightText: 'June 2019 - Aug 2019',
-    description: 'Mattis velit suspendisse interdum sed. Pellentesque pulvinar cursus ante maecenas nulla. Venenatis condimentum semper at commodo felis. Neque eu pretium faucibus faucibus lorem aenean enim cursus. Tincidunt sit venenatis in laoreet elementum viverra risus.',
+    description: 'Worked with company leadership to create a repository of corporate marketing materials for use on web and print campaigns. This included writing, filming, and editing a complete internal training suite as well as imaging all company product lines.',
     addlLines: []
   },
   {
     title: 'Nextmove Technologies',
     subtitle: 'Head of Web Development',
     rightText: 'June 2018 - Aug 2018',
-    description: 'Elementum quam est netus nullam neque sed. Vitae scelerisque condimentum tempor sed diam cras mi nam. Rutrum fusce sit sodales rhoncus purus. Nunc id id eu aliquam sapien laoreet fermentum.',
+    description: 'Worked company leadership to completely redesign and rebuild their online presence, with a focus on improved user experience and maintainability. Increased website traffic by 220%, lowered site bounce rate by 60%, and increased page views per session by 70% over three months.',
     addlLines: []
   }
 ];
@@ -45,28 +46,28 @@ export const HomeAchievementsCardContent: HomeInformationCardEntry[] = [
     title: 'United States Patent 9,632,952',
     subtitle: 'Inventor, Sole Patent Holder',
     rightText: 'Awarded Jan 2017',
-    description: 'Pellentesque hac neque, ipsum fames eu rutrum. Sit congue leo id ut ac ipsum, sed sit nisi. Mauris urna vitae sagittis curabitur commodo. A, odio posuere mattis habitant sed justo, tellus suspendisse quis.',
+    description: 'Designed, developed, and patented a physical hardware macro device for use in data processing and gaming applications. This device was patented on research conducted during a high school independent study.',
     addlLines: []
   },
   {
     title: 'Wilderness First Responder',
     subtitle: 'Certified Wilderness Medical Provider (WFR)',
     rightText: 'May 2019 - Present',
-    description: 'Nulla sagittis faucibus sed et ultrices volutpat congue. Fermentum scelerisque lectus amet sapien sodales ut sem faucibus. Eget eget nisl egestas non viverra proin praesent eget. Et, lacinia egestas ipsum morbi.',
+    description: 'Trained in advanced backcountry lifesaving, focused on immediate medical response and evacuation techniques. Finished top in my class, achieving a perfect score in the intensive 80-hour training course.',
     addlLines: []
   },
   {
     title: 'New England Hundred-Highest Club',
-    subtitle: 'Certified Wilderness Medical Provider (WFR)',
+    subtitle: 'AMC Hunderd-Highest Award Recipient',
     rightText: 'Aug 2005 - Aug 2020',
-    description: 'Eu nisi, amet, scelerisque laoreet amet quam amet bibendum. Suspendisse adipiscing ante viverra in varius. Amet, lacus quisque turpis morbi lacus sollicitudin a. Malesuada dictumst gravida pharetra, donec senectus at scelerisque. Euismod sed massa, est enim, fermentum, sem fringilla. Nibh nibh felis interdum posuere amet blandit consequat.',
+    description: 'Worked over the course of 15 years to summit the 100 tallest peaks within New England, many of which require advanced backcountry navigation and wayfinding training.',
     addlLines: []
   },
   {
     title: 'BSA Eagle Scout Rank',
     subtitle: 'Highest Rank Attainable in the Scouts BSA',
     rightText: 'Awarded Jan 2017',
-    description: 'Pellentesque hac neque, ipsum fames eu rutrum. Sit congue leo id ut ac ipsum, sed sit nisi. Mauris urna vitae sagittis curabitur commodo. A, odio posuere mattis habitant sed justo, tellus suspendisse quis.',
+    description: 'Awarded the rank of Eagle Scout after 11 years of membership. Led a group of 30 volunteers rebuilding cabins for a local non-profit land trust, totaling over 250 person-hours and raising $1000 in the course of six hours.',
     addlLines: []
   }
 ];
@@ -74,8 +75,8 @@ export const HomeAchievementsCardContent: HomeInformationCardEntry[] = [
 export const HomeSkillsCardContent: HomeInformationCardEntry[] = [
   {
     title: 'Frontend Web Development',
-    subtitle: 'Inventor, Sole Patent Holder',
-    description: 'Pellentesque hac neque, ipsum fames eu rutrum. Sit congue leo id ut ac ipsum, sed sit nisi. Mauris urna vitae sagittis curabitur commodo. A, odio posuere mattis habitant sed justo, tellus suspendisse quis.',
+    subtitle: 'Specialzing dataflow management and JAMStack applications',
+    description: 'Deep experience with building efficient and highly maintainable user interfaces, using tools such as Redux and NextJS. Experience with both short-turnaround and matintenance-phase applications.',
     addlLines: [
       {
         label: 'Languages',
@@ -89,8 +90,8 @@ export const HomeSkillsCardContent: HomeInformationCardEntry[] = [
   },
   {
     title: 'Backend Web Development',
-    subtitle: 'Inventor, Sole Patent Holder',
-    description: 'Pellentesque hac neque, ipsum fames eu rutrum. Sit congue leo id ut ac ipsum, sed sit nisi. Mauris urna vitae sagittis curabitur commodo. A, odio posuere mattis habitant sed justo, tellus suspendisse quis.',
+    subtitle: 'Specializing in robust and efficient ',
+    description: 'Experience with building scalable and maintainable backend code, both with servers and serverless functions. Specializing in NodeJS, with experience in many other backend paradeigms.',
     addlLines: [
       {
         label: 'Languages',
@@ -98,14 +99,14 @@ export const HomeSkillsCardContent: HomeInformationCardEntry[] = [
       },
       {
         label: 'Frameworks',
-        content: 'Git, NodeJS, ExpressJS, MongoDB, Flask, Ruby on Rails'
+        content: 'Git, NodeJS, ExpressJS, SQL, NoSQL, Flask, Ruby on Rails'
       }
     ]
   },
   {
     title: 'Product Design',
-    subtitle: 'Inventor, Sole Patent Holder',
-    description: 'Pellentesque hac neque, ipsum fames eu rutrum. Sit congue leo id ut ac ipsum, sed sit nisi. Mauris urna vitae sagittis curabitur commodo. A, odio posuere mattis habitant sed justo, tellus suspendisse quis.',
+    subtitle: 'Specializing in cohesive user experiences',
+    description: 'Trained in UI/UX and product design. I work to ensure a lasting positive user experience, whether related to web interfaces or complete product flows. I often use my product design experience to improve the user interfaces I build.',
     addlLines: [
       {
         label: 'Programs',
@@ -115,23 +116,8 @@ export const HomeSkillsCardContent: HomeInformationCardEntry[] = [
   },
   {
     title: 'Embedded Development',
-    subtitle: 'Inventor, Sole Patent Holder',
-    description: 'Pellentesque hac neque, ipsum fames eu rutrum. Sit congue leo id ut ac ipsum, sed sit nisi. Mauris urna vitae sagittis curabitur commodo. A, odio posuere mattis habitant sed justo, tellus suspendisse quis.',
-    addlLines: [
-      {
-        label: 'Languages',
-        content: 'Typescript, Javascript, Python, Java, C++, Ruby, Bash'
-      },
-      {
-        label: 'Frameworks',
-        content: 'Git, NodeJS, ExpressJS, MongoDB, Flask, Ruby on Rails'
-      }
-    ]
-  },
-  {
-    title: 'Product Design',
-    subtitle: 'Inventor, Sole Patent Holder',
-    description: 'Pellentesque hac neque, ipsum fames eu rutrum. Sit congue leo id ut ac ipsum, sed sit nisi. Mauris urna vitae sagittis curabitur commodo. A, odio posuere mattis habitant sed justo, tellus suspendisse quis.',
+    subtitle: 'Specializing in IoT and web-enabled devices',
+    description: 'Experienced in writing low-level application code, with background ranging from the USB protocol to embedded monitoring and IoT systems. Specialty in web/hardware interfacing via embedded UI and REST clients.',
     addlLines: [
       {
         label: 'Languages',

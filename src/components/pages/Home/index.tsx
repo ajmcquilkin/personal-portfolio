@@ -105,11 +105,18 @@ const Home = (): JSX.Element => {
 
           <TextSection
             title="my background"
-            subtitle="Currently working at Microsoft as a Software Engineering Intern on the Power BI team"
+            subtitle="Currently working at Microsoft as a Software Engineering Intern on the PowerBI team."
             context="about me"
             colorMode="light"
             className={styles.backgroundTextContainer}
           >
+            {/* <TextSectionParagraph>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictum sit turpis suspendisse urna enim nascetur
+              ultrices massa blandit. Odio tincidunt imperdiet suspendisse venenatis diam ac faucibus. Urna, nullam tincidunt
+              pretium viverra pretium pulvinar. Rhoncus imperdiet ut imperdiet id. Erat tellus molestie vitae sed ac orci
+              scelerisque interdum sit.
+            </TextSectionParagraph> */}
+
             <TextSectionParagraph>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictum sit turpis suspendisse urna enim nascetur
               ultrices massa blandit. Odio tincidunt imperdiet suspendisse venenatis diam ac faucibus. Urna, nullam tincidunt
@@ -208,7 +215,7 @@ const Home = (): JSX.Element => {
 
           <TextSection
             title="my passions"
-            subtitle="I’m a part time professional phographer, specializing in landscapes and adventures"
+            subtitle="I’m a part time professional phographer, specializing in landscapes and adventures."
             context="about me"
             colorMode="light"
             className={styles.passionsContent}
@@ -234,21 +241,19 @@ const Home = (): JSX.Element => {
           <div className={[styles.flexSection, styles.resumeExperienceContainer].join(' ')}>
             <TextSection
               title="my experience"
-              subtitle="I’m a part time professional phographer, specializing in landscapes and adventures"
+              subtitle="My employments and personal projects."
               context="resume"
               colorMode="light"
               className={styles.resumeExperienceText}
             >
               <TextSectionParagraph>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictum sit turpis suspendisse urna enim nascetur
-                ultrices massa blandit. Odio tincidunt imperdiet suspendisse venenatis diam ac faucibus. Urna, nullam tincidunt
-                pretium viverra pretium pulvinar. Rhoncus imperdiet ut imperdiet id. Erat tellus molestie vitae sed ac orci
-                scelerisque interdum sit.
+                I pride myself on my ability to draw from my experiences to improve my work. Here is a selection of my
+                previous and current positions, and what I brought to each of these roles.
               </TextSectionParagraph>
 
               <TextSectionCTA>
-                <Button colorMode="light" onClick={() => router.push('/about')}>
-                  more about me
+                <Button colorMode="light" onClick={() => router.push(mailtoLink)}>
+                  contact me
                 </Button>
               </TextSectionCTA>
             </TextSection>
@@ -271,21 +276,19 @@ const Home = (): JSX.Element => {
 
             <TextSection
               title="my achievements"
-              subtitle="I’m a part time professional phographer, specializing in landscapes and adventures"
+              subtitle="What I've done that I'm proud of."
               context="resume"
               colorMode="light"
               className={styles.resumeAchievementsText}
             >
               <TextSectionParagraph>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictum sit turpis suspendisse urna enim nascetur
-                ultrices massa blandit. Odio tincidunt imperdiet suspendisse venenatis diam ac faucibus. Urna, nullam tincidunt
-                pretium viverra pretium pulvinar. Rhoncus imperdiet ut imperdiet id. Erat tellus molestie vitae sed ac orci
-                scelerisque interdum sit.
+                I strive to be the best I can be in all that I do, both personally and professionally. Here are my proudest
+                achievements, and relevant background information on each.
               </TextSectionParagraph>
 
               <TextSectionCTA>
-                <Button colorMode="light" onClick={() => router.push('/about')}>
-                  more about me
+                <Button colorMode="light" onClick={() => router.push(mailtoLink)}>
+                  contact me
                 </Button>
               </TextSectionCTA>
             </TextSection>
@@ -294,21 +297,19 @@ const Home = (): JSX.Element => {
           <div className={[styles.flexSection, styles.resumeSkillsContainer].join(' ')}>
             <TextSection
               title="my skills"
-              subtitle="I’m a part time professional phographer, specializing in landscapes and adventures"
+              subtitle="What I'm good at, and what I love doing."
               context="resume"
               colorMode="light"
               className={styles.resumeSkillsText}
             >
               <TextSectionParagraph>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictum sit turpis suspendisse urna enim nascetur
-                ultrices massa blandit. Odio tincidunt imperdiet suspendisse venenatis diam ac faucibus. Urna, nullam tincidunt
-                pretium viverra pretium pulvinar. Rhoncus imperdiet ut imperdiet id. Erat tellus molestie vitae sed ac orci
-                scelerisque interdum sit.
+                Over the course of my professional life I&apos;ve been exposed to many different fields. Here are my strongest
+                fields, and information on what I can do within each.
               </TextSectionParagraph>
 
               <TextSectionCTA>
-                <Button colorMode="light" onClick={() => router.push('/about')}>
-                  more about me
+                <Button colorMode="light" onClick={() => router.push(mailtoLink)}>
+                  contact me
                 </Button>
               </TextSectionCTA>
             </TextSection>
@@ -338,7 +339,7 @@ const Home = (): JSX.Element => {
 
             <TextSection
               title="my projects"
-              subtitle="Explore my professional experiences by topic, or view all of my stories below"
+              subtitle="Explore my stories by topic, or scroll down to view them all."
               context="my work"
               colorMode="light"
               className={styles.projectsIntroText}
@@ -402,7 +403,7 @@ const Home = (): JSX.Element => {
 
               <TextSectionCTA>
                 <Button colorMode="light" onClick={handleFilterProjects}>
-                  find projects
+                  filter stories
                 </Button>
               </TextSectionCTA>
             </TextSection>

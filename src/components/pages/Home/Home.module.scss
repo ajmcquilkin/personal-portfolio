@@ -142,8 +142,12 @@
 
       .resumeExperienceContainer {
         .resumeExperienceText {
+          margin: auto 0px;
           padding: 12vw;
           flex: 1;
+
+          position: relative;
+          top: -15px;
         }
 
         .resumeExperienceContent {
@@ -156,8 +160,12 @@
 
       .resumeAchievementsContainer {
         .resumeAchievementsText {
+          margin: auto 0px;
           padding: 12vw;
           flex: 1;
+
+          position: relative;
+          top: -15px;
         }
 
         .resumeAchievementsContent {
@@ -170,8 +178,12 @@
 
       .resumeSkillsContainer {
         .resumeSkillsText {
+          margin: auto 0px;
           padding: 12vw;
           flex: 1;
+
+          position: relative;
+          top: -15px;
         }
 
         .resumeSkillsContent {
