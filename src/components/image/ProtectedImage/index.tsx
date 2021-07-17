@@ -5,7 +5,8 @@ import ImageContextMenu from 'components/image/ImageContextMenu';
 
 import styles from './ProtectedImage.module.scss';
 
-export type ProtectedImageProps = Pick<ImageProps, 'src' | 'alt' | 'objectFit' | 'objectPosition' | 'quality' | 'className'> & {
+export type ProtectedImageProps = Pick<ImageProps, | 'alt' | 'objectFit' | 'objectPosition' | 'quality' | 'className'> & {
+  src: string;
   onLoad?: () => void;
   backgroundColor?: string;
 }
