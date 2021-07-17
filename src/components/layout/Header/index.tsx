@@ -41,6 +41,7 @@ const Header = ({
             alt={alt}
             objectFit="cover"
             className={styles.mainFeature}
+            backgroundColor="#171e27"
           />
         </div>
       )}
