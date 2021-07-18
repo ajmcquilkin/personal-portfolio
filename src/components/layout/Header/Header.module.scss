@@ -53,10 +53,18 @@
     }
   }
 
+  &.dark {
+      .line{
+          background: colors.$dark
+      }
+  }
+
   .line {
     @include generics.siteLine();
     left: generics.$home-site-line-left;
     width: 1px;
+
+    background: colors.$white;
 
     &.top {
       top: 0px;
@@ -137,7 +145,6 @@
         font-family: fonts.$poppins;
         font-size: 13px;
         font-weight: 300;
-        color: colors.$white;
       }
 
       img {
@@ -160,14 +167,12 @@
         @include fonts.h1();
 
         margin: 0 0 -0.5em;
-        color: colors.$white;
       }
 
       h2 {
         @include fonts.h2();
 
         margin: 0 0 7px;
-        color: colors.$white;
       }
 
       p {
@@ -176,7 +181,6 @@
         margin: 0 0 27px;
         max-width: 810px;
         font-size: 27px;
-        color: colors.$white;
       }
 
       .landing-screen-banner-content {
