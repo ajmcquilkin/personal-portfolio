@@ -25,6 +25,9 @@
   font-weight: 700;
   color: $color;
 
+  max-width: 80px;
+  max-height: 80px;
+
   @media only screen and (max-width: 600px) {
     left: generics.$screen-padding-small;
   }
@@ -37,7 +40,12 @@
   left: -174px;
   top: -101.5px;
 
-  background: linear-gradient(180deg, rgba(23, 30, 39, 0.2) 0%, rgba(23, 30, 39, 0.1) 64.06%, rgba(23, 30, 39, 0) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(23, 30, 39, 0.2) 0%,
+    rgba(23, 30, 39, 0.1) 64.06%,
+    rgba(23, 30, 39, 0) 100%
+  );
   transform: rotate(-30deg);
 }
 
@@ -64,7 +72,12 @@
   right: -200px;
   top: -481.56px;
 
-  background: linear-gradient(180deg, rgba(23, 30, 39, 0.3) 0%, rgba(23, 30, 39, 0.15) 64.06%, rgba(23, 30, 39, 0) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(23, 30, 39, 0.3) 0%,
+    rgba(23, 30, 39, 0.15) 64.06%,
+    rgba(23, 30, 39, 0) 100%
+  );
   transform: rotate(30deg);
 }
 
@@ -83,7 +96,7 @@
     font-weight: 700;
     color: colors.$dark;
   }
-  
+
   h2 {
     margin: 0 0 7px;
 
@@ -111,7 +124,11 @@
   left: -60%;
   top: -108%;
 
-  background: radial-gradient(50% 50% at 50% 50%, rgba(34, 34, 34, 0.2) 0%, rgba(34, 34, 34, 0) 100%);
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(34, 34, 34, 0.2) 0%,
+    rgba(34, 34, 34, 0) 100%
+  );
 }
 
 @mixin button {
@@ -158,7 +175,7 @@
   left: 50vw;
   transform: translate(-50%, 0);
 
-  @media only screen and (max-width: 725px) { 
+  @media only screen and (max-width: 725px) {
     display: none;
   }
 }
@@ -170,6 +187,11 @@
   left: 0;
   bottom: 0;
 
-  background: linear-gradient(180deg, rgba(23, 30, 39, 0.9) 0%, rgba(23, 30, 39, 0.572917) 59.9%, rgba(23, 30, 39, 0) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(23, 30, 39, 0.9) 0%,
+    rgba(23, 30, 39, 0.572917) 59.9%,
+    rgba(23, 30, 39, 0) 100%
+  );
   transform: rotate(-180deg);
 }

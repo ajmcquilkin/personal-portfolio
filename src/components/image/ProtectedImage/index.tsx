@@ -18,13 +18,9 @@ const ProtectedImage = ({
   const ref = useRef<HTMLDivElement>(null);
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
-  const handleLoadAnimationFrame = () => {
+  const handleLoadingComplete = () => {
     if (onLoad) onLoad();
     setIsLoaded(true);
-  };
-
-  const handleLoad = () => {
-    requestAnimationFrame(handleLoadAnimationFrame);
   };
 
   return (
@@ -41,7 +37,7 @@ const ProtectedImage = ({
         objectFit={objectFit}
         objectPosition={objectPosition}
         quality={quality}
-        onLoad={handleLoad}
+        onLoadingComplete={handleLoadingComplete}
         className={[styles.animation, isLoaded ? styles.loaded : ''].join(' ')}
       />
       <img className={styles.featureImage} src="/feature-image.png" alt={alt} />

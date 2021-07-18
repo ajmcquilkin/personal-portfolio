@@ -18,7 +18,7 @@
 
       margin: 72px 0px 23px;
     }
-    
+
     h3 {
       font-family: fonts.$poppins;
       font-size: 36px;
@@ -27,7 +27,7 @@
 
       margin: 48px 0px 23px;
     }
-    
+
     h4 {
       font-family: fonts.$open-sans;
       font-size: 27px;
@@ -36,7 +36,7 @@
 
       margin: 36px 0px 18px;
     }
-    
+
     h5 {
       font-family: fonts.$open-sans;
       font-size: 21px;
@@ -45,7 +45,7 @@
 
       margin: 24px 0px 16px;
     }
-    
+
     h6 {
       font-family: fonts.$open-sans;
       font-size: 18px;
@@ -55,8 +55,14 @@
       margin: 21px 0px 15px;
     }
 
+    hr {
+      border: 1px solid colors.$lighter-dark;
+    }
+
     // ! HARD TO READ
-    p, pre, td {
+    p,
+    pre,
+    td {
       @include fonts.paragraphStyling();
 
       display: flex;
@@ -69,15 +75,12 @@
     }
 
     em {
-
     }
 
     strong {
-
     }
 
     del {
-
     }
 
     a {
@@ -89,15 +92,19 @@
       li {
         @include fonts.paragraphStyling();
         margin: generics.$text-list-margin 0px;
-        &:last-child { margin: 0px; }
+        &:last-child {
+          margin: 0px;
+        }
       }
     }
-    
+
     ul {
       li {
         @include fonts.paragraphStyling();
         margin: generics.$text-list-margin 0px;
-        &:last-child { margin: 0px; }
+        &:last-child {
+          margin: 0px;
+        }
       }
     }
 
@@ -105,7 +112,7 @@
       margin: 0px;
       padding: 12px 40px;
       border-left: 4px solid colors.$dark;
-      
+
       p {
         margin: 0px;
         font-size: 18px;
@@ -133,7 +140,7 @@
       padding: 3px 12px;
       border-radius: 6px;
       background-color: #e0e0e0;
-      
+
       code {
         line-height: 100%;
       }

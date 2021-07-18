@@ -30,7 +30,7 @@ const Story = ({
     <main className={styles.container}>
       <article>
         <header className={styles.headerContainer}>
-          <div className={styles.signature}>AM</div>
+          <img className={styles.signature} src="/logo-white.svg" alt="" />
           <Menu colorMode="dark" className={styles.menuContainer} />
 
           <div className={styles.headerFlexContainer}>
