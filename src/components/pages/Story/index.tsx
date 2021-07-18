@@ -11,11 +11,13 @@ import { mailtoLink, resumeFileName } from 'utils';
 import { StoryMeta } from 'types';
 
 import Header from 'components/layout/Header';
+import Footer from 'components/layout/Footer';
 import styles from './Story.module.scss';
 
 export interface StoryProps {
     meta: StoryMeta,
-    content: string
+    content: string,
+    path: string
 }
 
 const Story = ({
@@ -31,9 +33,9 @@ const Story = ({
         <main className={styles.container}>
             <article>
                 <Header
-                    title="Adam McQuilkin"
-                    subtitle="Developer, Product Designer"
-                    description="A passionate Dartmouth College computer science and design student, specializing in web and application development."
+                    title={title}
+                    subtitle={subtitle}
+                    description={description}
                     colorMode="dark"
                 >
                     <Button
@@ -53,49 +55,6 @@ const Story = ({
                         download resume
                     </Button>
                 </Header>
-                {/* <header className={styles.headerContainer}>
-                    <img className={styles.signature} src="/logo-white.svg" alt="" />
-                    <Menu colorMode="dark" className={styles.menuContainer} />
-
-                    <div className={styles.headerFlexContainer}>
-                        <div className={styles.headerContentContainer}>
-                            <h1>{title}</h1>
-                            <h2>{subtitle}</h2>
-                            <p className={styles.content}>{description}</p>
-
-                            <div className={styles.buttonContainer}>
-                                <Button
-                                    colorMode="dark"
-                                    className={styles.contentButton}
-                                    onClick={() => router.push(link)}
-                                >
-                                    view site
-                                </Button>
-
-                                <Button
-                                    colorMode="dark"
-                                    className={styles.contentButton}
-                                    onClick={() => router.push(mailtoLink)}
-                                >
-                                    contact me
-                                </Button>
-                            </div>
-                        </div>
-
-                        <div className={styles.featuredImageContainer}>
-                            <Image
-                                src={featuredImage}
-                                alt={featuredImageAlt}
-                                width={600}
-                                height={400}
-                                layout="intrinsic"
-                                objectFit="contain"
-                            />
-                        </div>
-                    </div>
-
-                    <ArrowBox colorMode="dark" className={styles.arrowBox} />
-                </header> */}
 
                 <section className={styles.overviewContainer}>
                     <h2>Project Overview</h2>
@@ -130,6 +89,8 @@ const Story = ({
                 </section>
 
                 <section><StoryContent>{content}</StoryContent></section>
+
+                <Footer />
             </article>
         </main>
     );
