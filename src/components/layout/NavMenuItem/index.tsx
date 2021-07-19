@@ -13,21 +13,21 @@ export interface NavMenuItemProps {
 }
 
 const NavMenuItem = ({
-  label, href, className = '', colorMode = 'light'
+    label, href, className = '', colorMode = 'light'
 }: NavMenuItemProps): JSX.Element => {
-  const router = useRouter();
-  const isActive = href === router.pathname;
-  const colorStyle = colorMode === 'light' ? styles.light : styles.dark;
+    const router = useRouter();
+    const isActive = href === router.pathname;
+    const colorStyle = colorMode === 'light' ? styles.light : styles.dark;
 
-  return (
-    <div className={[styles.container, colorStyle, className].join(' ')}>
-      <div className={[styles.bar, styles.left, colorStyle, isActive ? styles.active : ''].join(' ')} />
-      <Link href={href}>
-        <a className={[colorStyle, isActive ? styles.active : ''].join(' ')}>{label}</a>
-      </Link>
-      <div className={[styles.bar, styles.right, colorStyle, isActive ? styles.active : ''].join(' ')} />
-    </div>
-  );
+    return (
+        <div className={[styles.container, colorStyle, className].join(' ')}>
+            <div className={[styles.bar, styles.left, colorStyle, isActive ? styles.active : ''].join(' ')} />
+            <Link href={href}>
+                <a className={[colorStyle, isActive ? styles.active : ''].join(' ')}>{label}</a>
+            </Link>
+            <div className={[styles.bar, styles.right, colorStyle, isActive ? styles.active : ''].join(' ')} />
+        </div>
+    );
 };
 
 export default NavMenuItem;

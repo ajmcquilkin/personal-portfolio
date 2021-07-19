@@ -17,24 +17,24 @@ export interface TextSectionProps {
 }
 
 const TextSection = ({
-  title, subtitle, context, children,
-  className = '', colorMode = 'dark', headerLevel = 2
+    title, subtitle, context, children,
+    className = '', colorMode = 'dark', headerLevel = 2
 }: TextSectionProps): JSX.Element => (
-  <div className={[styles.container, colorMode === 'dark' ? styles.dark : styles.light, className].join(' ')}>
-    <div className={styles.context}>{context}</div>
-    {createElement(
-      `h${headerLevel > 0 && headerLevel <= 6 ? headerLevel : 2}`,
-      { className: styles.header },
-      title
-    )}
-    <p className={styles.subtitle}>{subtitle}</p>
+    <div className={[styles.container, colorMode === 'dark' ? styles.dark : styles.light, className].join(' ')}>
+        <div className={styles.context}>{context}</div>
+        {createElement(
+            `h${headerLevel > 0 && headerLevel <= 6 ? headerLevel : 2}`,
+            { className: styles.header },
+            title
+        )}
+        <p className={styles.subtitle}>{subtitle}</p>
 
-    <div className={styles.children}>{children}</div>
-  </div>
+        <div className={styles.children}>{children}</div>
+    </div>
 );
 
 export {
-  TextSection as default,
-  TextSectionCTA,
-  TextSectionParagraph
+    TextSection as default,
+    TextSectionCTA,
+    TextSectionParagraph
 };

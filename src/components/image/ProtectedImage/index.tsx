@@ -12,38 +12,38 @@ export type ProtectedImageProps = Pick<ImageProps, | 'alt' | 'objectFit' | 'obje
 }
 
 const ProtectedImage = ({
-  src, alt, objectFit, objectPosition, onLoad,
-  backgroundColor = 'transparent', quality = 70, className = ''
+    src, alt, objectFit, objectPosition, onLoad,
+    backgroundColor = 'transparent', quality = 70, className = ''
 }: ProtectedImageProps): JSX.Element => {
-  const ref = useRef<HTMLDivElement>(null);
-  const [isLoaded, setIsLoaded] = useState<boolean>(false);
+    const ref = useRef<HTMLDivElement>(null);
+    const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
-  const handleLoadingComplete = () => {
-    if (onLoad) onLoad();
-    setIsLoaded(true);
-  };
+    const handleLoadingComplete = () => {
+        if (onLoad) onLoad();
+        setIsLoaded(true);
+    };
 
-  return (
-    <div
-      ref={ref}
-      className={[styles.container, className].join(' ')}
-      role="presentation"
-      style={{ backgroundColor }}
-    >
-      <Image
-        src={src}
-        alt={alt}
-        layout="fill"
-        objectFit={objectFit}
-        objectPosition={objectPosition}
-        quality={quality}
-        onLoadingComplete={handleLoadingComplete}
-        className={[styles.animation, isLoaded ? styles.loaded : ''].join(' ')}
-      />
-      <img className={styles.featureImage} src="/feature-image.png" alt={alt} />
-      <ImageContextMenu parentRef={ref} />
-    </div>
-  );
+    return (
+        <div
+            ref={ref}
+            className={[styles.container, className].join(' ')}
+            role="presentation"
+            style={{ backgroundColor }}
+        >
+            <Image
+                src={src}
+                alt={alt}
+                layout="fill"
+                objectFit={objectFit}
+                objectPosition={objectPosition}
+                quality={quality}
+                onLoadingComplete={handleLoadingComplete}
+                className={[styles.animation, isLoaded ? styles.loaded : ''].join(' ')}
+            />
+            <img className={styles.featureImage} src="/feature-image.png" alt={alt} />
+            <ImageContextMenu parentRef={ref} />
+        </div>
+    );
 };
 
 export default ProtectedImage;

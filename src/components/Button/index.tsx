@@ -15,33 +15,33 @@ export interface ButtonProps {
 }
 
 const Button = ({
-  children, onClick,
-  colorMode = 'light', size = 'small', className = ''
+    children, onClick,
+    colorMode = 'light', size = 'small', className = ''
 }: ButtonProps): JSX.Element => {
-  const { width = 0, height = 0, ref } = useResizeDetector();
+    const { width = 0, height = 0, ref } = useResizeDetector();
 
-  return (
-    <div
-      className={[
-        styles.buttonContainer,
-        colorMode === 'light' ? styles.light : styles.dark,
-        size === 'small' ? styles.sm : styles.lg,
-        className
-      ].join(' ')}
-      ref={ref}
-    >
-      <button
-        type="button"
-        onClick={onClick}
-      >
-        <svg width={`${width}px`} height={`${height}px`} viewBox={`0 0 ${width} ${height}`}>
-          <polyline points={`${width - 1},1 ${width - 1},${height - 1} 1,${height - 1} 1,1 ${width - 1},1`} className="bg-line" />
-        </svg>
+    return (
+        <div
+            className={[
+                styles.buttonContainer,
+                colorMode === 'light' ? styles.light : styles.dark,
+                size === 'small' ? styles.sm : styles.lg,
+                className
+            ].join(' ')}
+            ref={ref}
+        >
+            <button
+                type="button"
+                onClick={onClick}
+            >
+                <svg width={`${width}px`} height={`${height}px`} viewBox={`0 0 ${width} ${height}`}>
+                    <polyline points={`${width - 1},1 ${width - 1},${height - 1} 1,${height - 1} 1,1 ${width - 1},1`} className="bg-line" />
+                </svg>
 
-        {children}
-      </button>
-    </div>
-  );
+                {children}
+            </button>
+        </div>
+    );
 };
 
 export default Button;

@@ -9,13 +9,13 @@ export interface CarouselProps {
 }
 
 const Carousel = ({ position, children, className = '' }: CarouselProps): JSX.Element => {
-  const childrenArray = Children.toArray(children);
+    const childrenArray = Children.toArray(children);
 
-  return (
-    <div className={className}>
-      {childrenArray[position]}
-    </div>
-  );
+    return (
+        <div className={className}>
+            {childrenArray[position]}
+        </div>
+    );
 };
 
 export default Carousel;

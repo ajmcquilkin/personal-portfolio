@@ -8,9 +8,9 @@ export interface StoryContentProps {
 }
 
 const StoryContent = ({ children }: StoryContentProps): JSX.Element => (
-  <div className={styles.container}>
-    <ReactMarkdown plugins={[gfm]} className={styles.content}>{children}</ReactMarkdown>
-  </div>
+    <div className={styles.container}>
+        <ReactMarkdown plugins={[gfm]} className={styles.content}>{children}</ReactMarkdown>
+    </div>
 );
 
 export default StoryContent;

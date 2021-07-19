@@ -7,9 +7,9 @@ export interface TextSectionCTAProps {
 }
 
 const TextSectionCTA = ({ children, className = '' }: TextSectionCTAProps): JSX.Element => (
-  <div className={[styles.cta, className].join(' ')}>
-    {children}
-  </div>
+    <div className={[styles.cta, className].join(' ')}>
+        {children}
+    </div>
 );
 
 export default TextSectionCTA;
