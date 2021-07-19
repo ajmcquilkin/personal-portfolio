@@ -1,0 +1,39 @@
+@use "styles/colors.scss" as colors;
+@use "styles/fonts.scss" as fonts;
+
+.container {
+    display: flex;
+    flex-direction: row;
+
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 50%);
+
+    .logo {
+        margin: auto 200px auto 0px;
+        width: 300px !important;
+        height: 300px;
+
+        circle {
+            box-shadow: colors.$default-shadow;
+        }
+    }
+
+    .textContainer {
+        margin: auto 0px;
+
+        .buttonContainer {
+            display: flex;
+            flex-direction: row;
+
+            .button {
+                margin-right: 30px;
+
+                &:last-child {
+                    margin-right: 0px;
+                }
+            }
+        }
+    }
+}

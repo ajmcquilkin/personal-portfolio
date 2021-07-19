@@ -1,0 +1,37 @@
+@use "styles/colors.scss" as colors;
+@use "styles/fonts.scss" as fonts;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    color: colors.$dark;
+
+    .headerContainer {
+        display: flex;
+        flex-direction: row;
+
+        img {
+            margin-right: 24px;
+        }
+        
+        .titleContainer {
+            display: flex;
+            flex-direction: column;
+
+            h3 {
+                @include fonts.h3();
+                margin: 0px auto 0px 0px;
+                font-size: 27px;
+            }
+
+            p {
+                @include fonts.paragraphStyling();
+                margin: auto 0px;
+            }
+        }
+    }
+
+    .content {
+        @include fonts.paragraphStyling();
+    }
+}

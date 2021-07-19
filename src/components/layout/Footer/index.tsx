@@ -1,62 +1,21 @@
-import { useRouter } from 'next/router';
-
-import Button from 'components/Button';
 import ProtectedImage from 'components/image/ProtectedImage';
-import TextSection, { TextSectionCTA } from 'components/TextSection';
-
-import { mailtoLink, resumeFileName } from 'utils';
+import FooterInner from 'components/layout/FooterInner';
 
 import styles from './Footer.module.scss';
 
-const Footer = (): JSX.Element => {
-  const router = useRouter();
-
-  return (
+const Footer = (): JSX.Element => (
     <footer className={styles.container}>
-      <ProtectedImage
-        src="/v1602266186/Personal%20Portfolio/gallery/franc_2_qtcjjv.jpg"
-        alt="test mountain image"
-        objectFit="cover"
-      />
-
-      <div className={styles.topGradient} />
-      <div className={styles.bottomGradient} />
-
-      <div className={styles.contentContainer}>
-        <img
-          src="/logo-white.svg"
-          alt="adam mcquilkin personal logo"
-          className={styles.logo}
+        <ProtectedImage
+            src="/v1602266186/Personal%20Portfolio/gallery/franc_2_qtcjjv.jpg"
+            alt="test mountain image"
+            objectFit="cover"
         />
 
-        <TextSection
-          title="contact me"
-          subtitle="Thanks for stopping by! Always feel free to drop a line if you want to chat :)"
-          context="reach out"
-          colorMode="light"
-          className={styles.textContainer}
-        >
-          <TextSectionCTA className={styles.buttonContainer}>
-            <Button
-              colorMode="light"
-              onClick={() => router.push(mailtoLink)}
-              className={styles.button}
-            >
-              contact me
-            </Button>
+        <div className={styles.topGradient} />
+        <div className={styles.bottomGradient} />
 
-            <Button
-              colorMode="light"
-              onClick={() => router.push(resumeFileName)}
-              className={styles.button}
-            >
-              download resume
-            </Button>
-          </TextSectionCTA>
-        </TextSection>
-      </div>
+        <div className={styles.contentContainer}><FooterInner /></div>
     </footer>
-  );
-};
+);
 
 export default Footer;

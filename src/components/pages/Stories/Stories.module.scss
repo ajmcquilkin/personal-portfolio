@@ -1,0 +1,39 @@
+@use "styles/colors.scss" as colors;
+@use "styles/fonts.scss" as fonts;
+
+.container {
+    .mainContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        margin: 20vh 0px;
+        padding: 0px 7vw;
+
+        h2 {
+            @include fonts.h2();
+        }
+
+        hr {
+            margin: 0px;
+            margin: 0px 6%;
+        }
+
+        .storiesListContainer {
+            .storyContainer {
+                margin-bottom: 48px;
+
+                &:last-child {
+                    margin-bottom: 0px;
+                }
+            }
+        }
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        height: 100vh;
+    }
+}
