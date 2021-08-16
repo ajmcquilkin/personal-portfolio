@@ -2,7 +2,7 @@
 slug: blog-two
 title: My Second Blog
 subtitle: This Description Of My Second Blog.
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+description: Pharetra, arcu, posuere vestibulum, turpis turpis congue sit consectetur. Commodo tempus feugiat ac sed ornare quis. Condimentum suscipit justo mus curabitur duis arcu arcu. Accumsan pharetra posuere ipsum gravida malesuada lectus convallis. Est mi nullam felis, auctor. Nisl, rhoncus, aenean nec eget adipiscing vel pretium turpis etiam. Amet, gravida sit amet arcu. Sit in.
 
 link: https://www.google.com
 featuredImage: https://www.adammcquilkin.com/static/media/dplanner.b95b4dc3.png
