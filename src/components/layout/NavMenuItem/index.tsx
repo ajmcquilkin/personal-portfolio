@@ -5,19 +5,23 @@ import { ColorMode } from 'types';
 import styles from './NavMenuItem.module.scss';
 
 export interface NavMenuItemProps {
-  href: string,
-  label: string,
+    href: string,
+    label: string,
 
-  className?: string,
-  colorMode?: ColorMode
+    includeSubroutes?: boolean,
+    className?: string,
+    colorMode?: ColorMode
 }
 
 const NavMenuItem = ({
-    label, href, className = '', colorMode = 'light'
+    label, href, includeSubroutes = false, className = '', colorMode = 'light'
 }: NavMenuItemProps): JSX.Element => {
     const router = useRouter();
-    const isActive = href === router.pathname;
     const colorStyle = colorMode === 'light' ? styles.light : styles.dark;
+
+    const isActive = includeSubroutes
+        ? router.pathname.includes(href.replace('/', ''))
+        : router.pathname === href;
 
     return (
         <div className={[styles.container, colorStyle, className].join(' ')}>

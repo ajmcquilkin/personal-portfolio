@@ -12,7 +12,7 @@ export interface MenuProps {
 const Menu = ({ colorMode = 'light', className = '' }: MenuProps): JSX.Element => (
     <nav className={[styles.container, className].join(' ')}>
         <NavMenuItem className={styles.menuItem} colorMode={colorMode} label="Home" href="/" />
-        <NavMenuItem className={styles.menuItem} colorMode={colorMode} label="Stories" href="/stories" />
+        <NavMenuItem className={styles.menuItem} colorMode={colorMode} label="Stories" href="/stories" includeSubroutes />
         <NavMenuItem className={styles.menuItem} colorMode={colorMode} label="About Me" href="/about" />
         <NavMenuItem className={styles.menuItem} colorMode={colorMode} label="My Resume" href={`/${resumeFileName}`} />
         <NavMenuItem className={styles.menuItem} colorMode={colorMode} label="Contact" href={mailtoLink} />

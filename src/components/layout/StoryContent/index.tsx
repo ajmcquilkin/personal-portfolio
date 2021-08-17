@@ -4,7 +4,7 @@ import gfm from 'remark-gfm';
 import styles from './StoryContent.module.scss';
 
 export interface StoryContentProps {
-  children: string
+    children: string
 }
 
 const StoryContent = ({ children }: StoryContentProps): JSX.Element => (
