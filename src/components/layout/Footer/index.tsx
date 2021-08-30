@@ -14,7 +14,9 @@ const Footer = (): JSX.Element => (
         <div className={styles.topGradient} />
         <div className={styles.bottomGradient} />
 
-        <div className={styles.contentContainer}><FooterInner /></div>
+        <div className={styles.contentContainer}>
+            <FooterInner />
+        </div>
     </footer>
 );
 

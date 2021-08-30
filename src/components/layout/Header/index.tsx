@@ -24,12 +24,14 @@ export interface HeaderProps {
     alt?: string,
 
     colorMode?: ColorMode,
-    hideArrow?: boolean
+    hideArrow?: boolean,
+    hideSocials?: boolean
 }
 
 const Header = ({
     title, subtitle, description, children,
-    src = '', alt = '', colorMode = 'light', hideArrow = false,
+    src = '', alt = '', colorMode = 'light',
+    hideArrow = false, hideSocials = false
 }: HeaderProps): JSX.Element => {
     const router = useRouter();
     const useImage = !!src && !!alt;
@@ -54,63 +56,19 @@ const Header = ({
                 <div className={[styles.line, styles.top].join(' ')} />
                 <div className={[styles.line, styles.main].join(' ')} />
 
-                <div className={styles.signature}>
-                    <img
-                        src={`/logo-${colorMode === 'light' ? 'white' : 'dark'}-transparent.svg`}
-                        alt="adam mcquilkin personal logo"
-                    />
+                <div className={styles.headerMenuContainer}>
+                    <div className={styles.signature}>
+                        <img
+                            src={`/logo-${colorMode === 'light' ? 'white' : 'dark'}-transparent.svg`}
+                            alt="adam mcquilkin personal logo"
+                        />
+                    </div>
+                    <Menu colorMode={colorMode} className={styles.menuContainer} />
                 </div>
 
-                <ConditionalRenderer><div className={styles.signatureShadow} /></ConditionalRenderer>
-
-                <Menu colorMode={colorMode} className={styles.menuContainer} />
-                <ConditionalRenderer><div className={styles.menuShadow} /></ConditionalRenderer>
-
-                <div className={styles.personalLinksContainer}>
-                    <Link href="https://www.linkedin.com/in/adam-mcquilkin">
-                        <a
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={styles.linkContainer}
-                        >
-                            <p>LinkedIn</p>
-                            <img src="/icons/brands/linkedin.png" alt="linkedin link" />
-                        </a>
-                    </Link>
-
-                    <Link href="https://github.com/ajmcquilkin">
-                        <a
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={styles.linkContainer}
-                        >
-                            <p>GitHub</p>
-                            <img src="/icons/brands/github.png" alt="github link" />
-                        </a>
-                    </Link>
-
-                    {/* <Link href="">
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.linkContainer}
-          >
-            <p>Coming Soon!</p>
-            <img src="/icons/brands/medium.png" alt="medium link" />
-          </a>
-        </Link> */}
-
-                    <Link href={mailtoLink}>
-                        <a
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={styles.linkContainer}
-                        >
-                            <p>Email</p>
-                            <img src="/icons/brands/email.png" alt="mailto link" />
-                        </a>
-                    </Link>
-                </div>
+                {/* <ConditionalRenderer><div className={styles.menuShadow} /></ConditionalRenderer> */}
+                {/* <ConditionalRenderer><div className={styles.menuShadow} /></ConditionalRenderer> */}
+                {/* <ConditionalRenderer><div className={styles.signatureShadow} /></ConditionalRenderer> */}
 
                 <div className={styles.bannerContainer}>
                     <div className={styles.bannerContent}>
@@ -123,7 +81,55 @@ const Header = ({
                         </div>
                     </div>
 
-                    <ConditionalRenderer><div className={styles.bannerShadow} /></ConditionalRenderer>
+                    {!hideSocials && (
+                        <div className={styles.personalLinksContainer}>
+                            <Link href="https://www.linkedin.com/in/adam-mcquilkin">
+                                <a
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={styles.linkContainer}
+                                >
+                                    <p>LinkedIn</p>
+                                    <img src="/icons/brands/linkedin.png" alt="linkedin link" />
+                                </a>
+                            </Link>
+
+                            <Link href="https://github.com/ajmcquilkin">
+                                <a
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={styles.linkContainer}
+                                >
+                                    <p>GitHub</p>
+                                    <img src="/icons/brands/github.png" alt="github link" />
+                                </a>
+                            </Link>
+
+                            {/* <Link href="">
+                        <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.linkContainer}
+                        >
+                            <p>Coming Soon!</p>
+                            <img src="/icons/brands/medium.png" alt="medium link" />
+                        </a>
+                    </Link> */}
+
+                            <Link href={mailtoLink}>
+                                <a
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={styles.linkContainer}
+                                >
+                                    <p>Email</p>
+                                    <img src="/icons/brands/email.png" alt="mailto link" />
+                                </a>
+                            </Link>
+                        </div>
+                    )}
+
+                    {/* <ConditionalRenderer><div className={styles.bannerShadow} /></ConditionalRenderer> */}
                 </div>
 
                 <nav className={styles.cardsContainer}>
@@ -145,14 +151,14 @@ const Header = ({
                         className={styles.navCard}
                     />
 
-                    <NavCard
+                    {/* <NavCard
                         title="photography"
                         subtitle="personal"
                         linkText="see work"
                         colorMode={colorMode}
                         onClick={() => { router.push('/about#main-photo-gallery'); }}
                         className={styles.navCard}
-                    />
+                    /> */}
                 </nav>
 
                 {!hideArrow && <ArrowBox colorMode={colorMode} className={styles.arrowBox} />}

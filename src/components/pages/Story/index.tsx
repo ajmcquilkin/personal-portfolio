@@ -37,6 +37,7 @@ const Story = ({
                     subtitle={subtitle}
                     description={description}
                     colorMode="dark"
+                    hideSocials
                 >
                     <Button
                         onClick={() => router.push(mailtoLink)}

@@ -2,10 +2,10 @@ import { HomeInformationCardEntry } from 'types/cards';
 import styles from './HomeInformationCard.module.scss';
 
 export interface HomeInformationCardProps {
-  title: string,
-  rightText: string,
-  content: HomeInformationCardEntry[],
-  className?: string
+    title: string,
+    rightText: string,
+    content: HomeInformationCardEntry[],
+    className?: string
 }
 
 const HomeInformationCard = ({

@@ -3,13 +3,14 @@
 @use "styles/generics.scss" as generics;
 @use "styles/header.scss" as header;
 
+$list-gap: 1.5rem;
+
 .container {
   .headerContainer {
-    @include generics.responsivePadding();
-
+    margin: 0px auto;
     position: relative;
-    overflow: hidden;
-    height: 100vh;
+    max-width: 1200px;
+    height: max(100vh, 100%);
 
     .signature {
       @include header.signature(colors.$dark);
@@ -45,7 +46,7 @@
 
       .featuredImageContainer {
         margin: auto;
-        padding-left: 24px;
+        padding-left: 2em;
       }
     }
 
@@ -55,9 +56,9 @@
   }
 
   .overviewContainer {
-    width: generics.$main-screen-width;
-    max-width: generics.$overview-max-width;
-    margin: 0px auto 96px;
+    max-width: 1200px;
+    margin: 0px auto;
+    padding: generics.$side-padding;
 
     h2 {
       font-family: fonts.$poppins;
@@ -65,7 +66,7 @@
       font-weight: 200;
       color: colors.$dark;
 
-      margin: 72px 0px 23px;
+      margin: 1.5em 0px 0.5em;
     }
 
     p,
@@ -76,36 +77,44 @@
 
     .overviewFlexContainer {
       display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+      flex-direction: column;
+      gap: $list-gap;
+
+      @media (min-width: 750px) {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 6em;
+
+        .overviewLeft {
+          flex: 5;
+        }
+      }
 
       .overviewLeft {
-        margin-right: 120px;
-        flex: 5;
-
         h3 {
           font-family: fonts.$poppins;
           font-size: 36px;
           font-weight: 300;
           color: colors.$dark;
 
-          margin: 0px 0px 23px;
+          margin: 0px 0px 0.66em;
         }
       }
 
       .overviewRight {
+        display: flex;
+        flex-direction: column;
+        gap: $list-gap;
         flex: 3;
 
         .overviewRightList {
-          margin-bottom: 30px;
-
           h3 {
             font-family: fonts.$poppins;
             font-size: 27px;
             font-weight: 400;
             color: colors.$dark;
 
-            margin: 0px 0px 12px;
+            margin: 0px 0px 0.48em;
           }
 
           ul {

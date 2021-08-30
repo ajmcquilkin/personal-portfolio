@@ -1,28 +1,37 @@
 @use "styles/colors.scss" as colors;
 @use "styles/fonts.scss" as fonts;
 
+$top-gradient-buffer: 18%;
+$gradient-separation: -9%;
+
 .container {
-    display: flex;
-    flex-direction: column;
-    
+  display: flex;
+  flex-direction: column;
+
   position: relative;
   width: 100%;
-  height: 173vh;
+  // margin-top: 12em;
 
   .topGradient {
     width: 100%;
-    height: 27vh;
+    height: $top-gradient-buffer;
 
     position: absolute;
     left: 0px;
     top: 0px;
+    z-index: 3;
 
-    background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.927083) 13.02%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(
+      180deg,
+      #ffffff 0%,
+      rgba(255, 255, 255, 0.927083) 13.02%,
+      rgba(255, 255, 255, 0) 100%
+    );
   }
 
   .bottomGradient {
     width: 100%;
-    height: 129vh;
+    height: calc(100% - #{$top-gradient-buffer} - #{$gradient-separation});
 
     position: absolute;
     left: 0px;
@@ -38,9 +47,8 @@
     transform: rotate(-180deg);
   }
 
-    .contentContainer {
-        margin-top: auto;
-        height: 100vh;
-        position: relative;
-    }
+  .contentContainer {
+    position: relative;
+    padding: 15em 0px 9em;
+  }
 }

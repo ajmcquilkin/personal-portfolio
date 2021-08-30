@@ -2,38 +2,42 @@
 @use "styles/fonts.scss" as fonts;
 
 .container {
-    .mainContainer {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+  .mainContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
 
-        margin: 20vh 0px 0px;
-        padding: 0px 7vw;
+    @media (min-width: 750px) {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 0px;
 
-        h2 {
-            @include fonts.h2();
-        }
-
-        hr {
-            margin: 0px;
-            margin: 0px 6%;
-        }
-
-        .storiesListContainer {
-            .storyContainer {
-                margin: 36px 0px 96px;
-
-                &:last-child {
-                    margin-bottom: 36px;
-                }
-            }
-        }
+      hr {
+        margin: 0px 6% !important;
+      }
     }
 
-    .footer {
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        height: 100vh;
+    margin: 8em auto;
+    padding: 0px 3em;
+    max-width: 1200px;
+
+    h2 {
+      @include fonts.h2();
+      margin: 0px;
     }
+
+    hr {
+      margin: 0px;
+    }
+
+    .storiesListContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 4em;
+    }
+  }
+
+  .footer {
+    position: relative;
+  }
 }

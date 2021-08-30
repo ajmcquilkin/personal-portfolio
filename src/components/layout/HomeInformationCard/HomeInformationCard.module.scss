@@ -3,6 +3,7 @@
 
 $line-offset: 15px;
 $entry-dot-diameter: 7px;
+$layout-ui-break: 500px;
 
 .container {
   box-shadow: colors.$default-shadow;
@@ -10,14 +11,18 @@ $entry-dot-diameter: 7px;
 
   .header {
     display: flex;
-    flex-direction: row;
-    margin-bottom: 30px;
+    flex-direction: column-reverse;
+    margin-bottom: 1.8em;
+
+    @media (min-width: 600px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
 
     h3 {
       @include fonts.h3();
 
-      margin: 0px auto 0px 0px;
-      font-size: 27px;
+      margin: auto 0px;
       color: colors.$light-blue;
     }
 
@@ -30,48 +35,60 @@ $entry-dot-diameter: 7px;
   }
 
   .content {
-    padding-left: 46px;
     position: relative;
 
-    .sideLine {
-      position: absolute;
-      left: 0px;
-      top: $line-offset;
+    @media (min-width: $layout-ui-break) {
+      padding-left: 46px;
 
-      width: 1px;
-      height: calc(100% - #{$line-offset});
-      background-color: colors.$white;
+      .sideLine {
+        position: absolute;
+        left: 0px;
+        top: $line-offset;
+
+        width: 1px;
+        height: calc(100% - #{$line-offset});
+        background-color: colors.$white;
+      }
     }
 
     .entriesContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5em;
+
       .entry {
-        margin-bottom: 27px;
+        @media (min-width: $layout-ui-break) {
+          .entryDot {
+            position: absolute;
+            left: calc(-1 * #{$entry-dot-diameter} / 2);
 
-        .entryDot {
-          position: absolute;
-          left: calc(-1 * #{$entry-dot-diameter} / 2);
+            transform: translateY(#{$line-offset});
 
-          transform: translateY(#{$line-offset});
-
-          background-color: colors.$white;
-          width: $entry-dot-diameter;
-          height: $entry-dot-diameter;
-          border-radius: 50%;
+            background-color: colors.$white;
+            width: $entry-dot-diameter;
+            height: $entry-dot-diameter;
+            border-radius: 50%;
+          }
         }
 
         .entryHeader {
           display: flex;
-          flex-direction: row;
+          flex-direction: column-reverse;
+          gap: 0.4em;
+
+          @media (min-width: 750px) {
+            flex-direction: row;
+            justify-content: space-between;
+          }
 
           h4 {
             @include fonts.h4();
-
-            margin: 0px auto -3px 0px;
-            font-size: 21px;
+            margin: 0px 0px 0.15em;
           }
 
           p {
-            margin: auto 0px 0px;
+            @include fonts.paragraphStyling();
+            margin: 0px;
           }
         }
 
@@ -79,7 +96,7 @@ $entry-dot-diameter: 7px;
           @include fonts.paragraphStyling();
 
           margin: 0px 0px 6px;
-          font-size: 13px;
+          font-size: clamp(13px, 3vw, 15px);
           color: #a0a0a0;
         }
 
@@ -91,9 +108,21 @@ $entry-dot-diameter: 7px;
         }
 
         .addlLinesContainer {
+          display: flex;
+          flex-direction: column;
+
+          @media (max-width: $layout-ui-break) {
+            gap: 0.6em;
+          }
+
           .addlLine {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
+            gap: 0.3em;
+
+            @media (min-width: $layout-ui-break) {
+              flex-direction: row;
+            }
 
             p {
               @include fonts.paragraphStyling();

@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 
 import Button from 'components/Button';
 import CaseStudyCard from 'components/CaseStudyCard';
-import FooterInner from 'components/layout/FooterInner';
+import Footer from 'components/layout/Footer';
 import Header from 'components/layout/Header';
 import { StoryProps } from 'components/pages/Story';
 
@@ -24,10 +24,12 @@ const Stories = ({ stories }: StoriesProps): JSX.Element => {
                 subtitle="Case Studies I’m Proud Of"
                 description="Sed dolor sed pellentesque sem ullamcorper venenatis. Diam in commodo vel sed a blandit sed hac imperdiet. Fermentum."
                 colorMode="dark"
+                hideSocials
             >
                 <Button
                     onClick={() => router.push(mailtoLink)}
                     className="headerButton"
+                    colorMode="dark"
                 >
                     contact me
                 </Button>
@@ -36,6 +38,7 @@ const Stories = ({ stories }: StoriesProps): JSX.Element => {
                     size="large"
                     onClick={() => router.push(resumeFileName)}
                     className="headerButton"
+                    colorMode="dark"
                 >
                     download resume
                 </Button>
@@ -46,7 +49,7 @@ const Stories = ({ stories }: StoriesProps): JSX.Element => {
                 <hr />
                 <div className={styles.storiesListContainer}>
                     {stories.map(({ meta: { title, subtitle, description }, path }) => (
-                        <div className={styles.storyContainer} key={path}>
+                        <div key={path}>
                             <CaseStudyCard
                                 title={title}
                                 subtitle={subtitle}
@@ -62,7 +65,7 @@ const Stories = ({ stories }: StoriesProps): JSX.Element => {
             </main>
 
             <footer className={styles.footer}>
-                <FooterInner colorMode="dark" />
+                <Footer />
             </footer>
         </div>
     );

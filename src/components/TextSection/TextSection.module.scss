@@ -15,27 +15,24 @@
 
   .context {
     @include fonts.paragraphStyling();
-    margin: 0px 0px 8px;
+    margin: 0px 0px 0.3em;
   }
 
   .header {
     @include fonts.h2();
-    margin: 0px 0px 16px;
+    margin: 0px 0px 0.4em;
   }
 
   .subtitle {
-    @include fonts.paragraphStyling();
-    margin: 0px 0px 27px;
-    font-size: 27px;
+    @include fonts.h3();
+    margin: 0px 0px 0.6em;
+    line-height: 1.55em;
   }
 
   .children {
     .description {
       @include fonts.paragraphStyling();
-
-      margin: 0px 0px 36px;
-      font-size: 18px;
-      line-height: 200%;
+      margin: 0px 0px 2em;
     }
 
     .cta {

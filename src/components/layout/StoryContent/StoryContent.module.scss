@@ -7,8 +7,8 @@
 
   .content {
     margin: 0px auto;
-    width: generics.$main-screen-width;
     max-width: generics.$story-max-width;
+    padding: generics.$side-padding;
 
     h2 {
       font-family: fonts.$poppins;

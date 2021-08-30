@@ -1,52 +1,55 @@
 @use "styles/colors.scss" as colors;
 
-@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Open+Sans:wght@300;400&family=Poppins:wght@200;300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=family=Open+Sans:wght@300;400&family=Poppins:wght@200;300;400;600;700&display=swap");
 
-$caveat: "Caveat", cursive;
 $open-sans: "Open Sans", sans-serif;
 $poppins: "Poppins", sans-serif;
 
 @mixin h1() {
   font-family: $poppins;
-  font-size: calc(2vw + 24px);
+  font-size: clamp(36px, calc(2vw + 24px), 72px);
   font-weight: 700;
 
   margin-top: 1em;
   margin-bottom: 0.36em;
+  line-height: 1em;
 }
 
 @mixin h2() {
   font-family: $poppins;
-  font-size: calc(1.5vw + 18px);
+  font-size: clamp(24px, calc(1.5vw + 18px), 48px);
   font-weight: 200;
 
   margin-top: 1.5em;
   margin-bottom: 0.5em;
+  line-height: 1em;
 }
 
 @mixin h3() {
   font-family: $poppins;
-  font-size: calc(1vw + 18px);
+  font-size: clamp(18px, calc(1vw + 18px), 36px);
   font-weight: 300;
 
   margin-top: 1.33em;
   margin-bottom: 0.5em;
+  line-height: 1em;
 }
 
 @mixin h4() {
   font-family: $open-sans;
-  font-size: calc(0.7vw + 15px);
+  font-size: clamp(15px, calc(0.8vw + 15px), 21px);
   font-weight: 400;
 
   margin-top: 1.33em;
   margin-bottom: 0.66em;
+  line-height: 1em;
 }
 
 @mixin paragraphStyling() {
   font-family: $open-sans;
-  font-size: 18px;
+  font-size: clamp(15px, 3vw, 18px);
   font-weight: 300;
 
   text-rendering: optimizeLegibility;
-  line-height: 155%;
+  line-height: 1.55em;
 }

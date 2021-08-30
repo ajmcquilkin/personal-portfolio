@@ -9,9 +9,8 @@ $screen-padding-small: calc((100vw - #{$main-screen-width-large}) / 2);
 
 $text-list-margin: 18px;
 $story-max-width: 900px;
-$overview-max-width: 1200px;
 
-$home-site-line-left: 6vw;
+$side-padding: 3rem;
 
 // Mixins
 
@@ -29,12 +28,8 @@ $home-site-line-left: 6vw;
   transition-delay: 0.1s;
 }
 
-@mixin responsivePadding($verticalPadding: 0px, $breakpoint: 600px) {
-  padding: $verticalPadding $screen-padding;
-
-  @media only screen and (max-width: $breakpoint) {
-    padding: $verticalPadding $screen-padding-small;
-  }
+@mixin responsivePadding($padding: 3em) {
+  padding: $padding;
 }
 
 @mixin informationCard {

@@ -6,12 +6,12 @@ import { ButtonSize, ColorMode } from 'types';
 import styles from './Button.module.scss';
 
 export interface ButtonProps {
-  colorMode?: ColorMode;
-  size?: ButtonSize;
-  className?: string;
+    colorMode?: ColorMode;
+    size?: ButtonSize;
+    className?: string;
 
-  children: ReactNode,
-  onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
+    children: ReactNode,
+    onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
 }
 
 const Button = ({

@@ -2,11 +2,15 @@
 @use "styles/fonts.scss" as fonts;
 @use "styles/generics.scss" as generics;
 
+$lr-text-margin: 18px;
+$side-padding: 3rem;
+
 .container {
   display: flex;
   flex-direction: row;
   overflow: hidden;
-  
+  min-width: 210px;
+
   &.dark {
     color: colors.$dark;
   }
@@ -14,20 +18,29 @@
   &.light {
     color: colors.$white;
   }
-  
+
   &:hover > .bar:not(.active) {
-    &.left { transform: translate(0%, 0%); }
-    &.right { transform: translate(0%, 0%); }
-    
-    &.light { background: colors.$white; }
-    &.dark { background: colors.$dark; }
+    &.left {
+      transform: translate(0%, 0%);
+    }
+    &.right {
+      transform: translate(0%, 0%);
+    }
+
+    &.light {
+      background: colors.$white;
+    }
+    &.dark {
+      background: colors.$dark;
+    }
   }
 
   a {
-    position: relative;
+    @include fonts.paragraphStyling();
     font-family: fonts.$poppins;
     font-size: 16px;
-    font-weight: 300;
+
+    position: relative;
     text-decoration: none;
     text-align: right;
     overflow: hidden;
@@ -35,44 +48,51 @@
     &:focus {
       outline: none;
     }
-    
-    &.active::after, &:focus::after {
+
+    &.active::after,
+    &:focus::after {
       @include generics.after(1px);
       transform: translate(0%, 0%);
     }
 
-    &.dark { color: colors.$dark; &::after { background: colors.$dark; } }
-    &.light { color: colors.$white; &::after { background: colors.$white; } }
+    &.dark {
+      color: colors.$dark;
+      &::after {
+        background: colors.$dark;
+      }
+    }
+    &.light {
+      color: colors.$white;
+      &::after {
+        background: colors.$white;
+      }
+    }
 
     &::after {
       @include generics.after(1px);
       transform: translate(-100%, 0%);
     }
   }
-  
+
   .bar {
     margin: auto 0;
     height: 1px;
     transition: transform 0.3s ease-in-out;
-    
+
     &.left {
       transform: translate(-100%, 0%);
 
       margin-left: 0px;
-      margin-right: 18px;
+      margin-right: $lr-text-margin;
       flex: 1;
     }
-    
+
     &.right {
       transform: translate(100%, 0%);
 
-      margin-left: 18px;
+      margin-left: $lr-text-margin;
       margin-right: 0px;
-      width: 96px;
-
-      @media only screen and (max-width: 800px) {
-        width: 30px;
-      }
+      width: calc(#{$side-padding} - #{$lr-text-margin});
     }
 
     &.active {

@@ -3,9 +3,9 @@
 
 .container {
   position: relative;
-  width: calc(13.5vw + 120px);
   min-width: 216px;
   cursor: pointer;
+  flex: 1;
 
   border: none;
   background: none;

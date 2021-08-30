@@ -2,14 +2,19 @@
 @use "styles/fonts.scss" as fonts;
 @use "styles/generics.scss" as generics;
 
-.container {
-  padding: 0px 14vw; // ! UPDATE
-  height: 115vh;
+$signature-width: 78px;
+$signature-height: 61px;
+$signature-margin: 2em;
 
+$line-bottom-extension: 12em;
+
+$banner-row-break: 800px;
+$side-padding: 3rem;
+
+.container {
   position: relative;
-  background-size: cover !important;
-  background-repeat: no-repeat;
-  overflow: hidden;
+  min-height: 100vh;
+  padding: $side-padding $side-padding 8em;
 
   &.light {
     color: colors.$white;
@@ -36,128 +41,128 @@
   }
 
   .signature {
-    position: absolute;
-    z-index: 2;
-    left: generics.$home-site-line-left; // ! UPDATE
-    top: 6vh;
+    margin: 2em 0px;
 
-    transform: translateX(-50%);
-
-    font-family: fonts.$caveat;
-    font-size: 48px;
-    font-weight: 700;
-    user-select: none;
-
-    @media only screen and (max-width: 600px) {
-      left: 2vw; // ! UPDATE
+    img {
+      width: $signature-width;
+      height: $signature-height;
     }
   }
 
   &.dark {
-      .line{
-          background: colors.$dark
+    .line {
+      background: colors.$dark;
+    }
+  }
+
+  @media (min-width: 1700px) {
+    .line {
+      @include generics.siteLine();
+      left: calc(#{$signature-width} / 2 + #{$side-padding});
+      width: 1px;
+
+      background: colors.$white;
+
+      &.top {
+        top: 0px;
+        height: calc(#{$side-padding});
       }
-  }
 
-  .line {
-    @include generics.siteLine();
-    left: generics.$home-site-line-left;
-    width: 1px;
+      &.main {
+        top: calc(
+          #{$side-padding} + #{$signature-margin} * 2 + #{$signature-height}
+        );
 
-    background: colors.$white;
-
-    &.top {
-      top: 0px;
-      height: 4vh;
-    }
-
-    &.main {
-      top: calc(4vh + 2vh + 5.6vh + 2vh);
-      height: calc(100% - (4vh + 2vh + 5.6vh + 2vh));
+        height: calc(
+          100% -
+            (#{$side-padding} + #{$signature-margin} * 2 + #{$signature-height}) +
+            #{$line-bottom-extension}
+        );
+      }
     }
   }
 
-  .signatureShadow {
-    position: absolute;
-    width: 796.98px;
-    height: 323.28px;
-    left: -174px;
-    top: -101.5px;
+  .headerMenuContainer {
+    display: flex;
+    flex-direction: column-reverse;
 
-    background: linear-gradient(
-      180deg,
-      rgba(23, 30, 39, 0.2) 0%,
-      rgba(23, 30, 39, 0.1) 64.06%,
-      rgba(23, 30, 39, 0) 100%
-    );
-    transform: rotate(-30deg);
-  }
+    @media (max-width: 500px) {
+      .menuContainer {
+        width: 100vw;
+        left: calc(#{$side-padding} * -1);
+      }
+    }
 
-  .menuContainer {
-    position: absolute;
-    z-index: 2;
-    width: 300px;
-    top: 48px;
-    right: 0;
+    @media (min-width: 500px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
 
-    @media only screen and (max-width: 800px) {
-      width: 180px;
+    .signatureShadow {
+      // position: absolute;
+      // width: 796.98px;
+      // height: 323.28px;
+      // left: -174px;
+      // top: -101.5px;
+
+      // background: linear-gradient(
+      //   180deg,
+      //   rgba(23, 30, 39, 0.2) 0%,
+      //   rgba(23, 30, 39, 0.1) 64.06%,
+      //   rgba(23, 30, 39, 0) 100%
+      // );
+      // transform: rotate(-30deg);
+    }
+
+    .menuContainer {
+      position: relative;
+      right: calc(#{$side-padding} * -1);
+
+      // position: absolute;
+      // z-index: 2;
+      // width: 300px;
+      // top: 48px;
+      // right: 0;
+
+      // @media only screen and (max-width: 800px) {
+      //   width: 180px;
+      // }
     }
   }
 
   .menuShadow {
-    position: absolute;
-    width: 1158.01px;
-    height: 485.08px;
-    right: -200px;
-    top: -481.56px;
+    // position: absolute;
+    // width: 1158.01px;
+    // height: 485.08px;
+    // right: -200px;
+    // top: -481.56px;
 
-    background: linear-gradient(
-      180deg,
-      rgba(23, 30, 39, 0.3) 0%,
-      rgba(23, 30, 39, 0.15) 64.06%,
-      rgba(23, 30, 39, 0) 100%
-    );
-    transform: rotate(30deg);
-  }
-
-  .personalLinksContainer {
-    position: absolute;
-    right: 114px;
-    top: 42vh;
-    transform: translateY(-50%);
-    z-index: 10;
-
-    .linkContainer {
-      display: flex;
-      flex-direction: row;
-      justify-content: right;
-
-      margin-bottom: 12px;
-
-      &:last-child {
-        margin-bottom: 0px;
-      }
-
-      p {
-        margin: auto 21px auto 0px;
-
-        font-family: fonts.$poppins;
-        font-size: 13px;
-        font-weight: 300;
-      }
-
-      img {
-        width: 24px;
-        max-height: 24px;
-      }
-    }
+    // background: linear-gradient(
+    //   180deg,
+    //   rgba(23, 30, 39, 0.3) 0%,
+    //   rgba(23, 30, 39, 0.15) 64.06%,
+    //   rgba(23, 30, 39, 0) 100%
+    // );
+    // transform: rotate(30deg);
   }
 
   .bannerContainer {
-    position: relative;
-    top: 42vh;
-    transform: translateY(-50%);
+    // position: relative;
+    // top: 42vh;
+    // transform: translateY(-50%);
+
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+
+    margin: 3em auto 8em;
+    max-width: 1500px;
+
+    @media (min-width: $banner-row-break) {
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 6em;
+    }
 
     .bannerContent {
       position: relative;
@@ -165,106 +170,106 @@
 
       h1 {
         @include fonts.h1();
-
-        margin: 0 0 -0.5em;
+        margin: 0px 0px -0.04em;
       }
 
       h2 {
         @include fonts.h2();
-
-        margin: 0 0 7px;
+        margin: 0px 0px 0.36em;
       }
 
       p {
         @include fonts.paragraphStyling();
 
-        margin: 0 0 27px;
+        margin: 0em 0em 1.5em;
         max-width: 810px;
-        font-size: 27px;
-      }
-
-      .landing-screen-banner-content {
-        font-family: fonts.$open-sans;
-        font-size: calc(16px + 0.5vw);
-        font-weight: 300;
-        line-height: 155%;
-
-        max-width: 750px;
-        margin: 0 0 28px;
+        font-size: calc(1em * 1.5);
       }
 
       .buttonContainer {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        gap: 1.2em 2.4em;
+      }
+    }
 
-        :global(.headerButton) {
-          margin: 0 36px 18px 0;
+    .personalLinksContainer {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 0.9em 2.4em;
 
-          :last-child {
-            margin: 0px;
-          }
+      @media (min-width: $banner-row-break) {
+        flex-direction: column;
+        margin: auto 0px;
+      }
+
+      .linkContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        gap: 1.2em;
+
+        p {
+          @include fonts.paragraphStyling();
+
+          margin: auto 0px;
+          font-family: fonts.$poppins;
+          font-size: 14px;
+        }
+
+        img {
+          width: 24px;
+          max-height: 24px;
         }
       }
     }
 
     .bannerShadow {
-      position: absolute;
-      width: 240%;
-      height: 330%;
-      left: -60%;
-      top: -108%;
+      // position: absolute;
+      // width: 240%;
+      // height: 330%;
+      // left: -60%;
+      // top: -108%;
 
-      background: radial-gradient(
-        50% 50% at 50% 50%,
-        rgba(34, 34, 34, 0.2) 0%,
-        rgba(34, 34, 34, 0) 100%
-      );
+      // background: radial-gradient(
+      //   50% 50% at 50% 50%,
+      //   rgba(34, 34, 34, 0.2) 0%,
+      //   rgba(34, 34, 34, 0) 100%
+      // );
     }
   }
 
   .cardsContainer {
-    position: absolute;
-    z-index: 2;
-    top: 72vh;
-
-    width: generics.$main-screen-width;
-
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 2em;
 
-    :global(.navCard) {
-      margin-bottom: 36px;
-    }
+    position: relative;
+    z-index: 2;
 
-    @media only screen and (max-width: 725px) {
-      top: 32vh;
-      width: 100%;
+    margin-bottom: 6em;
+    max-width: 1500px;
 
-      :global(.navCard) {
-        width: 100%;
-      }
+    @media (min-width: 1200px) {
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 0px auto 6em;
+      gap: 4em;
     }
   }
 
   .arrowBox {
-    position: absolute;
+    position: relative;
+    margin: 0px auto;
     z-index: 2;
-    top: 90vh;
-    left: 50vw;
-    transform: translate(-50%, 0);
-
-    @media only screen and (max-width: 725px) {
-      display: none;
-    }
   }
 
   .bottomGradient {
     position: absolute;
     width: 100%;
-    height: 497px;
+    height: 16em;
     left: 0;
     bottom: 0;
 

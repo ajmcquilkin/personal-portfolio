@@ -31,20 +31,20 @@ const Home = (): JSX.Element => {
 
     const [featuredProject, setFeaturedProject] = useState(0);
     const [passionsImage, setPassionsImage] = useState(0);
-    const [filteredProjects, setFilteredProjects] = useState(ProjectsArray);
+    // const [filteredProjects, setFilteredProjects] = useState(ProjectsArray);
     const [selectedTags, setSelectedTags] = useState(new Set());
 
-    const handleTagSelect = (tag: AllProjectTags, selected: boolean) => {
-        const updatedState = new Set(selectedTags);
-        if (selected) updatedState.add(tag);
-        else updatedState.delete(tag);
-        setSelectedTags(updatedState);
-    };
+    // const handleTagSelect = (tag: AllProjectTags, selected: boolean) => {
+    //     const updatedState = new Set(selectedTags);
+    //     if (selected) updatedState.add(tag);
+    //     else updatedState.delete(tag);
+    //     setSelectedTags(updatedState);
+    // };
 
-    const handleFilterProjects = () => {
-        if (selectedTags.size) setFilteredProjects(ProjectsArray.filter((project) => !!project.tags?.some((tag) => selectedTags.has(tag))));
-        else setFilteredProjects(ProjectsArray);
-    };
+    // const handleFilterProjects = () => {
+    //     if (selectedTags.size) setFilteredProjects(ProjectsArray.filter((project) => !!project.tags?.some((tag) => selectedTags.has(tag))));
+    //     else setFilteredProjects(ProjectsArray);
+    // };
 
     return (
         <div className={styles.container}>
@@ -75,87 +75,61 @@ const Home = (): JSX.Element => {
                 {/* Personal Background Section */}
 
                 <section className={[styles.flexSection, styles.backgroundContainer].join(' ')}>
-                    <div className={styles.backgroundLine} />
+                    <div className={styles.backgroundWidthContainer}>
+                        {/* <div className={styles.backgroundLine} /> */}
 
-                    <div className={styles.backgroundTilesContainer}>
-                        <div className={styles.backgroundTile}>
-                            <div className={styles.backgroundTileHeader}>
-                                <h3>education</h3>
-                                <p>see more</p>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictum sit turpis suspendisse urna enim nascetur ultrices massa blandit.</p>
-                        </div>
+                        <TextSection
+                            title="my background"
+                            subtitle="Currently working at Microsoft as a Software Engineering Intern on the PowerBI team."
+                            context="about me"
+                            colorMode="light"
+                            className={styles.backgroundTextContainer}
+                        >
+                            <TextSectionParagraph>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictum sit turpis suspendisse urna enim nascetur
+                                ultrices massa blandit. Odio tincidunt imperdiet suspendisse venenatis diam ac faucibus. Urna, nullam tincidunt
+                                pretium viverra pretium pulvinar. Rhoncus imperdiet ut imperdiet id. Erat tellus molestie vitae sed ac orci
+                                scelerisque interdum sit.
+                            </TextSectionParagraph>
 
-                        <div className={styles.backgroundTile}>
-                            <div className={styles.backgroundTileHeader}>
-                                <h3>work</h3>
-                                <p>see more</p>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictum sit turpis suspendisse urna enim nascetur ultrices massa blandit.</p>
-                        </div>
+                            <TextSectionCTA>
+                                <Button colorMode="light" onClick={() => router.push('/about')}>
+                                    more about me
+                                </Button>
+                            </TextSectionCTA>
+                        </TextSection>
 
-                        <div className={styles.backgroundTile}>
-                            <div className={styles.backgroundTileHeader}>
-                                <h3>achievements</h3>
-                                <p>see more</p>
+                        <div className={styles.backgroundTilesContainer}>
+                            <div className={styles.backgroundTile}>
+                                <div className={styles.backgroundTileHeader}>
+                                    <h3>education</h3>
+                                    <p>see more</p>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictum sit turpis suspendisse urna enim nascetur ultrices massa blandit.</p>
                             </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictum sit turpis suspendisse urna enim nascetur ultrices massa blandit.</p>
+
+                            <div className={styles.backgroundTile}>
+                                <div className={styles.backgroundTileHeader}>
+                                    <h3>work</h3>
+                                    <p>see more</p>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictum sit turpis suspendisse urna enim nascetur ultrices massa blandit.</p>
+                            </div>
+
+                            <div className={styles.backgroundTile}>
+                                <div className={styles.backgroundTileHeader}>
+                                    <h3>achievements</h3>
+                                    <p>see more</p>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictum sit turpis suspendisse urna enim nascetur ultrices massa blandit.</p>
+                            </div>
                         </div>
                     </div>
-
-                    <TextSection
-                        title="my background"
-                        subtitle="Currently working at Microsoft as a Software Engineering Intern on the PowerBI team."
-                        context="about me"
-                        colorMode="light"
-                        className={styles.backgroundTextContainer}
-                    >
-                        {/* <TextSectionParagraph>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictum sit turpis suspendisse urna enim nascetur
-              ultrices massa blandit. Odio tincidunt imperdiet suspendisse venenatis diam ac faucibus. Urna, nullam tincidunt
-              pretium viverra pretium pulvinar. Rhoncus imperdiet ut imperdiet id. Erat tellus molestie vitae sed ac orci
-              scelerisque interdum sit.
-            </TextSectionParagraph> */}
-
-                        <TextSectionParagraph>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictum sit turpis suspendisse urna enim nascetur
-                            ultrices massa blandit. Odio tincidunt imperdiet suspendisse venenatis diam ac faucibus. Urna, nullam tincidunt
-                            pretium viverra pretium pulvinar. Rhoncus imperdiet ut imperdiet id. Erat tellus molestie vitae sed ac orci
-                            scelerisque interdum sit.
-                        </TextSectionParagraph>
-
-                        <TextSectionCTA>
-                            <Button colorMode="light" onClick={() => router.push('/about')}>
-                                more about me
-                            </Button>
-                        </TextSectionCTA>
-                    </TextSection>
                 </section>
 
                 {/* Featured Projects Section */}
 
                 <section className={[styles.flexSection, styles.featuredProjectContainer].join(' ')}>
-                    <div className={styles.featuredProjectImageContainer}>
-                        <Carousel
-                            position={featuredProject}
-                            className={styles.featuredProjectImageCarousel}
-                        >
-                            {HomeFeaturedProjects.map(({ featuredImageSrc, featuredImageAlt, caption }) => (
-                                <>
-                                    <div className={styles.featuredProjectImage}>
-                                        <Image
-                                            src={featuredImageSrc}
-                                            alt={featuredImageAlt}
-                                            layout="fill"
-                                            objectFit="contain"
-                                        />
-                                    </div>
-                                    <p>{caption}</p>
-                                </>
-                            ))}
-                        </Carousel>
-                    </div>
-
                     <div className={styles.featuredProjectContentContainer}>
                         <Carousel position={featuredProject}>
                             {HomeFeaturedProjects.map(({
@@ -186,6 +160,27 @@ const Home = (): JSX.Element => {
                             onSelect={(idx) => setFeaturedProject(idx)}
                         />
                     </div>
+
+                    <div className={styles.featuredProjectImageContainer}>
+                        <Carousel
+                            position={featuredProject}
+                            className={styles.featuredProjectImageCarousel}
+                        >
+                            {HomeFeaturedProjects.map(({ featuredImageSrc, featuredImageAlt, caption }) => (
+                                <>
+                                    <div className={styles.featuredProjectImage}>
+                                        <Image
+                                            src={featuredImageSrc}
+                                            alt={featuredImageAlt}
+                                            layout="fill"
+                                            objectFit="contain"
+                                        />
+                                    </div>
+                                    <p>{caption}</p>
+                                </>
+                            ))}
+                        </Carousel>
+                    </div>
                 </section>
 
                 {/* Personal Passions Section */}
@@ -213,38 +208,40 @@ const Home = (): JSX.Element => {
                         />
                     </div>
 
-                    <TextSection
-                        title="my passions"
-                        subtitle="I’m a part time professional phographer, specializing in landscapes and adventures."
-                        context="about me"
-                        colorMode="light"
-                        className={styles.passionsContent}
-                    >
-                        <TextSectionParagraph>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictum sit turpis suspendisse urna enim nascetur
-                            ultrices massa blandit. Odio tincidunt imperdiet suspendisse venenatis diam ac faucibus. Urna, nullam tincidunt
-                            pretium viverra pretium pulvinar. Rhoncus imperdiet ut imperdiet id. Erat tellus molestie vitae sed ac orci
-                            scelerisque interdum sit.
-                        </TextSectionParagraph>
+                    <div className={styles.passionsContent}>
+                        <TextSection
+                            title="my passions"
+                            subtitle="I’m a part time professional phographer, specializing in landscapes and adventures."
+                            context="about me"
+                            colorMode="light"
+                            className={styles.passionsText}
+                        >
+                            <TextSectionParagraph>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictum sit turpis suspendisse urna enim nascetur
+                                ultrices massa blandit. Odio tincidunt imperdiet suspendisse venenatis diam ac faucibus. Urna, nullam tincidunt
+                                pretium viverra pretium pulvinar. Rhoncus imperdiet ut imperdiet id. Erat tellus molestie vitae sed ac orci
+                                scelerisque interdum sit.
+                            </TextSectionParagraph>
 
-                        <TextSectionCTA>
-                            <Button colorMode="light" onClick={() => router.push('/about')}>
-                                more about me
-                            </Button>
-                        </TextSectionCTA>
-                    </TextSection>
+                            <TextSectionCTA>
+                                <Button colorMode="light" onClick={() => router.push('/about')}>
+                                    more about me
+                                </Button>
+                            </TextSectionCTA>
+                        </TextSection>
+                    </div>
                 </section>
 
                 {/* Resume Section */}
 
                 <section className={styles.resumeContainer}>
-                    <div className={[styles.flexSection, styles.resumeExperienceContainer].join(' ')}>
+                    <div className={[styles.resumeSection, styles.resumeExperienceContainer].join(' ')}>
                         <TextSection
                             title="my experience"
                             subtitle="My employments and personal projects."
                             context="resume"
                             colorMode="light"
-                            className={styles.resumeExperienceText}
+                            className={styles.resumeTextContainer}
                         >
                             <TextSectionParagraph>
                                 I pride myself on my ability to draw from my experiences to improve my work. Here is a selection of my
@@ -262,24 +259,17 @@ const Home = (): JSX.Element => {
                             title="experience"
                             rightText="what I've done"
                             content={HomeExperienceCardContent}
-                            className={styles.resumeExperienceContent}
+                            className={styles.resumeListContent}
                         />
                     </div>
 
-                    <div className={[styles.flexSection, styles.resumeAchievementsContainer].join(' ')}>
-                        <HomeInformationCard
-                            title="acheivements"
-                            rightText="what I've earned"
-                            content={HomeAchievementsCardContent}
-                            className={styles.resumeAchievementsContent}
-                        />
-
+                    <div className={[styles.resumeSection, styles.resumeAchievementsContainer].join(' ')}>
                         <TextSection
                             title="my achievements"
                             subtitle="What I've done that I'm proud of."
                             context="resume"
                             colorMode="light"
-                            className={styles.resumeAchievementsText}
+                            className={styles.resumeTextContainer}
                         >
                             <TextSectionParagraph>
                                 I strive to be the best I can be in all that I do, both personally and professionally. Here are my proudest
@@ -292,15 +282,22 @@ const Home = (): JSX.Element => {
                                 </Button>
                             </TextSectionCTA>
                         </TextSection>
+
+                        <HomeInformationCard
+                            title="acheivements"
+                            rightText="what I've earned"
+                            content={HomeAchievementsCardContent}
+                            className={styles.resumeListContent}
+                        />
                     </div>
 
-                    <div className={[styles.flexSection, styles.resumeSkillsContainer].join(' ')}>
+                    <div className={[styles.resumeSection, styles.resumeSkillsContainer].join(' ')}>
                         <TextSection
                             title="my skills"
                             subtitle="What I'm good at, and what I love doing."
                             context="resume"
                             colorMode="light"
-                            className={styles.resumeSkillsText}
+                            className={styles.resumeTextContainer}
                         >
                             <TextSectionParagraph>
                                 Over the course of my professional life I&apos;ve been exposed to many different fields. Here are my strongest
@@ -318,14 +315,14 @@ const Home = (): JSX.Element => {
                             title="skills"
                             rightText="what I've learned"
                             content={HomeSkillsCardContent}
-                            className={styles.resumeSkillsContent}
+                            className={styles.resumeListContent}
                         />
                     </div>
                 </section>
 
-                {/* Past Projects Container */}
+                {/* Past Projects Container (WIP) */}
 
-                <section className={styles.projectsContainer}>
+                {/* <section className={styles.projectsContainer}>
                     <div className={[styles.flexSection, styles.projectsIntroContainer].join(' ')}>
                         <div className={styles.projectsIntroImageContainer}>
                             <div className={styles.projectsIntroImage}>
@@ -441,10 +438,10 @@ const Home = (): JSX.Element => {
                             </div>
                         ))}
                     </div>
-                </section>
+                </section> */}
             </main>
 
-            <Footer />
+            <div className={styles.footerContainer}><Footer /></div>
         </div>
     );
 };
