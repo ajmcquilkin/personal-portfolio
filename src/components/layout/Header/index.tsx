@@ -138,7 +138,7 @@ const Header = ({
                         subtitle="software"
                         linkText="see work"
                         colorMode={colorMode}
-                        onClick={() => { router.push('/?tag=development#work-experience-search'); }}
+                        onClick={() => { router.push('/#experience'); }}
                         className={styles.navCard}
                     />
 
@@ -147,7 +147,7 @@ const Header = ({
                         subtitle="product"
                         linkText="see work"
                         colorMode={colorMode}
-                        onClick={() => { router.push('/?tag=design#work-experience-search'); }}
+                        onClick={() => { router.push('/#experience'); }}
                         className={styles.navCard}
                     />
 

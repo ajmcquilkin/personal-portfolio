@@ -26,7 +26,7 @@
   .subtitle {
     @include fonts.h3();
     margin: 0px 0px 0.6em;
-    line-height: 1.55em;
+    line-height: 1.2em;
   }
 
   .children {
@@ -37,6 +37,7 @@
 
     .cta {
       margin: 0px;
+      max-width: 480px;
     }
   }
 }

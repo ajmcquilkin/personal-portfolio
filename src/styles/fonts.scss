@@ -1,6 +1,6 @@
 @use "styles/colors.scss" as colors;
 
-@import url("https://fonts.googleapis.com/css2?family=family=Open+Sans:wght@300;400&family=Poppins:wght@200;300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Poppins:wght@200;300;400;600;700&display=swap");
 
 $open-sans: "Open Sans", sans-serif;
 $poppins: "Poppins", sans-serif;
@@ -45,9 +45,13 @@ $poppins: "Poppins", sans-serif;
   line-height: 1em;
 }
 
-@mixin paragraphStyling() {
+@mixin paragraphStyling($scale: 1) {
   font-family: $open-sans;
-  font-size: clamp(15px, 3vw, 18px);
+  font-size: clamp(
+    calc(15px * #{$scale}),
+    calc(3vw * #{$scale}),
+    calc(18px * #{$scale})
+  );
   font-weight: 300;
 
   text-rendering: optimizeLegibility;

@@ -147,10 +147,6 @@ $side-padding: 3rem;
   }
 
   .bannerContainer {
-    // position: relative;
-    // top: 42vh;
-    // transform: translateY(-50%);
-
     display: flex;
     flex-direction: column;
     gap: 2em;
@@ -183,14 +179,21 @@ $side-padding: 3rem;
 
         margin: 0em 0em 1.5em;
         max-width: 810px;
-        font-size: calc(1em * 1.5);
+        font-size: calc(1em * 1.2);
       }
 
       .buttonContainer {
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+        flex-direction: column;
         gap: 1.2em 2.4em;
+
+        @media (min-width: $banner-row-break) {
+          flex-direction: row;
+        }
+
+        & > div {
+          flex: 1;
+        }
       }
     }
 

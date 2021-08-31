@@ -1,62 +1,26 @@
 @use "styles/colors.scss" as colors;
 @use "styles/fonts.scss" as fonts;
 
-$large-min-width: 240px;
-$large-min-height: 30px;
-$large-width: calc(16vw + #{$large-min-width});
-$large-height: calc(2vw + #{$large-min-height});
-$large-border: calc(2 * #{$large-width} + 2 * #{$large-height});
-
-$small-min-width: 120px;
-$small-min-height: 30px;
-$small-width: calc(9vw + #{$small-min-width});
-$small-height: calc(2vw + #{$small-min-height});
-$small-border: calc(2 * #{$small-width} + 2 * #{$small-height});
-
 .buttonContainer {
   position: relative;
+  width: auto;
+  height: auto;
 
   // Sizing
 
-  &.lg {
-    width: $large-width;
-    height: $large-height;
-    min-width: 240px;
-    min-height: 42px;
+  $width: var(--width);
+  $height: var(--height);
+  $border: calc(2 * #{$width} + 2 * #{$height});
 
-    button {
-      svg {
-        stroke-dasharray: $large-width $large-border;
-        stroke-dashoffset: $large-width;
-      }
-
-      &:focus-within svg {
-        stroke-dashoffset: calc(#{$large-border} * -1);
-      }
-      &:hover svg {
-        stroke-dashoffset: calc(#{$large-border} * -1);
-      }
+  button {
+    svg {
+      stroke-dasharray: $width $border;
+      stroke-dashoffset: $width;
     }
-  }
 
-  &.sm {
-    width: $small-width;
-    height: $small-height;
-    min-width: $small-min-width;
-    min-height: $small-min-height;
-
-    button {
-      svg {
-        stroke-dasharray: $small-width $small-border;
-        stroke-dashoffset: $small-width;
-      }
-
-      &:focus-within svg {
-        stroke-dashoffset: calc(#{$small-border} * -1);
-      }
-      &:hover svg {
-        stroke-dashoffset: calc(#{$small-border} * -1);
-      }
+    &:focus-within svg,
+    &:hover svg {
+      stroke-dashoffset: calc(#{$border} * -1);
     }
   }
 
@@ -65,20 +29,24 @@ $small-border: calc(2 * #{$small-width} + 2 * #{$small-height});
   &.dark button {
     border: 1px solid colors.$dark;
     color: colors.$dark;
+
     svg {
       stroke: colors.$dark;
-    } // TODO: Update this color
+    }
+
     &::after {
       background-color: colors.$dark;
-    } // TODO: Update this color
+    }
   }
 
   &.light button {
     border: 1px solid colors.$white;
     color: colors.$white;
+
     svg {
       stroke: colors.$white;
     }
+
     &::after {
       background-color: colors.$white;
     }
@@ -87,17 +55,16 @@ $small-border: calc(2 * #{$small-width} + 2 * #{$small-height});
   // Main styling
 
   button {
-    font-family: fonts.$open-sans;
+    @include fonts.paragraphStyling(1.1);
     font-weight: 400;
-    // font-size: calc(0.5vw + 12px);
-    font-size: 18px;
 
+    padding: 0.96em 3em;
     width: 100%;
     height: 100%;
 
     background: none;
     border-radius: 1px;
-    // outline: none;
+    outline: none;
     cursor: pointer;
 
     svg {

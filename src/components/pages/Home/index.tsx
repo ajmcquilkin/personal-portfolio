@@ -14,17 +14,17 @@ import Footer from 'components/layout/Footer';
 import HomeInformationCard from 'components/layout/HomeInformationCard';
 
 import { mailtoLink, resumeFileName } from 'utils';
-import {
-    ProjectFrameworksArray, ProjectLanguagesArray, ProjectTagsArray,
-    AllProjectTags
-} from 'types/projects';
+// import {
+//     ProjectFrameworksArray, ProjectLanguagesArray, ProjectTagsArray,
+//     AllProjectTags
+// } from 'types/projects';
 
 import styles from './Home.module.scss';
 
 import { HomeAchievementsCardContent, HomeExperienceCardContent, HomeSkillsCardContent } from './homeCardInformation';
 import { HomePassionsImages } from './homeFeaturedImages';
 import { HomeFeaturedProjects } from './homeFeaturedProjects';
-import { ProjectsArray } from './projects';
+// import { ProjectsArray } from './projects';
 
 const Home = (): JSX.Element => {
     const router = useRouter();
@@ -32,7 +32,7 @@ const Home = (): JSX.Element => {
     const [featuredProject, setFeaturedProject] = useState(0);
     const [passionsImage, setPassionsImage] = useState(0);
     // const [filteredProjects, setFilteredProjects] = useState(ProjectsArray);
-    const [selectedTags, setSelectedTags] = useState(new Set());
+    // const [selectedTags, setSelectedTags] = useState(new Set());
 
     // const handleTagSelect = (tag: AllProjectTags, selected: boolean) => {
     //     const updatedState = new Set(selectedTags);
@@ -80,7 +80,7 @@ const Home = (): JSX.Element => {
 
                         <TextSection
                             title="my background"
-                            subtitle="Currently working at Microsoft as a Software Engineering Intern on the PowerBI team."
+                            subtitle="Currently studying Computer Science and Engineering at Dartmouth College."
                             context="about me"
                             colorMode="light"
                             className={styles.backgroundTextContainer}
@@ -102,16 +102,8 @@ const Home = (): JSX.Element => {
                         <div className={styles.backgroundTilesContainer}>
                             <div className={styles.backgroundTile}>
                                 <div className={styles.backgroundTileHeader}>
-                                    <h3>education</h3>
-                                    <p>see more</p>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictum sit turpis suspendisse urna enim nascetur ultrices massa blandit.</p>
-                            </div>
-
-                            <div className={styles.backgroundTile}>
-                                <div className={styles.backgroundTileHeader}>
-                                    <h3>work</h3>
-                                    <p>see more</p>
+                                    <h3>experience</h3>
+                                    <a href="#experience">see more</a>
                                 </div>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictum sit turpis suspendisse urna enim nascetur ultrices massa blandit.</p>
                             </div>
@@ -119,7 +111,15 @@ const Home = (): JSX.Element => {
                             <div className={styles.backgroundTile}>
                                 <div className={styles.backgroundTileHeader}>
                                     <h3>achievements</h3>
-                                    <p>see more</p>
+                                    <a href="#achievements">see more</a>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictum sit turpis suspendisse urna enim nascetur ultrices massa blandit.</p>
+                            </div>
+
+                            <div className={styles.backgroundTile}>
+                                <div className={styles.backgroundTileHeader}>
+                                    <h3>skills</h3>
+                                    <a href="#skills">see more</a>
                                 </div>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictum sit turpis suspendisse urna enim nascetur ultrices massa blandit.</p>
                             </div>
@@ -211,7 +211,7 @@ const Home = (): JSX.Element => {
                     <div className={styles.passionsContent}>
                         <TextSection
                             title="my passions"
-                            subtitle="I’m a part time professional phographer, specializing in landscapes and adventures."
+                            subtitle="Part-time professional phographer, specializing landscape and travel."
                             context="about me"
                             colorMode="light"
                             className={styles.passionsText}
@@ -236,6 +236,8 @@ const Home = (): JSX.Element => {
 
                 <section className={styles.resumeContainer}>
                     <div className={[styles.resumeSection, styles.resumeExperienceContainer].join(' ')}>
+                        <div id="experience" />
+
                         <TextSection
                             title="my experience"
                             subtitle="My employments and personal projects."
@@ -264,6 +266,8 @@ const Home = (): JSX.Element => {
                     </div>
 
                     <div className={[styles.resumeSection, styles.resumeAchievementsContainer].join(' ')}>
+                        <div id="achievements" />
+
                         <TextSection
                             title="my achievements"
                             subtitle="What I've done that I'm proud of."
@@ -292,6 +296,8 @@ const Home = (): JSX.Element => {
                     </div>
 
                     <div className={[styles.resumeSection, styles.resumeSkillsContainer].join(' ')}>
+                        <div id="skills" />
+
                         <TextSection
                             title="my skills"
                             subtitle="What I'm good at, and what I love doing."

@@ -6,11 +6,11 @@
   flex-direction: column;
   gap: 4em;
 
-  max-width: 54em;
+  max-width: 72em;
   margin: 0px auto;
   padding: 0px 3em 3em;
 
-  @media (min-width: 900px) {
+  @media (min-width: 1000px) {
     flex-direction: row;
   }
 
@@ -29,9 +29,10 @@
     .buttonContainer {
       display: flex;
       flex-direction: column;
+      max-width: 900px;
       gap: 1.2em;
 
-      @media (min-width: 700px) {
+      @media (min-width: 1000px) {
         flex-direction: row;
         gap: 2.4em;
       }

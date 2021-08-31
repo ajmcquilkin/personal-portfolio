@@ -39,19 +39,17 @@
         // }
 
         .backgroundTilesContainer {
+          display: flex;
+          flex-direction: column;
+          gap: 1.2em;
           flex: 1;
 
           .backgroundTile {
-            margin-bottom: 16px;
-            padding: 41px;
+            padding: 2.1em;
 
             border-radius: 4px;
             background: colors.$lighter-dark;
             color: colors.$white;
-
-            &:last-child {
-              margin-bottom: 0px;
-            }
 
             .backgroundTileHeader {
               display: flex;
@@ -68,10 +66,15 @@
                 color: colors.$light-blue;
               }
 
-              p {
+              a {
                 @include fonts.paragraphStyling();
                 margin: auto 0px;
               }
+            }
+
+            & > p {
+              @include fonts.paragraphStyling();
+              margin-bottom: 0px;
             }
           }
         }
