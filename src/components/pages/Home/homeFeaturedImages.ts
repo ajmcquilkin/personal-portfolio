@@ -1,6 +1,6 @@
 export interface HomeFeaturedImage {
-  src: string,
-  alt: string
+    src: string,
+    alt: string
 }
 
 export const HomePassionsImages: HomeFeaturedImage[] = [

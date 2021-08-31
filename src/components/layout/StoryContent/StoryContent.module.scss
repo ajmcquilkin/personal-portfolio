@@ -11,27 +11,21 @@
     padding: generics.$side-padding;
 
     h2 {
-      font-family: fonts.$poppins;
-      font-size: 48px;
-      font-weight: 200;
+      @include fonts.h2();
       color: colors.$dark;
 
       margin: 72px 0px 23px;
     }
 
     h3 {
-      font-family: fonts.$poppins;
-      font-size: 36px;
-      font-weight: 300;
+      @include fonts.h3();
       color: colors.$dark;
 
       margin: 48px 0px 23px;
     }
 
     h4 {
-      font-family: fonts.$open-sans;
-      font-size: 27px;
-      font-weight: 400;
+      @include fonts.h4();
       color: colors.$dark;
 
       margin: 36px 0px 18px;
@@ -62,7 +56,8 @@
     // ! HARD TO READ
     p,
     pre,
-    td {
+    td,
+    a {
       @include fonts.paragraphStyling();
 
       display: flex;

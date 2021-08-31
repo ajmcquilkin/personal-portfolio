@@ -92,11 +92,11 @@ const Home = (): JSX.Element => {
                                 scelerisque interdum sit.
                             </TextSectionParagraph>
 
-                            <TextSectionCTA>
+                            {/* <TextSectionCTA>
                                 <Button colorMode="light" onClick={() => router.push('/about')}>
                                     more about me
                                 </Button>
-                            </TextSectionCTA>
+                            </TextSectionCTA> */}
                         </TextSection>
 
                         <div className={styles.backgroundTilesContainer}>
@@ -222,12 +222,12 @@ const Home = (): JSX.Element => {
                                 pretium viverra pretium pulvinar. Rhoncus imperdiet ut imperdiet id. Erat tellus molestie vitae sed ac orci
                                 scelerisque interdum sit.
                             </TextSectionParagraph>
-
+                            {/*
                             <TextSectionCTA>
                                 <Button colorMode="light" onClick={() => router.push('/about')}>
                                     more about me
                                 </Button>
-                            </TextSectionCTA>
+                            </TextSectionCTA> */}
                         </TextSection>
                     </div>
                 </section>

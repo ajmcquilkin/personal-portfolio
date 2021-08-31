@@ -61,18 +61,14 @@ $list-gap: 1.5rem;
     padding: generics.$side-padding;
 
     h2 {
-      font-family: fonts.$poppins;
-      font-size: 48px;
-      font-weight: 200;
-      color: colors.$dark;
-
+      @include fonts.h2();
       margin: 1.5em 0px 0.5em;
+      color: colors.$dark;
     }
 
     p,
     li {
       @include fonts.paragraphStyling();
-      font-size: 18px;
     }
 
     .overviewFlexContainer {
@@ -92,12 +88,9 @@ $list-gap: 1.5rem;
 
       .overviewLeft {
         h3 {
-          font-family: fonts.$poppins;
-          font-size: 36px;
-          font-weight: 300;
-          color: colors.$dark;
-
+          @include fonts.h3();
           margin: 0px 0px 0.66em;
+          color: colors.$dark;
         }
       }
 
@@ -109,9 +102,7 @@ $list-gap: 1.5rem;
 
         .overviewRightList {
           h3 {
-            font-family: fonts.$poppins;
-            font-size: 27px;
-            font-weight: 400;
+            @include fonts.h3();
             color: colors.$dark;
 
             margin: 0px 0px 0.48em;
