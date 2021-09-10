@@ -133,7 +133,7 @@ const Home = (): JSX.Element => {
                         <Carousel position={featuredProject}>
                             {HomeFeaturedProjects.map(({
                                 title, subtitle, context,
-                                description, storyUrl
+                                description, link
                             }) => (
                                 <TextSection
                                     title={title}
@@ -145,7 +145,7 @@ const Home = (): JSX.Element => {
                                     <TextSectionParagraph>{description}</TextSectionParagraph>
 
                                     <TextSectionCTA>
-                                        <Button colorMode="dark" onClick={() => router.push(storyUrl || '/story')}>
+                                        <Button colorMode="dark" onClick={() => router.push(link || '/stories')}>
                                             learn more
                                         </Button>
                                     </TextSectionCTA>
