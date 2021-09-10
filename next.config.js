@@ -1,6 +1,7 @@
 module.exports = {
     target: 'serverless',
     webpack5: true,
+    distDir: 'build',
     images: {
         domains: [
             'res.cloudinary.com',
