@@ -26,7 +26,7 @@ const FooterInner = ({ colorMode = 'light', className = '' }: FooterInnerProps):
 
             <TextSection
                 title="contact me"
-                subtitle="Thanks for stopping by :)"
+                subtitle="Thanks for stopping by!"
                 context="reach out"
                 colorMode={colorMode}
                 className={styles.textContainer}

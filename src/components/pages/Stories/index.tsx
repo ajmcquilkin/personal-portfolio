@@ -48,14 +48,19 @@ const Stories = ({ stories }: StoriesProps): JSX.Element => {
                 <h2>Case Studies</h2>
                 <hr />
                 <div className={styles.storiesListContainer}>
-                    {stories.map(({ meta: { title, subtitle, description }, path }) => (
+                    {stories.map(({
+                        meta: {
+                            title, subtitle, description,
+                            icon, iconAlt
+                        }, path
+                    }) => (
                         <div key={path}>
                             <CaseStudyCard
                                 title={title}
                                 subtitle={subtitle}
                                 description={description}
-                                imageSrc="/icons/dartmouth-dark.svg"
-                                imageAlt=""
+                                imageSrc={icon}
+                                imageAlt={iconAlt}
                                 link={path}
                             />
                         </div>

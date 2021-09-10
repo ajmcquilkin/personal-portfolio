@@ -13,7 +13,9 @@ export const getContentFromFile = async (slug: string): Promise<StoryProps> => {
 };
 
 export const getAllSlugs = (): string[] => {
-    const allBlogs = glob.sync('posts/**/*.md'); // ! Can't have leading "/"
+    const allBlogs = glob
+        .sync('posts/**/*.md') // ! Can't have leading "/"
+        .filter((slug) => !slug.split('/')?.[1].startsWith('_')); // Remove non-public posts
 
     const blogSlugs = allBlogs.map(
         (file) => file

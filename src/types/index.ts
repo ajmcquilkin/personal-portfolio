@@ -6,14 +6,17 @@ export interface StoryMeta {
   subtitle: string,
   description: string,
   // author: string,
-
   descriptionLong: string[],
+
+  partners: string[],
   roles: string[],
   team: string[],
   timeline: string,
   languages: string,
 
   link: string,
+  icon: string,
+  iconAlt: string,
   featuredImage: string,
   featuredImageAlt: string
 }
