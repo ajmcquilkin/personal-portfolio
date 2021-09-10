@@ -1,3 +1,6 @@
+/* eslint-disable indent */
+/* eslint-disable react/jsx-indent */
+
 // import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useLayoutEffect, useRef, useState } from 'react';

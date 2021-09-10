@@ -5,10 +5,6 @@ export interface TextSectionParagraphProps {
   className?: string
 }
 
-const TextSectionParagraph = ({ children, className = '' }: TextSectionParagraphProps): JSX.Element => (
-  <p className={[styles.description, className].join(' ')}>
-    {children}
-  </p>
-);
+const TextSectionParagraph = ({ children, className = '' }: TextSectionParagraphProps): JSX.Element => <p className={[styles.description, className].join(' ')}>{children}</p>;
 
 export default TextSectionParagraph;

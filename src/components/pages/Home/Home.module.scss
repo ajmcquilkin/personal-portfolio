@@ -69,6 +69,7 @@
               a {
                 @include fonts.paragraphStyling();
                 margin: auto 0px;
+                text-decoration: underline;
               }
             }
 

@@ -22,7 +22,7 @@ const Stories = ({ stories }: StoriesProps): JSX.Element => {
             <Header
                 title="My Stories"
                 subtitle="Case Studies I’m Proud Of"
-                description="Sed dolor sed pellentesque sem ullamcorper venenatis. Diam in commodo vel sed a blandit sed hac imperdiet. Fermentum."
+                description="Here's a sampling of projects and roles that I'm proud of, as well as how I approached each one. If you want to hear more about what I've done, feel free to reach out!"
                 colorMode="dark"
                 hideSocials
             >

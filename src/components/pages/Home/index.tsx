@@ -80,16 +80,15 @@ const Home = (): JSX.Element => {
 
                         <TextSection
                             title="my background"
-                            subtitle="Currently studying Computer Science and Engineering at Dartmouth College."
+                            subtitle="Computer Science and Engineering Student at Dartmouth College."
                             context="about me"
                             colorMode="light"
                             className={styles.backgroundTextContainer}
                         >
                             <TextSectionParagraph>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictum sit turpis suspendisse urna enim nascetur
-                                ultrices massa blandit. Odio tincidunt imperdiet suspendisse venenatis diam ac faucibus. Urna, nullam tincidunt
-                                pretium viverra pretium pulvinar. Rhoncus imperdiet ut imperdiet id. Erat tellus molestie vitae sed ac orci
-                                scelerisque interdum sit.
+                                I have a varied background in computer science, engineering, and product design, with both industry and theoretical experience.
+                                I&apos;m passionate about creating immersive user experiences in everything I do, and I believe this shows in my work.
+                                I&apos;ve compiled a summary of what I&apos;ve done, what I&apos;ve earned, and what I can do.
                             </TextSectionParagraph>
 
                             {/* <TextSectionCTA>
@@ -105,7 +104,7 @@ const Home = (): JSX.Element => {
                                     <h3>experience</h3>
                                     <a href="#experience">see more</a>
                                 </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictum sit turpis suspendisse urna enim nascetur ultrices massa blandit.</p>
+                                <p>A summary of my work experience, including both personal projects and professional roles.</p>
                             </div>
 
                             <div className={styles.backgroundTile}>
@@ -113,7 +112,7 @@ const Home = (): JSX.Element => {
                                     <h3>achievements</h3>
                                     <a href="#achievements">see more</a>
                                 </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictum sit turpis suspendisse urna enim nascetur ultrices massa blandit.</p>
+                                <p>Accolades that I&apos;ve earned from exceptional work and personal endeavors.</p>
                             </div>
 
                             <div className={styles.backgroundTile}>
@@ -121,7 +120,7 @@ const Home = (): JSX.Element => {
                                     <h3>skills</h3>
                                     <a href="#skills">see more</a>
                                 </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictum sit turpis suspendisse urna enim nascetur ultrices massa blandit.</p>
+                                <p>Relevant skills that I&apos;ve learned during my work and personal research.</p>
                             </div>
                         </div>
                     </div>
@@ -169,10 +168,9 @@ const Home = (): JSX.Element => {
                             {HomeFeaturedProjects.map(({ featuredImageSrc, featuredImageAlt, caption }) => (
                                 <>
                                     <div className={styles.featuredProjectImage}>
-                                        <Image
+                                        <ProtectedImage
                                             src={featuredImageSrc}
                                             alt={featuredImageAlt}
-                                            layout="fill"
                                             objectFit="contain"
                                         />
                                     </div>
@@ -217,11 +215,11 @@ const Home = (): JSX.Element => {
                             className={styles.passionsText}
                         >
                             <TextSectionParagraph>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictum sit turpis suspendisse urna enim nascetur
-                                ultrices massa blandit. Odio tincidunt imperdiet suspendisse venenatis diam ac faucibus. Urna, nullam tincidunt
-                                pretium viverra pretium pulvinar. Rhoncus imperdiet ut imperdiet id. Erat tellus molestie vitae sed ac orci
-                                scelerisque interdum sit.
+                                When I&apos;m not working or studying, you can often find me enjoying the great oudoors. I love to hike and mountain
+                                bike, and I dabble in landscape and adventure photography. I also enjoy tinkering with electronics and 3D printing.
+                                I&apos;ve compiled a few photos from my adventures here!
                             </TextSectionParagraph>
+
                             {/*
                             <TextSectionCTA>
                                 <Button colorMode="light" onClick={() => router.push('/about')}>
