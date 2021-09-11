@@ -112,7 +112,7 @@
           .featuredProjectImage {
             margin-bottom: 36px;
             position: relative;
-            height: 40vh;
+            height: clamp(120px, 40vh, 480px);
           }
 
           p {
