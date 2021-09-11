@@ -7,12 +7,12 @@ import ProtectedImage from 'components/image/ProtectedImage';
 import Menu from 'components/layout/Menu';
 import NavCard from 'components/layout/NavCard';
 import ConditionalRenderer from 'components/layout/ConditionalRenderer';
+import { ConditionalRendererProvider } from 'components/layout/ConditionalRenderer/context';
 
 import { mailtoLink } from 'utils';
 import { ColorMode } from 'types';
 
 import styles from './Header.module.scss';
-import { ConditionalRendererProvider } from '../ConditionalRenderer/context';
 
 export interface HeaderProps {
     title: string,
@@ -23,6 +23,7 @@ export interface HeaderProps {
     src?: string,
     alt?: string,
 
+    className?: string,
     colorMode?: ColorMode,
     hideArrow?: boolean,
     hideSocials?: boolean
@@ -30,7 +31,7 @@ export interface HeaderProps {
 
 const Header = ({
     title, subtitle, description, children,
-    src = '', alt = '', colorMode = 'light',
+    src = '', alt = '', className = '', colorMode = 'light',
     hideArrow = false, hideSocials = false
 }: HeaderProps): JSX.Element => {
     const router = useRouter();
@@ -38,7 +39,7 @@ const Header = ({
 
     return (
         <ConditionalRendererProvider isVisible={useImage}>
-            <header className={[styles.container, colorMode === 'light' ? styles.light : styles.dark].join(' ')}>
+            <header className={[styles.container, colorMode === 'light' ? styles.light : styles.dark, className].join(' ')}>
                 {useImage && (
                     <div className={styles.mainFeature}>
                         <ConditionalRenderer><div className={styles.mainFeatureShadow} /></ConditionalRenderer>
