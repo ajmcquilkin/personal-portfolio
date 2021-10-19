@@ -166,7 +166,7 @@ const Home = (): JSX.Element => {
                             className={styles.featuredProjectImageCarousel}
                         >
                             {HomeFeaturedProjects.map(({ featuredImageSrc, featuredImageAlt, caption }) => (
-                                <>
+                                <div key={featuredImageAlt}>
                                     <div className={styles.featuredProjectImage}>
                                         <ProtectedImage
                                             src={featuredImageSrc}
@@ -175,7 +175,7 @@ const Home = (): JSX.Element => {
                                         />
                                     </div>
                                     <p>{caption}</p>
-                                </>
+                                </div>
                             ))}
                         </Carousel>
                     </div>

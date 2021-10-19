@@ -95,7 +95,7 @@
     &:hover::after,
     &:focus::after {
       opacity: 0.1;
-      transition: opacity 0.6s ease-in-out;
+      transition: opacity 0.3s ease-in-out; // 0.6 with button svg animation
     }
   }
 }

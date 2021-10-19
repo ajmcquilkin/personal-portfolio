@@ -55,13 +55,13 @@ const Button = ({
                 onClick={onClick}
                 style={cssProps}
             >
-                <svg
+                {/* <svg
                     width={`${width}px`}
                     height={`${height}px`}
                     viewBox={`0 0 ${width} ${height}`}
                 >
                     <polyline points={`${width - 1},1 ${width - 1},${height - 1} 1,${height - 1} 1,1 ${width - 1},1`} className="bg-line" />
-                </svg>
+                </svg> */}
 
                 {children}
             </button>
