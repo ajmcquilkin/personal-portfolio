@@ -11,6 +11,9 @@ module.exports = {
         loader: 'cloudinary',
         path: 'https://res.cloudinary.com/duq3rhnd2/image/upload'
     },
+    eslint: {
+        ignoreDuringBuilds: true
+    },
     webpack(config) {
         config.module.rules.push({
             test: /\.md$/,
