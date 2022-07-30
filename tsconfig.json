@@ -24,12 +24,13 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "allowSyntheticDefaultImports": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "incremental": true
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx",
+    "**/*.tsx"
   ],
   "exclude": [
     "node_modules",
