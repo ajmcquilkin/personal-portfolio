@@ -3,8 +3,6 @@ title: D-Planner, LLC
 subtitle: Course planning done right
 description: Academic planning is difficult for students, especially when information is fragmented and hard to find. D-Planner is a better way of planning out your time at college. Winner of the 2018 DALI Pitch Competition.
 
-link: https://d-planner.com
-
 timeline: September 2018 - Present
 
 languages: Javascript, HTML, Sass, Python, MERN stack

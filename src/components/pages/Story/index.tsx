@@ -21,7 +21,7 @@ const Story = ({
     meta: {
         title, subtitle, description, descriptionLong,
         partners, roles, team, timeline, languages,
-        link, featuredImage, featuredImageAlt
+        link, linkText, featuredImage, featuredImageAlt
     }, content
 }: StoryProps): JSX.Element => {
     const router = useRouter();
@@ -52,7 +52,7 @@ const Story = ({
                             className="headerButton"
                             colorMode="dark"
                         >
-                            view project
+                            {linkText ?? 'view project'}
                         </Button>
                     )}
 
