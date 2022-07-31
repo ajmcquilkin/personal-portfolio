@@ -58,12 +58,12 @@ const Header = ({
                 <div className={[styles.line, styles.main].join(' ')} />
 
                 <div className={styles.headerMenuContainer}>
-                    <div className={styles.signature}>
+                    <a href="/" className={styles.signature}>
                         <img
                             src={`/logo-${colorMode === 'light' ? 'white' : 'dark'}-transparent.svg`}
                             alt="adam mcquilkin personal logo"
                         />
-                    </div>
+                    </a>
                     <Menu colorMode={colorMode} className={styles.menuContainer} />
                 </div>
 
