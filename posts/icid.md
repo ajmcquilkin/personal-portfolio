@@ -1,5 +1,4 @@
 ---
-slug: icid
 title: Intermediate Computer Interface Device
 subtitle: US Patent 9,632,952
 description: How can we leverage hardware to enable USB Human Interface Device (HID) macros and signal repeaters on systems in which you don't have access to software installers?

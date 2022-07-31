@@ -1,5 +1,4 @@
 ---
-slug: itc-dplan
 title: Term Scheduling Portal
 subtitle: Creating a modern student course election portal
 description: Dartmouth College’s existing term election interface has a success rate of 25%, and does not support international students. How might Dartmouth make sure their interface works for everyone?'

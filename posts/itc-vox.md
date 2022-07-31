@@ -1,5 +1,4 @@
 ---
-slug: itc-vox
 title: ITC Vox Daily
 subtitle: Modern content curation for Dartmouth College
 description: How can we create a modern content creation workflow for Dartmouth College that can handle curating, approving, and rendering submitted daily college content?

@@ -1,5 +1,4 @@
 ---
-slug: microsoft-powerbi
 title: Microsoft PowerBI
 subtitle: Improving UX within the PowerBI Suite
 description: How can we optimize and modernize the user experience within the Paginated Reports suite within Microsoft's larger PowerBI suite?

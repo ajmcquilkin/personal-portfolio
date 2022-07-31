@@ -1,5 +1,4 @@
 ---
-slug: whiteboard
 title: Whiteboard Productivity
 subtitle: Centralizing personal productivity
 description: An all-encompassing productivity app that empowers users to take full control over their lives through relevant, integrated planning functionality. Built in conjunction with Tuck School of Business.

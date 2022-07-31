@@ -1,5 +1,4 @@
 ---
-slug: granite-state
 title: Granite State Volunteering
 subtitle: Encouraging volunteerism within NH youth
 description: Working with the NH House of Representatives, how can we encourage New Hampshire youth to contribute to thier communities via the centralization and curation of volunteer opportunities?

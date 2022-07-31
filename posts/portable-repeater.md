@@ -1,5 +1,4 @@
 ---
-slug: portable-repeater
 title: Portable Radio Repeater
 subtitle: Enabling all-condition radio communication
 description: A highly portable radio repeater mast that allows search and rescue workers to communicate via radio in highly mountainous and dangerous terrain, built to support and improve existing radio infrastructure.
