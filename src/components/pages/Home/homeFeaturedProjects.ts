@@ -13,7 +13,8 @@ export const HomeFeaturedProjects: HomeFeaturedProject[] = [
     caption:
       "A filing diagram showing the proposed implementation for the Intermediate Computer Interface Device.",
 
-    featuredImageSrc: "/v1631290242/Personal%20Portfolio/icid_eej36n.jpg",
+    featuredImageSrc:
+      "/v1659309989/Personal%20Portfolio/US09632952-20170425-D00000_dhhvgy.png",
     featuredImageAlt:
       "patent filing diagram showing intermediate computer interface device",
     featuredLogoSrc: "/icons/chip.svg",
