@@ -1,13 +1,10 @@
-import Image from 'next/image';
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 
-import ArrowBox from 'components/ArrowBox';
 import Button from 'components/Button';
-
-import Menu from 'components/layout/Menu';
 import StoryContent from 'components/layout/StoryContent';
 
-import { mailtoLink, resumeFileName } from 'utils';
+import { HEAD_TITLE_BASE, mailtoLink } from 'utils';
 import { StoryMeta } from 'types';
 
 import Header from 'components/layout/Header';
@@ -15,9 +12,8 @@ import Footer from 'components/layout/Footer';
 import styles from './Story.module.scss';
 
 export interface StoryProps {
-    meta: StoryMeta,
-    content: string,
-    path: string
+    meta: StoryMeta;
+    content: string;
 }
 
 const Story = ({
@@ -31,6 +27,15 @@ const Story = ({
 
     return (
         <main className={styles.container}>
+            <Head>
+                <title>
+                    {title}
+                    {' '}
+                    -
+                    {' '}
+                    {HEAD_TITLE_BASE}
+                </title>
+            </Head>
             <article>
                 <Header
                     title={title}

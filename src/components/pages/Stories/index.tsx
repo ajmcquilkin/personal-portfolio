@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 import Button from 'components/Button';
@@ -6,7 +7,7 @@ import Footer from 'components/layout/Footer';
 import Header from 'components/layout/Header';
 import { StoryProps } from 'components/pages/Story';
 
-import { mailtoLink, resumeFileName } from 'utils';
+import { HEAD_TITLE_BASE, mailtoLink, resumeFileName } from 'utils';
 
 import styles from './Stories.module.scss';
 
@@ -19,6 +20,13 @@ const Stories = ({ stories }: StoriesProps): JSX.Element => {
 
     return (
         <div className={styles.container}>
+            <Head>
+                <title>
+                    Stories -
+                    {' '}
+                    {HEAD_TITLE_BASE}
+                </title>
+            </Head>
             <Header
                 title="My Stories"
                 subtitle="Case Studies I’m Proud Of"
