@@ -14,6 +14,7 @@ module.exports = {
     eslint: {
         ignoreDuringBuilds: true
     },
+    generateBuildId: () => 'build',
     webpack(config) {
         config.module.rules.push({
             test: /\.md$/,
