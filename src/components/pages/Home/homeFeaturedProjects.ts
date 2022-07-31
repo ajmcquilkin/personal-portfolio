@@ -5,8 +5,8 @@ export type HomeFeaturedProject = Project & { caption: string; link: string };
 
 export const HomeFeaturedProjects: HomeFeaturedProject[] = [
   {
-    title: "Intermediate Computer Interface Device",
-    subtitle: "US Patent 9,632,952",
+    title: "US Patent 9,632,952",
+    subtitle: "Intermediate Computer Interface Device",
     context: "Innovation",
     description:
       "How can we leverage hardware to enable USB Human Interface Device (HID) macros and signal repeaters on systems in which you don't have access to software installers?",
