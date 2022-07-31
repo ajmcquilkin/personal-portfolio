@@ -14,6 +14,7 @@ import styles from './Story.module.scss';
 export interface StoryProps {
     meta: StoryMeta;
     content: string;
+    path: string;
 }
 
 const Story = ({
