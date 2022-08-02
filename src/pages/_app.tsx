@@ -9,6 +9,10 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => (
         <Head>
             <title>{HEAD_TITLE_BASE}</title>
             <meta name="description" content="A passionate Dartmouth College computer science and design student, specializing in web and application development." />
+            <link
+                href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Poppins:wght@200;300;400;600;700&display=swap"
+                rel="stylesheet"
+            />
         </Head>
         <Component {...pageProps} />
     </div>
