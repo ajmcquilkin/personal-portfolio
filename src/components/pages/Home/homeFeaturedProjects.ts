@@ -5,6 +5,24 @@ export type HomeFeaturedProject = Project & { caption: string; link: string };
 
 export const HomeFeaturedProjects: HomeFeaturedProject[] = [
   {
+    title: "Mesh Networking",
+    subtitle: "Meshtastic Network Management Client",
+    context: "Open Source",
+    description:
+      "How can we give non-techincal users the confidence and ability to rapidly deploy and manage complex mesh network topologies in a low bandwidth and low reliability environment?",
+    caption:
+      "A mockup showing the network management client and a simulated mesh network.",
+
+    featuredImageSrc:
+      "/v1683046698/Personal%20Portfolio/mnmc-mockup_honxbk.png",
+    featuredImageAlt:
+      "mockup showing the client UI within a macbook pro screen",
+    featuredLogoSrc: "/icons/meshtastic-dark.svg",
+    featuredLogoAlt: "Meshtasic project logo",
+
+    link: "/stories/mnmc",
+  },
+  {
     title: "US Patent 9,632,952",
     subtitle: "Intermediate Computer Interface Device",
     context: "Innovation",
