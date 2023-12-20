@@ -6,105 +6,105 @@ $lr-text-margin: 18px;
 $side-padding: 3rem;
 
 .container {
-  display: flex;
-  flex-direction: row;
-  overflow: hidden;
-  min-width: 210px;
-
-  &.dark {
-    color: colors.$dark;
-  }
-
-  &.light {
-    color: colors.$white;
-  }
-
-  &:hover > .bar:not(.active) {
-    &.left {
-      transform: translate(0%, 0%);
-    }
-    &.right {
-      transform: translate(0%, 0%);
-    }
-
-    &.light {
-      background: colors.$white;
-    }
-    &.dark {
-      background: colors.$dark;
-    }
-  }
-
-  a {
-    @include fonts.paragraphStyling();
-    font-family: fonts.$poppins;
-    font-size: 16px;
-
-    position: relative;
-    text-decoration: none;
-    text-align: right;
+    display: flex;
+    flex-direction: row;
     overflow: hidden;
-
-    &:focus {
-      outline: none;
-    }
-
-    &.active::after,
-    &:focus::after {
-      @include generics.after(1px);
-      transform: translate(0%, 0%);
-    }
+    min-width: 210px;
 
     &.dark {
-      color: colors.$dark;
-      &::after {
-        background: colors.$dark;
-      }
-    }
-    &.light {
-      color: colors.$white;
-      &::after {
-        background: colors.$white;
-      }
-    }
-
-    &::after {
-      @include generics.after(1px);
-      transform: translate(-100%, 0%);
-    }
-  }
-
-  .bar {
-    margin: auto 0;
-    height: 1px;
-    transition: transform 0.3s ease-in-out;
-
-    &.left {
-      transform: translate(-100%, 0%);
-
-      margin-left: 0px;
-      margin-right: $lr-text-margin;
-      flex: 1;
-    }
-
-    &.right {
-      transform: translate(100%, 0%);
-
-      margin-left: $lr-text-margin;
-      margin-right: 0px;
-      width: calc(#{$side-padding} - #{$lr-text-margin});
-    }
-
-    &.active {
-      transform: translateX(0);
-    }
-
-    &.dark {
-      background: colors.$dark;
+        color: colors.$dark;
     }
 
     &.light {
-      background: colors.$white;
+        color: colors.$white;
     }
-  }
+
+    &:hover > .bar:not(.active) {
+        &.left {
+            transform: translate(0%, 0%);
+        }
+        &.right {
+            transform: translate(0%, 0%);
+        }
+
+        &.light {
+            background: colors.$white;
+        }
+        &.dark {
+            background: colors.$dark;
+        }
+    }
+
+    a {
+        @include fonts.paragraphStyling();
+        font-family: fonts.$poppins;
+        font-size: 16px;
+
+        position: relative;
+        text-decoration: none;
+        text-align: right;
+        overflow: hidden;
+
+        &:focus {
+            outline: none;
+        }
+
+        &.active::after,
+        &:focus::after {
+            @include generics.after(1px);
+            transform: translate(0%, 0%);
+        }
+
+        &.dark {
+            color: colors.$dark;
+            &::after {
+                background: colors.$dark;
+            }
+        }
+        &.light {
+            color: colors.$white;
+            &::after {
+                background: colors.$white;
+            }
+        }
+
+        &::after {
+            @include generics.after(1px);
+            transform: translate(-100%, 0%);
+        }
+    }
+
+    .bar {
+        margin: auto 0;
+        height: 1px;
+        transition: transform 0.3s ease-in-out;
+
+        &.left {
+            transform: translate(-100%, 0%);
+
+            margin-left: 0px;
+            margin-right: $lr-text-margin;
+            flex: 1;
+        }
+
+        &.right {
+            transform: translate(100%, 0%);
+
+            margin-left: $lr-text-margin;
+            margin-right: 0px;
+            width: calc(#{$side-padding} - #{$lr-text-margin});
+        }
+
+        &.active {
+            transform: translateX(0);
+        }
+
+        &.dark {
+            background: colors.$dark;
+        }
+
+        &.light {
+            background: colors.$white;
+        }
+    }
 }

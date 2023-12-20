@@ -1,18 +1,18 @@
-import Head from 'next/head';
-import { useRouter } from 'next/router';
+import Head from "next/head";
+import { useRouter } from "next/router";
 
-import Button from 'components/Button';
-import CaseStudyCard from 'components/CaseStudyCard';
-import Footer from 'components/layout/Footer';
-import Header from 'components/layout/Header';
-import { StoryProps } from 'components/pages/Story';
+import Button from "components/Button";
+import CaseStudyCard from "components/CaseStudyCard";
+import Footer from "components/layout/Footer";
+import Header from "components/layout/Header";
+import { StoryProps } from "components/pages/Story";
 
-import { HEAD_TITLE_BASE, mailtoLink, resumeFileName } from 'utils';
+import { HEAD_TITLE_BASE, mailtoLink, resumeFileName } from "utils";
 
-import styles from './Stories.module.scss';
+import styles from "./Stories.module.scss";
 
 export interface StoriesProps {
-    stories: StoryProps[]
+    stories: StoryProps[];
 }
 
 const Stories = ({ stories }: StoriesProps): JSX.Element => {
@@ -21,11 +21,7 @@ const Stories = ({ stories }: StoriesProps): JSX.Element => {
     return (
         <div className={styles.container}>
             <Head>
-                <title>
-                    Stories -
-                    {' '}
-                    {HEAD_TITLE_BASE}
-                </title>
+                <title>Stories - {HEAD_TITLE_BASE}</title>
             </Head>
             <Header
                 title="My Stories"
@@ -56,24 +52,29 @@ const Stories = ({ stories }: StoriesProps): JSX.Element => {
                 <h2>Case Studies</h2>
                 <hr />
                 <div className={styles.storiesListContainer}>
-                    {stories.map(({
-                        meta: {
-                            title, subtitle, description,
-                            icon, iconAlt
-                        }, path
-                    }) => (
-                        <div key={path}>
-                            <CaseStudyCard
-                                title={title}
-                                subtitle={subtitle}
-                                description={description}
-                                imageSrc={icon}
-                                imageAlt={iconAlt}
-                                link={path}
-                            />
-                        </div>
-                    ))}
-
+                    {stories.map(
+                        ({
+                            meta: {
+                                title,
+                                subtitle,
+                                description,
+                                icon,
+                                iconAlt,
+                            },
+                            path,
+                        }) => (
+                            <div key={path}>
+                                <CaseStudyCard
+                                    title={title}
+                                    subtitle={subtitle}
+                                    description={description}
+                                    imageSrc={icon}
+                                    imageAlt={iconAlt}
+                                    link={path}
+                                />
+                            </div>
+                        ),
+                    )}
                 </div>
             </main>
 

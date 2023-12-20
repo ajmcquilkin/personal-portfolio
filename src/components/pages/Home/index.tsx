@@ -1,29 +1,36 @@
-import Image from 'next/image';
-import { useRouter } from 'next/router';
-import { useState } from 'react';
+import Image from "next/image";
+import { useRouter } from "next/router";
+import { useState } from "react";
 
-import Button from 'components/Button';
-import TextSection, { TextSectionCTA, TextSectionParagraph } from 'components/TextSection';
+import Button from "components/Button";
+import TextSection, {
+    TextSectionCTA,
+    TextSectionParagraph,
+} from "components/TextSection";
 
-import Carousel from 'components/carousel/Carousel';
-import CarouselSelector from 'components/carousel/CarouselSelector';
-import ProtectedImage from 'components/image/ProtectedImage';
+import Carousel from "components/carousel/Carousel";
+import CarouselSelector from "components/carousel/CarouselSelector";
+import ProtectedImage from "components/image/ProtectedImage";
 
-import Header from 'components/layout/Header';
-import Footer from 'components/layout/Footer';
-import HomeInformationCard from 'components/layout/HomeInformationCard';
+import Header from "components/layout/Header";
+import Footer from "components/layout/Footer";
+import HomeInformationCard from "components/layout/HomeInformationCard";
 
-import { mailtoLink, resumeFileName } from 'utils';
+import { mailtoLink, resumeFileName } from "utils";
 // import {
 //     ProjectFrameworksArray, ProjectLanguagesArray, ProjectTagsArray,
 //     AllProjectTags
 // } from 'types/projects';
 
-import styles from './Home.module.scss';
+import styles from "./Home.module.scss";
 
-import { HomeAchievementsCardContent, HomeExperienceCardContent, HomeSkillsCardContent } from './homeCardInformation';
-import { HomePassionsImages } from './homeFeaturedImages';
-import { HomeFeaturedProjects } from './homeFeaturedProjects';
+import {
+    HomeAchievementsCardContent,
+    HomeExperienceCardContent,
+    HomeSkillsCardContent,
+} from "./homeCardInformation";
+import { HomePassionsImages } from "./homeFeaturedImages";
+import { HomeFeaturedProjects } from "./homeFeaturedProjects";
 // import { ProjectsArray } from './projects';
 
 const Home = (): JSX.Element => {
@@ -74,7 +81,12 @@ const Home = (): JSX.Element => {
             <main className={styles.mainContainer}>
                 {/* Personal Background Section */}
 
-                <section className={[styles.flexSection, styles.backgroundContainer].join(' ')}>
+                <section
+                    className={[
+                        styles.flexSection,
+                        styles.backgroundContainer,
+                    ].join(" ")}
+                >
                     <div className={styles.backgroundWidthContainer}>
                         {/* <div className={styles.backgroundLine} /> */}
 
@@ -86,9 +98,14 @@ const Home = (): JSX.Element => {
                             className={styles.backgroundTextContainer}
                         >
                             <TextSectionParagraph>
-                                I have a varied background in computer science, engineering, and product design, with both industry and theoretical experience.
-                                I&apos;m passionate about creating immersive user experiences in everything I do, and I believe this shows in my work.
-                                I&apos;ve compiled a summary of what I&apos;ve done, what I&apos;ve earned, and what I can do.
+                                I have a varied background in computer science,
+                                engineering, and product design, with both
+                                industry and theoretical experience. I&apos;m
+                                passionate about creating immersive user
+                                experiences in everything I do, and I believe
+                                this shows in my work. I&apos;ve compiled a
+                                summary of what I&apos;ve done, what I&apos;ve
+                                earned, and what I can do.
                             </TextSectionParagraph>
 
                             {/* <TextSectionCTA>
@@ -104,7 +121,11 @@ const Home = (): JSX.Element => {
                                     <h3>experience</h3>
                                     <a href="#experience">see more</a>
                                 </div>
-                                <p>A summary of my work experience, including both personal projects and professional roles.</p>
+                                <p>
+                                    A summary of my work experience, including
+                                    both personal projects and professional
+                                    roles.
+                                </p>
                             </div>
 
                             <div className={styles.backgroundTile}>
@@ -112,7 +133,10 @@ const Home = (): JSX.Element => {
                                     <h3>achievements</h3>
                                     <a href="#achievements">see more</a>
                                 </div>
-                                <p>Accolades that I&apos;ve earned from exceptional work and personal endeavors.</p>
+                                <p>
+                                    Accolades that I&apos;ve earned from
+                                    exceptional work and personal endeavors.
+                                </p>
                             </div>
 
                             <div className={styles.backgroundTile}>
@@ -120,7 +144,10 @@ const Home = (): JSX.Element => {
                                     <h3>skills</h3>
                                     <a href="#skills">see more</a>
                                 </div>
-                                <p>Relevant skills that I&apos;ve learned during my work and personal research.</p>
+                                <p>
+                                    Relevant skills that I&apos;ve learned
+                                    during my work and personal research.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -128,29 +155,50 @@ const Home = (): JSX.Element => {
 
                 {/* Featured Projects Section */}
 
-                <section className={[styles.flexSection, styles.featuredProjectContainer].join(' ')}>
+                <section
+                    className={[
+                        styles.flexSection,
+                        styles.featuredProjectContainer,
+                    ].join(" ")}
+                >
                     <div className={styles.featuredProjectContentContainer}>
                         <Carousel position={featuredProject}>
-                            {HomeFeaturedProjects.map(({
-                                title, subtitle, context,
-                                description, link
-                            }) => (
-                                <TextSection
-                                    title={title}
-                                    subtitle={subtitle}
-                                    context={context}
-                                    className={styles.featuredProjectContent}
-                                    key={title}
-                                >
-                                    <TextSectionParagraph>{description}</TextSectionParagraph>
+                            {HomeFeaturedProjects.map(
+                                ({
+                                    title,
+                                    subtitle,
+                                    context,
+                                    description,
+                                    link,
+                                }) => (
+                                    <TextSection
+                                        title={title}
+                                        subtitle={subtitle}
+                                        context={context}
+                                        className={
+                                            styles.featuredProjectContent
+                                        }
+                                        key={title}
+                                    >
+                                        <TextSectionParagraph>
+                                            {description}
+                                        </TextSectionParagraph>
 
-                                    <TextSectionCTA>
-                                        <Button colorMode="dark" onClick={() => router.push(link || '/stories')}>
-                                            learn more
-                                        </Button>
-                                    </TextSectionCTA>
-                                </TextSection>
-                            ))}
+                                        <TextSectionCTA>
+                                            <Button
+                                                colorMode="dark"
+                                                onClick={() =>
+                                                    router.push(
+                                                        link || "/stories",
+                                                    )
+                                                }
+                                            >
+                                                learn more
+                                            </Button>
+                                        </TextSectionCTA>
+                                    </TextSection>
+                                ),
+                            )}
                         </Carousel>
 
                         <CarouselSelector
@@ -165,27 +213,45 @@ const Home = (): JSX.Element => {
                             position={featuredProject}
                             className={styles.featuredProjectImageCarousel}
                         >
-                            {HomeFeaturedProjects.map(({ featuredImageSrc, featuredImageAlt, caption }) => (
-                                <div key={featuredImageAlt}>
-                                    <div className={styles.featuredProjectImage}>
-                                        <ProtectedImage
-                                            src={featuredImageSrc}
-                                            alt={featuredImageAlt}
-                                            objectFit="contain"
-                                        />
+                            {HomeFeaturedProjects.map(
+                                ({
+                                    featuredImageSrc,
+                                    featuredImageAlt,
+                                    caption,
+                                }) => (
+                                    <div key={featuredImageAlt}>
+                                        <div
+                                            className={
+                                                styles.featuredProjectImage
+                                            }
+                                        >
+                                            <ProtectedImage
+                                                src={featuredImageSrc}
+                                                alt={featuredImageAlt}
+                                                objectFit="contain"
+                                            />
+                                        </div>
+                                        <p>{caption}</p>
                                     </div>
-                                    <p>{caption}</p>
-                                </div>
-                            ))}
+                                ),
+                            )}
                         </Carousel>
                     </div>
                 </section>
 
                 {/* Personal Passions Section */}
 
-                <section className={[styles.flexSection, styles.passionsContainer].join(' ')}>
+                <section
+                    className={[
+                        styles.flexSection,
+                        styles.passionsContainer,
+                    ].join(" ")}
+                >
                     <div className={styles.passionsImageContainer}>
-                        <Carousel position={passionsImage} className={styles.passionsImageCarousel}>
+                        <Carousel
+                            position={passionsImage}
+                            className={styles.passionsImageCarousel}
+                        >
                             {HomePassionsImages.map(({ src, alt }) => (
                                 <div className={styles.passionsImage} key={src}>
                                     <ProtectedImage
@@ -215,9 +281,13 @@ const Home = (): JSX.Element => {
                             className={styles.passionsText}
                         >
                             <TextSectionParagraph>
-                                When I&apos;m not working or studying, you can often find me enjoying the great oudoors. I love to hike and mountain
-                                bike, and I dabble in landscape and adventure photography. I also enjoy tinkering with electronics and 3D printing.
-                                I&apos;ve compiled a few photos from my adventures here!
+                                When I&apos;m not working or studying, you can
+                                often find me enjoying the great oudoors. I love
+                                to hike and mountain bike, and I dabble in
+                                landscape and adventure photography. I also
+                                enjoy tinkering with electronics and 3D
+                                printing. I&apos;ve compiled a few photos from
+                                my adventures here!
                             </TextSectionParagraph>
 
                             {/*
@@ -233,7 +303,12 @@ const Home = (): JSX.Element => {
                 {/* Resume Section */}
 
                 <section className={styles.resumeContainer}>
-                    <div className={[styles.resumeSection, styles.resumeExperienceContainer].join(' ')}>
+                    <div
+                        className={[
+                            styles.resumeSection,
+                            styles.resumeExperienceContainer,
+                        ].join(" ")}
+                    >
                         <div id="experience" />
 
                         <TextSection
@@ -244,12 +319,17 @@ const Home = (): JSX.Element => {
                             className={styles.resumeTextContainer}
                         >
                             <TextSectionParagraph>
-                                I pride myself on my ability to draw from my experiences to improve my work. Here is a selection of my
-                                previous and current positions, and what I brought to each of these roles.
+                                I pride myself on my ability to draw from my
+                                experiences to improve my work. Here is a
+                                selection of my previous and current positions,
+                                and what I brought to each of these roles.
                             </TextSectionParagraph>
 
                             <TextSectionCTA>
-                                <Button colorMode="light" onClick={() => router.push(mailtoLink)}>
+                                <Button
+                                    colorMode="light"
+                                    onClick={() => router.push(mailtoLink)}
+                                >
                                     contact me
                                 </Button>
                             </TextSectionCTA>
@@ -263,7 +343,12 @@ const Home = (): JSX.Element => {
                         />
                     </div>
 
-                    <div className={[styles.resumeSection, styles.resumeAchievementsContainer].join(' ')}>
+                    <div
+                        className={[
+                            styles.resumeSection,
+                            styles.resumeAchievementsContainer,
+                        ].join(" ")}
+                    >
                         <div id="achievements" />
 
                         <TextSection
@@ -274,12 +359,17 @@ const Home = (): JSX.Element => {
                             className={styles.resumeTextContainer}
                         >
                             <TextSectionParagraph>
-                                I strive to be the best I can be in all that I do, both personally and professionally. Here are my proudest
-                                achievements, and relevant background information on each.
+                                I strive to be the best I can be in all that I
+                                do, both personally and professionally. Here are
+                                my proudest achievements, and relevant
+                                background information on each.
                             </TextSectionParagraph>
 
                             <TextSectionCTA>
-                                <Button colorMode="light" onClick={() => router.push(mailtoLink)}>
+                                <Button
+                                    colorMode="light"
+                                    onClick={() => router.push(mailtoLink)}
+                                >
                                     contact me
                                 </Button>
                             </TextSectionCTA>
@@ -293,7 +383,12 @@ const Home = (): JSX.Element => {
                         />
                     </div>
 
-                    <div className={[styles.resumeSection, styles.resumeSkillsContainer].join(' ')}>
+                    <div
+                        className={[
+                            styles.resumeSection,
+                            styles.resumeSkillsContainer,
+                        ].join(" ")}
+                    >
                         <div id="skills" />
 
                         <TextSection
@@ -304,12 +399,17 @@ const Home = (): JSX.Element => {
                             className={styles.resumeTextContainer}
                         >
                             <TextSectionParagraph>
-                                Over the course of my professional life I&apos;ve been exposed to many different fields. Here are my strongest
-                                fields, and information on what I can do within each.
+                                Over the course of my professional life
+                                I&apos;ve been exposed to many different fields.
+                                Here are my strongest fields, and information on
+                                what I can do within each.
                             </TextSectionParagraph>
 
                             <TextSectionCTA>
-                                <Button colorMode="light" onClick={() => router.push(mailtoLink)}>
+                                <Button
+                                    colorMode="light"
+                                    onClick={() => router.push(mailtoLink)}
+                                >
                                     contact me
                                 </Button>
                             </TextSectionCTA>
@@ -445,7 +545,9 @@ const Home = (): JSX.Element => {
                 </section> */}
             </main>
 
-            <div className={styles.footerContainer}><Footer /></div>
+            <div className={styles.footerContainer}>
+                <Footer />
+            </div>
         </div>
     );
 };

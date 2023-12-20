@@ -17,7 +17,7 @@ languages: SystemVerilog, VHDL
 roles:
   - System Architect
   - HDL Engineer
- 
+
 descriptionLong:
   - Image compression is a vital component of modern data processing flows, and the most widely-used compression method is JPEG compression. JPEG compression is a highly time-complex algorithm, as to process a single pixel of a raw image, the algorithm iterates over all other pixels within the image (or within a subsection of the image). This means that optimizing this compression method has the potential to save huge amounts of processing time given how commonly used JPEG compression is.
   - One common method of saving time when implementing the JPEG compression algorithm is to split a given image into eight by eight blocks and compress each block individually. This saves a large amount of time over processing the image as a whole due to the high polynomial time complexity of the operation. From here, processing can be done completely in parallel on each sub-image block, leading to the first major time save.

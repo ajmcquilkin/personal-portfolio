@@ -2,41 +2,41 @@
 @use "styles/fonts.scss" as fonts;
 
 .container {
-  display: flex;
-  flex-direction: column;
-  gap: 4em;
+    display: flex;
+    flex-direction: column;
+    gap: 4em;
 
-  max-width: 72em;
-  margin: 0px auto;
-  padding: 0px 3em 3em;
-
-  @media (min-width: 1000px) {
-    flex-direction: row;
-  }
-
-  .logo {
+    max-width: 72em;
     margin: 0px auto;
-    width: clamp(12em, 100%, 18em);
+    padding: 0px 3em 3em;
 
-    circle {
-      box-shadow: colors.$default-shadow;
-    }
-  }
-
-  .textContainer {
-    margin: auto 0px;
-
-    .buttonContainer {
-      display: flex;
-      flex-direction: column;
-      max-width: 900px;
-      margin-top: 1.2em;
-      gap: 1.2em;
-
-      @media (min-width: 1000px) {
+    @media (min-width: 1000px) {
         flex-direction: row;
-        gap: 2.4em;
-      }
     }
-  }
+
+    .logo {
+        margin: 0px auto;
+        width: clamp(12em, 100%, 18em);
+
+        circle {
+            box-shadow: colors.$default-shadow;
+        }
+    }
+
+    .textContainer {
+        margin: auto 0px;
+
+        .buttonContainer {
+            display: flex;
+            flex-direction: column;
+            max-width: 900px;
+            margin-top: 1.2em;
+            gap: 1.2em;
+
+            @media (min-width: 1000px) {
+                flex-direction: row;
+                gap: 2.4em;
+            }
+        }
+    }
 }

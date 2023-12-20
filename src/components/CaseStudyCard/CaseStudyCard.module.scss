@@ -2,43 +2,43 @@
 @use "styles/fonts.scss" as fonts;
 
 .container {
-  display: flex;
-  flex-direction: column;
-  color: colors.$dark;
-
-  .headerContainer {
     display: flex;
     flex-direction: column;
-    gap: 0.9em;
+    color: colors.$dark;
 
-    @media (min-width: 400px) {
-      flex-direction: row;
+    .headerContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 0.9em;
+
+        @media (min-width: 400px) {
+            flex-direction: row;
+        }
+
+        img {
+            margin: auto 0.9em auto 0px;
+            max-width: 54px;
+            max-height: 54px;
+        }
+
+        .titleContainer {
+            display: flex;
+            flex-direction: column;
+
+            h3 {
+                @include fonts.h3();
+                margin: 0px auto 0px 0px;
+                font-size: 27px;
+            }
+
+            p {
+                @include fonts.paragraphStyling();
+                margin: auto 0px;
+            }
+        }
     }
 
-    img {
-      margin: auto 0.9em auto 0px;
-      max-width: 54px;
-      max-height: 54px;
-    }
-
-    .titleContainer {
-      display: flex;
-      flex-direction: column;
-
-      h3 {
-        @include fonts.h3();
-        margin: 0px auto 0px 0px;
-        font-size: 27px;
-      }
-
-      p {
+    .content {
         @include fonts.paragraphStyling();
-        margin: auto 0px;
-      }
     }
-  }
-
-  .content {
-    @include fonts.paragraphStyling();
-  }
 }

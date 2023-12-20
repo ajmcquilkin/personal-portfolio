@@ -12,277 +12,278 @@ $banner-row-break: 800px;
 $side-padding: 3rem;
 
 .container {
-  position: relative;
-  padding: $side-padding $side-padding 8em;
+    position: relative;
+    padding: $side-padding $side-padding 8em;
 
-  &.light {
-    color: colors.$white;
-  }
-
-  &.dark {
-    color: colors.$dark;
-  }
-
-  .mainFeature {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-
-    .mainFeatureShadow {
-      opacity: 0.48;
-      background-color: colors.$dark;
-      width: 100%;
-      height: 100%;
-    }
-  }
-
-  .signature {
-    margin: 2em 0px;
-
-    img {
-      width: $signature-width;
-      height: $signature-height;
-    }
-  }
-
-  &.dark {
-    .line {
-      background: colors.$dark;
-    }
-  }
-
-  @media (min-width: 1700px) {
-    .line {
-      @include generics.siteLine();
-      left: calc(#{$signature-width} / 2 + #{$side-padding});
-      width: 1px;
-
-      background: colors.$white;
-
-      &.top {
-        top: 0px;
-        height: calc(#{$side-padding});
-      }
-
-      &.main {
-        top: calc(
-          #{$side-padding} + #{$signature-margin} * 2 + #{$signature-height}
-        );
-
-        height: calc(
-          100% -
-            (#{$side-padding} + #{$signature-margin} * 2 + #{$signature-height}) +
-            #{$line-bottom-extension}
-        );
-      }
-    }
-  }
-
-  .headerMenuContainer {
-    display: flex;
-    flex-direction: column-reverse;
-
-    @media (max-width: 500px) {
-      .menuContainer {
-        width: 100vw;
-        left: calc(#{$side-padding} * -1);
-      }
+    &.light {
+        color: colors.$white;
     }
 
-    @media (min-width: 500px) {
-      flex-direction: row;
-      justify-content: space-between;
+    &.dark {
+        color: colors.$dark;
     }
 
-    .signatureShadow {
-      // position: absolute;
-      // width: 796.98px;
-      // height: 323.28px;
-      // left: -174px;
-      // top: -101.5px;
+    .mainFeature {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
 
-      // background: linear-gradient(
-      //   180deg,
-      //   rgba(23, 30, 39, 0.2) 0%,
-      //   rgba(23, 30, 39, 0.1) 64.06%,
-      //   rgba(23, 30, 39, 0) 100%
-      // );
-      // transform: rotate(-30deg);
-    }
-
-    .menuContainer {
-      position: relative;
-      right: calc(#{$side-padding} * -1);
-
-      // position: absolute;
-      // z-index: 2;
-      // width: 300px;
-      // top: 48px;
-      // right: 0;
-
-      // @media only screen and (max-width: 800px) {
-      //   width: 180px;
-      // }
-    }
-  }
-
-  .menuShadow {
-    // position: absolute;
-    // width: 1158.01px;
-    // height: 485.08px;
-    // right: -200px;
-    // top: -481.56px;
-
-    // background: linear-gradient(
-    //   180deg,
-    //   rgba(23, 30, 39, 0.3) 0%,
-    //   rgba(23, 30, 39, 0.15) 64.06%,
-    //   rgba(23, 30, 39, 0) 100%
-    // );
-    // transform: rotate(30deg);
-  }
-
-  .bannerContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
-
-    margin: 3em auto 8em;
-    max-width: 1500px;
-
-    @media (min-width: $banner-row-break) {
-      flex-direction: row;
-      justify-content: space-between;
-      margin-top: 6em;
-      gap: 4.8em;
-    }
-
-    .bannerContent {
-      position: relative;
-      z-index: 2;
-
-      h1 {
-        @include fonts.h1();
-        margin: 0px 0px -0.04em;
-      }
-
-      h2 {
-        @include fonts.h2();
-        margin: 0px 0px 0.36em;
-      }
-
-      p {
-        @include fonts.paragraphStyling();
-
-        margin: 0em 0em 1.5em;
-        max-width: 810px;
-        font-size: calc(1em * 1.2);
-      }
-
-      .buttonContainer {
-        display: flex;
-        flex-direction: column;
-        gap: 1.2em 2.4em;
-
-        @media (min-width: $banner-row-break) {
-          flex-direction: row;
+        .mainFeatureShadow {
+            opacity: 0.48;
+            background-color: colors.$dark;
+            width: 100%;
+            height: 100%;
         }
-
-        & > div {
-          flex: 1;
-        }
-      }
     }
 
-    .personalLinksContainer {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
-      flex-wrap: wrap;
-      gap: 0.9em 2.4em;
-
-      @media (min-width: $banner-row-break) {
-        flex-direction: column;
-        margin: auto 0px;
-      }
-
-      .linkContainer {
-        display: flex;
-        flex-direction: row;
-        justify-content: right;
-        gap: 1.2em;
-
-        p {
-          @include fonts.paragraphStyling();
-
-          margin: auto 0px;
-          font-family: fonts.$poppins;
-          font-size: 14px;
-        }
+    .signature {
+        margin: 2em 0px;
 
         img {
-          width: 24px;
-          max-height: 24px;
+            width: $signature-width;
+            height: $signature-height;
         }
-      }
     }
 
-    .bannerShadow {
-      // position: absolute;
-      // width: 240%;
-      // height: 330%;
-      // left: -60%;
-      // top: -108%;
-
-      // background: radial-gradient(
-      //   50% 50% at 50% 50%,
-      //   rgba(34, 34, 34, 0.2) 0%,
-      //   rgba(34, 34, 34, 0) 100%
-      // );
+    &.dark {
+        .line {
+            background: colors.$dark;
+        }
     }
-  }
 
-  .cardsContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
+    @media (min-width: 1700px) {
+        .line {
+            @include generics.siteLine();
+            left: calc(#{$signature-width} / 2 + #{$side-padding});
+            width: 1px;
 
-    position: relative;
-    z-index: 2;
+            background: colors.$white;
 
-    margin-bottom: 6em;
-    max-width: 1500px;
+            &.top {
+                top: 0px;
+                height: calc(#{$side-padding});
+            }
 
-    @media (min-width: 1200px) {
-      flex-direction: row;
-      justify-content: space-between;
-      margin: 0px auto 6em;
-      gap: 4em;
+            &.main {
+                top: calc(
+                    #{$side-padding} + #{$signature-margin} * 2 + #{$signature-height}
+                );
+
+                height: calc(
+                    100% -
+                        (
+                            #{$side-padding} + #{$signature-margin} * 2 + #{$signature-height}
+                        ) + #{$line-bottom-extension}
+                );
+            }
+        }
     }
-  }
 
-  .arrowBox {
-    position: relative;
-    margin: 0px auto;
-    z-index: 2;
-  }
+    .headerMenuContainer {
+        display: flex;
+        flex-direction: column-reverse;
 
-  .bottomGradient {
-    position: absolute;
-    width: 100%;
-    height: 16em;
-    left: 0;
-    bottom: 0;
+        @media (max-width: 500px) {
+            .menuContainer {
+                width: 100vw;
+                left: calc(#{$side-padding} * -1);
+            }
+        }
 
-    background: linear-gradient(
-      180deg,
-      rgba(23, 30, 39, 1) 0%,
-      rgba(23, 30, 39, 0.572917) 59.9%,
-      rgba(23, 30, 39, 0) 100%
-    );
-    transform: rotate(-180deg);
-  }
+        @media (min-width: 500px) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .signatureShadow {
+            // position: absolute;
+            // width: 796.98px;
+            // height: 323.28px;
+            // left: -174px;
+            // top: -101.5px;
+
+            // background: linear-gradient(
+            //   180deg,
+            //   rgba(23, 30, 39, 0.2) 0%,
+            //   rgba(23, 30, 39, 0.1) 64.06%,
+            //   rgba(23, 30, 39, 0) 100%
+            // );
+            // transform: rotate(-30deg);
+        }
+
+        .menuContainer {
+            position: relative;
+            right: calc(#{$side-padding} * -1);
+
+            // position: absolute;
+            // z-index: 2;
+            // width: 300px;
+            // top: 48px;
+            // right: 0;
+
+            // @media only screen and (max-width: 800px) {
+            //   width: 180px;
+            // }
+        }
+    }
+
+    .menuShadow {
+        // position: absolute;
+        // width: 1158.01px;
+        // height: 485.08px;
+        // right: -200px;
+        // top: -481.56px;
+
+        // background: linear-gradient(
+        //   180deg,
+        //   rgba(23, 30, 39, 0.3) 0%,
+        //   rgba(23, 30, 39, 0.15) 64.06%,
+        //   rgba(23, 30, 39, 0) 100%
+        // );
+        // transform: rotate(30deg);
+    }
+
+    .bannerContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+
+        margin: 3em auto 8em;
+        max-width: 1500px;
+
+        @media (min-width: $banner-row-break) {
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 6em;
+            gap: 4.8em;
+        }
+
+        .bannerContent {
+            position: relative;
+            z-index: 2;
+
+            h1 {
+                @include fonts.h1();
+                margin: 0px 0px -0.04em;
+            }
+
+            h2 {
+                @include fonts.h2();
+                margin: 0px 0px 0.36em;
+            }
+
+            p {
+                @include fonts.paragraphStyling();
+
+                margin: 0em 0em 1.5em;
+                max-width: 810px;
+                font-size: calc(1em * 1.2);
+            }
+
+            .buttonContainer {
+                display: flex;
+                flex-direction: column;
+                gap: 1.2em 2.4em;
+
+                @media (min-width: $banner-row-break) {
+                    flex-direction: row;
+                }
+
+                & > div {
+                    flex: 1;
+                }
+            }
+        }
+
+        .personalLinksContainer {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            gap: 0.9em 2.4em;
+
+            @media (min-width: $banner-row-break) {
+                flex-direction: column;
+                margin: auto 0px;
+            }
+
+            .linkContainer {
+                display: flex;
+                flex-direction: row;
+                justify-content: right;
+                gap: 1.2em;
+
+                p {
+                    @include fonts.paragraphStyling();
+
+                    margin: auto 0px;
+                    font-family: fonts.$poppins;
+                    font-size: 14px;
+                }
+
+                img {
+                    width: 24px;
+                    max-height: 24px;
+                }
+            }
+        }
+
+        .bannerShadow {
+            // position: absolute;
+            // width: 240%;
+            // height: 330%;
+            // left: -60%;
+            // top: -108%;
+
+            // background: radial-gradient(
+            //   50% 50% at 50% 50%,
+            //   rgba(34, 34, 34, 0.2) 0%,
+            //   rgba(34, 34, 34, 0) 100%
+            // );
+        }
+    }
+
+    .cardsContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+
+        position: relative;
+        z-index: 2;
+
+        margin-bottom: 6em;
+        max-width: 1500px;
+
+        @media (min-width: 1200px) {
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 0px auto 6em;
+            gap: 4em;
+        }
+    }
+
+    .arrowBox {
+        position: relative;
+        margin: 0px auto;
+        z-index: 2;
+    }
+
+    .bottomGradient {
+        position: absolute;
+        width: 100%;
+        height: 16em;
+        left: 0;
+        bottom: 0;
+
+        background: linear-gradient(
+            180deg,
+            rgba(23, 30, 39, 1) 0%,
+            rgba(23, 30, 39, 0.572917) 59.9%,
+            rgba(23, 30, 39, 0) 100%
+        );
+        transform: rotate(-180deg);
+    }
 }

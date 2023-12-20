@@ -2,8 +2,8 @@
 /* eslint-disable react/jsx-indent */
 
 // import Image from 'next/image';
-import { useRouter } from 'next/router';
-import { useLayoutEffect, useRef, useState } from 'react';
+import { useRouter } from "next/router";
+import { useLayoutEffect, useRef, useState } from "react";
 
 // import Button from 'components/Button';
 // import Header from 'components/layout/Header';
@@ -12,29 +12,29 @@ import { useLayoutEffect, useRef, useState } from 'react';
 // import mainGalleryImages from 'utils/images';
 
 // import Footer from 'components/layout/Footer';
-import styles from './About.module.scss';
+import styles from "./About.module.scss";
 
-interface AboutProps {
-
-}
+interface AboutProps {}
 
 const About = (): JSX.Element => {
-  const imageWidth = 400;
-  const imageHeight = 270;
+    const imageWidth = 400;
+    const imageHeight = 270;
 
-  const router = useRouter();
+    const router = useRouter();
 
-  const [galleryWidth, setGalleryWidth] = useState<number>();
+    const [galleryWidth, setGalleryWidth] = useState<number>();
 
-  const ref = useRef<HTMLDivElement | null>(null);
-  useLayoutEffect(() => {
-    setGalleryWidth((ref?.current?.children.length || 0) * ((imageWidth + 6) / 3));
-  }, []);
+    const ref = useRef<HTMLDivElement | null>(null);
+    useLayoutEffect(() => {
+        setGalleryWidth(
+            (ref?.current?.children.length || 0) * ((imageWidth + 6) / 3),
+        );
+    }, []);
 
-  return (
-    <div className={styles.container}>
-      About Page
-      {/* <Header
+    return (
+        <div className={styles.container}>
+            About Page
+            {/* <Header
         title="Adam McQuilkin"
         subtitle="Developer, Product Designer"
         description="A passionate Dartmouth College computer science and design student, specializing in web and application development."
@@ -161,8 +161,8 @@ const About = (): JSX.Element => {
       </main>
 
       <Footer /> */}
-    </div>
-  );
+        </div>
+    );
 };
 
 export default About;

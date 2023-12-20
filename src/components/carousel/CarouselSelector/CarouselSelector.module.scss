@@ -2,101 +2,101 @@
 @use "styles/fonts.scss" as fonts;
 
 .container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-
-  .selector {
-    @include fonts.paragraphStyling();
-
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
 
-    background: none;
-    border: none;
-    cursor: pointer;
+    .selector {
+        @include fonts.paragraphStyling();
 
-    p {
-      margin: auto 18px;
+        display: flex;
+        flex-direction: row;
 
-      &.light {
-        color: colors.$white;
-      }
-
-      &.dark {
-        color: colors.$dark;
-      }
-    }
-
-    svg {
-      margin: auto 0px;
-
-      &.light {
-        path {
-          fill: colors.$white;
-          stroke: colors.$white;
-        }
-      }
-
-      &.dark {
-        path {
-          fill: colors.$dark;
-          stroke: colors.$dark;
-        }
-      }
-    }
-  }
-
-  .dotsContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-    .dot {
-      margin-right: 8px;
-      padding: 0px;
-      width: 9px;
-      height: 9px;
-
-      border-radius: 50%;
-      cursor: pointer;
-
-      transition: background 0.3s ease-in-out;
-
-      &:last-child {
-        margin-right: 0px;
-      }
-
-      &.light {
         background: none;
-        border: 1px solid colors.$white;
-
-        &.active {
-          background: colors.$white;
-        }
-      }
-
-      &.dark {
-        background: colors.$light-gray;
         border: none;
+        cursor: pointer;
 
-        &.active {
-          background: colors.$dark;
+        p {
+            margin: auto 18px;
+
+            &.light {
+                color: colors.$white;
+            }
+
+            &.dark {
+                color: colors.$dark;
+            }
         }
-      }
 
-      p {
-        border: 0;
-        clip: rect(1px, 1px, 1px, 1px);
-        height: 1px;
-        margin: -1px;
-        overflow: hidden;
-        padding: 0;
-        position: absolute;
-        width: 1px;
-      }
+        svg {
+            margin: auto 0px;
+
+            &.light {
+                path {
+                    fill: colors.$white;
+                    stroke: colors.$white;
+                }
+            }
+
+            &.dark {
+                path {
+                    fill: colors.$dark;
+                    stroke: colors.$dark;
+                }
+            }
+        }
     }
-  }
+
+    .dotsContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        .dot {
+            margin-right: 8px;
+            padding: 0px;
+            width: 9px;
+            height: 9px;
+
+            border-radius: 50%;
+            cursor: pointer;
+
+            transition: background 0.3s ease-in-out;
+
+            &:last-child {
+                margin-right: 0px;
+            }
+
+            &.light {
+                background: none;
+                border: 1px solid colors.$white;
+
+                &.active {
+                    background: colors.$white;
+                }
+            }
+
+            &.dark {
+                background: colors.$light-gray;
+                border: none;
+
+                &.active {
+                    background: colors.$dark;
+                }
+            }
+
+            p {
+                border: 0;
+                clip: rect(1px, 1px, 1px, 1px);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px;
+            }
+        }
+    }
 }

@@ -3,335 +3,336 @@
 @use "styles/generics.scss" as generics;
 
 .flexSection {
-  display: flex;
-  flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
 
 .container {
-  .mainContainer {
-    .backgroundContainer {
-      position: relative;
-      padding: generics.$side-padding;
-      background: colors.$dark;
+    .mainContainer {
+        .backgroundContainer {
+            position: relative;
+            padding: generics.$side-padding;
+            background: colors.$dark;
 
-      @media (min-width: 1000px) {
-        padding: 6em generics.$side-padding !important;
+            @media (min-width: 1000px) {
+                padding: 6em generics.$side-padding !important;
 
-        .backgroundWidthContainer {
-          flex-direction: row-reverse !important;
+                .backgroundWidthContainer {
+                    flex-direction: row-reverse !important;
+                }
+            }
+
+            .backgroundWidthContainer {
+                display: flex;
+                flex-direction: column;
+                margin: 0px auto;
+                gap: 4.8em;
+
+                max-width: 1470px;
+
+                // .backgroundLine {
+                //   @include generics.siteLine();
+
+                //   top: 0vh;
+                //   left: 6vw;
+                //   height: 70%;
+                // }
+
+                .backgroundTilesContainer {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.2em;
+                    flex: 1;
+
+                    .backgroundTile {
+                        padding: 2.1em;
+
+                        border-radius: 4px;
+                        background: colors.$lighter-dark;
+                        color: colors.$white;
+
+                        .backgroundTileHeader {
+                            display: flex;
+                            flex-direction: column-reverse;
+                            justify-content: space-between;
+
+                            @media (min-width: 500px) {
+                                flex-direction: row;
+                            }
+
+                            h3 {
+                                @include fonts.h3();
+                                margin: 0px auto 0px 0px;
+                                color: colors.$light-blue;
+                            }
+
+                            a {
+                                @include fonts.paragraphStyling();
+                                margin: auto 0px;
+                                text-decoration: underline;
+                                text-underline-offset: 0.18em;
+                            }
+                        }
+
+                        & > p {
+                            @include fonts.paragraphStyling();
+                            margin-bottom: 0px;
+                        }
+                    }
+                }
+
+                .backgroundTextContainer {
+                    margin: auto 0px;
+                    padding: 0px 3em;
+                    flex: 1;
+                }
+            }
         }
-      }
 
-      .backgroundWidthContainer {
-        display: flex;
-        flex-direction: column;
-        margin: 0px auto;
-        gap: 4.8em;
+        .featuredProjectContainer {
+            padding: 6em generics.$side-padding;
+            background: colors.$white;
 
-        max-width: 1470px;
+            flex-direction: column;
+            gap: 4em;
 
-        // .backgroundLine {
-        //   @include generics.siteLine();
+            @media (min-width: 1100px) {
+                flex-direction: row-reverse;
+                gap: 6em;
+            }
 
-        //   top: 0vh;
-        //   left: 6vw;
-        //   height: 70%;
-        // }
-
-        .backgroundTilesContainer {
-          display: flex;
-          flex-direction: column;
-          gap: 1.2em;
-          flex: 1;
-
-          .backgroundTile {
-            padding: 2.1em;
-
-            border-radius: 4px;
-            background: colors.$lighter-dark;
-            color: colors.$white;
-
-            .backgroundTileHeader {
-              display: flex;
-              flex-direction: column-reverse;
-              justify-content: space-between;
-
-              @media (min-width: 500px) {
-                flex-direction: row;
-              }
-
-              h3 {
-                @include fonts.h3();
-                margin: 0px auto 0px 0px;
-                color: colors.$light-blue;
-              }
-
-              a {
-                @include fonts.paragraphStyling();
+            .featuredProjectImageContainer {
                 margin: auto 0px;
-                text-decoration: underline;
-                text-underline-offset: 0.18em;
-              }
+                flex: 1;
+
+                .featuredProjectImageCarousel {
+                    position: relative;
+                    height: 100%;
+
+                    .featuredProjectImage {
+                        margin-bottom: 36px;
+                        position: relative;
+                        height: clamp(120px, 40vh, 480px);
+                    }
+
+                    p {
+                        @include fonts.paragraphStyling();
+                        text-align: center;
+                    }
+                }
             }
 
-            & > p {
-              @include fonts.paragraphStyling();
-              margin-bottom: 0px;
+            .featuredProjectContentContainer {
+                margin: auto 0px;
+                flex: 1;
+
+                .featuredProjectContent {
+                    margin-bottom: 48px;
+                }
             }
-          }
         }
 
-        .backgroundTextContainer {
-          margin: auto 0px;
-          padding: 0px 3em;
-          flex: 1;
+        .passionsContainer {
+            align-content: center;
+            height: max(108vh, 100%);
+
+            background: colors.$lighter-dark;
+            box-shadow: colors.$default-shadow;
+
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: 1fr;
+
+            @media (min-width: 1000px) {
+                grid-template-rows: 1fr;
+                grid-template-columns: repeat(2, 1fr);
+
+                .passionsContent {
+                    padding: 18em 6em !important;
+                }
+            }
+
+            .passionsImageContainer {
+                position: relative;
+
+                .passionsImageCarousel {
+                    position: relative;
+                    height: 100%;
+
+                    .passionsImage {
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .passionsImageSelector {
+                    position: absolute;
+                    width: 90%;
+                    left: 5%;
+                    bottom: 48px;
+                }
+            }
+
+            .passionsContent {
+                margin: auto;
+                padding: 6em;
+
+                .passionsText {
+                    margin: 0 auto;
+                }
+            }
         }
-      }
+
+        .resumeContainer {
+            display: flex;
+            flex-direction: column;
+            gap: 8em;
+            padding: 8em 2em;
+
+            background: linear-gradient(180deg, #171e27 0%, #1f2733 100%),
+                #171e27;
+            box-shadow: colors.$default-shadow;
+
+            .resumeSection {
+                display: flex;
+                flex-direction: column;
+                gap: 6em;
+
+                width: min(1400px, 100%);
+                margin: 0px auto;
+
+                @media (min-width: 1540px) {
+                    flex-direction: row;
+                }
+            }
+
+            .resumeListContent {
+                @include generics.informationCard();
+
+                margin: auto 0px;
+            }
+
+            .resumeTextContainer {
+                position: relative;
+                margin: auto 0px;
+                padding: 0px 3em;
+            }
+
+            // .resumeExperienceContainer {
+            //   // Unused
+            // }
+
+            .resumeAchievementsContainer {
+                @media (min-width: 1540px) {
+                    flex-direction: row-reverse;
+                }
+            }
+
+            // .resumeSkillsContainer {
+            //   // Unused
+            // }
+        }
+
+        // .projectsContainer {
+        //   .projectsIntroContainer {
+        //     display: flex;
+        //     flex-direction: row;
+        //     background-color: colors.$dark;
+        //     box-shadow: colors.$default-shadow;
+
+        //     .projectsIntroImageContainer {
+        //       width: 50%;
+
+        //       .projectsIntroImage {
+        //         position: relative;
+        //         width: 100%;
+        //         height: 100%;
+        //       }
+        //     }
+
+        //     .projectsIntroText {
+        //       // padding: 12vw;
+        //       padding: generics.$side-padding;
+        //       flex: 1;
+
+        //       .projectsIntroTagsContainer {
+        //         margin-bottom: 27px;
+
+        //         .projectsIntroTagLabel {
+        //           @include fonts.paragraphStyling();
+        //           margin: 0px 0px 15px;
+        //         }
+
+        //         .projectIntroButtonList {
+        //           display: flex;
+        //           flex-direction: row;
+        //           flex-wrap: wrap;
+
+        //           .projectIntroButton {
+        //             @include fonts.paragraphStyling();
+
+        //             margin: 0px 18px 15px 0px;
+        //             padding: 6px 18px;
+
+        //             background: none;
+        //             border: 1px solid colors.$white;
+        //             border-radius: 2px;
+
+        //             font-size: 15px;
+        //             color: colors.$white;
+        //             cursor: pointer;
+
+        //             &.selected {
+        //               background-color: rgba(255, 255, 255, 0.36);
+        //             }
+        //           }
+        //         }
+        //       }
+        //     }
+        //   }
+
+        //   .projectsListContainer {
+        //     .projectContainer {
+        //       display: flex;
+        //       flex-direction: row;
+        //       align-content: center;
+        //       height: 100vh;
+
+        //       &.inverted {
+        //         flex-direction: row-reverse;
+
+        //         .projectFeaturedImage {
+        //           margin: auto 12vw auto 0vw;
+        //         }
+        //       }
+
+        //       .projectFeaturedImage {
+        //         margin: auto 0vw auto 12vw;
+        //         flex: 1;
+        //       }
+
+        //       .projectContentContainer {
+        //         display: flex;
+        //         flex-direction: column;
+        //         justify-content: center;
+
+        //         // padding: 12vw;
+        //         padding: generics.$side-padding;
+        //         flex: 1;
+
+        //         .projectIcon {
+        //           margin-bottom: 36px;
+        //           width: 40px;
+        //           height: 40px;
+        //         }
+        //       }
+        //     }
+        //   }
+        // }
     }
 
-    .featuredProjectContainer {
-      padding: 6em generics.$side-padding;
-      background: colors.$white;
-
-      flex-direction: column;
-      gap: 4em;
-
-      @media (min-width: 1100px) {
-        flex-direction: row-reverse;
-        gap: 6em;
-      }
-
-      .featuredProjectImageContainer {
-        margin: auto 0px;
-        flex: 1;
-
-        .featuredProjectImageCarousel {
-          position: relative;
-          height: 100%;
-
-          .featuredProjectImage {
-            margin-bottom: 36px;
-            position: relative;
-            height: clamp(120px, 40vh, 480px);
-          }
-
-          p {
-            @include fonts.paragraphStyling();
-            text-align: center;
-          }
-        }
-      }
-
-      .featuredProjectContentContainer {
-        margin: auto 0px;
-        flex: 1;
-
-        .featuredProjectContent {
-          margin-bottom: 48px;
-        }
-      }
+    .footerContainer {
+        padding-top: 12em;
     }
-
-    .passionsContainer {
-      align-content: center;
-      height: max(108vh, 100%);
-
-      background: colors.$lighter-dark;
-      box-shadow: colors.$default-shadow;
-
-      display: grid;
-      grid-template-rows: repeat(2, 1fr);
-      grid-template-columns: 1fr;
-
-      @media (min-width: 1000px) {
-        grid-template-rows: 1fr;
-        grid-template-columns: repeat(2, 1fr);
-
-        .passionsContent {
-          padding: 18em 6em !important;
-        }
-      }
-
-      .passionsImageContainer {
-        position: relative;
-
-        .passionsImageCarousel {
-          position: relative;
-          height: 100%;
-
-          .passionsImage {
-            position: relative;
-            width: 100%;
-            height: 100%;
-          }
-        }
-
-        .passionsImageSelector {
-          position: absolute;
-          width: 90%;
-          left: 5%;
-          bottom: 48px;
-        }
-      }
-
-      .passionsContent {
-        margin: auto;
-        padding: 6em;
-
-        .passionsText {
-          margin: 0 auto;
-        }
-      }
-    }
-
-    .resumeContainer {
-      display: flex;
-      flex-direction: column;
-      gap: 8em;
-      padding: 8em 2em;
-
-      background: linear-gradient(180deg, #171e27 0%, #1f2733 100%), #171e27;
-      box-shadow: colors.$default-shadow;
-
-      .resumeSection {
-        display: flex;
-        flex-direction: column;
-        gap: 6em;
-
-        width: min(1400px, 100%);
-        margin: 0px auto;
-
-        @media (min-width: 1540px) {
-          flex-direction: row;
-        }
-      }
-
-      .resumeListContent {
-        @include generics.informationCard();
-
-        margin: auto 0px;
-      }
-
-      .resumeTextContainer {
-        position: relative;
-        margin: auto 0px;
-        padding: 0px 3em;
-      }
-
-      // .resumeExperienceContainer {
-      //   // Unused
-      // }
-
-      .resumeAchievementsContainer {
-        @media (min-width: 1540px) {
-          flex-direction: row-reverse;
-        }
-      }
-
-      // .resumeSkillsContainer {
-      //   // Unused
-      // }
-    }
-
-    // .projectsContainer {
-    //   .projectsIntroContainer {
-    //     display: flex;
-    //     flex-direction: row;
-    //     background-color: colors.$dark;
-    //     box-shadow: colors.$default-shadow;
-
-    //     .projectsIntroImageContainer {
-    //       width: 50%;
-
-    //       .projectsIntroImage {
-    //         position: relative;
-    //         width: 100%;
-    //         height: 100%;
-    //       }
-    //     }
-
-    //     .projectsIntroText {
-    //       // padding: 12vw;
-    //       padding: generics.$side-padding;
-    //       flex: 1;
-
-    //       .projectsIntroTagsContainer {
-    //         margin-bottom: 27px;
-
-    //         .projectsIntroTagLabel {
-    //           @include fonts.paragraphStyling();
-    //           margin: 0px 0px 15px;
-    //         }
-
-    //         .projectIntroButtonList {
-    //           display: flex;
-    //           flex-direction: row;
-    //           flex-wrap: wrap;
-
-    //           .projectIntroButton {
-    //             @include fonts.paragraphStyling();
-
-    //             margin: 0px 18px 15px 0px;
-    //             padding: 6px 18px;
-
-    //             background: none;
-    //             border: 1px solid colors.$white;
-    //             border-radius: 2px;
-
-    //             font-size: 15px;
-    //             color: colors.$white;
-    //             cursor: pointer;
-
-    //             &.selected {
-    //               background-color: rgba(255, 255, 255, 0.36);
-    //             }
-    //           }
-    //         }
-    //       }
-    //     }
-    //   }
-
-    //   .projectsListContainer {
-    //     .projectContainer {
-    //       display: flex;
-    //       flex-direction: row;
-    //       align-content: center;
-    //       height: 100vh;
-
-    //       &.inverted {
-    //         flex-direction: row-reverse;
-
-    //         .projectFeaturedImage {
-    //           margin: auto 12vw auto 0vw;
-    //         }
-    //       }
-
-    //       .projectFeaturedImage {
-    //         margin: auto 0vw auto 12vw;
-    //         flex: 1;
-    //       }
-
-    //       .projectContentContainer {
-    //         display: flex;
-    //         flex-direction: column;
-    //         justify-content: center;
-
-    //         // padding: 12vw;
-    //         padding: generics.$side-padding;
-    //         flex: 1;
-
-    //         .projectIcon {
-    //           margin-bottom: 36px;
-    //           width: 40px;
-    //           height: 40px;
-    //         }
-    //       }
-    //     }
-    //   }
-    // }
-  }
-
-  .footerContainer {
-    padding-top: 12em;
-  }
 }

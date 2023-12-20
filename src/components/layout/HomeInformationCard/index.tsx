@@ -1,18 +1,20 @@
-import { HomeInformationCardEntry } from 'types/cards';
-import styles from './HomeInformationCard.module.scss';
+import { HomeInformationCardEntry } from "types/cards";
+import styles from "./HomeInformationCard.module.scss";
 
 export interface HomeInformationCardProps {
-    title: string,
-    rightText: string,
-    content: HomeInformationCardEntry[],
-    className?: string
+    title: string;
+    rightText: string;
+    content: HomeInformationCardEntry[];
+    className?: string;
 }
 
 const HomeInformationCard = ({
-    title, rightText, content,
-    className = ''
+    title,
+    rightText,
+    content,
+    className = "",
 }: HomeInformationCardProps): JSX.Element => (
-    <div className={[styles.container, className].join(' ')}>
+    <div className={[styles.container, className].join(" ")}>
         <div className={styles.header}>
             <h3>{title}</h3>
             <p>{rightText}</p>
@@ -33,14 +35,18 @@ const HomeInformationCard = ({
 
                         <p className={styles.subtitle}>{element.subtitle}</p>
 
-                        <p className={styles.entryDescription}>{element.description}</p>
+                        <p className={styles.entryDescription}>
+                            {element.description}
+                        </p>
 
                         <div className={styles.addlLinesContainer}>
                             {element.addlLines.map((line) => (
-                                <div className={styles.addlLine} key={line.label}>
+                                <div
+                                    className={styles.addlLine}
+                                    key={line.label}
+                                >
                                     <p className={styles.label}>
-                                        {line.label}
-                                        :
+                                        {line.label}:
                                     </p>
                                     <p>{line.content}</p>
                                 </div>

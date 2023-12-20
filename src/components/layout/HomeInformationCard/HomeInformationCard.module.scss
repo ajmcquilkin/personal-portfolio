@@ -6,138 +6,138 @@ $entry-dot-diameter: 7px;
 $layout-ui-break: 500px;
 
 .container {
-  box-shadow: colors.$default-shadow;
-  color: colors.$white;
+    box-shadow: colors.$default-shadow;
+    color: colors.$white;
 
-  .header {
-    display: flex;
-    flex-direction: column-reverse;
-    margin-bottom: 1.8em;
+    .header {
+        display: flex;
+        flex-direction: column-reverse;
+        margin-bottom: 1.8em;
 
-    @media (min-width: 600px) {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-
-    h3 {
-      @include fonts.h3();
-
-      margin: auto 0px;
-      color: colors.$light-blue;
-    }
-
-    p {
-      @include fonts.paragraphStyling();
-
-      margin: auto 0px;
-      color: colors.$light-gray;
-    }
-  }
-
-  .content {
-    position: relative;
-
-    @media (min-width: $layout-ui-break) {
-      padding-left: 46px;
-
-      .sideLine {
-        position: absolute;
-        left: 0px;
-        top: $line-offset;
-
-        width: 1px;
-        height: calc(100% - #{$line-offset});
-        background-color: colors.$white;
-      }
-    }
-
-    .entriesContainer {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5em;
-
-      .entry {
-        @media (min-width: $layout-ui-break) {
-          .entryDot {
-            position: absolute;
-            left: calc(-1 * #{$entry-dot-diameter} / 2);
-
-            transform: translateY(#{$line-offset});
-
-            background-color: colors.$white;
-            width: $entry-dot-diameter;
-            height: $entry-dot-diameter;
-            border-radius: 50%;
-          }
-        }
-
-        .entryHeader {
-          display: flex;
-          flex-direction: column-reverse;
-          gap: 0.4em;
-
-          @media (min-width: 750px) {
+        @media (min-width: 600px) {
             flex-direction: row;
             justify-content: space-between;
-          }
+        }
 
-          h4 {
-            @include fonts.h4();
-            margin: 0px 0px 0.15em;
-          }
+        h3 {
+            @include fonts.h3();
 
-          p {
+            margin: auto 0px;
+            color: colors.$light-blue;
+        }
+
+        p {
             @include fonts.paragraphStyling();
-            margin: 0px;
-          }
+
+            margin: auto 0px;
+            color: colors.$light-gray;
+        }
+    }
+
+    .content {
+        position: relative;
+
+        @media (min-width: $layout-ui-break) {
+            padding-left: 46px;
+
+            .sideLine {
+                position: absolute;
+                left: 0px;
+                top: $line-offset;
+
+                width: 1px;
+                height: calc(100% - #{$line-offset});
+                background-color: colors.$white;
+            }
         }
 
-        .subtitle {
-          @include fonts.paragraphStyling();
-
-          margin: 0px 0px 6px;
-          font-size: clamp(13px, 3vw, 15px);
-          color: #a0a0a0;
-        }
-
-        .entryDescription {
-          @include fonts.paragraphStyling();
-
-          margin: 0px 0px 9px;
-          font-size: 15px;
-        }
-
-        .addlLinesContainer {
-          display: flex;
-          flex-direction: column;
-
-          @media (max-width: $layout-ui-break) {
-            gap: 0.6em;
-          }
-
-          .addlLine {
+        .entriesContainer {
             display: flex;
             flex-direction: column;
-            gap: 0.3em;
+            gap: 1.5em;
 
-            @media (min-width: $layout-ui-break) {
-              flex-direction: row;
+            .entry {
+                @media (min-width: $layout-ui-break) {
+                    .entryDot {
+                        position: absolute;
+                        left: calc(-1 * #{$entry-dot-diameter} / 2);
+
+                        transform: translateY(#{$line-offset});
+
+                        background-color: colors.$white;
+                        width: $entry-dot-diameter;
+                        height: $entry-dot-diameter;
+                        border-radius: 50%;
+                    }
+                }
+
+                .entryHeader {
+                    display: flex;
+                    flex-direction: column-reverse;
+                    gap: 0.4em;
+
+                    @media (min-width: 750px) {
+                        flex-direction: row;
+                        justify-content: space-between;
+                    }
+
+                    h4 {
+                        @include fonts.h4();
+                        margin: 0px 0px 0.15em;
+                    }
+
+                    p {
+                        @include fonts.paragraphStyling();
+                        margin: 0px;
+                    }
+                }
+
+                .subtitle {
+                    @include fonts.paragraphStyling();
+
+                    margin: 0px 0px 6px;
+                    font-size: clamp(13px, 3vw, 15px);
+                    color: #a0a0a0;
+                }
+
+                .entryDescription {
+                    @include fonts.paragraphStyling();
+
+                    margin: 0px 0px 9px;
+                    font-size: 15px;
+                }
+
+                .addlLinesContainer {
+                    display: flex;
+                    flex-direction: column;
+
+                    @media (max-width: $layout-ui-break) {
+                        gap: 0.6em;
+                    }
+
+                    .addlLine {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.3em;
+
+                        @media (min-width: $layout-ui-break) {
+                            flex-direction: row;
+                        }
+
+                        p {
+                            @include fonts.paragraphStyling();
+
+                            margin: 0px;
+                            font-size: 15px;
+
+                            &.label {
+                                margin-right: 12px;
+                                font-weight: 700;
+                            }
+                        }
+                    }
+                }
             }
-
-            p {
-              @include fonts.paragraphStyling();
-
-              margin: 0px;
-              font-size: 15px;
-
-              &.label {
-                margin-right: 12px;
-                font-weight: 700;
-              }
-            }
-          }
         }
-      }
     }
-  }
 }

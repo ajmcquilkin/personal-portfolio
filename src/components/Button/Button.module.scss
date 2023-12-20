@@ -2,100 +2,100 @@
 @use "styles/fonts.scss" as fonts;
 
 .buttonContainer {
-  position: relative;
-  width: auto;
-  height: auto;
+    position: relative;
+    width: auto;
+    height: auto;
 
-  // Sizing
+    // Sizing
 
-  $width: var(--width);
-  $height: var(--height);
-  $border: calc(2 * #{$width} + 2 * #{$height});
+    $width: var(--width);
+    $height: var(--height);
+    $border: calc(2 * #{$width} + 2 * #{$height});
 
-  button {
-    svg {
-      stroke-dasharray: $width $border;
-      stroke-dashoffset: $width;
+    button {
+        svg {
+            stroke-dasharray: $width $border;
+            stroke-dashoffset: $width;
+        }
+
+        &:focus-within svg,
+        &:hover svg {
+            stroke-dashoffset: calc(#{$border} * -1);
+        }
     }
 
-    &:focus-within svg,
-    &:hover svg {
-      stroke-dashoffset: calc(#{$border} * -1);
-    }
-  }
+    // Color mode
 
-  // Color mode
+    &.dark button {
+        border: 1px solid colors.$dark;
+        color: colors.$dark;
 
-  &.dark button {
-    border: 1px solid colors.$dark;
-    color: colors.$dark;
+        svg {
+            stroke: colors.$dark;
+        }
 
-    svg {
-      stroke: colors.$dark;
-    }
-
-    &::after {
-      background-color: colors.$dark;
-    }
-  }
-
-  &.light button {
-    border: 1px solid colors.$white;
-    color: colors.$white;
-
-    svg {
-      stroke: colors.$white;
+        &::after {
+            background-color: colors.$dark;
+        }
     }
 
-    &::after {
-      background-color: colors.$white;
-    }
-  }
+    &.light button {
+        border: 1px solid colors.$white;
+        color: colors.$white;
 
-  // Main styling
+        svg {
+            stroke: colors.$white;
+        }
 
-  button {
-    @include fonts.paragraphStyling(1.1);
-    font-weight: 400;
-
-    padding: 0.96em 3em;
-    width: 100%;
-    height: 100%;
-
-    background: none;
-    border-radius: 1px;
-    outline: none;
-    cursor: pointer;
-
-    svg {
-      position: absolute;
-      left: 0;
-      top: 0;
-      fill: none;
-      stroke-width: 2px;
-      transition: 1s ease-in-out;
+        &::after {
+            background-color: colors.$white;
+        }
     }
 
-    &::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
+    // Main styling
 
-      opacity: 0;
-      transition: opacity 0.6s ease-in-out;
-    }
+    button {
+        @include fonts.paragraphStyling(1.1);
+        font-weight: 400;
 
-    &:focus-within button > svg {
-      stroke-dashoffset: -600px;
-    }
+        padding: 0.96em 3em;
+        width: 100%;
+        height: 100%;
 
-    &:hover::after,
-    &:focus::after {
-      opacity: 0.1;
-      transition: opacity 0.3s ease-in-out; // 0.6 with button svg animation
+        background: none;
+        border-radius: 1px;
+        outline: none;
+        cursor: pointer;
+
+        svg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            fill: none;
+            stroke-width: 2px;
+            transition: 1s ease-in-out;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out;
+        }
+
+        &:focus-within button > svg {
+            stroke-dashoffset: -600px;
+        }
+
+        &:hover::after,
+        &:focus::after {
+            opacity: 0.1;
+            transition: opacity 0.3s ease-in-out; // 0.6 with button svg animation
+        }
     }
-  }
 }

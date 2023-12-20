@@ -6,118 +6,118 @@
 $list-gap: 1.5rem;
 
 .container {
-  .headerContainer {
-    margin: 0px auto;
-    position: relative;
-    max-width: 1200px;
-    height: max(100vh, 100%);
+    .headerContainer {
+        margin: 0px auto;
+        position: relative;
+        max-width: 1200px;
+        height: max(100vh, 100%);
 
-    .signature {
-      @include header.signature(colors.$dark);
-    }
-
-    .menuContainer {
-      @include header.menu();
-    }
-
-    .headerFlexContainer {
-      @include header.content(colors.$dark);
-
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-
-      .headerContentContainer {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin-right: auto;
-
-        .buttonContainer {
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-
-          .contentButton {
-            @include header.button();
-          }
+        .signature {
+            @include header.signature(colors.$dark);
         }
-      }
 
-      .featuredImageContainer {
-        margin: auto;
-        padding-left: 2em;
-      }
-    }
-
-    .arrowBox {
-      @include header.arrowBox();
-    }
-  }
-
-  .overviewContainer {
-    max-width: 1200px;
-    margin: 0px auto;
-    padding: generics.$side-padding;
-
-    h2 {
-      @include fonts.h2();
-      margin: 1.5em 0px 0.5em;
-      color: colors.$dark;
-    }
-
-    p,
-    li {
-      @include fonts.paragraphStyling();
-    }
-
-    .overviewFlexContainer {
-      display: flex;
-      flex-direction: column;
-      gap: $list-gap;
-
-      @media (min-width: 750px) {
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 6em;
-
-        .overviewLeft {
-          flex: 5;
+        .menuContainer {
+            @include header.menu();
         }
-      }
 
-      .overviewLeft {
-        h3 {
-          @include fonts.h3();
-          margin: 0px 0px 0.66em;
-          color: colors.$dark;
-        }
-      }
+        .headerFlexContainer {
+            @include header.content(colors.$dark);
 
-      .overviewRight {
-        display: flex;
-        flex-direction: column;
-        gap: $list-gap;
-        flex: 3;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
 
-        .overviewRightList {
-          h3 {
-            @include fonts.h3();
-            color: colors.$dark;
+            .headerContentContainer {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin-right: auto;
 
-            margin: 0px 0px 0.48em;
-          }
+                .buttonContainer {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
 
-          ul {
-            padding-left: 0px;
-            list-style: none;
-
-            li {
-              margin-bottom: 0.3em;
+                    .contentButton {
+                        @include header.button();
+                    }
+                }
             }
-          }
+
+            .featuredImageContainer {
+                margin: auto;
+                padding-left: 2em;
+            }
         }
-      }
+
+        .arrowBox {
+            @include header.arrowBox();
+        }
     }
-  }
+
+    .overviewContainer {
+        max-width: 1200px;
+        margin: 0px auto;
+        padding: generics.$side-padding;
+
+        h2 {
+            @include fonts.h2();
+            margin: 1.5em 0px 0.5em;
+            color: colors.$dark;
+        }
+
+        p,
+        li {
+            @include fonts.paragraphStyling();
+        }
+
+        .overviewFlexContainer {
+            display: flex;
+            flex-direction: column;
+            gap: $list-gap;
+
+            @media (min-width: 750px) {
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 6em;
+
+                .overviewLeft {
+                    flex: 5;
+                }
+            }
+
+            .overviewLeft {
+                h3 {
+                    @include fonts.h3();
+                    margin: 0px 0px 0.66em;
+                    color: colors.$dark;
+                }
+            }
+
+            .overviewRight {
+                display: flex;
+                flex-direction: column;
+                gap: $list-gap;
+                flex: 3;
+
+                .overviewRightList {
+                    h3 {
+                        @include fonts.h3();
+                        color: colors.$dark;
+
+                        margin: 0px 0px 0.48em;
+                    }
+
+                    ul {
+                        padding-left: 0px;
+                        list-style: none;
+
+                        li {
+                            margin-bottom: 0.3em;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

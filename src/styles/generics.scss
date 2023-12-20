@@ -15,31 +15,31 @@ $side-padding: 3rem;
 // Mixins
 
 @mixin after($height: 2px) {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
+    content: "";
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 
-  width: 100%;
-  height: $height;
+    width: 100%;
+    height: $height;
 
-  transition: transform 0.4s cubic-bezier(0, 1, 0.6, 1);
-  transition-delay: 0.1s;
+    transition: transform 0.4s cubic-bezier(0, 1, 0.6, 1);
+    transition-delay: 0.1s;
 }
 
 @mixin responsivePadding($padding: 3em) {
-  padding: $padding;
+    padding: $padding;
 }
 
 @mixin informationCard {
-  background-color: colors.$lighter-dark;
-  padding: 41px;
-  border-radius: 4px;
+    background-color: colors.$lighter-dark;
+    padding: 41px;
+    border-radius: 4px;
 }
 
 @mixin siteLine {
-  position: absolute;
-  z-index: 999;
-  width: 1px;
+    position: absolute;
+    z-index: 999;
+    width: 1px;
 }

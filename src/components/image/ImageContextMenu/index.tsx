@@ -1,11 +1,13 @@
-import { RefObject, useEffect, useState } from 'react';
-import styles from './ImageContextMenu.module.scss';
+import { RefObject, useEffect, useState } from "react";
+import styles from "./ImageContextMenu.module.scss";
 
 export interface ImageContextMenuProps {
-  parentRef: RefObject<HTMLElement>
+    parentRef: RefObject<HTMLElement>;
 }
 
-const ImageContextMenu = ({ parentRef }: ImageContextMenuProps): JSX.Element => {
+const ImageContextMenu = ({
+    parentRef,
+}: ImageContextMenuProps): JSX.Element => {
     const [isOpen, setIsOpen] = useState(false);
     const [eventX, setEventX] = useState(0);
     const [eventY, setEventY] = useState(0);
@@ -25,13 +27,13 @@ const ImageContextMenu = ({ parentRef }: ImageContextMenuProps): JSX.Element => 
         const parent = parentRef.current;
         if (!parent) return;
 
-        parent.addEventListener('contextmenu', handleContextMenu);
-        window.addEventListener('click', handleWindowClick);
+        parent.addEventListener("contextmenu", handleContextMenu);
+        window.addEventListener("click", handleWindowClick);
 
         // eslint-disable-next-line consistent-return
         return () => {
-            parent.removeEventListener('contextmenu', handleContextMenu);
-            window.removeEventListener('click', handleWindowClick);
+            parent.removeEventListener("contextmenu", handleContextMenu);
+            window.removeEventListener("click", handleWindowClick);
         };
     }, []);
 
@@ -40,12 +42,13 @@ const ImageContextMenu = ({ parentRef }: ImageContextMenuProps): JSX.Element => 
     return (
         <div className={styles.container} style={{ top: eventY, left: eventX }}>
             <p>
-                © Adam McQuilkin,
-                {' '}
-                {(new Date()).getFullYear()}
-                , all rights reserved.
+                © Adam McQuilkin, {new Date().getFullYear()}, all rights
+                reserved.
             </p>
-            <p>This is a copyrighted image, and is not free to use. If you would like to license this image, please contact me.</p>
+            <p>
+                This is a copyrighted image, and is not free to use. If you
+                would like to license this image, please contact me.
+            </p>
         </div>
     );
 };

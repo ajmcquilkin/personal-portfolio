@@ -2,95 +2,95 @@
 @use "styles/fonts.scss" as fonts;
 
 .container {
-  position: relative;
-  min-width: 216px;
-  cursor: pointer;
-  flex: 1;
-
-  border: none;
-  background: none;
-  padding: 0px;
-
-  // Hover effects
-  // transition: transform 0.3s ease;
-
-  &::after {
-    content: "";
     position: relative;
-    display: block;
-    height: 2px;
-    bottom: -2px;
-    width: 100%;
-    transform: scaleX(0);
-    transform-origin: 0%;
-    transition: transform 0.6s ease;
-  }
+    min-width: 216px;
+    cursor: pointer;
+    flex: 1;
 
-  &:focus {
-    outline: none;
-  }
+    border: none;
+    background: none;
+    padding: 0px;
 
-  &:hover,
-  &:focus {
-    // transform: scale(1.02, 1.02);
+    // Hover effects
+    // transition: transform 0.3s ease;
 
     &::after {
-      transform: scaleX(1);
+        content: "";
+        position: relative;
+        display: block;
+        height: 2px;
+        bottom: -2px;
+        width: 100%;
+        transform: scaleX(0);
+        transform-origin: 0%;
+        transition: transform 0.6s ease;
     }
-  }
 
-  // Colorings
-
-  &.dark {
-    border-bottom: 1px solid colors.$dark;
-    color: colors.$dark;
-
-    &::after {
-      background: colors.$dark;
+    &:focus {
+        outline: none;
     }
-  }
 
-  &.light {
-    border-bottom: 1px solid colors.$white;
-    color: colors.$white;
+    &:hover,
+    &:focus {
+        // transform: scale(1.02, 1.02);
 
-    &::after {
-      background: colors.$white;
-    }
-  }
-
-  // Main styling
-
-  .flexContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 3px;
-    padding: 0px 6px;
-
-    .left {
-      display: flex;
-      flex-direction: column-reverse;
-
-      p {
-        margin-bottom: -0.33em;
-        font-family: fonts.$poppins;
-        font-size: 18px;
-        font-weight: 300;
-
-        text-align: left;
-
-        &.title {
-          margin-bottom: 0px;
-          font-size: 24px;
-          font-weight: 400;
+        &::after {
+            transform: scaleX(1);
         }
-      }
     }
 
-    p {
-      @include fonts.paragraphStyling();
-      margin: auto 0px;
+    // Colorings
+
+    &.dark {
+        border-bottom: 1px solid colors.$dark;
+        color: colors.$dark;
+
+        &::after {
+            background: colors.$dark;
+        }
     }
-  }
+
+    &.light {
+        border-bottom: 1px solid colors.$white;
+        color: colors.$white;
+
+        &::after {
+            background: colors.$white;
+        }
+    }
+
+    // Main styling
+
+    .flexContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 3px;
+        padding: 0px 6px;
+
+        .left {
+            display: flex;
+            flex-direction: column-reverse;
+
+            p {
+                margin-bottom: -0.33em;
+                font-family: fonts.$poppins;
+                font-size: 18px;
+                font-weight: 300;
+
+                text-align: left;
+
+                &.title {
+                    margin-bottom: 0px;
+                    font-size: 24px;
+                    font-weight: 400;
+                }
+            }
+        }
+
+        p {
+            @include fonts.paragraphStyling();
+            margin: auto 0px;
+        }
+    }
 }

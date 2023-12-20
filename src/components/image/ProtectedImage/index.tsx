@@ -1,19 +1,28 @@
-import Image, { ImageProps } from 'next/image';
-import { useRef, useState } from 'react';
+import Image, { ImageProps } from "next/image";
+import { useRef, useState } from "react";
 
-import ImageContextMenu from 'components/image/ImageContextMenu';
+import ImageContextMenu from "components/image/ImageContextMenu";
 
-import styles from './ProtectedImage.module.scss';
+import styles from "./ProtectedImage.module.scss";
 
-export type ProtectedImageProps = Pick<ImageProps, | 'alt' | 'objectFit' | 'objectPosition' | 'quality' | 'className'> & {
-  src: string;
-  onLoad?: () => void;
-  backgroundColor?: string;
-}
+export type ProtectedImageProps = Pick<
+    ImageProps,
+    "alt" | "objectFit" | "objectPosition" | "quality" | "className"
+> & {
+    src: string;
+    onLoad?: () => void;
+    backgroundColor?: string;
+};
 
 const ProtectedImage = ({
-    src, alt, objectFit, objectPosition, onLoad,
-    backgroundColor = 'transparent', quality = 70, className = ''
+    src,
+    alt,
+    objectFit,
+    objectPosition,
+    onLoad,
+    backgroundColor = "transparent",
+    quality = 70,
+    className = "",
 }: ProtectedImageProps): JSX.Element => {
     const ref = useRef<HTMLDivElement>(null);
     const [isLoaded, setIsLoaded] = useState<boolean>(false);
@@ -26,7 +35,7 @@ const ProtectedImage = ({
     return (
         <div
             ref={ref}
-            className={[styles.container, className].join(' ')}
+            className={[styles.container, className].join(" ")}
             role="presentation"
             style={{ backgroundColor }}
         >
@@ -38,9 +47,16 @@ const ProtectedImage = ({
                 objectPosition={objectPosition}
                 quality={quality}
                 onLoadingComplete={handleLoadingComplete}
-                className={[styles.animation, isLoaded ? styles.loaded : ''].join(' ')}
+                className={[
+                    styles.animation,
+                    isLoaded ? styles.loaded : "",
+                ].join(" ")}
             />
-            <img className={styles.featureImage} src="/feature-image.png" alt={alt} />
+            <img
+                className={styles.featureImage}
+                src="/feature-image.png"
+                alt={alt}
+            />
             <ImageContextMenu parentRef={ref} />
         </div>
     );

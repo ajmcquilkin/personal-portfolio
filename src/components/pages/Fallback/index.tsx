@@ -1,15 +1,15 @@
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 
-import Button from 'components/Button';
-import Header from 'components/layout/Header';
+import Button from "components/Button";
+import Header from "components/layout/Header";
 
-import styles from './Fallback.module.scss';
+import styles from "./Fallback.module.scss";
 
 const Fallback = (): JSX.Element => {
     const router = useRouter();
 
     return (
-        <div style={{ overflow: 'hidden' }}>
+        <div style={{ overflow: "hidden" }}>
             <Header
                 title="404"
                 subtitle="That's an error..."
@@ -20,7 +20,7 @@ const Fallback = (): JSX.Element => {
                 hideArrow
             >
                 <Button
-                    onClick={() => router.push('/')}
+                    onClick={() => router.push("/")}
                     className="headerButton"
                 >
                     go home
@@ -28,7 +28,7 @@ const Fallback = (): JSX.Element => {
 
                 <Button
                     size="large"
-                    onClick={() => router.push('/stories')}
+                    onClick={() => router.push("/stories")}
                     className="headerButton"
                 >
                     see my work

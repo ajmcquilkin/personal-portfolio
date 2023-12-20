@@ -1,7 +1,7 @@
-import ProtectedImage from 'components/image/ProtectedImage';
-import FooterInner from 'components/layout/FooterInner';
+import ProtectedImage from "components/image/ProtectedImage";
+import FooterInner from "components/layout/FooterInner";
 
-import styles from './Footer.module.scss';
+import styles from "./Footer.module.scss";
 
 const Footer = (): JSX.Element => (
     <footer className={styles.container}>

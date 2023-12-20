@@ -1,18 +1,23 @@
-import { createContext, ReactNode, useContext } from 'react';
+import { createContext, ReactNode, useContext } from "react";
 
 export interface ConditionalRendererContext {
-    isVisible: boolean
+    isVisible: boolean;
 }
 
-export interface ConditionalRendererContextProps extends ConditionalRendererContext {
-    children: ReactNode
+export interface ConditionalRendererContextProps
+    extends ConditionalRendererContext {
+    children: ReactNode;
 }
 
 const context = createContext<ConditionalRendererContext>({ isVisible: false });
 
-const useConditionalRenderer = (): ConditionalRendererContext => useContext(context);
+const useConditionalRenderer = (): ConditionalRendererContext =>
+    useContext(context);
 
-const ConditionalRendererProvider = ({ isVisible, children }: ConditionalRendererContextProps): JSX.Element => (
+const ConditionalRendererProvider = ({
+    isVisible,
+    children,
+}: ConditionalRendererContextProps): JSX.Element => (
     <context.Provider value={{ isVisible }}>{children}</context.Provider>
 );
 

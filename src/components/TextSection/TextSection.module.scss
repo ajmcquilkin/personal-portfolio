@@ -2,42 +2,42 @@
 @use "styles/fonts.scss" as fonts;
 
 .container {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 
-  &.light {
-    color: colors.$white;
-  }
-
-  &.dark {
-    color: colors.$dark;
-  }
-
-  .context {
-    @include fonts.paragraphStyling();
-    margin: 0px 0px 0.3em;
-  }
-
-  .header {
-    @include fonts.h2();
-    margin: 0px 0px 0.4em;
-  }
-
-  .subtitle {
-    @include fonts.h3();
-    margin: 0px 0px 0.6em;
-    line-height: 1.2em;
-  }
-
-  .children {
-    .description {
-      @include fonts.paragraphStyling();
-      margin: 0px 0px 2em;
+    &.light {
+        color: colors.$white;
     }
 
-    .cta {
-      margin: 0px;
-      max-width: 480px;
+    &.dark {
+        color: colors.$dark;
     }
-  }
+
+    .context {
+        @include fonts.paragraphStyling();
+        margin: 0px 0px 0.3em;
+    }
+
+    .header {
+        @include fonts.h2();
+        margin: 0px 0px 0.4em;
+    }
+
+    .subtitle {
+        @include fonts.h3();
+        margin: 0px 0px 0.6em;
+        line-height: 1.2em;
+    }
+
+    .children {
+        .description {
+            @include fonts.paragraphStyling();
+            margin: 0px 0px 2em;
+        }
+
+        .cta {
+            margin: 0px;
+            max-width: 480px;
+        }
+    }
 }

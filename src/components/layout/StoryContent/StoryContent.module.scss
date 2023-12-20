@@ -3,146 +3,146 @@
 @use "styles/generics.scss" as generics;
 
 .container {
-  display: block;
+    display: block;
 
-  .content {
-    margin: 0px auto;
-    max-width: generics.$story-max-width;
-    padding: generics.$side-padding;
+    .content {
+        margin: 0px auto;
+        max-width: generics.$story-max-width;
+        padding: generics.$side-padding;
 
-    h2 {
-      @include fonts.h2();
-      color: colors.$dark;
+        h2 {
+            @include fonts.h2();
+            color: colors.$dark;
 
-      margin: 72px 0px 23px;
-    }
-
-    h3 {
-      @include fonts.h3();
-      color: colors.$dark;
-
-      margin: 48px 0px 23px;
-    }
-
-    h4 {
-      @include fonts.h4();
-      color: colors.$dark;
-
-      margin: 36px 0px 18px;
-    }
-
-    h5 {
-      font-family: fonts.$open-sans;
-      font-size: 21px;
-      font-weight: 500;
-      color: colors.$dark;
-
-      margin: 24px 0px 16px;
-    }
-
-    h6 {
-      font-family: fonts.$open-sans;
-      font-size: 18px;
-      font-weight: 500;
-      color: colors.$dark;
-
-      margin: 21px 0px 15px;
-    }
-
-    hr {
-      border: 1px solid colors.$lighter-dark;
-    }
-
-    // ! HARD TO READ
-    p,
-    pre,
-    td,
-    a {
-      @include fonts.paragraphStyling();
-
-      display: flex;
-      flex-direction: column;
-      margin: 24px 0px;
-    }
-
-    td {
-      margin: 0px;
-    }
-
-    em {
-    }
-
-    strong {
-    }
-
-    del {
-    }
-
-    a {
-      color: rgb(33, 166, 219);
-      text-decoration: underline;
-    }
-
-    ol {
-      li {
-        @include fonts.paragraphStyling();
-        margin: generics.$text-list-margin 0px;
-        &:last-child {
-          margin: 0px;
+            margin: 72px 0px 23px;
         }
-      }
-    }
 
-    ul {
-      li {
-        @include fonts.paragraphStyling();
-        margin: generics.$text-list-margin 0px;
-        &:last-child {
-          margin: 0px;
+        h3 {
+            @include fonts.h3();
+            color: colors.$dark;
+
+            margin: 48px 0px 23px;
         }
-      }
+
+        h4 {
+            @include fonts.h4();
+            color: colors.$dark;
+
+            margin: 36px 0px 18px;
+        }
+
+        h5 {
+            font-family: fonts.$open-sans;
+            font-size: 21px;
+            font-weight: 500;
+            color: colors.$dark;
+
+            margin: 24px 0px 16px;
+        }
+
+        h6 {
+            font-family: fonts.$open-sans;
+            font-size: 18px;
+            font-weight: 500;
+            color: colors.$dark;
+
+            margin: 21px 0px 15px;
+        }
+
+        hr {
+            border: 1px solid colors.$lighter-dark;
+        }
+
+        // ! HARD TO READ
+        p,
+        pre,
+        td,
+        a {
+            @include fonts.paragraphStyling();
+
+            display: flex;
+            flex-direction: column;
+            margin: 24px 0px;
+        }
+
+        td {
+            margin: 0px;
+        }
+
+        em {
+        }
+
+        strong {
+        }
+
+        del {
+        }
+
+        a {
+            color: rgb(33, 166, 219);
+            text-decoration: underline;
+        }
+
+        ol {
+            li {
+                @include fonts.paragraphStyling();
+                margin: generics.$text-list-margin 0px;
+                &:last-child {
+                    margin: 0px;
+                }
+            }
+        }
+
+        ul {
+            li {
+                @include fonts.paragraphStyling();
+                margin: generics.$text-list-margin 0px;
+                &:last-child {
+                    margin: 0px;
+                }
+            }
+        }
+
+        blockquote {
+            margin: 0px;
+            padding: 12px 40px;
+            border-left: 4px solid colors.$dark;
+
+            p {
+                margin: 0px;
+                font-size: 18px;
+            }
+        }
+
+        table {
+            img {
+                max-width: 60%;
+            }
+        }
+
+        img {
+            margin: 0px auto;
+            max-width: 100%;
+        }
+
+        code {
+            background-color: #e0e0e0;
+            border-radius: 1px;
+            color: brown;
+        }
+
+        pre {
+            padding: 3px 12px;
+            border-radius: 6px;
+            background-color: #e0e0e0;
+
+            code {
+                line-height: 100%;
+            }
+        }
+
+        table {
+            margin: 0px auto;
+        }
     }
-
-    blockquote {
-      margin: 0px;
-      padding: 12px 40px;
-      border-left: 4px solid colors.$dark;
-
-      p {
-        margin: 0px;
-        font-size: 18px;
-      }
-    }
-
-    table {
-      img {
-        max-width: 60%;
-      }
-    }
-
-    img {
-      margin: 0px auto;
-      max-width: 100%;
-    }
-
-    code {
-      background-color: #e0e0e0;
-      border-radius: 1px;
-      color: brown;
-    }
-
-    pre {
-      padding: 3px 12px;
-      border-radius: 6px;
-      background-color: #e0e0e0;
-
-      code {
-        line-height: 100%;
-      }
-    }
-
-    table {
-      margin: 0px auto;
-    }
-  }
 }

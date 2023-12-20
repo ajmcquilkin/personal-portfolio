@@ -1,13 +1,13 @@
 export interface TextLine {
-  label: string,
-  content: string
+    label: string;
+    content: string;
 }
 
 export interface HomeInformationCardEntry {
-  title: string,
-  subtitle: string,
-  rightText?: string,
+    title: string;
+    subtitle: string;
+    rightText?: string;
 
-  description: string,
-  addlLines: TextLine[]
+    description: string;
+    addlLines: TextLine[];
 }
